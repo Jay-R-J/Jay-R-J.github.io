@@ -1,0 +1,33 @@
+# Robots.txt 文件 - 防止爬虫滥用
+# 允许所有爬虫访问
+User-agent: *
+
+# 允许访问的目录
+Allow: /
+Allow: /about/
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/
+Allow: /flink/
+Allow: /留言/
+
+# 禁止访问的目录和文件
+Disallow: /_drafts/
+Disallow: /node_modules/
+Disallow: /themes/
+Disallow: /source/_posts/
+Disallow: /source/_drafts/
+Disallow: /package.json
+Disallow: /_config.yml
+Disallow: /themes/butterfly/_config.yml
+
+# 网站地图
+Sitemap: https://yourusername.github.io/sitemap.xml
+
+# 爬虫抓取频率 - 限制爬虫抓取频率，避免服务器负载过高
+Crawl-delay: 10
+
+# 禁止特定爬虫
+# User-agent: BadBot
+# Disallow: /
+
