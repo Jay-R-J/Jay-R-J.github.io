@@ -857,8 +857,8 @@
       <tags>
         <tag>Python</tag>
         <tag>编程学习</tag>
-        <tag>编程语言</tag>
         <tag>实践项目</tag>
+        <tag>编程语言</tag>
       </tags>
   </entry>
   <entry>
@@ -1054,9 +1054,9 @@
         <category>技术</category>
       </categories>
       <tags>
+        <tag>技术分享</tag>
         <tag>Python</tag>
         <tag>编程学习</tag>
-        <tag>技术分享</tag>
         <tag>编程语言</tag>
       </tags>
   </entry>
@@ -1203,9 +1203,9 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>技术分享</tag>
         <tag>Hexo</tag>
         <tag>博客</tag>
+        <tag>技术分享</tag>
       </tags>
   </entry>
   <entry>
@@ -1283,9 +1283,9 @@
         <category>生活</category>
       </categories>
       <tags>
-        <tag>技术分享</tag>
         <tag>Hexo</tag>
         <tag>博客</tag>
+        <tag>技术分享</tag>
         <tag>个人成长</tag>
       </tags>
   </entry>
