@@ -1,104 +1,321 @@
 # Python优雅代码最佳实践
 
+## 📋 目录
+
+1. [遵循PEP 8规范](#1-遵循pep-8规范)
+2. [充分利用Python特性](#2-充分利用python特性)
+3. [函数设计最佳实践](#3-函数设计最佳实践)
+4. [异常处理](#4-异常处理)
+5. [模块化设计](#5-模块化设计)
+6. [代码可读性](#6-代码可读性)
+7. [性能优化](#7-性能优化)
+8. [上下文管理器](#8-上下文管理器)
+9. [测试你的代码](#9-测试你的代码)
+10. [代码质量工具](#10-代码质量工具)
+11. [持续学习](#11-持续学习)
+
+---
+
 ## 1. 遵循PEP 8规范
 
 ### 命名规范
-- 变量名和函数名：使用snake_case（小写字母+下划线）
-- 类名：使用PascalCase（首字母大写+无下划线）
-- 常量：使用全大写+下划线
-- 模块名：使用小写字母，避免使用下划线
+- **变量名和函数名**：使用 `snake_case`（小写字母+下划线）
+- **类名**：使用 `PascalCase`（首字母大写+无下划线）
+- **常量**：使用 `ALL_CAPS`（全大写+下划线）
+- **模块名**：使用小写字母，避免使用下划线
+- **包名**：使用简短的小写字母，避免使用下划线
 
 ### 代码布局
 - 每行不超过79个字符
 - 函数和类之间空两行
 - 函数内部逻辑块之间空一行
-- 使用4个空格缩进
+- 使用4个空格缩进，不使用制表符
+- 二元操作符前后加空格
+- 逗号、冒号、分号前不空格，后加空格
 
-## 2. 利用Python的特性
+---
 
-### 列表推导式
+## 2. 充分利用Python特性
+
+### 推导式（Comprehensions）
 ```python
-# 不优雅
-squares = []
-for num in range(10):
-    squares.append(num ** 2)
+# 列表推导式
+squares = [num ** 2 for num in range(10) if num % 2 == 0]
 
-# 优雅
-squares = [num ** 2 for num in range(10)]
+# 字典推导式
+word_lengths = {word: len(word) for word in ["apple", "banana", "cherry"]}
+
+# 集合推导式
+unique_lengths = {len(word) for word in ["apple", "banana", "cherry"]}
+
+# 生成器表达式（内存高效）
+sum_of_squares = sum(num ** 2 for num in range(1000000))
 ```
 
-### 生成器表达式
+### Python 3.8+ 新特性
+
+#### 海象运算符（Walrus Operator）
 ```python
 # 不优雅
-sum = 0
-for num in range(1000000):
-    sum += num
+user_input = input("Enter something: ")
+if user_input:
+    print(f"You entered: {user_input}")
 
 # 优雅
-sum = sum(num for num in range(1000000))
+if (user_input := input("Enter something: ")):
+    print(f"You entered: {user_input}")
+
+# 实际应用：处理多行输入
+while (line := input("Enter a line (or 'quit' to exit): ")) != "quit":
+    print(f"Processing: {line}")
 ```
 
-### 字典推导式
+#### 仅限位置参数
+```python
+# 只有name是位置参数，其他是关键字参数
+def greet(name, /, greeting="Hello", *, punctuation="."):
+    print(f"{greeting}, {name}{punctuation}")
+```
+
+#### 合并字典与更新字典
+```python
+# Python 3.5+
+merged = {**dict1, **dict2}
+
+# Python 3.9+
+merged = dict1 | dict2  # 合并两个字典
+dict1 |= dict2  # 原地更新字典
+```
+
+#### 类型注解改进（Python 3.9+）
+```python
+# Python 3.8及以前
+from typing import List, Dict, Optional
+
+def process_items(items: List[str], threshold: int = 10) -> Dict[str, int]:
+    pass
+
+# Python 3.9+
+def process_items(items: list[str], threshold: int = 10) -> dict[str, int]:
+    pass
+```
+
+#### 结构化模式匹配（Python 3.10+）
+```python
+def process_data(data):
+    match data:
+        case 0:
+            print("数据为零")
+        case 1 | 2:
+            print("数据为1或2")
+        case list() if len(data) > 0:
+            print(f"非空列表，长度: {len(data)}")
+        case dict(key=value):
+            print(f"字典包含key: {value}")
+        case _:
+            print("其他类型数据")
+```
+
+#### 新字符串方法（Python 3.9+）
+```python
+# 删除前缀和后缀
+s = "Hello, World!"
+print(s.removeprefix("Hello, "))  # 输出: World!
+print(s.removesuffix("!"))  # 输出: Hello, World
+
+# 大小写转换增强
+print("python".capitalize())  # Python
+print("PYTHON".casefold())  # python
+```
+
+#### 类型联合（Python 3.10+）
+```python
+# Python 3.8-3.9
+from typing import Union
+
+def process_value(value: Union[int, str, None]) -> None:
+    pass
+
+# Python 3.10+
+def process_value(value: int | str | None) -> None:
+    pass
+```
+
+### 解包（Unpacking）
 ```python
 # 不优雅
-word_lengths = {}
-for word in words:
-    word_lengths[word] = len(word)
+a = my_list[0]
+b = my_list[1]
+c = my_list[2]
 
 # 优雅
-word_lengths = {word: len(word) for word in words}
+a, b, c = my_list
+
+# 扩展解包
+a, b, *rest = my_list
 ```
 
-## 3. 函数设计
+---
+
+## 3. 函数设计最佳实践
 
 ### 函数应该短小精悍
 - 函数长度最好不超过20行
 - 每个函数只做一件事
+- 使用单一出口原则（尽可能只有一个return语句）
+- 每个函数应该有明确的职责和返回值
+
+### 函数参数顺序
+```python
+# 推荐顺序：必要参数 → 默认参数 → 可变参数 → 关键字可变参数
+def func(required_param1, required_param2, default_param=default_value, *args, **kwargs):
+    pass
+```
 
 ### 使用默认参数和关键字参数
 ```python
-# 不优雅
-def create_user(name, email, age, is_admin):
-    pass
-
-# 优雅
 def create_user(name, email, age=18, is_admin=False):
-    pass
+    return {
+        "name": name,
+        "email": email,
+        "age": age,
+        "is_admin": is_admin
+    }
+
+# 调用时使用关键字参数提高可读性
+create_user("张三", "zhangsan@example.com", age=25)
 ```
 
 ### 使用类型提示
 ```python
-# 不优雅
-def calculate_area(radius):
-    return 3.14 * radius ** 2
+# Python 3.9+ 原生类型注解
+def process_items(items: list[str], threshold: int = 10) -> dict[str, int]:
+    """处理字符串列表并返回长度统计"""
+    result = {}
+    for item in items:
+        if len(item) > threshold:
+            result[item] = len(item)
+    return result
 
-# 优雅
-def calculate_area(radius: float) -> float:
-    return 3.14 * radius ** 2
+# Python 3.10+ 类型联合
+def get_user_id(user: str | int) -> int:
+    """获取用户ID，支持字符串和整数输入"""
+    if isinstance(user, str):
+        return int(user)
+    return user
 ```
+
+### 使用装饰器
+```python
+import time
+from functools import wraps
+from typing import Callable, Any
+
+# 测量函数执行时间的装饰器
+def timing_decorator(func: Callable[..., Any]) -> Callable[..., Any]:
+    """测量函数执行时间的装饰器"""
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        end_time = time.time()
+        print(f"{func.__name__} 执行时间: {end_time - start_time:.4f}秒")
+        return result
+    return wrapper
+
+# 缓存装饰器，避免重复计算
+from functools import lru_cache
+
+@lru_cache(maxsize=128)
+def fibonacci(n: int) -> int:
+    """计算斐波那契数列，使用缓存优化"""
+    if n <= 1:
+        return n
+    return fibonacci(n-1) + fibonacci(n-2)
+
+# 实际应用：登录验证装饰器
+def requires_login(func: Callable) -> Callable:
+    """需要登录的装饰器"""
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        if not is_logged_in():
+            return "请先登录"
+        return func(*args, **kwargs)
+    return wrapper
+
+@requires_login
+def view_dashboard():
+    """查看仪表盘，需要登录"""
+    return "仪表盘内容"
+```
+
+### 使用functools工具
+```python
+from functools import partial, reduce
+
+# 偏函数：固定部分参数
+add_10 = partial(lambda x, y: x + y, 10)
+result = add_10(5)  # 输出: 15
+
+# reduce：归约操作
+from typing import List
+
+def product(numbers: List[int]) -> int:
+    return reduce(lambda x, y: x * y, numbers, 1)
+```
+
+---
 
 ## 4. 异常处理
 
 ### 精确捕获异常
 ```python
+try:
+    with open("data.txt", "r") as f:
+        content = f.read()
+except FileNotFoundError:
+    print("文件不存在，请检查路径")
+except PermissionError:
+    print("没有权限读取文件")
+except Exception as e:
+    print(f"发生意外错误: {e}")
+```
+
+### 避免使用裸露的except
+```python
 # 不优雅
 try:
     # 代码
     pass
-except Exception as e:
-    print(f"错误: {e}")
+except:  # 捕获所有异常，包括KeyboardInterrupt等
+    print("发生错误")
 
 # 优雅
 try:
     # 代码
     pass
-except FileNotFoundError as e:
-    print(f"文件不存在: {e}")
-except PermissionError as e:
-    print(f"没有权限: {e}")
+except Exception as e:
+    print(f"发生错误: {e}")
 ```
 
-## 5. 代码可读性
+---
+
+## 5. 模块化设计
+
+### 合理组织代码
+- 将相关功能组织到同一个模块中
+- 使用包（package）来组织相关模块
+- 遵循单一职责原则
+- 使用 `__init__.py` 来控制模块的导出
+
+### 避免循环导入
+- 重构代码，提取公共依赖
+- 使用延迟导入
+- 重新组织模块结构
+
+---
+
+## 6. 代码可读性
 
 ### 使用有意义的变量名
 ```python
@@ -109,11 +326,14 @@ def f(a, b):
 
 # 优雅
 def calculate_sum(first_number: int, second_number: int) -> int:
+    """计算两个数的和"""
     sum_result = first_number + second_number
     return sum_result
 ```
 
 ### 添加适当的注释
+注释应该解释**为什么**这样做，而不是解释**代码在做什么**。
+
 ```python
 # 不优雅
 # 计算圆的面积
@@ -121,34 +341,94 @@ def calc_area(r):
     return 3.14 * r ** 2
 
 # 优雅
-# 使用π的近似值计算圆的面积，π取3.14以保证计算速度
+# 使用π的近似值3.14计算圆的面积，平衡精度和性能
 def calculate_circle_area(radius: float) -> float:
     return 3.14 * radius ** 2
 ```
 
-## 6. 性能优化
+### 使用文档字符串
+```python
+def create_user(name, email, age=18):
+    """创建新用户
+    
+    Args:
+        name (str): 用户的真实姓名
+        email (str): 用户的邮箱地址
+        age (int, optional): 用户的年龄，默认为18
+        
+    Returns:
+        dict: 包含用户信息的字典
+        
+    Raises:
+        ValueError: 当年龄小于0或大于120时抛出
+    """
+    if age < 0 or age > 120:
+        raise ValueError("年龄必须在0到120之间")
+    return {
+        "name": name,
+        "email": email,
+        "age": age
+    }
+```
+
+---
+
+## 7. 性能优化
 
 ### 使用内置函数和库
-Python的内置函数经过优化，比自己实现的相同功能更快。
+Python的内置函数和标准库经过了高度优化，比自己实现的相同功能更快。
+
+```python
+# 不优雅
+result = []
+for item in some_list:
+    if condition(item):
+        result.append(item)
+
+# 优雅
+result = list(filter(condition, some_list))
+
+# 更快的方式
+result = [item for item in some_list if condition(item)]
+```
 
 ### 避免不必要的计算
 ```python
 # 不优雅
-for item in data:
-    if expensive_function(item) > threshold:
-        # 处理
-        pass
+def process_data(data):
+    for item in data:
+        if expensive_calculation(item) > threshold:
+            # 处理逻辑
+            pass
 
 # 优雅
-for item in data:
-    result = expensive_function(item)
-    if result > threshold:
-        # 处理
-        pass
+def process_data(data):
+    for item in data:
+        calc_result = expensive_calculation(item)
+        if calc_result > threshold:
+            # 处理逻辑
+            pass
 ```
 
-## 7. 使用上下文管理器
+### 使用更高效的数据结构
+```python
+# 不优雅：检查元素是否存在于列表中（O(n)时间复杂度）
+if item in my_list:
+    # 处理逻辑
+    pass
 
+# 优雅：使用集合（O(1)时间复杂度）
+my_set = set(my_list)
+if item in my_set:
+    # 处理逻辑
+    pass
+```
+
+---
+
+## 8. 上下文管理器
+
+### 使用with语句
 ```python
 # 不优雅
 file = open("data.txt", "r")
@@ -162,16 +442,113 @@ with open("data.txt", "r") as file:
     content = file.read()
 ```
 
-## 8. 测试你的代码
+### 自定义上下文管理器
+```python
+import time
 
-编写单元测试确保代码按预期工作，使用unittest或pytest框架。
+class Timer:
+    def __enter__(self):
+        self.start_time = time.time()
+        return self
+    
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.end_time = time.time()
+        print(f"执行时间: {self.end_time - self.start_time:.4f}秒")
 
-## 9. 不断学习和改进
+# 使用
+with Timer():
+    # 耗时操作
+    time.sleep(1)
+```
+
+---
+
+## 9. 测试你的代码
+
+### 单元测试
+使用 `unittest` 或 `pytest` 框架编写单元测试。
+
+```python
+import pytest
+
+def test_calculate_sum():
+    """测试计算和函数"""
+    assert calculate_sum(1, 2) == 3
+    assert calculate_sum(-1, 1) == 0
+    assert calculate_sum(0, 0) == 0
+
+# 参数化测试
+@pytest.mark.parametrize("a, b, expected", [(1, 2, 3), (-1, 1, 0), (0, 0, 0)])
+def test_calculate_sum_parametrized(a, b, expected):
+    """参数化测试计算和函数"""
+    assert calculate_sum(a, b) == expected
+```
+
+### 代码覆盖率
+使用 `coverage` 工具确保测试覆盖了大部分代码。
+
+```bash
+coverage run -m pytestoverage report -m
+```
+
+---
+
+## 10. 代码质量工具
+
+### 静态代码分析
+- **flake8**：检查PEP 8规范和常见错误
+- **pylint**：全面的代码质量检查
+- **mypy**：静态类型检查
+
+### 代码格式化
+- **black**：自动代码格式化
+- **isort**：自动排序导入语句
+
+### 使用方式
+```bash
+# 格式化代码
+black .
+isort .
+
+# 检查代码
+flake8 .
+pylint .
+mypy .
+```
+
+---
+
+## 11. 持续学习
+
+Python生态系统在不断发展，新的库和最佳实践不断涌现。
 
 - 阅读优秀的开源代码
 - 参加Python社区活动
 - 关注Python相关的博客和公众号
+- 定期更新你的知识
+- 学习Python的新特性
 
-# 总结
+---
 
-写出优雅的Python代码需要遵循规范，充分利用Python的特性，注重代码可读性和性能。优雅的代码不仅易于阅读和维护，还能提高开发效率和代码质量。
+## 📝 总结
+
+写出优雅的Python代码需要：
+
+1. 遵循PEP 8规范
+2. 充分利用Python特性
+3. 设计清晰、简洁的函数
+4. 合理处理异常
+5. 采用模块化设计
+6. 注重代码可读性
+7. 进行性能优化
+8. 使用上下文管理器
+9. 编写全面的测试
+10. 使用代码质量工具
+11. 持续学习和改进
+
+优雅的代码不仅易于阅读和维护，还能提高开发效率和代码质量。
+
+---
+
+**最后更新时间**：2026-01-06
+**版本**：1.0.0
