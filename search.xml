@@ -777,6 +777,134 @@
       </tags>
   </entry>
   <entry>
+    <title>如何使用博客订阅功能</title>
+    <url>/2026/01/06/how-to-use-subscription.html</url>
+    <content><![CDATA[<h1 id="如何使用博客订阅功能"><a href="#如何使用博客订阅功能" class="headerlink" title="如何使用博客订阅功能"></a>如何使用博客订阅功能</h1><blockquote>
+<p>“及时获取最新内容，不错过任何精彩文章。” —— 佚名</p>
+</blockquote>
+<p>为了方便读者及时获取博客的最新文章和动态，我在博客中添加了订阅功能。通过订阅功能，你可以在第一时间收到博客的更新，无需手动访问博客网站。本文将详细介绍如何使用博客的订阅功能。</p>
+<h2 id="📌-什么是订阅功能？"><a href="#📌-什么是订阅功能？" class="headerlink" title="📌 什么是订阅功能？"></a>📌 什么是订阅功能？</h2><p>订阅功能是一种通过 RSS (Really Simple Syndication) 协议实现的内容更新通知服务。当博客发布新文章时，订阅者会通过 RSS 阅读器收到通知，无需手动访问博客网站。</p>
+<h3 id="订阅功能的好处"><a href="#订阅功能的好处" class="headerlink" title="订阅功能的好处"></a>订阅功能的好处</h3><ol>
+<li><strong>及时获取更新</strong>：第一时间收到博客的最新文章和动态</li>
+<li><strong>节省时间</strong>：无需每天手动访问博客网站</li>
+<li><strong>统一管理</strong>：在一个 RSS 阅读器中管理多个订阅源</li>
+<li><strong>无广告干扰</strong>：专注于内容本身，不受广告和其他干扰</li>
+<li><strong>隐私保护</strong>：无需注册账号，保护个人隐私</li>
+</ol>
+<h2 id="🚀-如何订阅博客？"><a href="#🚀-如何订阅博客？" class="headerlink" title="🚀 如何订阅博客？"></a>🚀 如何订阅博客？</h2><h3 id="方法一：使用-RSS-阅读器订阅"><a href="#方法一：使用-RSS-阅读器订阅" class="headerlink" title="方法一：使用 RSS 阅读器订阅"></a>方法一：使用 RSS 阅读器订阅</h3><h4 id="步骤-1：选择一个-RSS-阅读器"><a href="#步骤-1：选择一个-RSS-阅读器" class="headerlink" title="步骤 1：选择一个 RSS 阅读器"></a>步骤 1：选择一个 RSS 阅读器</h4><p>市场上有很多优秀的 RSS 阅读器，以下是一些推荐：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>推荐阅读器</th>
+<th>优点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Web 端</td>
+<td><a href="https://feedly.com/">Feedly</a></td>
+<td>界面简洁，功能强大，支持多设备同步</td>
+</tr>
+<tr>
+<td>Web 端</td>
+<td><a href="https://www.inoreader.com/">Inoreader</a></td>
+<td>功能丰富，支持过滤和搜索</td>
+</tr>
+<tr>
+<td>桌面端</td>
+<td><a href="https://www.thunderbird.net/">Thunderbird</a></td>
+<td>开源免费，邮件客户端集成</td>
+</tr>
+<tr>
+<td>桌面端</td>
+<td><a href="https://newsblur.com/">NewsBlur</a></td>
+<td>支持内容过滤和智能分类</td>
+</tr>
+<tr>
+<td>移动端</td>
+<td><a href="https://reederapp.com/">Reeder</a> (iOS)</td>
+<td>界面美观，操作流畅</td>
+</tr>
+<tr>
+<td>移动端</td>
+<td><a href="https://netnewswire.com/">NetNewsWire</a> (iOS&#x2F;macOS)</td>
+<td>开源免费，简洁易用</td>
+</tr>
+<tr>
+<td>移动端</td>
+<td><a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2">Feeder</a> (Android)</td>
+<td>功能全面，支持离线阅读</td>
+</tr>
+</tbody></table>
+<h4 id="步骤-2：获取博客的-RSS-地址"><a href="#步骤-2：获取博客的-RSS-地址" class="headerlink" title="步骤 2：获取博客的 RSS 地址"></a>步骤 2：获取博客的 RSS 地址</h4><p>博客的 RSS 地址为：<code>https://jay-r-j.github.io/atom.xml</code></p>
+<h4 id="步骤-3：在-RSS-阅读器中添加订阅"><a href="#步骤-3：在-RSS-阅读器中添加订阅" class="headerlink" title="步骤 3：在 RSS 阅读器中添加订阅"></a>步骤 3：在 RSS 阅读器中添加订阅</h4><p>以 Feedly 为例，添加订阅的步骤如下：</p>
+<ol>
+<li>打开 <a href="https://feedly.com/">Feedly</a> 网站，注册或登录账号</li>
+<li>点击左上角的 “Add Content” 按钮</li>
+<li>在搜索框中输入博客的 RSS 地址，或直接输入博客域名</li>
+<li>点击 “Follow” 按钮，完成订阅</li>
+</ol>
+<h3 id="方法二：使用浏览器订阅"><a href="#方法二：使用浏览器订阅" class="headerlink" title="方法二：使用浏览器订阅"></a>方法二：使用浏览器订阅</h3><p>现代浏览器通常内置了 RSS 订阅功能，以下是一些常见浏览器的订阅方法：</p>
+<h4 id="Chrome-浏览器"><a href="#Chrome-浏览器" class="headerlink" title="Chrome 浏览器"></a>Chrome 浏览器</h4><ol>
+<li>访问博客网站</li>
+<li>在地址栏右侧，点击 RSS 图标（如果没有显示，可以安装 RSS 订阅扩展）</li>
+<li>在弹出的页面中，选择你喜欢的 RSS 阅读器进行订阅</li>
+</ol>
+<h4 id="Firefox-浏览器"><a href="#Firefox-浏览器" class="headerlink" title="Firefox 浏览器"></a>Firefox 浏览器</h4><ol>
+<li>访问博客网站</li>
+<li>在地址栏右侧，点击 RSS 图标</li>
+<li>在弹出的页面中，选择 “Subscribe Now” 或复制 RSS 地址到你的 RSS 阅读器</li>
+</ol>
+<h4 id="Edge-浏览器"><a href="#Edge-浏览器" class="headerlink" title="Edge 浏览器"></a>Edge 浏览器</h4><ol>
+<li>访问博客网站</li>
+<li>点击地址栏左侧的 “…” 按钮</li>
+<li>选择 “RSS Feed” 选项</li>
+<li>在弹出的页面中，选择你喜欢的 RSS 阅读器进行订阅</li>
+</ol>
+<h3 id="方法三：使用邮件订阅"><a href="#方法三：使用邮件订阅" class="headerlink" title="方法三：使用邮件订阅"></a>方法三：使用邮件订阅</h3><p>如果你更喜欢通过邮件接收博客更新，可以使用以下方法：</p>
+<ol>
+<li>选择一个支持邮件订阅的 RSS 阅读器，如 <a href="https://blogtrottr.com/">Blogtrottr</a>、<a href="https://mailbrew.com/">Mailbrew</a> 或 <a href="https://kill-the-newsletter.com/">Kill the Newsletter!</a></li>
+<li>在 RSS 阅读器中添加博客的 RSS 地址</li>
+<li>配置邮件发送频率和其他设置</li>
+<li>确认邮件订阅，开始接收邮件通知</li>
+</ol>
+<h2 id="📱-如何在移动设备上订阅？"><a href="#📱-如何在移动设备上订阅？" class="headerlink" title="📱 如何在移动设备上订阅？"></a>📱 如何在移动设备上订阅？</h2><h3 id="iOS-设备"><a href="#iOS-设备" class="headerlink" title="iOS 设备"></a>iOS 设备</h3><ol>
+<li>下载并安装一款 RSS 阅读器应用，如 Reeder 或 NetNewsWire</li>
+<li>打开应用，点击 “Add Feed” 或类似按钮</li>
+<li>输入博客的 RSS 地址，或直接搜索博客域名</li>
+<li>点击 “Add” 或 “Follow” 按钮，完成订阅</li>
+</ol>
+<h3 id="Android-设备"><a href="#Android-设备" class="headerlink" title="Android 设备"></a>Android 设备</h3><ol>
+<li>下载并安装一款 RSS 阅读器应用，如 Feeder 或 Inoreader</li>
+<li>打开应用，点击 “+” 或 “Add Feed” 按钮</li>
+<li>输入博客的 RSS 地址，或直接搜索博客域名</li>
+<li>点击 “Add” 或 “Follow” 按钮，完成订阅</li>
+</ol>
+<h2 id="🔍-如何查看订阅的内容？"><a href="#🔍-如何查看订阅的内容？" class="headerlink" title="🔍 如何查看订阅的内容？"></a>🔍 如何查看订阅的内容？</h2><h3 id="在-RSS-阅读器中查看"><a href="#在-RSS-阅读器中查看" class="headerlink" title="在 RSS 阅读器中查看"></a>在 RSS 阅读器中查看</h3><p>打开你的 RSS 阅读器，找到博客的订阅源，点击即可查看最新的文章和动态。</p>
+<h3 id="在邮件中查看"><a href="#在邮件中查看" class="headerlink" title="在邮件中查看"></a>在邮件中查看</h3><p>如果你使用邮件订阅，当博客发布新文章时，你会收到一封包含文章摘要和链接的邮件。点击邮件中的链接即可查看完整文章。</p>
+<h2 id="📝-常见问题解答"><a href="#📝-常见问题解答" class="headerlink" title="📝 常见问题解答"></a>📝 常见问题解答</h2><h3 id="Q-订阅博客需要付费吗？"><a href="#Q-订阅博客需要付费吗？" class="headerlink" title="Q: 订阅博客需要付费吗？"></a>Q: 订阅博客需要付费吗？</h3><p>A: 不需要，博客的订阅功能完全免费。</p>
+<h3 id="Q-订阅后会收到垃圾邮件吗？"><a href="#Q-订阅后会收到垃圾邮件吗？" class="headerlink" title="Q: 订阅后会收到垃圾邮件吗？"></a>Q: 订阅后会收到垃圾邮件吗？</h3><p>A: 不会，订阅功能使用 RSS 协议，无需提供邮箱地址，因此不会收到垃圾邮件。如果你使用邮件订阅，邮件内容仅包含博客的更新信息，不会包含垃圾邮件。</p>
+<h3 id="Q-如何取消订阅？"><a href="#Q-如何取消订阅？" class="headerlink" title="Q: 如何取消订阅？"></a>Q: 如何取消订阅？</h3><p>A: 在你的 RSS 阅读器中找到博客的订阅源，点击取消订阅按钮即可。</p>
+<h3 id="Q-订阅后多久能收到更新？"><a href="#Q-订阅后多久能收到更新？" class="headerlink" title="Q: 订阅后多久能收到更新？"></a>Q: 订阅后多久能收到更新？</h3><p>A: 通常情况下，RSS 阅读器会每隔一段时间检查一次订阅源的更新，具体频率取决于 RSS 阅读器的设置。一般来说，你会在博客发布新文章后的几分钟到几小时内收到通知。</p>
+<h3 id="Q-可以只订阅特定类别的文章吗？"><a href="#Q-可以只订阅特定类别的文章吗？" class="headerlink" title="Q: 可以只订阅特定类别的文章吗？"></a>Q: 可以只订阅特定类别的文章吗？</h3><p>A: 目前博客只提供全量订阅，无法只订阅特定类别的文章。未来可能会考虑添加分类订阅功能。</p>
+<h2 id="🎯-订阅入口"><a href="#🎯-订阅入口" class="headerlink" title="🎯 订阅入口"></a>🎯 订阅入口</h2><p>博客的订阅入口位于导航菜单中，点击 “订阅” 按钮即可获取博客的 RSS 地址。</p>
+<h2 id="🎉-总结"><a href="#🎉-总结" class="headerlink" title="🎉 总结"></a>🎉 总结</h2><p>通过订阅功能，你可以及时获取博客的最新文章和动态，无需手动访问博客网站。订阅功能简单易用，保护个人隐私，是获取博客更新的最佳方式。</p>
+<p>如果你在使用订阅功能时遇到问题，欢迎在博客的留言板中留言，我会及时回复并解决问题。</p>
+<blockquote>
+<p>最后，感谢你的支持和关注！祝你阅读愉快！🚀</p>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>使用指南</tag>
+        <tag>订阅功能</tag>
+        <tag>RSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2025相机评选：以视频能力为核心的主观评价</title>
     <url>/2026/01/06/2025-camera-awards.html</url>
     <content><![CDATA[<h1 id="2025相机评选：以视频能力为核心的主观评价"><a href="#2025相机评选：以视频能力为核心的主观评价" class="headerlink" title="2025相机评选：以视频能力为核心的主观评价"></a>2025相机评选：以视频能力为核心的主观评价</h1><div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 12px; margin: 20px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
@@ -1159,134 +1287,6 @@
         <tag>博客</tag>
         <tag>技术分享</tag>
         <tag>个人成长</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何使用博客订阅功能</title>
-    <url>/2026/01/06/how-to-use-subscription.html</url>
-    <content><![CDATA[<h1 id="如何使用博客订阅功能"><a href="#如何使用博客订阅功能" class="headerlink" title="如何使用博客订阅功能"></a>如何使用博客订阅功能</h1><blockquote>
-<p>“及时获取最新内容，不错过任何精彩文章。” —— 佚名</p>
-</blockquote>
-<p>为了方便读者及时获取博客的最新文章和动态，我在博客中添加了订阅功能。通过订阅功能，你可以在第一时间收到博客的更新，无需手动访问博客网站。本文将详细介绍如何使用博客的订阅功能。</p>
-<h2 id="📌-什么是订阅功能？"><a href="#📌-什么是订阅功能？" class="headerlink" title="📌 什么是订阅功能？"></a>📌 什么是订阅功能？</h2><p>订阅功能是一种通过 RSS (Really Simple Syndication) 协议实现的内容更新通知服务。当博客发布新文章时，订阅者会通过 RSS 阅读器收到通知，无需手动访问博客网站。</p>
-<h3 id="订阅功能的好处"><a href="#订阅功能的好处" class="headerlink" title="订阅功能的好处"></a>订阅功能的好处</h3><ol>
-<li><strong>及时获取更新</strong>：第一时间收到博客的最新文章和动态</li>
-<li><strong>节省时间</strong>：无需每天手动访问博客网站</li>
-<li><strong>统一管理</strong>：在一个 RSS 阅读器中管理多个订阅源</li>
-<li><strong>无广告干扰</strong>：专注于内容本身，不受广告和其他干扰</li>
-<li><strong>隐私保护</strong>：无需注册账号，保护个人隐私</li>
-</ol>
-<h2 id="🚀-如何订阅博客？"><a href="#🚀-如何订阅博客？" class="headerlink" title="🚀 如何订阅博客？"></a>🚀 如何订阅博客？</h2><h3 id="方法一：使用-RSS-阅读器订阅"><a href="#方法一：使用-RSS-阅读器订阅" class="headerlink" title="方法一：使用 RSS 阅读器订阅"></a>方法一：使用 RSS 阅读器订阅</h3><h4 id="步骤-1：选择一个-RSS-阅读器"><a href="#步骤-1：选择一个-RSS-阅读器" class="headerlink" title="步骤 1：选择一个 RSS 阅读器"></a>步骤 1：选择一个 RSS 阅读器</h4><p>市场上有很多优秀的 RSS 阅读器，以下是一些推荐：</p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>推荐阅读器</th>
-<th>优点</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Web 端</td>
-<td><a href="https://feedly.com/">Feedly</a></td>
-<td>界面简洁，功能强大，支持多设备同步</td>
-</tr>
-<tr>
-<td>Web 端</td>
-<td><a href="https://www.inoreader.com/">Inoreader</a></td>
-<td>功能丰富，支持过滤和搜索</td>
-</tr>
-<tr>
-<td>桌面端</td>
-<td><a href="https://www.thunderbird.net/">Thunderbird</a></td>
-<td>开源免费，邮件客户端集成</td>
-</tr>
-<tr>
-<td>桌面端</td>
-<td><a href="https://newsblur.com/">NewsBlur</a></td>
-<td>支持内容过滤和智能分类</td>
-</tr>
-<tr>
-<td>移动端</td>
-<td><a href="https://reederapp.com/">Reeder</a> (iOS)</td>
-<td>界面美观，操作流畅</td>
-</tr>
-<tr>
-<td>移动端</td>
-<td><a href="https://netnewswire.com/">NetNewsWire</a> (iOS&#x2F;macOS)</td>
-<td>开源免费，简洁易用</td>
-</tr>
-<tr>
-<td>移动端</td>
-<td><a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2">Feeder</a> (Android)</td>
-<td>功能全面，支持离线阅读</td>
-</tr>
-</tbody></table>
-<h4 id="步骤-2：获取博客的-RSS-地址"><a href="#步骤-2：获取博客的-RSS-地址" class="headerlink" title="步骤 2：获取博客的 RSS 地址"></a>步骤 2：获取博客的 RSS 地址</h4><p>博客的 RSS 地址为：<code>https://jay-r-j.github.io/atom.xml</code></p>
-<h4 id="步骤-3：在-RSS-阅读器中添加订阅"><a href="#步骤-3：在-RSS-阅读器中添加订阅" class="headerlink" title="步骤 3：在 RSS 阅读器中添加订阅"></a>步骤 3：在 RSS 阅读器中添加订阅</h4><p>以 Feedly 为例，添加订阅的步骤如下：</p>
-<ol>
-<li>打开 <a href="https://feedly.com/">Feedly</a> 网站，注册或登录账号</li>
-<li>点击左上角的 “Add Content” 按钮</li>
-<li>在搜索框中输入博客的 RSS 地址，或直接输入博客域名</li>
-<li>点击 “Follow” 按钮，完成订阅</li>
-</ol>
-<h3 id="方法二：使用浏览器订阅"><a href="#方法二：使用浏览器订阅" class="headerlink" title="方法二：使用浏览器订阅"></a>方法二：使用浏览器订阅</h3><p>现代浏览器通常内置了 RSS 订阅功能，以下是一些常见浏览器的订阅方法：</p>
-<h4 id="Chrome-浏览器"><a href="#Chrome-浏览器" class="headerlink" title="Chrome 浏览器"></a>Chrome 浏览器</h4><ol>
-<li>访问博客网站</li>
-<li>在地址栏右侧，点击 RSS 图标（如果没有显示，可以安装 RSS 订阅扩展）</li>
-<li>在弹出的页面中，选择你喜欢的 RSS 阅读器进行订阅</li>
-</ol>
-<h4 id="Firefox-浏览器"><a href="#Firefox-浏览器" class="headerlink" title="Firefox 浏览器"></a>Firefox 浏览器</h4><ol>
-<li>访问博客网站</li>
-<li>在地址栏右侧，点击 RSS 图标</li>
-<li>在弹出的页面中，选择 “Subscribe Now” 或复制 RSS 地址到你的 RSS 阅读器</li>
-</ol>
-<h4 id="Edge-浏览器"><a href="#Edge-浏览器" class="headerlink" title="Edge 浏览器"></a>Edge 浏览器</h4><ol>
-<li>访问博客网站</li>
-<li>点击地址栏左侧的 “…” 按钮</li>
-<li>选择 “RSS Feed” 选项</li>
-<li>在弹出的页面中，选择你喜欢的 RSS 阅读器进行订阅</li>
-</ol>
-<h3 id="方法三：使用邮件订阅"><a href="#方法三：使用邮件订阅" class="headerlink" title="方法三：使用邮件订阅"></a>方法三：使用邮件订阅</h3><p>如果你更喜欢通过邮件接收博客更新，可以使用以下方法：</p>
-<ol>
-<li>选择一个支持邮件订阅的 RSS 阅读器，如 <a href="https://blogtrottr.com/">Blogtrottr</a>、<a href="https://mailbrew.com/">Mailbrew</a> 或 <a href="https://kill-the-newsletter.com/">Kill the Newsletter!</a></li>
-<li>在 RSS 阅读器中添加博客的 RSS 地址</li>
-<li>配置邮件发送频率和其他设置</li>
-<li>确认邮件订阅，开始接收邮件通知</li>
-</ol>
-<h2 id="📱-如何在移动设备上订阅？"><a href="#📱-如何在移动设备上订阅？" class="headerlink" title="📱 如何在移动设备上订阅？"></a>📱 如何在移动设备上订阅？</h2><h3 id="iOS-设备"><a href="#iOS-设备" class="headerlink" title="iOS 设备"></a>iOS 设备</h3><ol>
-<li>下载并安装一款 RSS 阅读器应用，如 Reeder 或 NetNewsWire</li>
-<li>打开应用，点击 “Add Feed” 或类似按钮</li>
-<li>输入博客的 RSS 地址，或直接搜索博客域名</li>
-<li>点击 “Add” 或 “Follow” 按钮，完成订阅</li>
-</ol>
-<h3 id="Android-设备"><a href="#Android-设备" class="headerlink" title="Android 设备"></a>Android 设备</h3><ol>
-<li>下载并安装一款 RSS 阅读器应用，如 Feeder 或 Inoreader</li>
-<li>打开应用，点击 “+” 或 “Add Feed” 按钮</li>
-<li>输入博客的 RSS 地址，或直接搜索博客域名</li>
-<li>点击 “Add” 或 “Follow” 按钮，完成订阅</li>
-</ol>
-<h2 id="🔍-如何查看订阅的内容？"><a href="#🔍-如何查看订阅的内容？" class="headerlink" title="🔍 如何查看订阅的内容？"></a>🔍 如何查看订阅的内容？</h2><h3 id="在-RSS-阅读器中查看"><a href="#在-RSS-阅读器中查看" class="headerlink" title="在 RSS 阅读器中查看"></a>在 RSS 阅读器中查看</h3><p>打开你的 RSS 阅读器，找到博客的订阅源，点击即可查看最新的文章和动态。</p>
-<h3 id="在邮件中查看"><a href="#在邮件中查看" class="headerlink" title="在邮件中查看"></a>在邮件中查看</h3><p>如果你使用邮件订阅，当博客发布新文章时，你会收到一封包含文章摘要和链接的邮件。点击邮件中的链接即可查看完整文章。</p>
-<h2 id="📝-常见问题解答"><a href="#📝-常见问题解答" class="headerlink" title="📝 常见问题解答"></a>📝 常见问题解答</h2><h3 id="Q-订阅博客需要付费吗？"><a href="#Q-订阅博客需要付费吗？" class="headerlink" title="Q: 订阅博客需要付费吗？"></a>Q: 订阅博客需要付费吗？</h3><p>A: 不需要，博客的订阅功能完全免费。</p>
-<h3 id="Q-订阅后会收到垃圾邮件吗？"><a href="#Q-订阅后会收到垃圾邮件吗？" class="headerlink" title="Q: 订阅后会收到垃圾邮件吗？"></a>Q: 订阅后会收到垃圾邮件吗？</h3><p>A: 不会，订阅功能使用 RSS 协议，无需提供邮箱地址，因此不会收到垃圾邮件。如果你使用邮件订阅，邮件内容仅包含博客的更新信息，不会包含垃圾邮件。</p>
-<h3 id="Q-如何取消订阅？"><a href="#Q-如何取消订阅？" class="headerlink" title="Q: 如何取消订阅？"></a>Q: 如何取消订阅？</h3><p>A: 在你的 RSS 阅读器中找到博客的订阅源，点击取消订阅按钮即可。</p>
-<h3 id="Q-订阅后多久能收到更新？"><a href="#Q-订阅后多久能收到更新？" class="headerlink" title="Q: 订阅后多久能收到更新？"></a>Q: 订阅后多久能收到更新？</h3><p>A: 通常情况下，RSS 阅读器会每隔一段时间检查一次订阅源的更新，具体频率取决于 RSS 阅读器的设置。一般来说，你会在博客发布新文章后的几分钟到几小时内收到通知。</p>
-<h3 id="Q-可以只订阅特定类别的文章吗？"><a href="#Q-可以只订阅特定类别的文章吗？" class="headerlink" title="Q: 可以只订阅特定类别的文章吗？"></a>Q: 可以只订阅特定类别的文章吗？</h3><p>A: 目前博客只提供全量订阅，无法只订阅特定类别的文章。未来可能会考虑添加分类订阅功能。</p>
-<h2 id="🎯-订阅入口"><a href="#🎯-订阅入口" class="headerlink" title="🎯 订阅入口"></a>🎯 订阅入口</h2><p>博客的订阅入口位于导航菜单中，点击 “订阅” 按钮即可获取博客的 RSS 地址。</p>
-<h2 id="🎉-总结"><a href="#🎉-总结" class="headerlink" title="🎉 总结"></a>🎉 总结</h2><p>通过订阅功能，你可以及时获取博客的最新文章和动态，无需手动访问博客网站。订阅功能简单易用，保护个人隐私，是获取博客更新的最佳方式。</p>
-<p>如果你在使用订阅功能时遇到问题，欢迎在博客的留言板中留言，我会及时回复并解决问题。</p>
-<blockquote>
-<p>最后，感谢你的支持和关注！祝你阅读愉快！🚀</p>
-</blockquote>
-<hr>
-]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>使用指南</tag>
-        <tag>订阅功能</tag>
-        <tag>RSS</tag>
       </tags>
   </entry>
 </search>
