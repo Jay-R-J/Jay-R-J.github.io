@@ -57,7 +57,22 @@
         
     <summary type="html">&lt;h1 id=&quot;🛠️-我做了一个在线工具箱网站&quot;&gt;&lt;a href=&quot;#🛠️-我做了一个在线工具箱网站&quot; class=&quot;headerlink&quot; title=&quot;🛠️ 我做了一个在线工具箱网站&quot;&gt;&lt;/a&gt;🛠️ 我做了一个在线工具箱网站&lt;/h1&gt;&lt;p&gt;最近，我开发了一个在线工具箱网站 &lt;a href=&quot;https://jay-r-j.github.io/toolbox/&quot;&gt;Toolbox&lt;/a&gt;，集成了多种实用工具，方便日常开发和生活使用。这个工具箱包含了密码生成、颜色转换、时间戳转换等多种功能，界面简洁易用，响应式设计适配各种设备。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/2026/01/08/toolbox-intro/toolbox-screenshot.png&quot; alt=&quot;工具箱网站截图&quot; loading=&quot;lazy&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;📋-功能介绍&quot;&gt;&lt;a href=&quot;#📋-功能介绍&quot; class=&quot;headerlink&quot; title=&quot;📋 功能介绍&quot;&gt;&lt;/a&gt;📋 功能介绍&lt;/h2&gt;&lt;h3 id=&quot;🔐-密码生成器&quot;&gt;&lt;a href=&quot;#🔐-密码生成器&quot;</summary>
+&lt;h2 id=&quot;📋-功能介绍&quot;&gt;&lt;a href=&quot;#📋-功能介绍&quot; class=&quot;headerlink&quot; title=&quot;📋 功能介绍&quot;&gt;&lt;/a&gt;📋 功能介绍&lt;/h2&gt;&lt;h3 id=&quot;🔐-密码生成器&quot;&gt;&lt;a href=&quot;#🔐-密码生成器&quot; class=&quot;headerlink&quot; title=&quot;🔐 密码生成器&quot;&gt;&lt;/a&gt;🔐 密码生成器&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;支持自定义密码长度&lt;/li&gt;
+&lt;li&gt;可选择包含大写字母、小写字母、数字和符号&lt;/li&gt;
+&lt;li&gt;实时生成符合要求的强密码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;⏱️-计时器&quot;&gt;&lt;a href=&quot;#⏱️-计时器&quot; class=&quot;headerlink&quot; title=&quot;⏱️ 计时器&quot;&gt;&lt;/a&gt;⏱️ 计时器&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;简单易用的倒计时功能&lt;/li&gt;
+&lt;li&gt;支持暂停、继续和重置操作&lt;/li&gt;
+&lt;li&gt;清晰的时间显示&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;🎨-颜色转换器&quot;&gt;&lt;a href=&quot;#🎨-颜色转换器&quot; class=&quot;headerlink&quot; title=&quot;🎨 颜色转换器&quot;&gt;&lt;/a&gt;🎨 颜色转换器&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;支持HEX、RGB、HSL三种颜色格式互相转换&lt;/li&gt;
+&lt;li&gt;实时预览颜色效果&lt;/li&gt;
+&lt;li&gt;简洁直观的界面设计&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;⏰-时间戳转换&quot;&gt;&lt;a href=&quot;#⏰-时间戳转换&quot;</summary>
         
       
     
@@ -90,7 +105,17 @@
         
     <summary type="html">&lt;h1 id=&quot;2025相机评选：以视频能力为核心的主观评价&quot;&gt;&lt;a href=&quot;#2025相机评选：以视频能力为核心的主观评价&quot; class=&quot;headerlink&quot; title=&quot;2025相机评选：以视频能力为核心的主观评价&quot;&gt;&lt;/a&gt;2025相机评选：以视频能力为核心的主观评价&lt;/h1&gt;&lt;div style=&quot;background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 12px; margin: 20px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.1);&quot;&gt;
   &lt;h2 style=&quot;margin: 0 0 10px 0; font-size: 1.2rem;&quot;&gt;📢 评选声明&lt;/h2&gt;
-  &lt;p style=&quot;margin: 0; opacity:</summary>
+  &lt;p style=&quot;margin: 0; opacity: 0.9;&quot;&gt;本评选为完全主观评价，更多重点放在相机的视频功能之上。如果您更看重相机的拍照功能，本评选结果可能不适合您作为参考。&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;background: white; padding: 25px; border-radius: 12px; margin: 20px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05);&quot;&gt;
+  &lt;p style=&quot;font-size: 1.1rem; line-height: 1.8; color: #333; margin: 0;&quot;&gt;
+    在视频创作日益普及的今天，相机的视频性能成为许多创作者和消费者关注的焦点。本次评选涵盖了消费级和专业级多个品类，从vlog相机到电影摄像机，从运动相机到无人机，旨在为不同需求的视频创作者提供参考。以下是各个奖项的详细评选结果及理由：
+  &lt;/p&gt;
+&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h2 id=&quot;📱-消费级品类&quot;&gt;&lt;a href=&quot;#📱-消费级品类&quot; class=&quot;headerlink&quot; title=&quot;📱 消费级品类&quot;&gt;&lt;/a&gt;📱 消费级品类&lt;/h2&gt;&lt;div style=&quot;background: #f0f9ff; border-left: 5px solid</summary>
         
       
     
@@ -125,7 +150,14 @@
         
     <summary type="html">&lt;h1 id=&quot;Python进阶：如何写出优雅的Python代码&quot;&gt;&lt;a href=&quot;#Python进阶：如何写出优雅的Python代码&quot; class=&quot;headerlink&quot; title=&quot;Python进阶：如何写出优雅的Python代码&quot;&gt;&lt;/a&gt;Python进阶：如何写出优雅的Python代码&lt;/h1&gt;&lt;p&gt;在Python编程中，写出能运行的代码很容易，但写出&lt;strong&gt;优雅、高效、易维护&lt;/strong&gt;的代码则需要更多的思考和实践。本文将介绍Python进阶技巧和最佳实践，帮助你写出更优雅的Python代码。&lt;/p&gt;
 &lt;h2 id=&quot;🌟-1-遵循PEP-8规范&quot;&gt;&lt;a href=&quot;#🌟-1-遵循PEP-8规范&quot; class=&quot;headerlink&quot; title=&quot;🌟 1. 遵循PEP 8规范&quot;&gt;&lt;/a&gt;🌟 1. 遵循PEP 8规范&lt;/h2&gt;&lt;p&gt;PEP 8是Python官方的代码风格指南，遵循它可以让你的代码更易读、更一致。&lt;/p&gt;
-&lt;h3 id=&quot;1-1-命名规范&quot;&gt;&lt;a href=&quot;#1-1-命名规范&quot; class=&quot;headerlink&quot;</summary>
+&lt;h3 id=&quot;1-1-命名规范&quot;&gt;&lt;a href=&quot;#1-1-命名规范&quot; class=&quot;headerlink&quot; title=&quot;1.1 命名规范&quot;&gt;&lt;/a&gt;1.1 命名规范&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;变量名、函数名&lt;/strong&gt;：使用小写字母，单词间用下划线分隔（&lt;code&gt;snake_case&lt;/code&gt;）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;类名&lt;/strong&gt;：使用首字母大写，单词间不使用下划线（&lt;code&gt;PascalCase&lt;/code&gt;）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;常量&lt;/strong&gt;：使用全大写字母，单词间用下划线分隔&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;模块名&lt;/strong&gt;：使用小写字母，避免使用下划线&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;包名&lt;/strong&gt;：使用简短的小写字母，避免使用下划线&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;1-2-代码布局&quot;&gt;&lt;a href=&quot;#1-2-代码布局&quot; class=&quot;headerlink&quot; title=&quot;1.2 代码布局&quot;&gt;&lt;/a&gt;1.2</summary>
         
       
     
@@ -161,7 +193,14 @@
 &lt;/blockquote&gt;
 &lt;p&gt;为了方便读者及时获取博客的最新文章和动态，我在博客中添加了订阅功能。通过订阅功能，你可以在第一时间收到博客的更新，无需手动访问博客网站。本文将详细介绍如何使用博客的订阅功能。&lt;/p&gt;
 &lt;h2 id=&quot;📌-什么是订阅功能？&quot;&gt;&lt;a href=&quot;#📌-什么是订阅功能？&quot; class=&quot;headerlink&quot; title=&quot;📌 什么是订阅功能？&quot;&gt;&lt;/a&gt;📌 什么是订阅功能？&lt;/h2&gt;&lt;p&gt;订阅功能是一种通过 RSS (Really Simple Syndication) 协议实现的内容更新通知服务。当博客发布新文章时，订阅者会通过 RSS 阅读器收到通知，无需手动访问博客网站。&lt;/p&gt;
-&lt;h3 id=&quot;订阅功能的好处&quot;&gt;&lt;a href=&quot;#订阅功能的好处&quot;</summary>
+&lt;h3 id=&quot;订阅功能的好处&quot;&gt;&lt;a href=&quot;#订阅功能的好处&quot; class=&quot;headerlink&quot; title=&quot;订阅功能的好处&quot;&gt;&lt;/a&gt;订阅功能的好处&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;及时获取更新&lt;/strong&gt;：第一时间收到博客的最新文章和动态&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;节省时间&lt;/strong&gt;：无需每天手动访问博客网站&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;统一管理&lt;/strong&gt;：在一个 RSS 阅读器中管理多个订阅源&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;无广告干扰&lt;/strong&gt;：专注于内容本身，不受广告和其他干扰&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;隐私保护&lt;/strong&gt;：无需注册账号，保护个人隐私&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;🚀-如何订阅博客？&quot;&gt;&lt;a href=&quot;#🚀-如何订阅博客？&quot; class=&quot;headerlink&quot; title=&quot;🚀 如何订阅博客？&quot;&gt;&lt;/a&gt;🚀 如何订阅博客？&lt;/h2&gt;&lt;h3 id=&quot;方法一：使用-RSS-阅读器订阅&quot;&gt;&lt;a href=&quot;#方法一：使用-RSS-阅读器订阅&quot; class=&quot;headerlink&quot; title=&quot;方法一：使用 RSS</summary>
         
       
     
@@ -196,7 +235,15 @@
 &lt;p&gt;“生活中的小技巧，往往能带来大改变。” —— 佚名&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;在快节奏的现代生活中，我们总是在寻找更高效、更舒适的生活方式。有时候，一个简单的小技巧就能解决我们日常遇到的麻烦，节省时间和精力。本文分享15个实用的生活小技巧，涵盖家居收纳、厨房技巧、健康生活、效率提升等多个方面，简单易行，让你的生活更加美好。&lt;/p&gt;
-&lt;h2 id=&quot;📌-家居收纳篇&quot;&gt;&lt;a href=&quot;#📌-家居收纳篇&quot; class=&quot;headerlink&quot; title=&quot;📌 家居收纳篇&quot;&gt;&lt;/a&gt;📌 家居收纳篇&lt;/h2&gt;&lt;h3 id=&quot;1-巧用衣架收纳围巾和领带&quot;&gt;&lt;a href=&quot;#1-巧用衣架收纳围巾和领带&quot; class=&quot;headerlink&quot; title=&quot;1. 巧用衣架收纳围巾和领带&quot;&gt;&lt;/a&gt;1.</summary>
+&lt;h2 id=&quot;📌-家居收纳篇&quot;&gt;&lt;a href=&quot;#📌-家居收纳篇&quot; class=&quot;headerlink&quot; title=&quot;📌 家居收纳篇&quot;&gt;&lt;/a&gt;📌 家居收纳篇&lt;/h2&gt;&lt;h3 id=&quot;1-巧用衣架收纳围巾和领带&quot;&gt;&lt;a href=&quot;#1-巧用衣架收纳围巾和领带&quot; class=&quot;headerlink&quot; title=&quot;1. 巧用衣架收纳围巾和领带&quot;&gt;&lt;/a&gt;1. 巧用衣架收纳围巾和领带&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;问题&lt;/strong&gt;：围巾和领带总是乱成一团，难找又难整理。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解决方案&lt;/strong&gt;：使用多层衣架或S型挂钩，将围巾和领带挂起来收纳。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;具体方法&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;将围巾折叠成适当宽度，挂在多层衣架的横杆上&lt;/li&gt;
+&lt;li&gt;领带可以直接挂在衣架的挂钩上，或者使用专门的领带架&lt;/li&gt;
+&lt;li&gt;这样不仅节省空间，还能一目了然地找到需要的围巾或领带&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;2-用鞋盒收纳电线和充电器&quot;&gt;&lt;a href=&quot;#2-用鞋盒收纳电线和充电器&quot; class=&quot;headerlink&quot; title=&quot;2. 用鞋盒收纳电线和充电器&quot;&gt;&lt;/a&gt;2.</summary>
         
       
     
@@ -233,7 +280,15 @@
 &lt;p&gt;“纸上得来终觉浅，绝知此事要躬行。” —— 陆游&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;学习Python最好的方式就是动手实践。通过完成一个个小项目，你可以巩固所学的知识，培养解决问题的能力，同时获得成就感。本文推荐10个适合Python入门学习者的实践项目，从基础到进阶，覆盖不同的应用场景。&lt;/p&gt;
-&lt;h2 id=&quot;📋-项目选择原则&quot;&gt;&lt;a href=&quot;#📋-项目选择原则&quot; class=&quot;headerlink&quot; title=&quot;📋 项目选择原则&quot;&gt;&lt;/a&gt;📋</summary>
+&lt;h2 id=&quot;📋-项目选择原则&quot;&gt;&lt;a href=&quot;#📋-项目选择原则&quot; class=&quot;headerlink&quot; title=&quot;📋 项目选择原则&quot;&gt;&lt;/a&gt;📋 项目选择原则&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;难度适中&lt;/strong&gt;：适合Python初学者，不需要太多高级知识&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;实用性强&lt;/strong&gt;：解决实际问题，具有实际应用价值&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;覆盖广泛&lt;/strong&gt;：涵盖不同的Python应用领域&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;循序渐进&lt;/strong&gt;：从简单到复杂，逐步提升难度&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;资源丰富&lt;/strong&gt;：有足够的学习资源和参考资料&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;🚀-10个Python入门级实践项目&quot;&gt;&lt;a href=&quot;#🚀-10个Python入门级实践项目&quot; class=&quot;headerlink&quot; title=&quot;🚀 10个Python入门级实践项目&quot;&gt;&lt;/a&gt;🚀 10个Python入门级实践项目&lt;/h2&gt;&lt;h3 id=&quot;1-计算器&quot;&gt;&lt;a href=&quot;#1-计算器&quot; class=&quot;headerlink&quot; title=&quot;1. 计算器&quot;&gt;&lt;/a&gt;1. 计算器&lt;/h3&gt;&lt;h4 id=&quot;项目简介&quot;&gt;&lt;a href=&quot;#项目简介&quot; class=&quot;headerlink&quot; title=&quot;项目简介&quot;&gt;&lt;/a&gt;项目简介&lt;/h4&gt;&lt;p&gt;实现一个简单的命令行计算器，支持基本的四则运算（加减乘除），以及括号运算。&lt;/p&gt;
+&lt;h4 id=&quot;核心知识点&quot;&gt;&lt;a</summary>
         
       
     
@@ -270,7 +325,16 @@
 &lt;p&gt;“Python是一种解释型、面向对象、动态数据类型的高级程序设计语言。它的设计哲学强调代码的可读性和简洁的语法。” —— Python官方文档&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;🤔-为什么要学Python？&quot;&gt;&lt;a href=&quot;#🤔-为什么要学Python？&quot; class=&quot;headerlink&quot; title=&quot;🤔 为什么要学Python？&quot;&gt;&lt;/a&gt;🤔 为什么要学Python？&lt;/h2&gt;&lt;p&gt;在开始学习之前，先明确为什么要学Python，这会成为你坚持下去的动力。&lt;/p&gt;
-&lt;h3 id=&quot;1-广泛的应用领域&quot;&gt;&lt;a href=&quot;#1-广泛的应用领域&quot; class=&quot;headerlink&quot; title=&quot;1. 广泛的应用领域&quot;&gt;&lt;/a&gt;1.</summary>
+&lt;h3 id=&quot;1-广泛的应用领域&quot;&gt;&lt;a href=&quot;#1-广泛的应用领域&quot; class=&quot;headerlink&quot; title=&quot;1. 广泛的应用领域&quot;&gt;&lt;/a&gt;1. 广泛的应用领域&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Web开发&lt;/strong&gt;：Django、Flask等框架&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据分析&lt;/strong&gt;：Pandas、NumPy、Matplotlib&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;人工智能&lt;/strong&gt;：TensorFlow、PyTorch、Scikit-learn&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;自动化运维&lt;/strong&gt;：脚本编写、系统管理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;网络爬虫&lt;/strong&gt;：Requests、BeautifulSoup、Scrapy&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;游戏开发&lt;/strong&gt;：Pygame&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;桌面应用&lt;/strong&gt;：Tkinter、PyQt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;2-良好的就业前景&quot;&gt;&lt;a href=&quot;#2-良好的就业前景&quot; class=&quot;headerlink&quot; title=&quot;2. 良好的就业前景&quot;&gt;&lt;/a&gt;2.</summary>
         
       
     
@@ -279,11 +343,11 @@
     <category term="技术" scheme="https://jay-r-j.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="技术分享" scheme="https://jay-r-j.github.io/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
-    
     <category term="Python" scheme="https://jay-r-j.github.io/tags/Python/"/>
     
     <category term="编程学习" scheme="https://jay-r-j.github.io/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="技术分享" scheme="https://jay-r-j.github.io/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
     
     <category term="编程语言" scheme="https://jay-r-j.github.io/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
     
@@ -307,7 +371,7 @@
 &lt;p&gt;承接上一篇《博客诞生记》，今天来聊聊我在搭建Hexo博客后做的那些优化工作。这些优化不仅提升了博客的性能和用户体验，也让我的写作和部署流程更加顺畅。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;一、性能优化：让加载飞起来&quot;&gt;&lt;a href=&quot;#一、性能优化：让加载飞起来&quot; class=&quot;headerlink&quot; title=&quot;一、性能优化：让加载飞起来&quot;&gt;&lt;/a&gt;一、性能优化：让加载飞起来&lt;/h2&gt;&lt;h3 id=&quot;1-图片懒加载&quot;&gt;&lt;a href=&quot;#1-图片懒加载&quot; class=&quot;headerlink&quot; title=&quot;1. 图片懒加载&quot;&gt;&lt;/a&gt;1. 图片懒加载&lt;/h3&gt;&lt;p&gt;图片是页面加载的主要瓶颈之一，我采用了浏览器原生的懒加载功能：&lt;/p&gt;
-&lt;figure class=&quot;highlight</summary>
+&lt;figure class=&quot;highlight yaml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 主题配置文件 themes/butterfly/_config.yml&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;lazyload:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attr&quot;&gt;enable:&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span</summary>
         
       
     
@@ -316,11 +380,11 @@
     <category term="技术" scheme="https://jay-r-j.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
+    <category term="技术分享" scheme="https://jay-r-j.github.io/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+    
     <category term="Hexo" scheme="https://jay-r-j.github.io/tags/Hexo/"/>
     
     <category term="博客" scheme="https://jay-r-j.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-    <category term="技术分享" scheme="https://jay-r-j.github.io/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
     
   </entry>
   
@@ -345,7 +409,14 @@
 &lt;p&gt;在这个信息爆炸的时代，我们每天都在接收大量碎片化的知识，但如果不加以整理和沉淀，这些知识就像沙子一样，从指缝间悄悄溜走。写博客对我而言，是一种”主动思考”和”深度沉淀”的方式。&lt;/p&gt;
 &lt;p&gt;具体来说，写博客有这些意义：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;✍️</summary>
+&lt;li&gt;✍️ &lt;strong&gt;记录成长轨迹&lt;/strong&gt;：用文字为自己的成长留下印记，一年后回头看，能清晰看到自己的进步&lt;/li&gt;
+&lt;li&gt;📚 &lt;strong&gt;分享创造价值&lt;/strong&gt;：把自己踩过的坑、学到的技巧分享出去，或许能帮到同样困惑的人&lt;/li&gt;
+&lt;li&gt;🧠 &lt;strong&gt;梳理思维脉络&lt;/strong&gt;：写作的过程就是思考的过程，能让我对知识有更系统、深入的理解&lt;/li&gt;
+&lt;li&gt;🌐 &lt;strong&gt;建立个人品牌&lt;/strong&gt;：在互联网上留下自己的声音，连接更多志同道合的朋友&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;🛠️-为什么选择Hexo？&quot;&gt;&lt;a href=&quot;#🛠️-为什么选择Hexo？&quot; class=&quot;headerlink&quot; title=&quot;🛠️ 为什么选择Hexo？&quot;&gt;&lt;/a&gt;🛠️ 为什么选择Hexo？&lt;/h2&gt;&lt;p&gt;在决定搭建博客后，我调研了多种方案：WordPress、Typecho、Hugo、Jekyll…最终选择了Hexo，原因有这些：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;⚡</summary>
         
       
     
@@ -354,11 +425,11 @@
     <category term="生活" scheme="https://jay-r-j.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
+    <category term="技术分享" scheme="https://jay-r-j.github.io/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+    
     <category term="Hexo" scheme="https://jay-r-j.github.io/tags/Hexo/"/>
     
     <category term="博客" scheme="https://jay-r-j.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-    <category term="技术分享" scheme="https://jay-r-j.github.io/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
     
     <category term="个人成长" scheme="https://jay-r-j.github.io/tags/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF/"/>
     
