@@ -3,6 +3,14 @@ User-agent: *
 
 # 允许访问所有公开内容
 Allow: /
+# 允许抓取CSS和JS文件，有助于搜索引擎理解网站结构
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
 
 # 禁止访问的非公开目录和文件
 Disallow: /_drafts/
@@ -11,11 +19,17 @@ Disallow: /themes/
 Disallow: /source/
 Disallow: /package.json
 Disallow: /_config.yml
-Disallow: /*.md$  
+Disallow: /_config.offline.yml
+Disallow: /db.json
+Disallow: /*.md$
+Disallow: /*.sh$
+Disallow: /*.bat$
+Disallow: /backup/
 
 # 网站地图 - 帮助搜索引擎发现所有页面
 Sitemap: https://jay-r-j.github.io/sitemap.xml
 Sitemap: https://jay-r-j.github.io/atom.xml
+Sitemap: https://jay-r-j.github.io/search.xml
 
 # 爬虫抓取频率 - 合理设置抓取间隔
 Crawl-delay: 5
@@ -36,4 +50,31 @@ Crawl-delay: 3
 User-agent: YandexBot
 Allow: /
 Crawl-delay: 3
+
+User-agent: Sogou Spider
+Allow: /
+Crawl-delay: 3
+
+User-agent: 360Spider
+Allow: /
+Crawl-delay: 3
+
+User-agent: Bytespider
+Allow: /
+Crawl-delay: 3
+
+# 允许特定爬虫抓取特定内容
+User-agent: Googlebot-Image
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+
+# 启用对网站的移动版抓取
+User-agent: Googlebot-Mobile
+Allow: /
+
+# 禁止抓取搜索结果页面，避免重复内容
+Disallow: /search/
 
