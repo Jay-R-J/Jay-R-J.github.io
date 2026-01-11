@@ -46,9 +46,9 @@
     <link href="https://jay-r-j.github.io/2026/01/08/toolbox-intro"/>
     <id>https://jay-r-j.github.io/2026/01/08/toolbox-intro</id>
     <published>2026-01-08T08:00:00.000Z</published>
-    <updated>2026-01-08T07:08:39.704Z</updated>
+    <updated>2026-01-11T05:34:37.937Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="🛠️-我做了一个在线工具箱网站"><a href="#🛠️-我做了一个在线工具箱网站" class="headerlink" title="🛠️ 我做了一个在线工具箱网站"></a>🛠️ 我做了一个在线工具箱网站</h1><p>最近，我开发了一个在线工具箱网站 <a href="https://jay-r-j.github.io/toolbox/">Toolbox</a>，集成了多种实用工具，方便日常开发和生活使用。这个工具箱包含了密码生成、颜色转换、时间戳转换等多种功能，界面简洁易用，响应式设计适配各种设备。</p><p><img src="/toolbox-screenshot.png" alt="工具箱网站截图"></p><h2 id="📋-功能介绍"><a href="#📋-功能介绍" class="headerlink" title="📋 功能介绍"></a>📋 功能介绍</h2><h3 id="🔐-密码生成器"><a href="#🔐-密码生成器" class="headerlink" title="🔐 密码生成器"></a>🔐 密码生成器</h3><ul><li>支持自定义密码长度</li><li>可选择包含大写字母、小写字母、数字和符号</li><li>实时生成符合要求的强密码</li></ul><h3 id="⏱️-计时器"><a href="#⏱️-计时器" class="headerlink" title="⏱️ 计时器"></a>⏱️ 计时器</h3><ul><li>简单易用的倒计时功能</li><li>支持暂停、继续和重置操作</li><li>清晰的时间显示</li></ul><h3 id="🎨-颜色转换器"><a href="#🎨-颜色转换器" class="headerlink" title="🎨 颜色转换器"></a>🎨 颜色转换器</h3><ul><li>支持HEX、RGB、HSL三种颜色格式互相转换</li><li>实时预览颜色效果</li><li>简洁直观的界面设计</li></ul><h3 id="⏰-时间戳转换"><a href="#⏰-时间戳转换" class="headerlink" title="⏰ 时间戳转换"></a>⏰ 时间戳转换</h3><ul><li>支持Unix时间戳和标准日期格式互相转换</li><li>实时显示当前时间和时间戳</li><li>支持秒级和毫秒级时间戳</li></ul><h3 id="🎲-随机数生成器"><a href="#🎲-随机数生成器" class="headerlink" title="🎲 随机数生成器"></a>🎲 随机数生成器</h3><ul><li>支持生成整数和浮点数</li><li>可自定义数值范围</li><li>浮点数支持自定义小数位数</li></ul><h3 id="🔍-正则表达式测试"><a href="#🔍-正则表达式测试" class="headerlink" title="🔍 正则表达式测试"></a>🔍 正则表达式测试</h3><ul><li>实时匹配高亮显示</li><li>支持常用正则模式</li><li>显示匹配结果数量</li></ul><h3 id="🌑-CSS阴影生成"><a href="#🌑-CSS阴影生成" class="headerlink" title="🌑 CSS阴影生成"></a>🌑 CSS阴影生成</h3><ul><li>可视化调整X偏移、Y偏移、模糊和扩展值</li><li>实时生成CSS代码</li><li>支持内阴影效果</li></ul><h3 id="🖼️-图片压缩"><a href="#🖼️-图片压缩" class="headerlink" title="🖼️ 图片压缩"></a>🖼️ 图片压缩</h3><ul><li>支持上传图片进行压缩</li><li>可选择输出格式和质量</li><li>限制最大宽度，保持图片比例</li></ul><h3 id="📱-User-Agent解析"><a href="#📱-User-Agent解析" class="headerlink" title="📱 User Agent解析"></a>📱 User Agent解析</h3><ul><li>自动解析浏览器信息</li><li>显示浏览器类型、版本、操作系统等详细信息</li><li>支持手动输入User Agent字符串</li></ul><h2 id="🚀-技术栈"><a href="#🚀-技术栈" class="headerlink" title="🚀 技术栈"></a>🚀 技术栈</h2><ul><li><strong>前端框架</strong>：HTML5 + CSS3 + JavaScript</li><li><strong>UI设计</strong>：简洁现代的设计风格</li><li><strong>响应式设计</strong>：适配桌面、平板和手机设备</li><li><strong>部署</strong>：GitHub Pages</li></ul><h2 id="💡-设计理念"><a href="#💡-设计理念" class="headerlink" title="💡 设计理念"></a>💡 设计理念</h2><ul><li><strong>简洁易用</strong>：界面简洁明了，操作直观</li><li><strong>功能实用</strong>：集成日常常用工具</li><li><strong>响应式设计</strong>：适配各种设备尺寸</li><li><strong>开源免费</strong>：代码开源，免费使用</li></ul><h2 id="📖-使用方法"><a href="#📖-使用方法" class="headerlink" title="📖 使用方法"></a>📖 使用方法</h2><ol><li>访问 <a href="https://jay-r-j.github.io/toolbox/">Toolbox</a></li><li>选择需要使用的工具</li><li>根据提示输入相关信息</li><li>查看结果或复制生成的代码</li></ol><h2 id="🤝-贡献"><a href="#🤝-贡献" class="headerlink" title="🤝 贡献"></a>🤝 贡献</h2><p>这个工具箱是开源项目，欢迎大家提出建议和贡献代码。如果你有好的工具想法，也可以告诉我，我会考虑添加到工具箱中。</p><h2 id="🌟-总结"><a href="#🌟-总结" class="headerlink" title="🌟 总结"></a>🌟 总结</h2><p>Toolbox是一个集成了多种实用工具的在线网站，旨在为开发者和普通用户提供便捷的工具服务。如果你在日常工作或生活中需要使用这些工具，不妨访问 <a href="https://jay-r-j.github.io/toolbox/">Toolbox</a> 试试吧！</p><p>希望这个工具箱能对你有所帮助，如果你有任何建议或反馈，欢迎留言告诉我。</p><hr><p><strong>访问地址</strong>：<a href="https://jay-r-j.github.io/toolbox/">https://jay-r-j.github.io/toolbox/</a><br><strong>开源地址</strong>：<a href="https://github.com/jay-r-j/toolbox">GitHub</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="🛠️-我做了一个在线工具箱网站"><a href="#🛠️-我做了一个在线工具箱网站" class="headerlink" title="🛠️ 我做了一个在线工具箱网站"></a>🛠️ 我做了一个在线工具箱网站</h1><p>最近，我开发了一个在线工具箱网站 <a href="https://jay-r-j.github.io/toolbox/">Toolbox</a>，集成了多种实用工具，方便日常开发和生活使用。这个工具箱包含了密码生成、颜色转换、时间戳转换等多种功能，界面简洁易用，响应式设计适配各种设备。</p><p><img src="/2026/01/08/toolbox-intro/toolbox-screenshot.png" alt="工具箱网站截图"></p><h2 id="📋-功能介绍"><a href="#📋-功能介绍" class="headerlink" title="📋 功能介绍"></a>📋 功能介绍</h2><h3 id="🔐-密码生成器"><a href="#🔐-密码生成器" class="headerlink" title="🔐 密码生成器"></a>🔐 密码生成器</h3><ul><li>支持自定义密码长度</li><li>可选择包含大写字母、小写字母、数字和符号</li><li>实时生成符合要求的强密码</li></ul><h3 id="⏱️-计时器"><a href="#⏱️-计时器" class="headerlink" title="⏱️ 计时器"></a>⏱️ 计时器</h3><ul><li>简单易用的倒计时功能</li><li>支持暂停、继续和重置操作</li><li>清晰的时间显示</li></ul><h3 id="🎨-颜色转换器"><a href="#🎨-颜色转换器" class="headerlink" title="🎨 颜色转换器"></a>🎨 颜色转换器</h3><ul><li>支持HEX、RGB、HSL三种颜色格式互相转换</li><li>实时预览颜色效果</li><li>简洁直观的界面设计</li></ul><h3 id="⏰-时间戳转换"><a href="#⏰-时间戳转换" class="headerlink" title="⏰ 时间戳转换"></a>⏰ 时间戳转换</h3><ul><li>支持Unix时间戳和标准日期格式互相转换</li><li>实时显示当前时间和时间戳</li><li>支持秒级和毫秒级时间戳</li></ul><h3 id="🎲-随机数生成器"><a href="#🎲-随机数生成器" class="headerlink" title="🎲 随机数生成器"></a>🎲 随机数生成器</h3><ul><li>支持生成整数和浮点数</li><li>可自定义数值范围</li><li>浮点数支持自定义小数位数</li></ul><h3 id="🔍-正则表达式测试"><a href="#🔍-正则表达式测试" class="headerlink" title="🔍 正则表达式测试"></a>🔍 正则表达式测试</h3><ul><li>实时匹配高亮显示</li><li>支持常用正则模式</li><li>显示匹配结果数量</li></ul><h3 id="🌑-CSS阴影生成"><a href="#🌑-CSS阴影生成" class="headerlink" title="🌑 CSS阴影生成"></a>🌑 CSS阴影生成</h3><ul><li>可视化调整X偏移、Y偏移、模糊和扩展值</li><li>实时生成CSS代码</li><li>支持内阴影效果</li></ul><h3 id="🖼️-图片压缩"><a href="#🖼️-图片压缩" class="headerlink" title="🖼️ 图片压缩"></a>🖼️ 图片压缩</h3><ul><li>支持上传图片进行压缩</li><li>可选择输出格式和质量</li><li>限制最大宽度，保持图片比例</li></ul><h3 id="📱-User-Agent解析"><a href="#📱-User-Agent解析" class="headerlink" title="📱 User Agent解析"></a>📱 User Agent解析</h3><ul><li>自动解析浏览器信息</li><li>显示浏览器类型、版本、操作系统等详细信息</li><li>支持手动输入User Agent字符串</li></ul><h2 id="🚀-技术栈"><a href="#🚀-技术栈" class="headerlink" title="🚀 技术栈"></a>🚀 技术栈</h2><ul><li><strong>前端框架</strong>：HTML5 + CSS3 + JavaScript</li><li><strong>UI设计</strong>：简洁现代的设计风格</li><li><strong>响应式设计</strong>：适配桌面、平板和手机设备</li><li><strong>部署</strong>：GitHub Pages</li></ul><h2 id="💡-设计理念"><a href="#💡-设计理念" class="headerlink" title="💡 设计理念"></a>💡 设计理念</h2><ul><li><strong>简洁易用</strong>：界面简洁明了，操作直观</li><li><strong>功能实用</strong>：集成日常常用工具</li><li><strong>响应式设计</strong>：适配各种设备尺寸</li><li><strong>开源免费</strong>：代码开源，免费使用</li></ul><h2 id="📖-使用方法"><a href="#📖-使用方法" class="headerlink" title="📖 使用方法"></a>📖 使用方法</h2><ol><li>访问 <a href="https://jay-r-j.github.io/toolbox/">Toolbox</a></li><li>选择需要使用的工具</li><li>根据提示输入相关信息</li><li>查看结果或复制生成的代码</li></ol><h2 id="🤝-贡献"><a href="#🤝-贡献" class="headerlink" title="🤝 贡献"></a>🤝 贡献</h2><p>这个工具箱是开源项目，欢迎大家提出建议和贡献代码。如果你有好的工具想法，也可以告诉我，我会考虑添加到工具箱中。</p><h2 id="🌟-总结"><a href="#🌟-总结" class="headerlink" title="🌟 总结"></a>🌟 总结</h2><p>Toolbox是一个集成了多种实用工具的在线网站，旨在为开发者和普通用户提供便捷的工具服务。如果你在日常工作或生活中需要使用这些工具，不妨访问 <a href="https://jay-r-j.github.io/toolbox/">Toolbox</a> 试试吧！</p><p>希望这个工具箱能对你有所帮助，如果你有任何建议或反馈，欢迎留言告诉我。</p><hr><p><strong>访问地址</strong>：<a href="https://jay-r-j.github.io/toolbox/">https://jay-r-j.github.io/toolbox/</a><br><strong>开源地址</strong>：<a href="https://github.com/jay-r-j/toolbox">GitHub</a></p>]]></content>
     
     
       
@@ -56,7 +56,7 @@
         
         
     <summary type="html">&lt;h1 id=&quot;🛠️-我做了一个在线工具箱网站&quot;&gt;&lt;a href=&quot;#🛠️-我做了一个在线工具箱网站&quot; class=&quot;headerlink&quot; title=&quot;🛠️ 我做了一个在线工具箱网站&quot;&gt;&lt;/a&gt;🛠️ 我做了一个在线工具箱网站&lt;/h1&gt;&lt;p&gt;最近，我开发了一个在线工具箱网站 &lt;a href=&quot;https://jay-r-j.github.io/toolbox/&quot;&gt;Toolbox&lt;/a&gt;，集成了多种实用工具，方便日常开发和生活使用。这个工具箱包含了密码生成、颜色转换、时间戳转换等多种功能，界面简洁易用，响应式设计适配各种设备。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/toolbox-screenshot.png&quot; alt=&quot;工具箱网站截图&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2026/01/08/toolbox-intro/toolbox-screenshot.png&quot; alt=&quot;工具箱网站截图&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;📋-功能介绍&quot;&gt;&lt;a href=&quot;#📋-功能介绍&quot; class=&quot;headerlink&quot; title=&quot;📋 功能介绍&quot;&gt;&lt;/a&gt;📋 功能介绍&lt;/h2&gt;&lt;h3 id=&quot;🔐-密码生成器&quot;&gt;&lt;a href=&quot;#🔐-密码生成器&quot; class=&quot;headerlink&quot; title=&quot;🔐 密码生成器&quot;&gt;&lt;/a&gt;🔐 密码生成器&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;支持自定义密码长度&lt;/li&gt;
 &lt;li&gt;可选择包含大写字母、小写字母、数字和符号&lt;/li&gt;
@@ -72,7 +72,7 @@
 &lt;li&gt;实时预览颜色效果&lt;/li&gt;
 &lt;li&gt;简洁直观的界面设计&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&quot;⏰-时间戳转换&quot;&gt;&lt;a href=&quot;#⏰-时间戳转换&quot; class=&quot;headerlink&quot; title=&quot;⏰ 时间戳转换&quot;&gt;&lt;/a&gt;⏰</summary>
+&lt;h3 id=&quot;⏰-时间戳转换&quot;&gt;&lt;a href=&quot;#⏰-时间戳转换&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -343,11 +343,11 @@
     <category term="技术" scheme="https://jay-r-j.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
+    <category term="技术分享" scheme="https://jay-r-j.github.io/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+    
     <category term="Python" scheme="https://jay-r-j.github.io/tags/Python/"/>
     
     <category term="编程学习" scheme="https://jay-r-j.github.io/tags/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="技术分享" scheme="https://jay-r-j.github.io/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
     
     <category term="编程语言" scheme="https://jay-r-j.github.io/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
     
@@ -380,11 +380,11 @@
     <category term="技术" scheme="https://jay-r-j.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="技术分享" scheme="https://jay-r-j.github.io/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
-    
     <category term="Hexo" scheme="https://jay-r-j.github.io/tags/Hexo/"/>
     
     <category term="博客" scheme="https://jay-r-j.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="技术分享" scheme="https://jay-r-j.github.io/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
     
   </entry>
   
@@ -425,11 +425,11 @@
     <category term="生活" scheme="https://jay-r-j.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-    <category term="技术分享" scheme="https://jay-r-j.github.io/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
-    
     <category term="Hexo" scheme="https://jay-r-j.github.io/tags/Hexo/"/>
     
     <category term="博客" scheme="https://jay-r-j.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="技术分享" scheme="https://jay-r-j.github.io/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
     
     <category term="个人成长" scheme="https://jay-r-j.github.io/tags/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF/"/>
     
