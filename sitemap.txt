@@ -1,6 +1,6 @@
 https://jay-r-j.github.io/timeline/index.html
 https://jay-r-j.github.io/contribute/index.html
-https://jay-r-j.github.io/2026/01/16/c1e66c88
+https://jay-r-j.github.io/2026/01/16/blog_usage_guide
 https://jay-r-j.github.io/flink/index.html
 https://jay-r-j.github.io/tools/index.html
 https://jay-r-j.github.io/about/index.html
