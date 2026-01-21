@@ -1,0 +1,1 @@
+{"auto_exclude":[".git","node_modules","__pycache__",".pytest_cache","venv",".venv","env",".env",".idea",".vscode",".DS_Store","*.pyc","*.log","*.tmp","*.bak","backup_*","dist","build","*.egg-info"],"max_backups":50,"compression":true,"hash_check":true,"source_dir":"D:/","backup_dir":"D:/"}
