@@ -1,1 +1,0 @@
-var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?0ef82ab6391955fdeca96b16efdc59f5";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}(),btf.addGlobalFn("pjaxComplete",()=>{_hmt.push(["_trackPageview",window.location.pathname])},"baidu_analytics");
