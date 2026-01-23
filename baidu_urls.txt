@@ -1,4 +1,4 @@
-https://jay-r-j.github.io/2026-01-21-project-backup-tool
-https://jay-r-j.github.io/2026-01-20-hexo-comment-system-config
-https://jay-r-j.github.io/2026-01-18-how-to-build-hexo-blog-from-scratch
-https://jay-r-j.github.io/blog-usage-guide
+https://www.jay-r-j.top/2026-01-21-project-backup-tool
+https://www.jay-r-j.top/2026-01-20-hexo-comment-system-config
+https://www.jay-r-j.top/2026-01-18-how-to-build-hexo-blog-from-scratch
+https://www.jay-r-j.top/blog-usage-guide
