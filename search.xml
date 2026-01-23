@@ -1092,10 +1092,10 @@
 <p>作为开发者，我会持续维护和优化这个工具，不断加入新的功能和改进。如果您在使用过程中有任何建议或反馈，欢迎随时在评论区交流，您的支持是我前进的最大动力！</p>
 <h2 id="📥-下载和使用"><a href="#📥-下载和使用" class="headerlink" title="📥 下载和使用"></a>📥 下载和使用</h2><h3 id="✨-工具下载"><a href="#✨-工具下载" class="headerlink" title="✨ 工具下载"></a>✨ 工具下载</h3><p>为了方便大家使用，我已经将工具打包成可执行文件，无需安装Python环境，直接双击即可运行：</p>
 <ul>
-<li><strong>📦 下载链接</strong>：<a href="python_backup_tool/项目备份工具.exe" download>项目备份工具.exe</a> - 点击下载项目备份工具，无需安装Python环境</li>
+<li><strong>📦 下载链接</strong>：<a href="2026-01-21-project-backup-tool/项目备份工具.exe" download>项目备份工具.exe</a> - 点击下载项目备份工具，无需安装Python环境</li>
 <li><strong>📏 文件大小</strong>：约8.7MB</li>
 <li><strong>🖥️ 运行环境</strong>：Windows 7及以上版本</li>
-<li><strong>🚀 无需安装</strong>：解压后直接使用，绿色便捷<br>（要保含abblink）</li>
+<li><strong>🚀 无需安装</strong>：解压后直接使用，绿色便捷</li>
 </ul>
 <h3 id="🖼️-界面预览"><a href="#🖼️-界面预览" class="headerlink" title="🖼️ 界面预览"></a>🖼️ 界面预览</h3><p>这是工具的主界面截图，简洁直观，功能一目了然：</p>
 <h3 id="界面预览"><a href="#界面预览" class="headerlink" title="界面预览"></a>界面预览</h3><img src="/2026-01-21-project-backup-tool/backup-tool-interface.png" class="" title="项目备份工具界面">
@@ -1651,7 +1651,7 @@
 <ul>
 <li><strong>GitHub</strong>：<a href="https://github.com/Jay-R-J/">https://github.com/Jay-R-J/</a></li>
 <li><strong>CSDN</strong>：<a href="https://blog.csdn.net/2401_82953028">https://blog.csdn.net/2401_82953028</a></li>
-<li><strong>电子邮件</strong>：<a href="mailto:&#x33;&#x36;&#48;&#57;&#53;&#x30;&#x36;&#x32;&#x37;&#56;&#64;&#101;&#x78;&#97;&#109;&#x70;&#108;&#101;&#x2e;&#99;&#111;&#109;">3609506278@example.com</a></li>
+<li><strong>电子邮件</strong>：<a href="mailto:&#51;&#x36;&#48;&#57;&#53;&#48;&#54;&#x32;&#x37;&#56;&#x40;&#101;&#120;&#x61;&#x6d;&#x70;&#108;&#101;&#x2e;&#99;&#111;&#109;">3609506278@example.com</a></li>
 <li><strong>微信</strong>：请在博客留言板留言获取</li>
 </ul>
 <h3 id="🤝-合作方式"><a href="#🤝-合作方式" class="headerlink" title="🤝 合作方式"></a>🤝 合作方式</h3><ul>
