@@ -17,5 +17,5 @@ Disallow: /themes/
 Disallow: /_config.yml
 Disallow: /_config.butterfly.yml
 
-Sitemap: https://jay-r-j.github.io/sitemap.xml
-Sitemap: https://jay-r-j.github.io/baidusitemap.xml
+Sitemap: https://www.jay-r-j.top/sitemap.xml
+Sitemap: https://www.jay-r-j.top/baidusitemap.xml
