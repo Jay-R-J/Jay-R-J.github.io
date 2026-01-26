@@ -1,5 +1,11 @@
+# 主机名声明，指定网站的首选域名
+Host: https://www.jay-r-j.top
+
+# 通用搜索引擎配置
 User-agent: *
+# 允许抓取所有公共页面
 Allow: /
+# 允许抓取特定目录
 Allow: /archives/
 Allow: /categories/
 Allow: /tags/
@@ -10,12 +16,46 @@ Allow: /留言/
 Allow: /visitor-wall/
 Allow: /contribute/
 Allow: /timeline/
-
+# 禁止抓取敏感目录和文件
 Disallow: /node_modules/
 Disallow: /public/
 Disallow: /themes/
 Disallow: /_config.yml
 Disallow: /_config.butterfly.yml
+Disallow: /db.json
+# 禁止抓取备份文件
+Disallow: /*.bak$
+Disallow: /*.swp$
+Disallow: /*.tmp$
 
+# 抓取频率建议，根据网站更新频率调整
+Crawl-delay: 10
+
+# 百度搜索引擎特定配置
+User-agent: Baiduspider
+Crawl-delay: 5
+
+# 谷歌搜索引擎特定配置
+User-agent: Googlebot
+Crawl-delay: 5
+
+# 必应搜索引擎特定配置
+User-agent: Bingbot
+Crawl-delay: 5
+
+# 360搜索引擎特定配置
+User-agent: 360Spider
+Crawl-delay: 5
+
+# 搜狗搜索引擎特定配置
+User-agent: Sogou Spider
+Crawl-delay: 5
+
+# 头条搜索引擎特定配置
+User-agent: Bytespider
+Crawl-delay: 5
+
+# 站点地图配置
 Sitemap: https://www.jay-r-j.top/sitemap.xml
 Sitemap: https://www.jay-r-j.top/baidusitemap.xml
+Sitemap: https://www.jay-r-j.top/atom.xml
