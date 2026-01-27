@@ -1,278 +1,711 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>如何从0到1搭建属于自己的Hexo博客网站 | 静态博客搭建教程</title>
-    <url>/2026-01-18-how-to-build-hexo-blog-from-scratch.html</url>
+    <title>Vue3项目创建教程 | 如何使用Vite快速搭建Vue3应用</title>
+    <url>/2026-01-25-how-to-create-vue3-project.html</url>
     <content><![CDATA[<div class="tip success">
-  <strong>🎉 欢迎阅读本教程！</strong><br>
-  本文将带你从0到1搭建属于自己的Hexo博客网站，适合完全零基础的新手。
+  <strong>🎉 欢迎阅读Vue3项目创建教程！</strong><br>
+  本文将详细介绍如何使用Vite（Vue官方推荐的构建工具）快速搭建Vue3应用，从环境准备到Vue3组件开发，适合Vue3初学者和前端开发者学习Vue3项目创建。
 </div>
 
-<h2 id="📝-前言"><a href="#📝-前言" class="headerlink" title="📝 前言"></a>📝 前言</h2><p>在数字化时代，拥有一个属于自己的博客网站是展示个人技术、分享知识和记录生活的绝佳方式。Hexo作为一款快速、简洁且高效的静态博客生成框架，受到了众多开发者的喜爱。</p>
-<p>本文将详细介绍如何从0到1搭建属于自己的Hexo博客网站，包括环境配置、主题安装、个性化设置、文章撰写和部署上线等完整流程。</p>
-<h2 id="📋-目录"><a href="#📋-目录" class="headerlink" title="📋 目录"></a>📋 目录</h2><ol>
-<li><a href="#%F0%9F%94%A7-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87">环境准备</a></li>
-<li><a href="#%F0%9F%93%A6-%E5%AE%89%E8%A3%85Hexo">安装Hexo</a></li>
-<li><a href="#%F0%9F%9A%80-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8D%9A%E5%AE%A2">初始化博客</a></li>
-<li><a href="#%E2%9A%99%EF%B8%8F-%E9%85%8D%E7%BD%AEHexo">配置Hexo</a></li>
-<li><a href="#%F0%9F%8E%A8-%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98">安装主题</a></li>
-<li><a href="#%E2%9C%A8-%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%BE%E7%BD%AE">个性化设置</a></li>
-<li><a href="#%E2%9C%8D%EF%B8%8F-%E6%92%B0%E5%86%99%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0">撰写第一篇文章</a></li>
-<li><a href="#%F0%9F%91%80-%E6%9C%AC%E5%9C%B0%E9%A2%84%E8%A7%88">本地预览</a></li>
-<li><a href="#%E2%9D%97-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3">常见问题解决</a></li>
-</ol>
-<h2 id="🔧-环境准备"><a href="#🔧-环境准备" class="headerlink" title="🔧 环境准备"></a>🔧 环境准备</h2><p>在开始搭建Hexo博客之前，我们需要准备好必要的环境。Hexo基于Node.js开发，所以需要安装Node.js和npm（Node.js包管理器）。</p>
-<h3 id="🔹-步骤1：安装Node-js"><a href="#🔹-步骤1：安装Node-js" class="headerlink" title="🔹 步骤1：安装Node.js"></a>🔹 步骤1：安装Node.js</h3><ol>
-<li>访问**<a href="https://nodejs.org/">Node.js官网</a>**</li>
-<li>下载适合你操作系统的<strong>LTS版本</strong>（推荐长期支持版本，更稳定）</li>
-<li>运行安装程序，按照提示完成安装</li>
-<li>验证安装是否成功</li>
+<hr>
+<h2 id="📝-前言"><a href="#📝-前言" class="headerlink" title="📝 前言"></a>📝 前言</h2><p>Vue3是Vue.js的最新版本，作为目前最流行的前端框架之一，带来了许多激动人心的新特性和性能改进：</p>
+<ul>
+<li>✨ <strong>组合式API (Composition API)</strong> - 更灵活的代码组织方式</li>
+<li>✨ <strong>TypeScript支持</strong> - 更好的类型安全和开发体验</li>
+<li>✨ <strong>性能提升</strong> - 更小的打包体积，更快的渲染速度</li>
+<li>✨ <strong>Fragment、Teleport、Suspense</strong> - 新的组件特性</li>
+<li>✨ <strong>更好的响应式系统</strong> - 基于Proxy的响应式实现</li>
+</ul>
+<p>创建Vue3项目是学习Vue3的第一步，Vue生态提供了两种主要的构建工具：Vite和Vue CLI。本文将重点介绍如何使用Vite创建Vue3项目，Vite是Vue官方推荐的构建工具，具有更快的开发体验，是Vue3项目搭建的首选工具。</p>
+<hr>
+<h2 id="📋-目录"><a href="#📋-目录" class="headerlink" title="📋 目录"></a>📋 目录</h2><ul>
+<li><a href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87">环境准备</a></li>
+<li><a href="#vite%E4%B8%8Evue-cli%E5%AF%B9%E6%AF%94">Vite与Vue CLI对比</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8-vite%E5%88%9B%E5%BB%BAvue3%E9%A1%B9%E7%9B%AE">使用Vite创建Vue3项目</a></li>
+<li><a href="#vue3%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84%E8%A7%A3%E6%9E%90">Vue3项目结构解析</a></li>
+<li><a href="#%E8%BF%90%E8%A1%8Cvue3%E9%A1%B9%E7%9B%AE">运行Vue3项目</a></li>
+<li><a href="#%E7%AE%80%E5%8D%95%E7%9A%84vue3%E7%BB%84%E4%BB%B6%E7%A4%BA%E4%BE%8B">简单的Vue3组件示例</a></li>
+<li><a href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">常见问题及解决方案</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93%E4%B8%8E%E8%B5%84%E6%BA%90">总结与资源</a></li>
+</ul>
+<hr>
+<h2 id="🔧-环境准备"><a href="#🔧-环境准备" class="headerlink" title="🔧 环境准备"></a><span id="环境准备">🔧 环境准备</span></h2><p>在进行Vue3项目搭建之前，我们需要准备好必要的开发环境。</p>
+<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>Vue3应用开发依赖Node.js和npm包管理器，所以首先需要安装Node.js：</p>
+<ol>
+<li>访问<a href="https://nodejs.org/">Node.js官网</a></li>
+<li>下载并安装<strong>LTS版本</strong>（推荐长期支持版本，更稳定）</li>
+<li>验证安装是否成功：</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 验证Node.js版本</span></span><br><span class="line">node -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证npm版本</span></span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <div class="image-grid">
-    <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/install-nodejs-verify.png" class="" title="node.js命令行验证结果">
-  </div>
-</div>
 
-<h3 id="🔹-步骤2：安装Git"><a href="#🔹-步骤2：安装Git" class="headerlink" title="🔹 步骤2：安装Git"></a>🔹 步骤2：安装Git</h3><p>Hexo需要Git来管理博客内容和部署到GitHub Pages。</p>
-<ol>
-<li>访问**<a href="https://git-scm.com/">Git官网</a>**</li>
-<li>下载适合你操作系统的版本</li>
-<li>运行安装程序，按照提示完成安装</li>
-<li>验证安装是否成功</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 验证Git版本</span></span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
-
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
+<figure class="image-container">
+  <figcaption><strong>📷 操作截图：验证Node.js和npm安装</strong></figcaption>
   <div class="image-grid">
-    <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/install-git-verify.png" class="" title="git命令行验证结果">
+    <img src="/2026-01-25-how-to-create-vue3-project/node-npm-verify.png" class="" title="验证Node.js和npm安装">
   </div>
-</div>
+</figure>
+
+<h3 id="安装pnpm（可选，推荐）"><a href="#安装pnpm（可选，推荐）" class="headerlink" title="安装pnpm（可选，推荐）"></a>安装pnpm（可选，推荐）</h3><p>pnpm是一个更快、更节省磁盘空间的包管理器，推荐使用：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g pnpm</span><br></pre></td></tr></table></figure>
+
+<figure class="image-container">
+  <figcaption><strong>📷 操作截图：安装pnpm</strong></figcaption>
+  <div class="image-grid">
+    <img src="/2026-01-25-how-to-create-vue3-project/install-pnpm.png" class="" title="安装pnpm">
+  </div>
+</figure>
 
 <hr>
-<h2 id="📦-安装Hexo"><a href="#📦-安装Hexo" class="headerlink" title="📦 安装Hexo"></a>📦 安装Hexo</h2><p>环境准备完成后，我们可以开始安装Hexo了。</p>
-<h3 id="🔹-步骤1：使用npm全局安装Hexo"><a href="#🔹-步骤1：使用npm全局安装Hexo" class="headerlink" title="🔹 步骤1：使用npm全局安装Hexo"></a>🔹 步骤1：使用npm全局安装Hexo</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 全局安装Hexo CLI</span></span><br><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<h3 id="🔹-步骤2：验证Hexo安装是否成功"><a href="#🔹-步骤2：验证Hexo安装是否成功" class="headerlink" title="🔹 步骤2：验证Hexo安装是否成功"></a>🔹 步骤2：验证Hexo安装是否成功</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 验证Hexo版本</span></span><br><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/install-hexo-verify.png" class="" title="安装Hexo命令">
-</div>
-
+<h2 id="⚖️-Vite与Vue-CLI对比"><a href="#⚖️-Vite与Vue-CLI对比" class="headerlink" title="⚖️ Vite与Vue CLI对比"></a><span id="vite与vue-cli对比">⚖️ Vite与Vue CLI对比</span></h2><p>在创建Vue3项目之前，让我们了解一下Vite和Vue CLI的主要区别，帮助你选择适合自己的构建工具：</p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>Vite</th>
+<th>Vue CLI</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>构建工具</strong></td>
+<td>ESBuild</td>
+<td>Webpack</td>
+</tr>
+<tr>
+<td><strong>开发服务器启动速度</strong></td>
+<td>极快（秒级）</td>
+<td>较慢（秒级到十秒级）</td>
+</tr>
+<tr>
+<td><strong>热模块替换 (HMR)</strong></td>
+<td>极快</td>
+<td>一般</td>
+</tr>
+<tr>
+<td><strong>生产构建</strong></td>
+<td>Rollup</td>
+<td>Webpack</td>
+</tr>
+<tr>
+<td><strong>默认支持</strong></td>
+<td>Vue3</td>
+<td>Vue2&#x2F;Vue3</td>
+</tr>
+<tr>
+<td><strong>TypeScript支持</strong></td>
+<td>内置</td>
+<td>需要配置</td>
+</tr>
+<tr>
+<td><strong>按需编译</strong></td>
+<td>✅ 支持</td>
+<td>❌ 不支持</td>
+</tr>
+<tr>
+<td><strong>冷启动性能</strong></td>
+<td>优秀</td>
+<td>一般</td>
+</tr>
+<tr>
+<td><strong>生态系统</strong></td>
+<td>快速增长</td>
+<td>成熟完善</td>
+</tr>
+<tr>
+<td><strong>官方推荐</strong></td>
+<td>✅ Vue3推荐</td>
+<td>❌ 仍支持但非Vue3首选</td>
+</tr>
+</tbody></table>
+<h3 id="Vite的优势"><a href="#Vite的优势" class="headerlink" title="Vite的优势"></a>Vite的优势</h3><ul>
+<li>✅ <strong>极速的开发体验</strong> - 使用ESBuild进行依赖预构建，开发服务器启动速度极快</li>
+<li>✅ <strong>按需编译</strong> - 只编译当前修改的文件，热更新速度快</li>
+<li>✅ <strong>现代浏览器原生支持</strong> - 利用浏览器的ES模块支持，无需打包</li>
+<li>✅ <strong>更好的TypeScript支持</strong> - 内置TypeScript支持，无需复杂配置</li>
+<li>✅ <strong>Vue3优先</strong> - 专为Vue3设计，支持Vue3的新特性</li>
+</ul>
+<h3 id="Vue-CLI的优势"><a href="#Vue-CLI的优势" class="headerlink" title="Vue CLI的优势"></a>Vue CLI的优势</h3><ul>
+<li>✅ <strong>成熟的生态系统</strong> - 丰富的插件和社区支持</li>
+<li>✅ <strong>广泛的兼容性</strong> - 支持Vue2和Vue3</li>
+<li>✅ <strong>全面的功能</strong> - 内置了很多功能，如PWA、测试等</li>
+<li>✅ <strong>适合大型项目</strong> - Webpack的生态系统更适合复杂项目</li>
+</ul>
+<h3 id="如何选择"><a href="#如何选择" class="headerlink" title="如何选择"></a>如何选择</h3><ul>
+<li><strong>推荐使用Vite</strong>：如果你是Vue3新项目，追求开发效率和速度</li>
+<li><strong>继续使用Vue CLI</strong>：如果你有现有Vue CLI项目，或需要Webpack的特定功能</li>
+</ul>
 <hr>
-<h2 id="🚀-初始化博客"><a href="#🚀-初始化博客" class="headerlink" title="🚀 初始化博客"></a>🚀 初始化博客</h2><p>现在我们可以初始化一个新的Hexo博客了。</p>
-<h3 id="🔹-步骤1：创建博客目录"><a href="#🔹-步骤1：创建博客目录" class="headerlink" title="🔹 步骤1：创建博客目录"></a>🔹 步骤1：创建博客目录</h3><p>选择一个合适的位置创建博客目录，例如在桌面创建一个名为<code>my-blog</code>的目录。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建博客目录</span></span><br><span class="line"><span class="built_in">mkdir</span> my-blog</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入博客目录</span></span><br><span class="line"><span class="built_in">cd</span> my-blog</span><br></pre></td></tr></table></figure>
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
+<h2 id="⚡-使用-Vite-创建-Vue3-项目"><a href="#⚡-使用-Vite-创建-Vue3-项目" class="headerlink" title="⚡ 使用 Vite 创建 Vue3 项目"></a><span id="使用-vite创建vue3项目">⚡ 使用 Vite 创建 Vue3 项目</span></h2><p>Vite是Vue官方推荐的构建工具，用于Vue3项目创建具有更快的开发体验和构建速度。</p>
+<h3 id="步骤1：创建项目"><a href="#步骤1：创建项目" class="headerlink" title="步骤1：创建项目"></a>步骤1：创建项目</h3><p>使用npm、yarn或pnpm等包管理器创建Vue3项目：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用npm</span></span><br><span class="line">npm create vite@latest vue3-project -- --template vue</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用yarn</span></span><br><span class="line">yarn create vite vue3-project -- --template vue</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用pnpm</span></span><br><span class="line">pnpm create vite vue3-project -- --template vue</span><br></pre></td></tr></table></figure>
+
+<figure class="image-container">
+  <figcaption><strong>📷 操作截图：执行Vite创建项目命令</strong></figcaption>
   <div class="image-grid">
-    <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/create-blog-directory.png" class="" title="创建博客目录">
+    <img src="/2026-01-25-how-to-create-vue3-project/vite-create-command.png" class="" title="执行Vite创建项目命令">
   </div>
-</div>
+</figure>
 
-<h3 id="🔹-步骤2：初始化Hexo博客"><a href="#🔹-步骤2：初始化Hexo博客" class="headerlink" title="🔹 步骤2：初始化Hexo博客"></a>🔹 步骤2：初始化Hexo博客</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 初始化Hexo博客</span></span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+<h3 id="步骤2：执行创建命令（完整流程）"><a href="#步骤2：执行创建命令（完整流程）" class="headerlink" title="步骤2：执行创建命令（完整流程）"></a>步骤2：执行创建命令（完整流程）</h3><p>执行创建命令之后，你将看到如下完整的交互流程：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; npx create-vite vue3-project --template vue</span><br><span class="line"></span><br><span class="line">◇  Use rolldown-vite (Experimental)?:</span><br><span class="line">│  Yes</span><br><span class="line">│</span><br><span class="line">◇  Install with npm and start now?</span><br><span class="line">│  Yes</span><br><span class="line">│</span><br><span class="line">◇  Scaffolding project <span class="keyword">in</span> D:\vue3\vue3-project...</span><br><span class="line">│</span><br><span class="line">◇  Installing dependencies with npm...</span><br><span class="line"></span><br><span class="line">added 37 packages <span class="keyword">in</span> 4s</span><br><span class="line"></span><br><span class="line">9 packages are looking <span class="keyword">for</span> funding</span><br><span class="line">  run `npm fund` <span class="keyword">for</span> details</span><br><span class="line">│</span><br><span class="line">◇  Starting dev server...</span><br><span class="line"></span><br><span class="line">&gt; vue3-project@0.0.0 dev</span><br><span class="line">&gt; vite</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  ROLLDOWN-VITE v7.2.5  ready <span class="keyword">in</span> 375 ms</span><br><span class="line"></span><br><span class="line">  ➜  Local:   http://localhost:5173/</span><br><span class="line">  ➜  Network: use --host to expose</span><br><span class="line">  ➜  press h + enter to show <span class="built_in">help</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="🔹-步骤3：安装依赖"><a href="#🔹-步骤3：安装依赖" class="headerlink" title="🔹 步骤3：安装依赖"></a>🔹 步骤3：安装依赖</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装博客依赖</span></span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
+<figure class="image-container">
+  <figcaption><strong>📷 操作截图：Vite创建项目完整流程</strong></figcaption>
   <div class="image-grid">
-    <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/init-hexo-install-deps.png" class="" title="初始化Hexo博客和安装依赖">
+    <img src="/2026-01-25-how-to-create-vue3-project/vite-create-full-flow.png" class="" title="Vite创建项目完整流程">
   </div>
-</div>
+</figure>
 
-<hr>
-<h2 id="⚙️-配置Hexo"><a href="#⚙️-配置Hexo" class="headerlink" title="⚙️ 配置Hexo"></a>⚙️ 配置Hexo</h2><p>Hexo初始化完成后，我们需要对博客进行基本配置。</p>
-<h3 id="🔹-步骤1：编辑配置文件"><a href="#🔹-步骤1：编辑配置文件" class="headerlink" title="🔹 步骤1：编辑配置文件"></a>🔹 步骤1：编辑配置文件</h3><p>Hexo的配置文件是<code>_config.yml</code>，位于博客根目录。使用文本编辑器（如VS Code、Sublime Text等）打开这个文件，对以下内容进行配置：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site - 网站基本信息</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">你的博客标题</span>          <span class="comment"># 博客标题，显示在网站顶部</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">你的博客副标题</span>    <span class="comment"># 博客副标题，显示在标题下方</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">你的博客描述</span>    <span class="comment"># 博客描述，用于SEO和元标签</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">你的名字</span>             <span class="comment"># 博客作者名称</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span>             <span class="comment"># 博客语言，中文使用zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">Asia/Shanghai</span>      <span class="comment"># 时区，亚洲/上海</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL - 链接配置</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://你的用户名.github.io</span>  <span class="comment"># 博客的完整URL</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span>                      <span class="comment"># 网站根目录</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span>  <span class="comment"># 文章永久链接格式</span></span><br><span class="line"><span class="attr">permalink_defaults:</span>          <span class="comment"># 永久链接默认值</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="🔹-步骤2：保存配置文件"><a href="#🔹-步骤2：保存配置文件" class="headerlink" title="🔹 步骤2：保存配置文件"></a>🔹 步骤2：保存配置文件</h3><p>修改完成后，保存配置文件。</p>
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/configure-hexo-config.png" class="" title="配置文件编辑界面">
-</div>
-
-<div class="tip info">
-  <strong>💡 配置提示：</strong>
-  - 配置文件中的冒号后面需要加空格
-  - 确保URL配置正确，特别是GitHub Pages的地址
-  - 语言设置为zh-CN可以确保中文显示正常
-</div>
-
-<hr>
-<h2 id="🎨-安装主题"><a href="#🎨-安装主题" class="headerlink" title="🎨 安装主题"></a>🎨 安装主题</h2><p>Hexo默认使用的是landscape主题，我们可以安装更美观、功能更丰富的主题，例如Butterfly主题。</p>
-<h3 id="🔹-步骤1：安装Butterfly主题"><a href="#🔹-步骤1：安装Butterfly主题" class="headerlink" title="🔹 步骤1：安装Butterfly主题"></a>🔹 步骤1：安装Butterfly主题</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 克隆Butterfly主题到themes目录</span></span><br><span class="line">git <span class="built_in">clone</span> -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure>
-
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <div class="image-grid">
-    <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/install-butterfly-theme.png" class="" title="安装Butterfly主题">
-  </div>
-</div>
-
-<h3 id="🔹-步骤2：启用主题"><a href="#🔹-步骤2：启用主题" class="headerlink" title="🔹 步骤2：启用主题"></a>🔹 步骤2：启用主题</h3><p>编辑<code>_config.yml</code>文件，将theme设置为butterfly：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 主题设置</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">butterfly</span>  <span class="comment"># 使用Butterfly主题</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="🔹-步骤3：安装必要的插件"><a href="#🔹-步骤3：安装必要的插件" class="headerlink" title="🔹 步骤3：安装必要的插件"></a>🔹 步骤3：安装必要的插件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装Butterfly主题所需的渲染插件</span></span><br><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus --save</span><br></pre></td></tr></table></figure>
-
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <div class="image-grid">
-    <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/install-theme-plugins.png" class="" title="安装必要的插件">
-  </div>
-</div>
-
-<div class="tip success">
-  <strong>✅ 主题优势：</strong>
-  - Butterfly主题美观现代，支持响应式设计
-  - 内置多种功能：搜索、评论、代码高亮等
-  - 支持自定义配置，易于个性化
-  - 活跃的社区支持和持续更新
-</div>
-
-<hr>
-<h2 id="✨-个性化设置"><a href="#✨-个性化设置" class="headerlink" title="✨ 个性化设置"></a>✨ 个性化设置</h2><p>现在我们可以对博客进行个性化设置，让它更加符合我们的需求。</p>
-<h3 id="🔹-步骤1：创建主题配置文件"><a href="#🔹-步骤1：创建主题配置文件" class="headerlink" title="🔹 步骤1：创建主题配置文件"></a>🔹 步骤1：创建主题配置文件</h3><p>在博客根目录创建一个<code>_config.butterfly.yml</code>文件，用于配置Butterfly主题（推荐使用独立配置文件，便于主题更新）。</p>
-<h3 id="🔹-步骤2：基本配置"><a href="#🔹-步骤2：基本配置" class="headerlink" title="🔹 步骤2：基本配置"></a>🔹 步骤2：基本配置</h3><p>在<code>_config.butterfly.yml</code>文件中进行基本配置：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 网站图标设置</span></span><br><span class="line"><span class="attr">favicon:</span> <span class="string">/img/favicon.ico</span>  <span class="comment"># 网站图标，显示在浏览器标签页</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 导航菜单设置</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">首页:</span> <span class="string">/</span>                   <span class="comment"># 首页链接</span></span><br><span class="line">  <span class="string">归档:</span> <span class="string">/archives/</span>          <span class="comment"># 文章归档</span></span><br><span class="line">  <span class="string">分类:</span> <span class="string">/categories/</span>        <span class="comment"># 文章分类</span></span><br><span class="line">  <span class="string">标签:</span> <span class="string">/tags/</span>              <span class="comment"># 文章标签</span></span><br><span class="line">  <span class="string">关于:</span> <span class="string">/about/</span>             <span class="comment"># 关于页面</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 社交链接设置</span></span><br><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">GitHub:</span> <span class="string">https://github.com/你的用户名</span>  <span class="comment"># GitHub链接</span></span><br><span class="line">  <span class="string">微博:</span> <span class="string">https://weibo.com/你的用户名</span>     <span class="comment"># 微博链接</span></span><br><span class="line">  <span class="string">知乎:</span> <span class="string">https://www.zhihu.com/people/你的用户名</span>  <span class="comment"># 知乎链接</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="🔹-步骤3：个性化样式"><a href="#🔹-步骤3：个性化样式" class="headerlink" title="🔹 步骤3：个性化样式"></a>🔹 步骤3：个性化样式</h3><p>可以在<code>source/css/custom.css</code>文件中添加自定义样式，个性化你的博客：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 示例：自定义博客标题样式 */</span></span><br><span class="line"><span class="selector-class">.site-title</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">2rem</span>;</span><br><span class="line">  <span class="attribute">font-weight</span>: bold;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#667eea</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 示例：自定义链接颜色 */</span></span><br><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#7c3aed</span>;</span><br><span class="line">  <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#f093fb</span>;</span><br><span class="line">  <span class="attribute">text-decoration</span>: underline;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<div class="tip warning">
-  <strong>🎯 个性化建议：</strong>
-  - 从简单的配置开始，逐步添加复杂功能
-  - 参考Butterfly主题的官方文档进行配置
-  - 定期备份你的配置文件
-</div>
-
-<hr>
-<h2 id="✍️-撰写第一篇文章"><a href="#✍️-撰写第一篇文章" class="headerlink" title="✍️ 撰写第一篇文章"></a>✍️ 撰写第一篇文章</h2><p>现在我们可以撰写第一篇博客文章了。</p>
-<h3 id="🔹-步骤1：创建新文章"><a href="#🔹-步骤1：创建新文章" class="headerlink" title="🔹 步骤1：创建新文章"></a>🔹 步骤1：创建新文章</h3><p>使用Hexo命令创建一篇新文章：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一篇新文章，标题为&quot;我的第一篇博客文章&quot;</span></span><br><span class="line">hexo new <span class="string">&quot;我的第一篇博客文章&quot;</span></span><br></pre></td></tr></table></figure>
-
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <div class="image-grid">
-    <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/create-new-post.png" class="" title="创建新文章命令">
-  </div>
-</div>
-
-<h3 id="🔹-步骤2：编辑文章"><a href="#🔹-步骤2：编辑文章" class="headerlink" title="🔹 步骤2：编辑文章"></a>🔹 步骤2：编辑文章</h3><p>文章会创建在<code>source/_posts</code>目录下，使用Markdown格式编写。编辑文章内容，添加标题、标签、分类等信息。</p>
-<p>文章的基本结构如下：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 我的第一篇博客文章  # 文章标题</span><br><span class="line">date: 2026-01-18 10:00:00  # 文章发布日期</span><br><span class="line">tags: [Hexo, 博客]  # 文章标签</span><br><span class="line">categories: [博客教程]  # 文章分类</span><br><span class="line"><span class="section">description: 这是我的第一篇博客文章  # 文章描述</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line"><span class="section"># 欢迎阅读我的第一篇博客</span></span><br><span class="line"></span><br><span class="line">这是我的第一篇Hexo博客文章，使用Markdown格式编写。</span><br><span class="line"></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"></span><br><span class="line"><span class="section">### 三级标题</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> 列表项1</span><br><span class="line"><span class="bullet">-</span> 列表项2</span><br><span class="line"><span class="bullet">-</span> 列表项3</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <div class="image-grid">
-    <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/edit-post-interface.png" class="" title="文章编辑界面">
-  </div>
-</div>
-
-<h3 id="🔹-步骤3：保存文章"><a href="#🔹-步骤3：保存文章" class="headerlink" title="🔹 步骤3：保存文章"></a>🔹 步骤3：保存文章</h3><p>编写完成后，保存文章。</p>
-<div class="tip success">
-  <strong>✏️ 写作建议：</strong>
-  - 使用Markdown格式编写，简洁高效
-  - 文章结构清晰，层次分明
-  - 适当使用图片和代码示例增强可读性
-  - 定期备份你的文章内容
-</div>
-
-<hr>
-<h2 id="👀-本地预览"><a href="#👀-本地预览" class="headerlink" title="👀 本地预览"></a>👀 本地预览</h2><p>在部署之前，我们可以在本地预览博客效果，检查是否有任何问题。</p>
-<h3 id="🔹-步骤1：生成静态文件"><a href="#🔹-步骤1：生成静态文件" class="headerlink" title="🔹 步骤1：生成静态文件"></a>🔹 步骤1：生成静态文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成静态文件</span></span><br><span class="line">hexo generate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者使用简写形式</span></span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-
-<h3 id="🔹-步骤2：启动本地服务器"><a href="#🔹-步骤2：启动本地服务器" class="headerlink" title="🔹 步骤2：启动本地服务器"></a>🔹 步骤2：启动本地服务器</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 启动本地服务器</span></span><br><span class="line">hexo server</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者使用简写形式</span></span><br><span class="line">hexo s</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可选：指定端口</span></span><br><span class="line">hexo s -p 8080</span><br></pre></td></tr></table></figure>
-
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <div class="image-grid">
-    <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/generate-static-server.png" class="" title="生成静态文件和启动本地服务器">
-  </div>
-</div>
-
-<h3 id="🔹-步骤3：访问本地博客"><a href="#🔹-步骤3：访问本地博客" class="headerlink" title="🔹 步骤3：访问本地博客"></a>🔹 步骤3：访问本地博客</h3><p>在浏览器中访问<code>http://localhost:4000</code>，查看博客效果。</p>
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <div class="image-grid">
-    <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/local-blog-preview.png" class="" title="本地博客效果">
-  </div>
-</div>
-
-<div class="tip info">
-  <strong>🔍 预览提示：</strong>
-  - 本地预览可以实时查看博客效果
-  - 修改文章或配置后，刷新浏览器即可看到更新
-  - 按下Ctrl+C可以停止本地服务器
-</div>
-
-<hr>
-<h2 id="❗-常见问题解决"><a href="#❗-常见问题解决" class="headerlink" title="❗ 常见问题解决"></a>❗ 常见问题解决</h2><p>在搭建Hexo博客的过程中，可能会遇到一些问题。这里列举几个常见问题及解决方法。</p>
-<h3 id="🔹-问题1：Hexo命令无法使用"><a href="#🔹-问题1：Hexo命令无法使用" class="headerlink" title="🔹 问题1：Hexo命令无法使用"></a>🔹 问题1：Hexo命令无法使用</h3><p><strong>症状：</strong> 执行<code>hexo</code>命令时提示”command not found”或类似错误</p>
-<p><strong>解决方法：</strong> </p>
-<ol>
-<li>检查Node.js和npm是否安装成功</li>
-<li>尝试重新安装Hexo：<code>npm install -g hexo-cli</code></li>
-<li>检查系统环境变量是否配置正确</li>
-</ol>
-<h3 id="🔹-问题2：本地预览时样式丢失"><a href="#🔹-问题2：本地预览时样式丢失" class="headerlink" title="🔹 问题2：本地预览时样式丢失"></a>🔹 问题2：本地预览时样式丢失</h3><p><strong>症状：</strong> 本地访问时，博客没有样式或样式显示异常</p>
-<p><strong>解决方法：</strong> </p>
-<ol>
-<li>检查主题配置是否正确</li>
-<li>确认必要的插件是否已安装</li>
-<li>尝试重新安装主题和依赖</li>
-<li>检查配置文件中的URL设置是否正确</li>
-</ol>
-<h3 id="🔹-问题3：文章图片无法显示"><a href="#🔹-问题3：文章图片无法显示" class="headerlink" title="🔹 问题3：文章图片无法显示"></a>🔹 问题3：文章图片无法显示</h3><p><strong>症状：</strong> 文章中的图片无法正常显示</p>
-<p><strong>解决方法：</strong> </p>
-<ol>
-<li>确保图片文件存放在与文章同名的文件夹中</li>
-<li>使用Hexo推荐的<code>&#123;% asset_img %&#125;</code>标签引用图片</li>
-<li>检查图片路径是否正确</li>
-</ol>
-<div class="tip warning">
-  <strong>💡 问题排查建议：</strong>
-  - 仔细查看命令行输出的错误信息
-  - 检查配置文件中的语法错误
-  - 参考Hexo和主题的官方文档
-  - 搜索相关问题的解决方案
-</div>
-
-<hr>
-<h2 id="🎊-结语"><a href="#🎊-结语" class="headerlink" title="🎊 结语"></a>🎊 结语</h2><p>恭喜你！现在你已经成功搭建了属于自己的Hexo博客网站。博客搭建只是开始，后续你可以通过以下方式让你的博客更加完美：</p>
+<h3 id="交互选项说明"><a href="#交互选项说明" class="headerlink" title="交互选项说明"></a>交互选项说明</h3><ol>
+<li><p><strong>Use rolldown-vite (Experimental)?</strong> - 是否使用实验性的rolldown-vite构建工具</p>
 <ul>
-<li><strong>撰写优质内容</strong>：定期更新博客，分享你的知识和经验</li>
-<li><strong>优化博客性能</strong>：使用CDN、压缩资源、优化图片等</li>
-<li><strong>添加更多功能</strong>：评论系统、阅读统计、搜索功能等</li>
-<li><strong>美化博客样式</strong>：自定义主题、添加动画效果等</li>
-<li><strong>SEO优化</strong>：优化文章标题、描述、标签等</li>
+<li><strong>Yes</strong> - 推荐选择，体验最新的构建性能优化</li>
+<li><strong>No</strong> - 使用传统的Vite构建工具</li>
 </ul>
-<p>希望本文对你有所帮助。如果你有任何问题或建议，欢迎在评论区留言交流！</p>
-<h2 id="📚-相关资源"><a href="#📚-相关资源" class="headerlink" title="📚 相关资源"></a>📚 相关资源</h2><ul>
-<li><strong><a href="https://hexo.io/zh-cn/docs/">Hexo官方文档</a></strong> - 最权威的Hexo使用指南</li>
-<li><strong><a href="https://butterfly.js.org/">Butterfly主题文档</a></strong> - Butterfly主题的详细配置说明</li>
-<li><strong><a href="https://docs.github.com/cn/pages">GitHub Pages官方文档</a></strong> - GitHub Pages的使用教程</li>
-<li><strong><a href="https://markdown.com.cn/basic-syntax/">Markdown语法指南</a></strong> - 学习Markdown写作语法</li>
+</li>
+<li><p><strong>Install with npm and start now?</strong> - 是否立即安装依赖并启动开发服务器</p>
+<ul>
+<li><strong>Yes</strong> - 自动完成依赖安装并启动开发服务器</li>
+<li><strong>No</strong> - 只创建项目结构，后续手动安装依赖</li>
+</ul>
+</li>
+</ol>
+<h3 id="手动安装依赖（如果选择No）"><a href="#手动安装依赖（如果选择No）" class="headerlink" title="手动安装依赖（如果选择No）"></a>手动安装依赖（如果选择No）</h3><p>如果你在创建项目时选择了不立即安装依赖，可以手动执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 进入项目目录</span></span><br><span class="line"><span class="built_in">cd</span> vue3-project</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用npm安装依赖</span></span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动开发服务器</span></span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+
+<figure class="image-container">
+  <figcaption><strong>📷 操作截图：手动安装依赖</strong></figcaption>
+  <div class="image-grid">
+    <img src="/2026-01-25-how-to-create-vue3-project/manual-install-deps.png" class="" title="手动安装依赖">
+  </div>
+</figure>
+
+<hr>
+<h2 id="📁-Vue3项目结构解析"><a href="#📁-Vue3项目结构解析" class="headerlink" title="📁 Vue3项目结构解析"></a><span id="vue3项目结构解析">📁 Vue3项目结构解析</span></h2><p>使用Vite成功创建Vue3项目后，我们来详细解析一下Vue3项目的目录结构：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vue3-project/</span><br><span class="line">├── node_modules/        # 项目依赖</span><br><span class="line">├── public/              # 静态资源</span><br><span class="line">│   └── favicon.ico      # 网站图标</span><br><span class="line">├── src/                 # 源代码</span><br><span class="line">│   ├── assets/          # 资源文件</span><br><span class="line">│   │   └── logo.png     # Vue logo</span><br><span class="line">│   ├── components/      # 组件目录</span><br><span class="line">│   │   └── HelloWorld.vue  # 示例组件</span><br><span class="line">│   ├── App.vue          # 根组件</span><br><span class="line">│   └── main.js          # 入口文件（JavaScript版本）</span><br><span class="line">│   └── main.ts          # 入口文件（TypeScript版本）</span><br><span class="line">├── .gitignore           # Git忽略文件</span><br><span class="line">├── index.html           # HTML模板</span><br><span class="line">├── package.json         # 项目配置和依赖</span><br><span class="line">└── vite.config.js       # Vite配置文件</span><br></pre></td></tr></table></figure>
+
+<h3 id="核心文件说明"><a href="#核心文件说明" class="headerlink" title="核心文件说明"></a>核心文件说明</h3><ul>
+<li>📄 <strong>main.js&#x2F;main.ts</strong> - 项目入口文件，创建Vue应用实例并挂载到DOM</li>
+<li>📄 <strong>App.vue</strong> - 根组件，包含应用的基本结构</li>
+<li>📁 <strong>components&#x2F;</strong> - 存放Vue组件的目录</li>
+<li>📁 <strong>assets&#x2F;</strong> - 存放图片、样式等资源文件</li>
+<li>⚙️ <strong>vite.config.js</strong> - Vite构建工具的配置文件</li>
 </ul>
 <hr>
-<p><strong>更新时间：</strong> 2026-01-18<br><strong>作者：</strong> Jay</p>
+<h2 id="🚀-运行Vue3项目"><a href="#🚀-运行Vue3项目" class="headerlink" title="🚀 运行Vue3项目"></a><span id="运行vue3项目">🚀 运行Vue3项目</span></h2><h3 id="开发模式运行"><a href="#开发模式运行" class="headerlink" title="开发模式运行"></a>开发模式运行</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用npm</span></span><br><span class="line">npm run dev</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用yarn</span></span><br><span class="line">yarn dev</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用pnpm</span></span><br><span class="line">pnpm dev</span><br></pre></td></tr></table></figure>
+
+<h3 id="访问项目"><a href="#访问项目" class="headerlink" title="访问项目"></a>访问项目</h3><p>运行成功后，会在命令行中显示访问地址，通常是 <code>http://localhost:5173</code>。</p>
+<p>在浏览器中访问该地址，即可看到Vue3项目的默认页面。</p>
+<figure class="image-container">
+  <figcaption><strong>📷 操作截图：Vue3默认页面</strong></figcaption>
+  <div class="image-grid">
+    <img src="/2026-01-25-how-to-create-vue3-project/vue3-default-page.png" class="" title="Vue3默认页面">
+  </div>
+</figure>
+
+<h3 id="构建生产版本"><a href="#构建生产版本" class="headerlink" title="构建生产版本"></a>构建生产版本</h3><p>当项目开发完成后，可以构建生产版本：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用npm</span></span><br><span class="line">npm run build</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用yarn</span></span><br><span class="line">yarn build</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用pnpm</span></span><br><span class="line">pnpm build</span><br></pre></td></tr></table></figure>
+
+<figure class="image-container">
+  <figcaption><strong>📷 操作截图：构建生产版本</strong></figcaption>
+  <div class="image-grid">
+    <img src="/2026-01-25-how-to-create-vue3-project/build-production.png" class="" title="构建生产版本">
+  </div>
+</figure>
+
+<p>构建后的文件会生成在 <code>dist</code> 目录中，可直接部署到服务器。</p>
+<hr>
+<h2 id="🧩-简单的Vue3组件示例"><a href="#🧩-简单的Vue3组件示例" class="headerlink" title="🧩 简单的Vue3组件示例"></a><span id="简单的vue3组件示例">🧩 简单的Vue3组件示例</span></h2><p>让我们创建一个简单的Vue3组件，体验一下Vue3的组合式API，学习Vue3组件开发的基本流程：</p>
+<h3 id="创建组件"><a href="#创建组件" class="headerlink" title="创建组件"></a>创建组件</h3><p>在 <code>src/components/</code> 目录下创建一个 <code>Counter.vue</code> 组件：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;counter&quot;&gt;</span><br><span class="line">    &lt;h2&gt;Vue3计数器&lt;/h2&gt;</span><br><span class="line">    &lt;p&gt;当前计数: &#123;&#123; count &#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;div class=&quot;buttons&quot;&gt;</span><br><span class="line">      &lt;button @click=&quot;increment&quot;&gt;+&lt;/button&gt;</span><br><span class="line">      &lt;button @click=&quot;decrement&quot;&gt;-&lt;/button&gt;</span><br><span class="line">      &lt;button @click=&quot;reset&quot;&gt;重置&lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">// 使用ref创建响应式数据</span><br><span class="line">const count = ref(0)</span><br><span class="line"></span><br><span class="line">// 定义方法</span><br><span class="line">const increment = () =&gt; &#123;</span><br><span class="line">  count.value++</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const decrement = () =&gt; &#123;</span><br><span class="line">  count.value--</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const reset = () =&gt; &#123;</span><br><span class="line">  count.value = 0</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">.counter &#123;</span><br><span class="line">  text-align: center;</span><br><span class="line">  padding: 20px;</span><br><span class="line">  border: 1px solid #eee;</span><br><span class="line">  border-radius: 8px;</span><br><span class="line">  max-width: 300px;</span><br><span class="line">  margin: 20px auto;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.buttons &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  justify-content: center;</span><br><span class="line">  gap: 10px;</span><br><span class="line">  margin-top: 20px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">button &#123;</span><br><span class="line">  padding: 10px 20px;</span><br><span class="line">  font-size: 18px;</span><br><span class="line">  cursor: pointer;</span><br><span class="line">  border: none;</span><br><span class="line">  border-radius: 4px;</span><br><span class="line">  background-color: #42b983;</span><br><span class="line">  color: white;</span><br><span class="line">  transition: background-color 0.3s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">button:hover &#123;</span><br><span class="line">  background-color: #3aa876;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="在App-vue中使用组件"><a href="#在App-vue中使用组件" class="headerlink" title="在App.vue中使用组件"></a>在App.vue中使用组件</h3><p>修改 <code>src/App.vue</code>，引入并使用我们创建的Counter组件：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;Vue3项目示例&lt;/h1&gt;</span><br><span class="line">    &lt;Counter /&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import Counter from &#x27;./components/Counter.vue&#x27;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">/* 全局样式 */</span><br><span class="line">body &#123;</span><br><span class="line">  font-family: Arial, sans-serif;</span><br><span class="line">  max-width: 800px;</span><br><span class="line">  margin: 0 auto;</span><br><span class="line">  padding: 20px;</span><br><span class="line">  text-align: center;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看效果"><a href="#查看效果" class="headerlink" title="查看效果"></a>查看效果</h3><p>保存文件后，开发服务器会自动重新加载，在浏览器中可以看到我们创建的计数器组件。</p>
+<figure class="image-container">
+  <figcaption><strong>📷 操作截图：Vue3计数器组件</strong></figcaption>
+  <div class="image-grid">
+    <img src="/2026-01-25-how-to-create-vue3-project/vue3-counter-example.png" class="" title="Vue3计数器组件">
+  </div>
+</figure>
+
+<hr>
+<h2 id="❓-常见问题及解决方案"><a href="#❓-常见问题及解决方案" class="headerlink" title="❓ 常见问题及解决方案"></a><span id="常见问题及解决方案">❓ 常见问题及解决方案</span></h2><h3 id="问题1：创建项目时网络超时"><a href="#问题1：创建项目时网络超时" class="headerlink" title="问题1：创建项目时网络超时"></a>问题1：创建项目时网络超时</h3><p><strong>解决方案</strong>：</p>
+<ul>
+<li>检查网络连接</li>
+<li>使用国内镜像：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># npm镜像</span></span><br><span class="line">npm config <span class="built_in">set</span> registry https://registry.npmmirror.com</span><br><span class="line"></span><br><span class="line"><span class="comment"># pnpm镜像</span></span><br><span class="line">pnpm config <span class="built_in">set</span> registry https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
+
+<h3 id="问题2：依赖安装失败"><a href="#问题2：依赖安装失败" class="headerlink" title="问题2：依赖安装失败"></a>问题2：依赖安装失败</h3><p><strong>解决方案</strong>：</p>
+<ul>
+<li>删除 <code>node_modules</code> 目录和 <code>package-lock.json</code>&#x2F;<code>yarn.lock</code>&#x2F;<code>pnpm-lock.yaml</code> 文件</li>
+<li>重新安装依赖</li>
+<li>尝试使用不同的包管理器（npm → pnpm → yarn）</li>
+</ul>
+<h3 id="问题3：运行时出现语法错误"><a href="#问题3：运行时出现语法错误" class="headerlink" title="问题3：运行时出现语法错误"></a>问题3：运行时出现语法错误</h3><p><strong>解决方案</strong>：</p>
+<ul>
+<li>检查Node.js版本是否符合要求（Vue3要求Node.js 14.18+或16+）</li>
+<li>确保使用了正确的Vue3语法</li>
+<li>检查是否安装了必要的依赖</li>
+</ul>
+<h3 id="问题4：组件不显示"><a href="#问题4：组件不显示" class="headerlink" title="问题4：组件不显示"></a>问题4：组件不显示</h3><p><strong>解决方案</strong>：</p>
+<ul>
+<li>检查组件是否正确引入</li>
+<li>检查组件名称是否正确</li>
+<li>检查模板语法是否正确</li>
+</ul>
+<hr>
+<h2 id="🎯-总结与资源"><a href="#🎯-总结与资源" class="headerlink" title="🎯 总结与资源"></a><span id="总结与资源">🎯 总结与资源</span></h2><p>恭喜你！你已经成功学习了如何使用Vite创建Vue3项目，并了解了Vite与Vue CLI的区别以及Vue3项目的基本结构和组件开发流程。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>✅ <strong>环境准备</strong> - 安装了Node.js和可选的pnpm包管理器</li>
+<li>✅ <strong>Vite与Vue CLI对比</strong> - 了解了两者的区别和各自的优势</li>
+<li>✅ <strong>Vite创建Vue3项目</strong> - 掌握了使用Vite创建Vue3项目的完整流程</li>
+<li>✅ <strong>项目结构解析</strong> - 了解了Vue3项目的核心文件和目录结构</li>
+<li>✅ <strong>运行与构建</strong> - 学会了如何运行开发服务器和构建生产版本</li>
+<li>✅ <strong>组件开发</strong> - 创建了一个使用组合式API的Vue3计数器组件</li>
+<li>✅ <strong>问题解决方案</strong> - 了解了常见问题的排查和解决方法</li>
+</ul>
+<h3 id="推荐资源"><a href="#推荐资源" class="headerlink" title="推荐资源"></a>推荐资源</h3><ul>
+<li>📚 <strong><a href="https://vuejs.org/guide/introduction.html">Vue3官方文档</a></strong> - 最权威的Vue3学习资源</li>
+<li>⚡ <strong><a href="https://vitejs.dev/guide/">Vite官方文档</a></strong> - Vite构建工具使用指南</li>
+<li>🔀 <strong><a href="https://router.vuejs.org/">Vue Router 4</a></strong> - Vue3的路由库</li>
+<li>🗄️ <strong><a href="https://pinia.vuejs.org/">Pinia</a></strong> - Vue3的状态管理库（替代Vuex）</li>
+<li>🎓 <strong><a href="https://www.vuemastery.com/">Vue Mastery</a></strong> - Vue官方课程平台</li>
+</ul>
+<h3 id="下一步学习建议"><a href="#下一步学习建议" class="headerlink" title="下一步学习建议"></a>下一步学习建议</h3><ol>
+<li>深入学习Vue3的组合式API</li>
+<li>学习Vue Router和Pinia，构建完整应用</li>
+<li>掌握TypeScript在Vue3中的使用</li>
+<li>了解Vue3的性能优化技巧</li>
+<li>探索Vite的高级配置和插件生态</li>
+</ol>
+<hr>
+<div class="tip success">
+  <strong>🎉 学习完成！</strong><br>
+  通过本文的学习，你已经掌握了使用Vite创建Vue3项目的基本技能，这为你进一步学习Vue3打下了坚实的基础。
+  <br><br>
+  <strong>🚀 继续探索Vue3的精彩世界吧！</strong>
+</div>
+
+<hr>
+<div class="article-info">
+  <strong>📅 更新时间：</strong>2026-01-25<br>
+  <strong>✍️ 作者：</strong>Jay<br>
+</div>
 ]]></content>
       <categories>
-        <category>博客教程</category>
+        <category>技术教程</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
-        <tag>博客教程</tag>
-        <tag>网站搭建</tag>
-        <tag>静态博客</tag>
-        <tag>Butterfly主题</tag>
-        <tag>Hexo博客搭建</tag>
-        <tag>个人博客</tag>
-        <tag>博客制作</tag>
-        <tag>网站建设</tag>
+        <tag>Vue3</tag>
+        <tag>Vite</tag>
+        <tag>Vue3项目创建</tag>
+        <tag>Vite搭建Vue3</tag>
+        <tag>前端开发</tag>
+        <tag>项目搭建</tag>
+        <tag>JavaScript</tag>
+        <tag>TypeScript</tag>
+        <tag>Vue3入门</tag>
+        <tag>Vue3教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>🛡️ Python项目备份工具 - 开发者的数据安全守护者 | 一键备份与版本管理工具</title>
+    <url>/2026-01-21-project-backup-tool.html</url>
+    <content><![CDATA[<h1 id="🛡️-Python项目备份工具-开发者的数据安全守护者"><a href="#🛡️-Python项目备份工具-开发者的数据安全守护者" class="headerlink" title="🛡️ Python项目备份工具 - 开发者的数据安全守护者"></a>🛡️ Python项目备份工具 - 开发者的数据安全守护者</h1><p>你是否曾经历过：</p>
+<ul>
+<li>辛辛苦苦写了一天的代码，不小心误删且无法恢复？</li>
+<li>项目版本混乱，分不清哪个是稳定版本？</li>
+<li>手动备份繁琐易错，总是遗漏重要文件？</li>
+</ul>
+<p>作为一名开发者，我深知这些痛点带来的挫败感。因此，我<strong>从零开始独立开发了这款项目备份工具</strong>，致力于解决这些实际问题，让开发者能够更安心地专注于创作。</p>
+<p>这款工具不仅仅是一个备份软件，更是我对「数据安全」理念的实践，希望能为更多开发者提供可靠的数据保护方案。</p>
+<h2 id="📋-项目简介"><a href="#📋-项目简介" class="headerlink" title="📋 项目简介"></a>📋 项目简介</h2><h3 id="✨-工具概述"><a href="#✨-工具概述" class="headerlink" title="✨ 工具概述"></a>✨ 工具概述</h3><p><strong>项目备份工具</strong>是一款专为开发者打造的简单易用的文件备份管理软件，集一键备份、智能版本管理、快速恢复等功能于一体。采用Python开发，提供图形界面（GUI）和命令行（CLI）两种使用方式，满足不同场景和用户的需求。</p>
+<p>作为开发者，我在实际使用中不断优化，加入了许多实用功能，适合各类开发者和普通用户使用。</p>
+<p>🔗 <strong>项目地址</strong>：<a href="https://github.com/Jay-R-J/Python_backup_tool">GitHub项目地址</a></p>
+<hr>
+<h3 id="🎯-开发背景"><a href="#🎯-开发背景" class="headerlink" title="🎯 开发背景"></a>🎯 开发背景</h3><p>开发这款工具的初衷，源于我在日常开发中遇到的真实痛点：</p>
+<ul>
+<li>经常遇到代码误删、项目混乱的情况</li>
+<li>市面上的备份工具要么太复杂，要么功能不全</li>
+<li>想拥有一个完全符合自己使用习惯的备份工具</li>
+<li>同时也想通过实践提升Python GUI开发技术</li>
+</ul>
+<hr>
+<h2 id="🚀-功能特性"><a href="#🚀-功能特性" class="headerlink" title="🚀 功能特性"></a>🚀 功能特性</h2><h3 id="🎯-核心功能"><a href="#🎯-核心功能" class="headerlink" title="🎯 核心功能"></a>🎯 核心功能</h3><h4 id="1-🔄-一键备份"><a href="#1-🔄-一键备份" class="headerlink" title="1. 🔄 一键备份"></a>1. 🔄 一键备份</h4><ul>
+<li>支持选择任意文件夹进行备份</li>
+<li>智能排除不需要的文件（如<code>.git</code>、<code>node_modules</code>等）</li>
+<li>支持添加自定义注释，方便识别不同版本</li>
+<li>备份过程实时显示进度，清晰直观</li>
+</ul>
+<h4 id="2-📊-智能版本管理"><a href="#2-📊-智能版本管理" class="headerlink" title="2. 📊 智能版本管理"></a>2. 📊 智能版本管理</h4><ul>
+<li>自动为每个备份生成唯一版本号</li>
+<li>完整记录备份时间、注释和文件大小</li>
+<li>支持按时间、版本号排序查看备份列表</li>
+<li>可视化展示备份历史，方便回溯</li>
+</ul>
+<h4 id="3-⏱️-快速恢复"><a href="#3-⏱️-快速恢复" class="headerlink" title="3. ⏱️ 快速恢复"></a>3. ⏱️ 快速恢复</h4><ul>
+<li>一键恢复到指定版本，操作简单快捷</li>
+<li>智能处理权限问题，跳过无法访问的文件</li>
+<li>生成详细的恢复报告，包含成功&#x2F;失败记录</li>
+<li>支持选择性恢复，灵活方便</li>
+</ul>
+<h4 id="4-💾-灵活的存储选项"><a href="#4-💾-灵活的存储选项" class="headerlink" title="4. 💾 灵活的存储选项"></a>4. 💾 灵活的存储选项</h4><ul>
+<li>可自定义备份保存位置，支持外部存储</li>
+<li>支持压缩备份，显著节省磁盘空间</li>
+<li>自动清理旧备份，可设置保留数量</li>
+<li>支持增量备份，提高备份效率</li>
+</ul>
+<hr>
+<h3 id="💡-技术特点"><a href="#💡-技术特点" class="headerlink" title="💡 技术特点"></a>💡 技术特点</h3><ul>
+<li><strong>🌍 跨平台兼容</strong>：完美支持Windows、macOS、Linux系统</li>
+<li><strong>📦 零依赖</strong>：仅使用Python标准库，无需额外安装任何依赖</li>
+<li><strong>💪 大文件支持</strong>：优化的文件处理逻辑，轻松处理GB级大文件</li>
+<li><strong>🎨 美观界面</strong>：现代化设计，简洁直观，视觉舒适度高</li>
+<li><strong>⚡ 高性能</strong>：优化的算法，备份恢复速度快</li>
+<li><strong>🔒 安全可靠</strong>：完整的错误处理，确保数据安全</li>
+</ul>
+<hr>
+<h2 id="🎯-解决什么问题"><a href="#🎯-解决什么问题" class="headerlink" title="🎯 解决什么问题"></a>🎯 解决什么问题</h2><h3 id="💢-开发者常见痛点"><a href="#💢-开发者常见痛点" class="headerlink" title="💢 开发者常见痛点"></a>💢 开发者常见痛点</h3><h4 id="1-❌-文件误删恢复难"><a href="#1-❌-文件误删恢复难" class="headerlink" title="1. ❌ 文件误删恢复难"></a>1. ❌ 文件误删恢复难</h4><ul>
+<li>工作中不小心删除了重要文件，懊悔不已</li>
+<li>没有版本控制，无法找回历史版本</li>
+<li><strong>解决方案</strong>：定期自动备份，一键即可恢复到任意时间点</li>
+</ul>
+<h4 id="2-🔀-代码混乱难以回溯"><a href="#2-🔀-代码混乱难以回溯" class="headerlink" title="2. 🔀 代码混乱难以回溯"></a>2. 🔀 代码混乱难以回溯</h4><ul>
+<li>多个人协作，代码版本混乱不堪</li>
+<li>不知道哪个版本是稳定可用的</li>
+<li><strong>解决方案</strong>：完整记录每个版本，方便对比和回溯，清晰掌握项目演进</li>
+</ul>
+<h4 id="3-⏳-备份操作繁琐易错"><a href="#3-⏳-备份操作繁琐易错" class="headerlink" title="3. ⏳ 备份操作繁琐易错"></a>3. ⏳ 备份操作繁琐易错</h4><ul>
+<li>手动复制粘贴容易遗漏文件</li>
+<li>不知道该备份哪些文件，费时费力</li>
+<li><strong>解决方案</strong>：智能识别需要备份的文件，自动排除无用文件，一键完成备份</li>
+</ul>
+<h4 id="4-📁-版本管理混乱"><a href="#4-📁-版本管理混乱" class="headerlink" title="4. 📁 版本管理混乱"></a>4. 📁 版本管理混乱</h4><ul>
+<li>文件命名不规范，如”最终版”、”最终最终版_v2”</li>
+<li>不知道哪个版本包含哪些具体修改</li>
+<li><strong>解决方案</strong>：自动生成唯一版本号和时间戳，配合自定义注释，版本管理一目了然</li>
+</ul>
+<hr>
+<h2 id="📖-使用指南"><a href="#📖-使用指南" class="headerlink" title="📖 使用指南"></a>📖 使用指南</h2><h3 id="🖥️-界面介绍"><a href="#🖥️-界面介绍" class="headerlink" title="🖥️ 界面介绍"></a>🖥️ 界面介绍</h3><p>打开程序后，您将看到简洁直观的主界面，分为以下几个区域：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">┌─────────────────────────────────────────────────────────────┐</span><br><span class="line">│ 项目备份工具 v1.0                                            │</span><br><span class="line">├─────────────────────────────────────────────────────────────┤</span><br><span class="line">│ 备份设置                                                     │</span><br><span class="line">│                                                             │</span><br><span class="line">│  要备份的目录:  [C:\Users\MyProject      ] [浏览...]        │</span><br><span class="line">│  备份保存位置:  [D:\Backups              ] [浏览...]        │</span><br><span class="line">│                                           备份数量: 5 个    │</span><br><span class="line">├─────────────────────────────────────────────────────────────┤</span><br><span class="line">│ [创建备份] [恢复备份] [删除备份] [刷新列表]                  │</span><br><span class="line">├─────────────────────────────────────────────────────────────┤</span><br><span class="line">│ 备份列表                                                     │</span><br><span class="line">│ ┌─────────────────────────────────────────────────────────┐ │</span><br><span class="line">│ │ 版本ID     │ 备份时间          │ 注释      │ 类型        │ │</span><br><span class="line">│ ├─────────────────────────────────────────────────────────┤ │</span><br><span class="line">│ │ v001_xxx   │ 2026-01-21 10:30 │ 初始备份  │ 压缩        │ │</span><br><span class="line">│ │ v002_xxx   │ 2026-01-21 11:00 │ 添加功能A │ 压缩        │ │</span><br><span class="line">│ └─────────────────────────────────────────────────────────┘ │</span><br><span class="line">├─────────────────────────────────────────────────────────────┤</span><br><span class="line">│ 状态栏: 就绪                                                │</span><br><span class="line">└─────────────────────────────────────────────────────────────┘</span><br></pre></td></tr></table></figure>
+
+<h3 id="🎮-按钮功能详解"><a href="#🎮-按钮功能详解" class="headerlink" title="🎮 按钮功能详解"></a>🎮 按钮功能详解</h3><h4 id="1-🔄-创建备份"><a href="#1-🔄-创建备份" class="headerlink" title="1. 🔄 创建备份"></a>1. 🔄 创建备份</h4><p><strong>📋 功能</strong>：将选定的源目录完整备份到指定位置</p>
+<p><strong>📝 使用方法</strong>：</p>
+<ol>
+<li>点击「要备份的目录」旁边的「浏览…」按钮，选择您想要备份的文件夹</li>
+<li>点击「备份保存位置」旁边的「浏览…」按钮，选择备份文件的保存位置</li>
+<li>点击「创建备份」按钮，弹出注释输入窗口</li>
+<li>输入备份注释（建议简洁描述本次备份的内容）</li>
+<li>点击「确定」开始备份，等待进度完成</li>
+</ol>
+<p><strong>🌟 示例</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入注释: &quot;完成了用户登录功能&quot;</span><br><span class="line">点击确定</span><br><span class="line">→ 程序会自动创建备份文件：项目名_v001_20260121_103000_完成了用户登录功能.zip</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-⏱️-恢复备份"><a href="#2-⏱️-恢复备份" class="headerlink" title="2. ⏱️ 恢复备份"></a>2. ⏱️ 恢复备份</h4><p><strong>📋 功能</strong>：将选定的备份版本恢复到源目录</p>
+<p><strong>⚠️ 重要注意事项</strong>：恢复操作会覆盖源目录中的现有文件，请务必谨慎操作！</p>
+<p><strong>📝 使用方法</strong>：</p>
+<ol>
+<li>在备份列表中点击选择您想要恢复的版本</li>
+<li>点击「恢复备份」按钮，弹出确认对话框</li>
+<li>仔细检查确认要恢复的版本，点击「是」</li>
+<li>等待恢复完成，查看恢复报告</li>
+</ol>
+<p><strong>🌟 示例</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">选择: v002_20260121_110000_添加功能A</span><br><span class="line">点击「恢复备份」</span><br><span class="line">确认: 是</span><br><span class="line">→ 源目录的文件会恢复到备份时的状态</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-🗑️-删除备份"><a href="#3-🗑️-删除备份" class="headerlink" title="3. 🗑️ 删除备份"></a>3. 🗑️ 删除备份</h4><p><strong>📋 功能</strong>：从备份列表和文件系统中永久删除指定的备份</p>
+<p><strong>⚠️ 重要注意事项</strong>：删除操作不可恢复，请确认后再执行！</p>
+<p><strong>📝 使用方法</strong>：</p>
+<ol>
+<li>在备份列表中点击选择要删除的版本</li>
+<li>点击「删除备份」按钮，弹出确认对话框</li>
+<li>点击「是」确认删除</li>
+<li>备份会立即从列表和磁盘中移除</li>
+</ol>
+<p><strong>🌟 示例</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">选择: v001_20260121_103000_初始备份</span><br><span class="line">点击「删除备份」</span><br><span class="line">确认: 是</span><br><span class="line">→ 该备份文件会从列表和文件系统中删除</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-🔄-刷新列表"><a href="#4-🔄-刷新列表" class="headerlink" title="4. 🔄 刷新列表"></a>4. 🔄 刷新列表</h4><p><strong>📋 功能</strong>：重新加载备份列表，同步最新的备份状态</p>
+<p><strong>📝 使用方法</strong>：</p>
+<ul>
+<li>直接点击「刷新列表」按钮即可</li>
+</ul>
+<p><strong>🎯 适用场景</strong>：</p>
+<ul>
+<li>手动删除了备份文件后</li>
+<li>备份文件被其他程序移动或修改后</li>
+<li>需要查看最新备份状态时</li>
+</ul>
+<h3 id="⚙️-配置说明"><a href="#⚙️-配置说明" class="headerlink" title="⚙️ 配置说明"></a>⚙️ 配置说明</h3><p>首次运行程序会自动在当前目录创建<code>config.json</code>配置文件，您可以根据需要手动修改以下配置项：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;source_dir&quot;</span><span class="punctuation">:</span> <span class="string">&quot;默认要备份的目录&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;backup_dir&quot;</span><span class="punctuation">:</span> <span class="string">&quot;默认备份保存位置&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;auto_exclude&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;.git&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;node_modules&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;__pycache__&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;*.pyc&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;*.log&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;*.tmp&quot;</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;max_backups&quot;</span><span class="punctuation">:</span> <span class="number">50</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;compression&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>📊 配置项详细说明</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>说明</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>source_dir</td>
+<td>默认要备份的目录</td>
+<td>当前运行目录</td>
+</tr>
+<tr>
+<td>backup_dir</td>
+<td>默认备份保存位置</td>
+<td>父目录&#x2F;project_backups</td>
+</tr>
+<tr>
+<td>auto_exclude</td>
+<td>自动排除的文件&#x2F;文件夹列表</td>
+<td>常见临时文件和缓存目录</td>
+</tr>
+<tr>
+<td>max_backups</td>
+<td>最大保留备份数量，超过自动清理最旧的</td>
+<td>50</td>
+</tr>
+<tr>
+<td>compression</td>
+<td>是否使用压缩备份，节省磁盘空间</td>
+<td>true</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="📚-进阶使用"><a href="#📚-进阶使用" class="headerlink" title="📚 进阶使用"></a>📚 进阶使用</h2><h3 id="🖥️-命令行模式"><a href="#🖥️-命令行模式" class="headerlink" title="🖥️ 命令行模式"></a>🖥️ 命令行模式</h3><p>对于习惯命令行的用户，工具提供了完整的CLI支持，操作更加高效：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建备份并添加注释</span></span><br><span class="line">python backup_tool.py --create --comment <span class="string">&quot;完成了用户登录功能&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出所有备份</span></span><br><span class="line">python backup_tool.py --list</span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复到指定版本</span></span><br><span class="line">python backup_tool.py --restore v001_20260121_103000</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除指定版本</span></span><br><span class="line">python backup_tool.py --delete v001_20260121_103000</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看帮助信息</span></span><br><span class="line">python backup_tool.py --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="⏰-定时自动备份"><a href="#⏰-定时自动备份" class="headerlink" title="⏰ 定时自动备份"></a>⏰ 定时自动备份</h3><p>您可以通过系统任务计划程序设置定时自动备份，让数据保护更省心：</p>
+<h4 id="Windows系统设置步骤"><a href="#Windows系统设置步骤" class="headerlink" title="Windows系统设置步骤"></a>Windows系统设置步骤</h4><ol>
+<li>打开「任务计划程序」（可以在开始菜单搜索）</li>
+<li>点击「创建基本任务」，输入任务名称（如”项目自动备份”）</li>
+<li>设置触发器（如每天晚上10点，或者每隔几小时）</li>
+<li>设置操作：选择「启动程序」</li>
+<li>浏览选择 <code>项目备份工具.exe</code> 的完整路径</li>
+<li>在「添加参数」中输入：<code>--create --comment &quot;自动定时备份&quot;</code></li>
+<li>完成设置，系统会按照计划自动执行备份</li>
+</ol>
+<h4 id="macOS-Linux系统设置"><a href="#macOS-Linux系统设置" class="headerlink" title="macOS&#x2F;Linux系统设置"></a>macOS&#x2F;Linux系统设置</h4><p>可以使用 <code>cron</code> 或 <code>systemd</code> 定时任务，示例 <code>cron</code> 配置：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 每天晚上10点执行自动备份</span></span><br><span class="line">0 22 * * * /path/to/python /path/to/backup_tool.py --create --comment <span class="string">&quot;自动定时备份&quot;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="💡-最佳实践"><a href="#💡-最佳实践" class="headerlink" title="💡 最佳实践"></a>💡 最佳实践</h2><h3 id="📋-备份策略建议"><a href="#📋-备份策略建议" class="headerlink" title="📋 备份策略建议"></a>📋 备份策略建议</h3><h4 id="1-🔑-重要节点备份"><a href="#1-🔑-重要节点备份" class="headerlink" title="1. 🔑 重要节点备份"></a>1. 🔑 重要节点备份</h4><ul>
+<li><strong>功能完成后</strong>：每次完成一个功能模块，立即备份</li>
+<li><strong>配置修改前</strong>：修改关键配置文件前，先备份当前状态</li>
+<li><strong>代码重构前</strong>：重构代码前，备份稳定版本</li>
+<li><strong>下班前</strong>：每天下班前，进行一次完整备份</li>
+<li><strong>版本发布前</strong>：发布新版本前，进行最终备份</li>
+</ul>
+<h4 id="2-📍-备份位置选择"><a href="#2-📍-备份位置选择" class="headerlink" title="2. 📍 备份位置选择"></a>2. 📍 备份位置选择</h4><ul>
+<li><strong>本地多磁盘</strong>：备份到不同物理磁盘，防止单盘故障</li>
+<li><strong>云盘同步</strong>：使用云盘同步备份文件夹，实现异地备份</li>
+<li><strong>外部存储</strong>：重要项目备份到移动硬盘或U盘，离线保存</li>
+<li><strong>混合策略</strong>：结合本地、云盘和外部存储，实现多层次保护</li>
+</ul>
+<h4 id="3-📝-注释规范"><a href="#3-📝-注释规范" class="headerlink" title="3. 📝 注释规范"></a>3. 📝 注释规范</h4><ul>
+<li><strong>清晰描述</strong>：简单明了描述本次备份的内容或变更</li>
+<li><strong>标注里程碑</strong>：重要版本标注版本号或里程碑</li>
+<li><strong>使用关键词</strong>：包含功能、修复、重构等关键词</li>
+<li><strong>统一格式</strong>：保持注释格式一致，方便查找和回溯</li>
+</ul>
+<h3 id="✅-注释示例"><a href="#✅-注释示例" class="headerlink" title="✅ 注释示例"></a>✅ 注释示例</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 🎯 推荐的注释格式</span><br><span class="line">&quot;完成了用户登录功能，修复了验证码bug&quot;</span><br><span class="line">&quot;修复了数据库连接超时问题&quot;</span><br><span class="line">&quot;重构了数据访问层，优化了查询性能&quot;</span><br><span class="line">&quot;添加了Excel导出功能&quot;</span><br><span class="line">&quot;v1.0版本发布前备份&quot;</span><br><span class="line"></span><br><span class="line"># ❌ 不推荐的注释</span><br><span class="line">&quot;备份&quot;         # 过于简单，无实际意义</span><br><span class="line">&quot;更新&quot;         # 不明确具体更新内容</span><br><span class="line">&quot;修改&quot;         # 模糊不清</span><br><span class="line">&quot;111&quot;         # 无意义的字符</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="❓-常见问题"><a href="#❓-常见问题" class="headerlink" title="❓ 常见问题"></a>❓ 常见问题</h2><h3 id="❔-Q-恢复备份时提示权限不足怎么办？"><a href="#❔-Q-恢复备份时提示权限不足怎么办？" class="headerlink" title="❔ Q: 恢复备份时提示权限不足怎么办？"></a>❔ Q: 恢复备份时提示权限不足怎么办？</h3><p>✅ <strong>A</strong>: 程序设计了智能权限处理机制，会自动跳过无法访问的文件，并生成详细的恢复报告。您可以尝试以下解决方案：</p>
+<ul>
+<li>关闭正在占用目标文件的程序</li>
+<li>以管理员身份运行程序，获取更高权限</li>
+<li>手动处理那些无法自动恢复的文件</li>
+</ul>
+<h3 id="❔-Q-备份文件可以手动删除吗？"><a href="#❔-Q-备份文件可以手动删除吗？" class="headerlink" title="❔ Q: 备份文件可以手动删除吗？"></a>❔ Q: 备份文件可以手动删除吗？</h3><p>✅ <strong>A</strong>: 当然可以。手动删除备份文件后，只需点击「刷新列表」按钮，程序会自动从备份日志中清除这些记录，保持列表与实际文件一致。</p>
+<h3 id="❔-Q-如何备份多个不同的项目？"><a href="#❔-Q-如何备份多个不同的项目？" class="headerlink" title="❔ Q: 如何备份多个不同的项目？"></a>❔ Q: 如何备份多个不同的项目？</h3><p>✅ <strong>A</strong>: 工具支持多项目备份，操作非常简单：</p>
+<ol>
+<li>点击「要备份的目录」旁边的「浏览…」按钮，选择新的项目目录</li>
+<li>为该项目选择或创建对应的备份目录（建议为每个项目单独创建备份文件夹）</li>
+<li>点击「创建备份」即可完成该项目的备份</li>
+</ol>
+<h3 id="❔-Q-备份文件一般有多大？"><a href="#❔-Q-备份文件一般有多大？" class="headerlink" title="❔ Q: 备份文件一般有多大？"></a>❔ Q: 备份文件一般有多大？</h3><p>✅ <strong>A</strong>: 备份文件大小取决于多种因素：</p>
+<ul>
+<li><strong>默认压缩模式</strong>：<ul>
+<li>代码类项目：通常为原大小的10%-30%，压缩效果显著</li>
+<li>媒体类项目：通常为原大小的80%-100%，压缩空间有限</li>
+</ul>
+</li>
+<li><strong>可调整配置</strong>：您可以在<code>config.json</code>中关闭压缩功能，获得更快的备份速度</li>
+</ul>
+<h3 id="❔-Q-程序支持增量备份吗？"><a href="#❔-Q-程序支持增量备份吗？" class="headerlink" title="❔ Q: 程序支持增量备份吗？"></a>❔ Q: 程序支持增量备份吗？</h3><p>✅ <strong>A</strong>: 是的，工具支持智能增量备份，仅备份变化的文件，大幅提高备份效率并节省磁盘空间。</p>
+<hr>
+<h2 id="🔧-技术实现"><a href="#🔧-技术实现" class="headerlink" title="🔧 技术实现"></a>🔧 技术实现</h2><h3 id="📝-个人开发历程"><a href="#📝-个人开发历程" class="headerlink" title="📝 个人开发历程"></a>📝 个人开发历程</h3><p>作为独立开发者，我经历了从需求分析到最终发布的完整开发流程，每一步都凝聚了我的心血：</p>
+<h4 id="1-🎯-需求分析与规划"><a href="#1-🎯-需求分析与规划" class="headerlink" title="1. 🎯 需求分析与规划"></a>1. 🎯 需求分析与规划</h4><ul>
+<li>调研了市面上现有备份工具的优缺点</li>
+<li>明确了核心功能：一键备份、版本管理、快速恢复</li>
+<li>确定了目标用户：开发者和需要数据保护的普通用户</li>
+</ul>
+<h4 id="2-💡-技术选型"><a href="#2-💡-技术选型" class="headerlink" title="2. 💡 技术选型"></a>2. 💡 技术选型</h4><ul>
+<li><strong>语言</strong>：选择Python，看重其跨平台性和易用性</li>
+<li><strong>GUI框架</strong>：Tkinter，纯Python标准库，无需额外依赖</li>
+<li><strong>设计理念</strong>：简洁易用，零依赖，跨平台兼容</li>
+</ul>
+<h4 id="3-🔨-核心实现"><a href="#3-🔨-核心实现" class="headerlink" title="3. 🔨 核心实现"></a>3. 🔨 核心实现</h4><ul>
+<li>编写<code>backup_tool.py</code>，实现命令行版核心备份逻辑</li>
+<li>开发<code>gui_backup_tool.py</code>，打造友好直观的图形界面</li>
+<li>设计智能配置系统，自动生成和管理<code>config.json</code></li>
+<li>实现智能文件排除规则，自动忽略无用文件</li>
+</ul>
+<h4 id="4-✨-优化迭代"><a href="#4-✨-优化迭代" class="headerlink" title="4. ✨ 优化迭代"></a>4. ✨ 优化迭代</h4><ul>
+<li>修复了权限处理问题，增强了程序稳定性</li>
+<li>优化了大文件处理逻辑，支持GB级文件备份</li>
+<li>改进了界面设计，提升了用户体验</li>
+<li>增加了打包支持，方便用户直接使用</li>
+<li>添加了增量备份功能，提高备份效率</li>
+</ul>
+<hr>
+<h3 id="📁-核心代码结构"><a href="#📁-核心代码结构" class="headerlink" title="📁 核心代码结构"></a>📁 核心代码结构</h3><p>工具采用模块化设计，代码结构清晰，易于维护和扩展：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">backup_tool/</span><br><span class="line">├── backup_tool.py      # 核心备份逻辑（命令行版）</span><br><span class="line">├── gui_backup_tool.py  # 图形界面版本，基于Tkinter</span><br><span class="line">├── config.json         # 自动生成的配置文件</span><br><span class="line">└── dist/</span><br><span class="line">    └── 项目备份工具.exe # 使用PyInstaller打包的可执行程序</span><br></pre></td></tr></table></figure>
+
+<h3 id="🛠️-技术栈"><a href="#🛠️-技术栈" class="headerlink" title="🛠️ 技术栈"></a>🛠️ 技术栈</h3><table>
+<thead>
+<tr>
+<th>技术</th>
+<th>版本</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>编程语言</strong></td>
+<td>Python 3.6+</td>
+<td>跨平台，语法简洁，生态丰富</td>
+</tr>
+<tr>
+<td><strong>GUI框架</strong></td>
+<td>Tkinter + ttk</td>
+<td>纯Python标准库，无需额外安装</td>
+</tr>
+<tr>
+<td><strong>打包工具</strong></td>
+<td>PyInstaller</td>
+<td>将Python脚本打包为独立可执行文件</td>
+</tr>
+<tr>
+<td><strong>依赖</strong></td>
+<td>仅标准库</td>
+<td>零外部依赖，运行环境要求低</td>
+</tr>
+<tr>
+<td><strong>开发工具</strong></td>
+<td>VS Code</td>
+<td>轻量级，功能强大的代码编辑器</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="💭-个人开发心得"><a href="#💭-个人开发心得" class="headerlink" title="💭 个人开发心得"></a>💭 个人开发心得</h2><p>作为一名开发者，开发这款备份工具的过程对我来说意义非凡，让我深刻体会到了「技术服务于需求」的真正含义：</p>
+<h3 id="🌟-从痛点到解决方案"><a href="#🌟-从痛点到解决方案" class="headerlink" title="🌟 从痛点到解决方案"></a>🌟 从痛点到解决方案</h3><ul>
+<li>开发这款工具的初衷，是为了解决我自己在开发过程中遇到的数据安全问题</li>
+<li>当我真正使用自己开发的工具保护重要项目时，那种成就感和安全感是无法言喻的</li>
+<li>这让我更加坚信：<strong>最好的工具往往是开发者为了解决自己的痛点而创造的</strong></li>
+</ul>
+<h3 id="🎨-用户体验至上"><a href="#🎨-用户体验至上" class="headerlink" title="🎨 用户体验至上"></a>🎨 用户体验至上</h3><ul>
+<li>我始终坚持「简洁易用」的设计理念，拒绝复杂繁琐的操作</li>
+<li>每一个按钮的位置、每一个提示信息，我都反复斟酌，力求让用户一目了然</li>
+<li>我相信：<strong>一个优秀的工具，应该让用户无需阅读说明书就能轻松使用</strong></li>
+</ul>
+<h3 id="🔄-持续优化的重要性"><a href="#🔄-持续优化的重要性" class="headerlink" title="🔄 持续优化的重要性"></a>🔄 持续优化的重要性</h3><ul>
+<li>工具发布后，我不断收集反馈，持续优化功能和性能</li>
+<li>从最初的简单备份功能，到现在的智能版本管理、增量备份，每一次迭代都让工具更加完善</li>
+<li>这个过程让我明白：<strong>优秀的产品永远不是一蹴而就的，而是不断优化迭代的结果</strong></li>
+</ul>
+<h3 id="🌍-跨平台的思考"><a href="#🌍-跨平台的思考" class="headerlink" title="🌍 跨平台的思考"></a>🌍 跨平台的思考</h3><ul>
+<li>考虑到不同用户的使用环境，我选择了跨平台的Python开发</li>
+<li>确保工具能在Windows、macOS和Linux系统上都能正常运行</li>
+<li>这让我意识到：<strong>好的工具应该尽可能地兼容不同用户的使用习惯和环境</strong></li>
+</ul>
+<h3 id="💡-代码质量的追求"><a href="#💡-代码质量的追求" class="headerlink" title="💡 代码质量的追求"></a>💡 代码质量的追求</h3><ul>
+<li>我始终保持代码的简洁性和可维护性，遵循良好的编程规范</li>
+<li>使用模块化设计，便于后续功能扩展和问题修复</li>
+<li>这让我深刻体会到：<strong>优秀的代码是产品长期发展的坚实基础</strong></li>
+</ul>
+<hr>
+<h2 id="🎉-结语"><a href="#🎉-结语" class="headerlink" title="🎉 结语"></a>🎉 结语</h2><p>这款项目备份工具对我来说意义重大，它不仅仅是一个软件作品，更是我对「数据安全」理念的实践和探索。从最初的一个想法，到现在功能完善的工具，每一行代码都凝聚了我的心血和思考。</p>
+<p>我希望这款工具能够帮助更多开发者：</p>
+<ul>
+<li>🛡️ 守护珍贵的代码和数据，不再为误删而烦恼</li>
+<li>⏰ 节省宝贵的时间，无需手动进行繁琐的备份操作</li>
+<li>📊 清晰管理项目版本，轻松回溯到任意历史状态</li>
+<li>💡 专注于创作本身，拥有更多的安全感和创作自由</li>
+</ul>
+<p>作为开发者，我会持续维护和优化这个工具，不断加入新的功能和改进。如果您在使用过程中有任何建议或反馈，欢迎随时在评论区交流，您的支持是我前进的最大动力！</p>
+<h2 id="📥-下载和使用"><a href="#📥-下载和使用" class="headerlink" title="📥 下载和使用"></a>📥 下载和使用</h2><h3 id="✨-工具下载"><a href="#✨-工具下载" class="headerlink" title="✨ 工具下载"></a>✨ 工具下载</h3><p>为了方便大家使用，我已经将工具打包成可执行文件，无需安装Python环境，直接双击即可运行：</p>
+<ul>
+<li><strong>📦 下载链接</strong>：<a href="2026-01-21-project-backup-tool/项目备份工具.exe" download>项目备份工具.exe</a> - 点击下载项目备份工具，无需安装Python环境</li>
+<li><strong>📏 文件大小</strong>：约8.7MB</li>
+<li><strong>🖥️ 运行环境</strong>：Windows 7及以上版本</li>
+<li><strong>🚀 无需安装</strong>：解压后直接使用，绿色便捷</li>
+</ul>
+<h3 id="🖼️-界面预览"><a href="#🖼️-界面预览" class="headerlink" title="🖼️ 界面预览"></a>🖼️ 界面预览</h3><p>这是工具的主界面截图，简洁直观，功能一目了然：</p>
+<h3 id="界面预览"><a href="#界面预览" class="headerlink" title="界面预览"></a>界面预览</h3><img src="/2026-01-21-project-backup-tool/backup-tool-interface.png" class="" title="项目备份工具界面">
+
+<h3 id="📖-使用提示"><a href="#📖-使用提示" class="headerlink" title="📖 使用提示"></a>📖 使用提示</h3><ol>
+<li>首次运行会自动生成<code>config.json</code>配置文件</li>
+<li>建议先浏览「使用指南」部分，了解基本操作</li>
+<li>开始使用前，建议先进行一次测试备份，熟悉操作流程</li>
+<li>定期检查备份文件，确保数据安全</li>
+</ol>
+<hr>
+<h3 id="📋-项目信息"><a href="#📋-项目信息" class="headerlink" title="📋 项目信息"></a>📋 项目信息</h3><table>
+<thead>
+<tr>
+<th>项目详情</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>项目地址</strong></td>
+<td><a href="https://github.com/Jay-R-J/Python_backup_tool">GitHub项目地址</a></td>
+</tr>
+<tr>
+<td><strong>开发者</strong></td>
+<td>Jay-R-J（独立开发）</td>
+</tr>
+<tr>
+<td><strong>开发时间</strong></td>
+<td>2026年1月</td>
+</tr>
+<tr>
+<td><strong>技术栈</strong></td>
+<td>Python + Tkinter</td>
+</tr>
+<tr>
+<td><strong>开源协议</strong></td>
+<td>MIT License</td>
+</tr>
+<tr>
+<td><strong>最新版本</strong></td>
+<td>v1.0</td>
+</tr>
+<tr>
+<td><strong>支持平台</strong></td>
+<td>Windows、macOS、Linux</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>技术分享</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>工具开发</tag>
+        <tag>数据安全</tag>
+        <tag>备份工具</tag>
+        <tag>项目管理</tag>
+        <tag>代码备份</tag>
+        <tag>自动备份</tag>
+        <tag>版本控制</tag>
       </tags>
   </entry>
   <entry>
@@ -762,711 +1195,278 @@
       </tags>
   </entry>
   <entry>
-    <title>🛡️ Python项目备份工具 - 开发者的数据安全守护者 | 一键备份与版本管理工具</title>
-    <url>/2026-01-21-project-backup-tool.html</url>
-    <content><![CDATA[<h1 id="🛡️-Python项目备份工具-开发者的数据安全守护者"><a href="#🛡️-Python项目备份工具-开发者的数据安全守护者" class="headerlink" title="🛡️ Python项目备份工具 - 开发者的数据安全守护者"></a>🛡️ Python项目备份工具 - 开发者的数据安全守护者</h1><p>你是否曾经历过：</p>
-<ul>
-<li>辛辛苦苦写了一天的代码，不小心误删且无法恢复？</li>
-<li>项目版本混乱，分不清哪个是稳定版本？</li>
-<li>手动备份繁琐易错，总是遗漏重要文件？</li>
-</ul>
-<p>作为一名开发者，我深知这些痛点带来的挫败感。因此，我<strong>从零开始独立开发了这款项目备份工具</strong>，致力于解决这些实际问题，让开发者能够更安心地专注于创作。</p>
-<p>这款工具不仅仅是一个备份软件，更是我对「数据安全」理念的实践，希望能为更多开发者提供可靠的数据保护方案。</p>
-<h2 id="📋-项目简介"><a href="#📋-项目简介" class="headerlink" title="📋 项目简介"></a>📋 项目简介</h2><h3 id="✨-工具概述"><a href="#✨-工具概述" class="headerlink" title="✨ 工具概述"></a>✨ 工具概述</h3><p><strong>项目备份工具</strong>是一款专为开发者打造的简单易用的文件备份管理软件，集一键备份、智能版本管理、快速恢复等功能于一体。采用Python开发，提供图形界面（GUI）和命令行（CLI）两种使用方式，满足不同场景和用户的需求。</p>
-<p>作为开发者，我在实际使用中不断优化，加入了许多实用功能，适合各类开发者和普通用户使用。</p>
-<p>🔗 <strong>项目地址</strong>：<a href="https://github.com/Jay-R-J/Python_backup_tool">GitHub项目地址</a></p>
-<hr>
-<h3 id="🎯-开发背景"><a href="#🎯-开发背景" class="headerlink" title="🎯 开发背景"></a>🎯 开发背景</h3><p>开发这款工具的初衷，源于我在日常开发中遇到的真实痛点：</p>
-<ul>
-<li>经常遇到代码误删、项目混乱的情况</li>
-<li>市面上的备份工具要么太复杂，要么功能不全</li>
-<li>想拥有一个完全符合自己使用习惯的备份工具</li>
-<li>同时也想通过实践提升Python GUI开发技术</li>
-</ul>
-<hr>
-<h2 id="🚀-功能特性"><a href="#🚀-功能特性" class="headerlink" title="🚀 功能特性"></a>🚀 功能特性</h2><h3 id="🎯-核心功能"><a href="#🎯-核心功能" class="headerlink" title="🎯 核心功能"></a>🎯 核心功能</h3><h4 id="1-🔄-一键备份"><a href="#1-🔄-一键备份" class="headerlink" title="1. 🔄 一键备份"></a>1. 🔄 一键备份</h4><ul>
-<li>支持选择任意文件夹进行备份</li>
-<li>智能排除不需要的文件（如<code>.git</code>、<code>node_modules</code>等）</li>
-<li>支持添加自定义注释，方便识别不同版本</li>
-<li>备份过程实时显示进度，清晰直观</li>
-</ul>
-<h4 id="2-📊-智能版本管理"><a href="#2-📊-智能版本管理" class="headerlink" title="2. 📊 智能版本管理"></a>2. 📊 智能版本管理</h4><ul>
-<li>自动为每个备份生成唯一版本号</li>
-<li>完整记录备份时间、注释和文件大小</li>
-<li>支持按时间、版本号排序查看备份列表</li>
-<li>可视化展示备份历史，方便回溯</li>
-</ul>
-<h4 id="3-⏱️-快速恢复"><a href="#3-⏱️-快速恢复" class="headerlink" title="3. ⏱️ 快速恢复"></a>3. ⏱️ 快速恢复</h4><ul>
-<li>一键恢复到指定版本，操作简单快捷</li>
-<li>智能处理权限问题，跳过无法访问的文件</li>
-<li>生成详细的恢复报告，包含成功&#x2F;失败记录</li>
-<li>支持选择性恢复，灵活方便</li>
-</ul>
-<h4 id="4-💾-灵活的存储选项"><a href="#4-💾-灵活的存储选项" class="headerlink" title="4. 💾 灵活的存储选项"></a>4. 💾 灵活的存储选项</h4><ul>
-<li>可自定义备份保存位置，支持外部存储</li>
-<li>支持压缩备份，显著节省磁盘空间</li>
-<li>自动清理旧备份，可设置保留数量</li>
-<li>支持增量备份，提高备份效率</li>
-</ul>
-<hr>
-<h3 id="💡-技术特点"><a href="#💡-技术特点" class="headerlink" title="💡 技术特点"></a>💡 技术特点</h3><ul>
-<li><strong>🌍 跨平台兼容</strong>：完美支持Windows、macOS、Linux系统</li>
-<li><strong>📦 零依赖</strong>：仅使用Python标准库，无需额外安装任何依赖</li>
-<li><strong>💪 大文件支持</strong>：优化的文件处理逻辑，轻松处理GB级大文件</li>
-<li><strong>🎨 美观界面</strong>：现代化设计，简洁直观，视觉舒适度高</li>
-<li><strong>⚡ 高性能</strong>：优化的算法，备份恢复速度快</li>
-<li><strong>🔒 安全可靠</strong>：完整的错误处理，确保数据安全</li>
-</ul>
-<hr>
-<h2 id="🎯-解决什么问题"><a href="#🎯-解决什么问题" class="headerlink" title="🎯 解决什么问题"></a>🎯 解决什么问题</h2><h3 id="💢-开发者常见痛点"><a href="#💢-开发者常见痛点" class="headerlink" title="💢 开发者常见痛点"></a>💢 开发者常见痛点</h3><h4 id="1-❌-文件误删恢复难"><a href="#1-❌-文件误删恢复难" class="headerlink" title="1. ❌ 文件误删恢复难"></a>1. ❌ 文件误删恢复难</h4><ul>
-<li>工作中不小心删除了重要文件，懊悔不已</li>
-<li>没有版本控制，无法找回历史版本</li>
-<li><strong>解决方案</strong>：定期自动备份，一键即可恢复到任意时间点</li>
-</ul>
-<h4 id="2-🔀-代码混乱难以回溯"><a href="#2-🔀-代码混乱难以回溯" class="headerlink" title="2. 🔀 代码混乱难以回溯"></a>2. 🔀 代码混乱难以回溯</h4><ul>
-<li>多个人协作，代码版本混乱不堪</li>
-<li>不知道哪个版本是稳定可用的</li>
-<li><strong>解决方案</strong>：完整记录每个版本，方便对比和回溯，清晰掌握项目演进</li>
-</ul>
-<h4 id="3-⏳-备份操作繁琐易错"><a href="#3-⏳-备份操作繁琐易错" class="headerlink" title="3. ⏳ 备份操作繁琐易错"></a>3. ⏳ 备份操作繁琐易错</h4><ul>
-<li>手动复制粘贴容易遗漏文件</li>
-<li>不知道该备份哪些文件，费时费力</li>
-<li><strong>解决方案</strong>：智能识别需要备份的文件，自动排除无用文件，一键完成备份</li>
-</ul>
-<h4 id="4-📁-版本管理混乱"><a href="#4-📁-版本管理混乱" class="headerlink" title="4. 📁 版本管理混乱"></a>4. 📁 版本管理混乱</h4><ul>
-<li>文件命名不规范，如”最终版”、”最终最终版_v2”</li>
-<li>不知道哪个版本包含哪些具体修改</li>
-<li><strong>解决方案</strong>：自动生成唯一版本号和时间戳，配合自定义注释，版本管理一目了然</li>
-</ul>
-<hr>
-<h2 id="📖-使用指南"><a href="#📖-使用指南" class="headerlink" title="📖 使用指南"></a>📖 使用指南</h2><h3 id="🖥️-界面介绍"><a href="#🖥️-界面介绍" class="headerlink" title="🖥️ 界面介绍"></a>🖥️ 界面介绍</h3><p>打开程序后，您将看到简洁直观的主界面，分为以下几个区域：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">┌─────────────────────────────────────────────────────────────┐</span><br><span class="line">│ 项目备份工具 v1.0                                            │</span><br><span class="line">├─────────────────────────────────────────────────────────────┤</span><br><span class="line">│ 备份设置                                                     │</span><br><span class="line">│                                                             │</span><br><span class="line">│  要备份的目录:  [C:\Users\MyProject      ] [浏览...]        │</span><br><span class="line">│  备份保存位置:  [D:\Backups              ] [浏览...]        │</span><br><span class="line">│                                           备份数量: 5 个    │</span><br><span class="line">├─────────────────────────────────────────────────────────────┤</span><br><span class="line">│ [创建备份] [恢复备份] [删除备份] [刷新列表]                  │</span><br><span class="line">├─────────────────────────────────────────────────────────────┤</span><br><span class="line">│ 备份列表                                                     │</span><br><span class="line">│ ┌─────────────────────────────────────────────────────────┐ │</span><br><span class="line">│ │ 版本ID     │ 备份时间          │ 注释      │ 类型        │ │</span><br><span class="line">│ ├─────────────────────────────────────────────────────────┤ │</span><br><span class="line">│ │ v001_xxx   │ 2026-01-21 10:30 │ 初始备份  │ 压缩        │ │</span><br><span class="line">│ │ v002_xxx   │ 2026-01-21 11:00 │ 添加功能A │ 压缩        │ │</span><br><span class="line">│ └─────────────────────────────────────────────────────────┘ │</span><br><span class="line">├─────────────────────────────────────────────────────────────┤</span><br><span class="line">│ 状态栏: 就绪                                                │</span><br><span class="line">└─────────────────────────────────────────────────────────────┘</span><br></pre></td></tr></table></figure>
-
-<h3 id="🎮-按钮功能详解"><a href="#🎮-按钮功能详解" class="headerlink" title="🎮 按钮功能详解"></a>🎮 按钮功能详解</h3><h4 id="1-🔄-创建备份"><a href="#1-🔄-创建备份" class="headerlink" title="1. 🔄 创建备份"></a>1. 🔄 创建备份</h4><p><strong>📋 功能</strong>：将选定的源目录完整备份到指定位置</p>
-<p><strong>📝 使用方法</strong>：</p>
-<ol>
-<li>点击「要备份的目录」旁边的「浏览…」按钮，选择您想要备份的文件夹</li>
-<li>点击「备份保存位置」旁边的「浏览…」按钮，选择备份文件的保存位置</li>
-<li>点击「创建备份」按钮，弹出注释输入窗口</li>
-<li>输入备份注释（建议简洁描述本次备份的内容）</li>
-<li>点击「确定」开始备份，等待进度完成</li>
-</ol>
-<p><strong>🌟 示例</strong>：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入注释: &quot;完成了用户登录功能&quot;</span><br><span class="line">点击确定</span><br><span class="line">→ 程序会自动创建备份文件：项目名_v001_20260121_103000_完成了用户登录功能.zip</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-⏱️-恢复备份"><a href="#2-⏱️-恢复备份" class="headerlink" title="2. ⏱️ 恢复备份"></a>2. ⏱️ 恢复备份</h4><p><strong>📋 功能</strong>：将选定的备份版本恢复到源目录</p>
-<p><strong>⚠️ 重要注意事项</strong>：恢复操作会覆盖源目录中的现有文件，请务必谨慎操作！</p>
-<p><strong>📝 使用方法</strong>：</p>
-<ol>
-<li>在备份列表中点击选择您想要恢复的版本</li>
-<li>点击「恢复备份」按钮，弹出确认对话框</li>
-<li>仔细检查确认要恢复的版本，点击「是」</li>
-<li>等待恢复完成，查看恢复报告</li>
-</ol>
-<p><strong>🌟 示例</strong>：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">选择: v002_20260121_110000_添加功能A</span><br><span class="line">点击「恢复备份」</span><br><span class="line">确认: 是</span><br><span class="line">→ 源目录的文件会恢复到备份时的状态</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-🗑️-删除备份"><a href="#3-🗑️-删除备份" class="headerlink" title="3. 🗑️ 删除备份"></a>3. 🗑️ 删除备份</h4><p><strong>📋 功能</strong>：从备份列表和文件系统中永久删除指定的备份</p>
-<p><strong>⚠️ 重要注意事项</strong>：删除操作不可恢复，请确认后再执行！</p>
-<p><strong>📝 使用方法</strong>：</p>
-<ol>
-<li>在备份列表中点击选择要删除的版本</li>
-<li>点击「删除备份」按钮，弹出确认对话框</li>
-<li>点击「是」确认删除</li>
-<li>备份会立即从列表和磁盘中移除</li>
-</ol>
-<p><strong>🌟 示例</strong>：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">选择: v001_20260121_103000_初始备份</span><br><span class="line">点击「删除备份」</span><br><span class="line">确认: 是</span><br><span class="line">→ 该备份文件会从列表和文件系统中删除</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-🔄-刷新列表"><a href="#4-🔄-刷新列表" class="headerlink" title="4. 🔄 刷新列表"></a>4. 🔄 刷新列表</h4><p><strong>📋 功能</strong>：重新加载备份列表，同步最新的备份状态</p>
-<p><strong>📝 使用方法</strong>：</p>
-<ul>
-<li>直接点击「刷新列表」按钮即可</li>
-</ul>
-<p><strong>🎯 适用场景</strong>：</p>
-<ul>
-<li>手动删除了备份文件后</li>
-<li>备份文件被其他程序移动或修改后</li>
-<li>需要查看最新备份状态时</li>
-</ul>
-<h3 id="⚙️-配置说明"><a href="#⚙️-配置说明" class="headerlink" title="⚙️ 配置说明"></a>⚙️ 配置说明</h3><p>首次运行程序会自动在当前目录创建<code>config.json</code>配置文件，您可以根据需要手动修改以下配置项：</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;source_dir&quot;</span><span class="punctuation">:</span> <span class="string">&quot;默认要备份的目录&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;backup_dir&quot;</span><span class="punctuation">:</span> <span class="string">&quot;默认备份保存位置&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;auto_exclude&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;.git&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;node_modules&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;__pycache__&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;*.pyc&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;*.log&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;*.tmp&quot;</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;max_backups&quot;</span><span class="punctuation">:</span> <span class="number">50</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;compression&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>📊 配置项详细说明</strong>：</p>
-<table>
-<thead>
-<tr>
-<th>配置项</th>
-<th>说明</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>source_dir</td>
-<td>默认要备份的目录</td>
-<td>当前运行目录</td>
-</tr>
-<tr>
-<td>backup_dir</td>
-<td>默认备份保存位置</td>
-<td>父目录&#x2F;project_backups</td>
-</tr>
-<tr>
-<td>auto_exclude</td>
-<td>自动排除的文件&#x2F;文件夹列表</td>
-<td>常见临时文件和缓存目录</td>
-</tr>
-<tr>
-<td>max_backups</td>
-<td>最大保留备份数量，超过自动清理最旧的</td>
-<td>50</td>
-</tr>
-<tr>
-<td>compression</td>
-<td>是否使用压缩备份，节省磁盘空间</td>
-<td>true</td>
-</tr>
-</tbody></table>
-<hr>
-<h2 id="📚-进阶使用"><a href="#📚-进阶使用" class="headerlink" title="📚 进阶使用"></a>📚 进阶使用</h2><h3 id="🖥️-命令行模式"><a href="#🖥️-命令行模式" class="headerlink" title="🖥️ 命令行模式"></a>🖥️ 命令行模式</h3><p>对于习惯命令行的用户，工具提供了完整的CLI支持，操作更加高效：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建备份并添加注释</span></span><br><span class="line">python backup_tool.py --create --comment <span class="string">&quot;完成了用户登录功能&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出所有备份</span></span><br><span class="line">python backup_tool.py --list</span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复到指定版本</span></span><br><span class="line">python backup_tool.py --restore v001_20260121_103000</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除指定版本</span></span><br><span class="line">python backup_tool.py --delete v001_20260121_103000</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看帮助信息</span></span><br><span class="line">python backup_tool.py --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="⏰-定时自动备份"><a href="#⏰-定时自动备份" class="headerlink" title="⏰ 定时自动备份"></a>⏰ 定时自动备份</h3><p>您可以通过系统任务计划程序设置定时自动备份，让数据保护更省心：</p>
-<h4 id="Windows系统设置步骤"><a href="#Windows系统设置步骤" class="headerlink" title="Windows系统设置步骤"></a>Windows系统设置步骤</h4><ol>
-<li>打开「任务计划程序」（可以在开始菜单搜索）</li>
-<li>点击「创建基本任务」，输入任务名称（如”项目自动备份”）</li>
-<li>设置触发器（如每天晚上10点，或者每隔几小时）</li>
-<li>设置操作：选择「启动程序」</li>
-<li>浏览选择 <code>项目备份工具.exe</code> 的完整路径</li>
-<li>在「添加参数」中输入：<code>--create --comment &quot;自动定时备份&quot;</code></li>
-<li>完成设置，系统会按照计划自动执行备份</li>
-</ol>
-<h4 id="macOS-Linux系统设置"><a href="#macOS-Linux系统设置" class="headerlink" title="macOS&#x2F;Linux系统设置"></a>macOS&#x2F;Linux系统设置</h4><p>可以使用 <code>cron</code> 或 <code>systemd</code> 定时任务，示例 <code>cron</code> 配置：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 每天晚上10点执行自动备份</span></span><br><span class="line">0 22 * * * /path/to/python /path/to/backup_tool.py --create --comment <span class="string">&quot;自动定时备份&quot;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="💡-最佳实践"><a href="#💡-最佳实践" class="headerlink" title="💡 最佳实践"></a>💡 最佳实践</h2><h3 id="📋-备份策略建议"><a href="#📋-备份策略建议" class="headerlink" title="📋 备份策略建议"></a>📋 备份策略建议</h3><h4 id="1-🔑-重要节点备份"><a href="#1-🔑-重要节点备份" class="headerlink" title="1. 🔑 重要节点备份"></a>1. 🔑 重要节点备份</h4><ul>
-<li><strong>功能完成后</strong>：每次完成一个功能模块，立即备份</li>
-<li><strong>配置修改前</strong>：修改关键配置文件前，先备份当前状态</li>
-<li><strong>代码重构前</strong>：重构代码前，备份稳定版本</li>
-<li><strong>下班前</strong>：每天下班前，进行一次完整备份</li>
-<li><strong>版本发布前</strong>：发布新版本前，进行最终备份</li>
-</ul>
-<h4 id="2-📍-备份位置选择"><a href="#2-📍-备份位置选择" class="headerlink" title="2. 📍 备份位置选择"></a>2. 📍 备份位置选择</h4><ul>
-<li><strong>本地多磁盘</strong>：备份到不同物理磁盘，防止单盘故障</li>
-<li><strong>云盘同步</strong>：使用云盘同步备份文件夹，实现异地备份</li>
-<li><strong>外部存储</strong>：重要项目备份到移动硬盘或U盘，离线保存</li>
-<li><strong>混合策略</strong>：结合本地、云盘和外部存储，实现多层次保护</li>
-</ul>
-<h4 id="3-📝-注释规范"><a href="#3-📝-注释规范" class="headerlink" title="3. 📝 注释规范"></a>3. 📝 注释规范</h4><ul>
-<li><strong>清晰描述</strong>：简单明了描述本次备份的内容或变更</li>
-<li><strong>标注里程碑</strong>：重要版本标注版本号或里程碑</li>
-<li><strong>使用关键词</strong>：包含功能、修复、重构等关键词</li>
-<li><strong>统一格式</strong>：保持注释格式一致，方便查找和回溯</li>
-</ul>
-<h3 id="✅-注释示例"><a href="#✅-注释示例" class="headerlink" title="✅ 注释示例"></a>✅ 注释示例</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 🎯 推荐的注释格式</span><br><span class="line">&quot;完成了用户登录功能，修复了验证码bug&quot;</span><br><span class="line">&quot;修复了数据库连接超时问题&quot;</span><br><span class="line">&quot;重构了数据访问层，优化了查询性能&quot;</span><br><span class="line">&quot;添加了Excel导出功能&quot;</span><br><span class="line">&quot;v1.0版本发布前备份&quot;</span><br><span class="line"></span><br><span class="line"># ❌ 不推荐的注释</span><br><span class="line">&quot;备份&quot;         # 过于简单，无实际意义</span><br><span class="line">&quot;更新&quot;         # 不明确具体更新内容</span><br><span class="line">&quot;修改&quot;         # 模糊不清</span><br><span class="line">&quot;111&quot;         # 无意义的字符</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="❓-常见问题"><a href="#❓-常见问题" class="headerlink" title="❓ 常见问题"></a>❓ 常见问题</h2><h3 id="❔-Q-恢复备份时提示权限不足怎么办？"><a href="#❔-Q-恢复备份时提示权限不足怎么办？" class="headerlink" title="❔ Q: 恢复备份时提示权限不足怎么办？"></a>❔ Q: 恢复备份时提示权限不足怎么办？</h3><p>✅ <strong>A</strong>: 程序设计了智能权限处理机制，会自动跳过无法访问的文件，并生成详细的恢复报告。您可以尝试以下解决方案：</p>
-<ul>
-<li>关闭正在占用目标文件的程序</li>
-<li>以管理员身份运行程序，获取更高权限</li>
-<li>手动处理那些无法自动恢复的文件</li>
-</ul>
-<h3 id="❔-Q-备份文件可以手动删除吗？"><a href="#❔-Q-备份文件可以手动删除吗？" class="headerlink" title="❔ Q: 备份文件可以手动删除吗？"></a>❔ Q: 备份文件可以手动删除吗？</h3><p>✅ <strong>A</strong>: 当然可以。手动删除备份文件后，只需点击「刷新列表」按钮，程序会自动从备份日志中清除这些记录，保持列表与实际文件一致。</p>
-<h3 id="❔-Q-如何备份多个不同的项目？"><a href="#❔-Q-如何备份多个不同的项目？" class="headerlink" title="❔ Q: 如何备份多个不同的项目？"></a>❔ Q: 如何备份多个不同的项目？</h3><p>✅ <strong>A</strong>: 工具支持多项目备份，操作非常简单：</p>
-<ol>
-<li>点击「要备份的目录」旁边的「浏览…」按钮，选择新的项目目录</li>
-<li>为该项目选择或创建对应的备份目录（建议为每个项目单独创建备份文件夹）</li>
-<li>点击「创建备份」即可完成该项目的备份</li>
-</ol>
-<h3 id="❔-Q-备份文件一般有多大？"><a href="#❔-Q-备份文件一般有多大？" class="headerlink" title="❔ Q: 备份文件一般有多大？"></a>❔ Q: 备份文件一般有多大？</h3><p>✅ <strong>A</strong>: 备份文件大小取决于多种因素：</p>
-<ul>
-<li><strong>默认压缩模式</strong>：<ul>
-<li>代码类项目：通常为原大小的10%-30%，压缩效果显著</li>
-<li>媒体类项目：通常为原大小的80%-100%，压缩空间有限</li>
-</ul>
-</li>
-<li><strong>可调整配置</strong>：您可以在<code>config.json</code>中关闭压缩功能，获得更快的备份速度</li>
-</ul>
-<h3 id="❔-Q-程序支持增量备份吗？"><a href="#❔-Q-程序支持增量备份吗？" class="headerlink" title="❔ Q: 程序支持增量备份吗？"></a>❔ Q: 程序支持增量备份吗？</h3><p>✅ <strong>A</strong>: 是的，工具支持智能增量备份，仅备份变化的文件，大幅提高备份效率并节省磁盘空间。</p>
-<hr>
-<h2 id="🔧-技术实现"><a href="#🔧-技术实现" class="headerlink" title="🔧 技术实现"></a>🔧 技术实现</h2><h3 id="📝-个人开发历程"><a href="#📝-个人开发历程" class="headerlink" title="📝 个人开发历程"></a>📝 个人开发历程</h3><p>作为独立开发者，我经历了从需求分析到最终发布的完整开发流程，每一步都凝聚了我的心血：</p>
-<h4 id="1-🎯-需求分析与规划"><a href="#1-🎯-需求分析与规划" class="headerlink" title="1. 🎯 需求分析与规划"></a>1. 🎯 需求分析与规划</h4><ul>
-<li>调研了市面上现有备份工具的优缺点</li>
-<li>明确了核心功能：一键备份、版本管理、快速恢复</li>
-<li>确定了目标用户：开发者和需要数据保护的普通用户</li>
-</ul>
-<h4 id="2-💡-技术选型"><a href="#2-💡-技术选型" class="headerlink" title="2. 💡 技术选型"></a>2. 💡 技术选型</h4><ul>
-<li><strong>语言</strong>：选择Python，看重其跨平台性和易用性</li>
-<li><strong>GUI框架</strong>：Tkinter，纯Python标准库，无需额外依赖</li>
-<li><strong>设计理念</strong>：简洁易用，零依赖，跨平台兼容</li>
-</ul>
-<h4 id="3-🔨-核心实现"><a href="#3-🔨-核心实现" class="headerlink" title="3. 🔨 核心实现"></a>3. 🔨 核心实现</h4><ul>
-<li>编写<code>backup_tool.py</code>，实现命令行版核心备份逻辑</li>
-<li>开发<code>gui_backup_tool.py</code>，打造友好直观的图形界面</li>
-<li>设计智能配置系统，自动生成和管理<code>config.json</code></li>
-<li>实现智能文件排除规则，自动忽略无用文件</li>
-</ul>
-<h4 id="4-✨-优化迭代"><a href="#4-✨-优化迭代" class="headerlink" title="4. ✨ 优化迭代"></a>4. ✨ 优化迭代</h4><ul>
-<li>修复了权限处理问题，增强了程序稳定性</li>
-<li>优化了大文件处理逻辑，支持GB级文件备份</li>
-<li>改进了界面设计，提升了用户体验</li>
-<li>增加了打包支持，方便用户直接使用</li>
-<li>添加了增量备份功能，提高备份效率</li>
-</ul>
-<hr>
-<h3 id="📁-核心代码结构"><a href="#📁-核心代码结构" class="headerlink" title="📁 核心代码结构"></a>📁 核心代码结构</h3><p>工具采用模块化设计，代码结构清晰，易于维护和扩展：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">backup_tool/</span><br><span class="line">├── backup_tool.py      # 核心备份逻辑（命令行版）</span><br><span class="line">├── gui_backup_tool.py  # 图形界面版本，基于Tkinter</span><br><span class="line">├── config.json         # 自动生成的配置文件</span><br><span class="line">└── dist/</span><br><span class="line">    └── 项目备份工具.exe # 使用PyInstaller打包的可执行程序</span><br></pre></td></tr></table></figure>
-
-<h3 id="🛠️-技术栈"><a href="#🛠️-技术栈" class="headerlink" title="🛠️ 技术栈"></a>🛠️ 技术栈</h3><table>
-<thead>
-<tr>
-<th>技术</th>
-<th>版本</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>编程语言</strong></td>
-<td>Python 3.6+</td>
-<td>跨平台，语法简洁，生态丰富</td>
-</tr>
-<tr>
-<td><strong>GUI框架</strong></td>
-<td>Tkinter + ttk</td>
-<td>纯Python标准库，无需额外安装</td>
-</tr>
-<tr>
-<td><strong>打包工具</strong></td>
-<td>PyInstaller</td>
-<td>将Python脚本打包为独立可执行文件</td>
-</tr>
-<tr>
-<td><strong>依赖</strong></td>
-<td>仅标准库</td>
-<td>零外部依赖，运行环境要求低</td>
-</tr>
-<tr>
-<td><strong>开发工具</strong></td>
-<td>VS Code</td>
-<td>轻量级，功能强大的代码编辑器</td>
-</tr>
-</tbody></table>
-<hr>
-<h2 id="💭-个人开发心得"><a href="#💭-个人开发心得" class="headerlink" title="💭 个人开发心得"></a>💭 个人开发心得</h2><p>作为一名开发者，开发这款备份工具的过程对我来说意义非凡，让我深刻体会到了「技术服务于需求」的真正含义：</p>
-<h3 id="🌟-从痛点到解决方案"><a href="#🌟-从痛点到解决方案" class="headerlink" title="🌟 从痛点到解决方案"></a>🌟 从痛点到解决方案</h3><ul>
-<li>开发这款工具的初衷，是为了解决我自己在开发过程中遇到的数据安全问题</li>
-<li>当我真正使用自己开发的工具保护重要项目时，那种成就感和安全感是无法言喻的</li>
-<li>这让我更加坚信：<strong>最好的工具往往是开发者为了解决自己的痛点而创造的</strong></li>
-</ul>
-<h3 id="🎨-用户体验至上"><a href="#🎨-用户体验至上" class="headerlink" title="🎨 用户体验至上"></a>🎨 用户体验至上</h3><ul>
-<li>我始终坚持「简洁易用」的设计理念，拒绝复杂繁琐的操作</li>
-<li>每一个按钮的位置、每一个提示信息，我都反复斟酌，力求让用户一目了然</li>
-<li>我相信：<strong>一个优秀的工具，应该让用户无需阅读说明书就能轻松使用</strong></li>
-</ul>
-<h3 id="🔄-持续优化的重要性"><a href="#🔄-持续优化的重要性" class="headerlink" title="🔄 持续优化的重要性"></a>🔄 持续优化的重要性</h3><ul>
-<li>工具发布后，我不断收集反馈，持续优化功能和性能</li>
-<li>从最初的简单备份功能，到现在的智能版本管理、增量备份，每一次迭代都让工具更加完善</li>
-<li>这个过程让我明白：<strong>优秀的产品永远不是一蹴而就的，而是不断优化迭代的结果</strong></li>
-</ul>
-<h3 id="🌍-跨平台的思考"><a href="#🌍-跨平台的思考" class="headerlink" title="🌍 跨平台的思考"></a>🌍 跨平台的思考</h3><ul>
-<li>考虑到不同用户的使用环境，我选择了跨平台的Python开发</li>
-<li>确保工具能在Windows、macOS和Linux系统上都能正常运行</li>
-<li>这让我意识到：<strong>好的工具应该尽可能地兼容不同用户的使用习惯和环境</strong></li>
-</ul>
-<h3 id="💡-代码质量的追求"><a href="#💡-代码质量的追求" class="headerlink" title="💡 代码质量的追求"></a>💡 代码质量的追求</h3><ul>
-<li>我始终保持代码的简洁性和可维护性，遵循良好的编程规范</li>
-<li>使用模块化设计，便于后续功能扩展和问题修复</li>
-<li>这让我深刻体会到：<strong>优秀的代码是产品长期发展的坚实基础</strong></li>
-</ul>
-<hr>
-<h2 id="🎉-结语"><a href="#🎉-结语" class="headerlink" title="🎉 结语"></a>🎉 结语</h2><p>这款项目备份工具对我来说意义重大，它不仅仅是一个软件作品，更是我对「数据安全」理念的实践和探索。从最初的一个想法，到现在功能完善的工具，每一行代码都凝聚了我的心血和思考。</p>
-<p>我希望这款工具能够帮助更多开发者：</p>
-<ul>
-<li>🛡️ 守护珍贵的代码和数据，不再为误删而烦恼</li>
-<li>⏰ 节省宝贵的时间，无需手动进行繁琐的备份操作</li>
-<li>📊 清晰管理项目版本，轻松回溯到任意历史状态</li>
-<li>💡 专注于创作本身，拥有更多的安全感和创作自由</li>
-</ul>
-<p>作为开发者，我会持续维护和优化这个工具，不断加入新的功能和改进。如果您在使用过程中有任何建议或反馈，欢迎随时在评论区交流，您的支持是我前进的最大动力！</p>
-<h2 id="📥-下载和使用"><a href="#📥-下载和使用" class="headerlink" title="📥 下载和使用"></a>📥 下载和使用</h2><h3 id="✨-工具下载"><a href="#✨-工具下载" class="headerlink" title="✨ 工具下载"></a>✨ 工具下载</h3><p>为了方便大家使用，我已经将工具打包成可执行文件，无需安装Python环境，直接双击即可运行：</p>
-<ul>
-<li><strong>📦 下载链接</strong>：<a href="2026-01-21-project-backup-tool/项目备份工具.exe" download>项目备份工具.exe</a> - 点击下载项目备份工具，无需安装Python环境</li>
-<li><strong>📏 文件大小</strong>：约8.7MB</li>
-<li><strong>🖥️ 运行环境</strong>：Windows 7及以上版本</li>
-<li><strong>🚀 无需安装</strong>：解压后直接使用，绿色便捷</li>
-</ul>
-<h3 id="🖼️-界面预览"><a href="#🖼️-界面预览" class="headerlink" title="🖼️ 界面预览"></a>🖼️ 界面预览</h3><p>这是工具的主界面截图，简洁直观，功能一目了然：</p>
-<h3 id="界面预览"><a href="#界面预览" class="headerlink" title="界面预览"></a>界面预览</h3><img src="/2026-01-21-project-backup-tool/backup-tool-interface.png" class="" title="项目备份工具界面">
-
-<h3 id="📖-使用提示"><a href="#📖-使用提示" class="headerlink" title="📖 使用提示"></a>📖 使用提示</h3><ol>
-<li>首次运行会自动生成<code>config.json</code>配置文件</li>
-<li>建议先浏览「使用指南」部分，了解基本操作</li>
-<li>开始使用前，建议先进行一次测试备份，熟悉操作流程</li>
-<li>定期检查备份文件，确保数据安全</li>
-</ol>
-<hr>
-<h3 id="📋-项目信息"><a href="#📋-项目信息" class="headerlink" title="📋 项目信息"></a>📋 项目信息</h3><table>
-<thead>
-<tr>
-<th>项目详情</th>
-<th>内容</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>项目地址</strong></td>
-<td><a href="https://github.com/Jay-R-J/Python_backup_tool">GitHub项目地址</a></td>
-</tr>
-<tr>
-<td><strong>开发者</strong></td>
-<td>Jay-R-J（独立开发）</td>
-</tr>
-<tr>
-<td><strong>开发时间</strong></td>
-<td>2026年1月</td>
-</tr>
-<tr>
-<td><strong>技术栈</strong></td>
-<td>Python + Tkinter</td>
-</tr>
-<tr>
-<td><strong>开源协议</strong></td>
-<td>MIT License</td>
-</tr>
-<tr>
-<td><strong>最新版本</strong></td>
-<td>v1.0</td>
-</tr>
-<tr>
-<td><strong>支持平台</strong></td>
-<td>Windows、macOS、Linux</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>技术分享</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>工具开发</tag>
-        <tag>数据安全</tag>
-        <tag>备份工具</tag>
-        <tag>项目管理</tag>
-        <tag>代码备份</tag>
-        <tag>自动备份</tag>
-        <tag>版本控制</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue3项目创建教程 | 如何使用Vite快速搭建Vue3应用</title>
-    <url>/2026-01-25-how-to-create-vue3-project.html</url>
+    <title>如何从0到1搭建属于自己的Hexo博客网站 | 静态博客搭建教程</title>
+    <url>/2026-01-18-how-to-build-hexo-blog-from-scratch.html</url>
     <content><![CDATA[<div class="tip success">
-  <strong>🎉 欢迎阅读Vue3项目创建教程！</strong><br>
-  本文将详细介绍如何使用Vite（Vue官方推荐的构建工具）快速搭建Vue3应用，从环境准备到Vue3组件开发，适合Vue3初学者和前端开发者学习Vue3项目创建。
+  <strong>🎉 欢迎阅读本教程！</strong><br>
+  本文将带你从0到1搭建属于自己的Hexo博客网站，适合完全零基础的新手。
 </div>
 
-<hr>
-<h2 id="📝-前言"><a href="#📝-前言" class="headerlink" title="📝 前言"></a>📝 前言</h2><p>Vue3是Vue.js的最新版本，作为目前最流行的前端框架之一，带来了许多激动人心的新特性和性能改进：</p>
-<ul>
-<li>✨ <strong>组合式API (Composition API)</strong> - 更灵活的代码组织方式</li>
-<li>✨ <strong>TypeScript支持</strong> - 更好的类型安全和开发体验</li>
-<li>✨ <strong>性能提升</strong> - 更小的打包体积，更快的渲染速度</li>
-<li>✨ <strong>Fragment、Teleport、Suspense</strong> - 新的组件特性</li>
-<li>✨ <strong>更好的响应式系统</strong> - 基于Proxy的响应式实现</li>
-</ul>
-<p>创建Vue3项目是学习Vue3的第一步，Vue生态提供了两种主要的构建工具：Vite和Vue CLI。本文将重点介绍如何使用Vite创建Vue3项目，Vite是Vue官方推荐的构建工具，具有更快的开发体验，是Vue3项目搭建的首选工具。</p>
-<hr>
-<h2 id="📋-目录"><a href="#📋-目录" class="headerlink" title="📋 目录"></a>📋 目录</h2><ul>
-<li><a href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87">环境准备</a></li>
-<li><a href="#vite%E4%B8%8Evue-cli%E5%AF%B9%E6%AF%94">Vite与Vue CLI对比</a></li>
-<li><a href="#%E4%BD%BF%E7%94%A8-vite%E5%88%9B%E5%BB%BAvue3%E9%A1%B9%E7%9B%AE">使用Vite创建Vue3项目</a></li>
-<li><a href="#vue3%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84%E8%A7%A3%E6%9E%90">Vue3项目结构解析</a></li>
-<li><a href="#%E8%BF%90%E8%A1%8Cvue3%E9%A1%B9%E7%9B%AE">运行Vue3项目</a></li>
-<li><a href="#%E7%AE%80%E5%8D%95%E7%9A%84vue3%E7%BB%84%E4%BB%B6%E7%A4%BA%E4%BE%8B">简单的Vue3组件示例</a></li>
-<li><a href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">常见问题及解决方案</a></li>
-<li><a href="#%E6%80%BB%E7%BB%93%E4%B8%8E%E8%B5%84%E6%BA%90">总结与资源</a></li>
-</ul>
-<hr>
-<h2 id="🔧-环境准备"><a href="#🔧-环境准备" class="headerlink" title="🔧 环境准备"></a><span id="环境准备">🔧 环境准备</span></h2><p>在进行Vue3项目搭建之前，我们需要准备好必要的开发环境。</p>
-<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>Vue3应用开发依赖Node.js和npm包管理器，所以首先需要安装Node.js：</p>
-<ol>
-<li>访问<a href="https://nodejs.org/">Node.js官网</a></li>
-<li>下载并安装<strong>LTS版本</strong>（推荐长期支持版本，更稳定）</li>
-<li>验证安装是否成功：</li>
+<h2 id="📝-前言"><a href="#📝-前言" class="headerlink" title="📝 前言"></a>📝 前言</h2><p>在数字化时代，拥有一个属于自己的博客网站是展示个人技术、分享知识和记录生活的绝佳方式。Hexo作为一款快速、简洁且高效的静态博客生成框架，受到了众多开发者的喜爱。</p>
+<p>本文将详细介绍如何从0到1搭建属于自己的Hexo博客网站，包括环境配置、主题安装、个性化设置、文章撰写和部署上线等完整流程。</p>
+<h2 id="📋-目录"><a href="#📋-目录" class="headerlink" title="📋 目录"></a>📋 目录</h2><ol>
+<li><a href="#%F0%9F%94%A7-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87">环境准备</a></li>
+<li><a href="#%F0%9F%93%A6-%E5%AE%89%E8%A3%85Hexo">安装Hexo</a></li>
+<li><a href="#%F0%9F%9A%80-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8D%9A%E5%AE%A2">初始化博客</a></li>
+<li><a href="#%E2%9A%99%EF%B8%8F-%E9%85%8D%E7%BD%AEHexo">配置Hexo</a></li>
+<li><a href="#%F0%9F%8E%A8-%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98">安装主题</a></li>
+<li><a href="#%E2%9C%A8-%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%BE%E7%BD%AE">个性化设置</a></li>
+<li><a href="#%E2%9C%8D%EF%B8%8F-%E6%92%B0%E5%86%99%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0">撰写第一篇文章</a></li>
+<li><a href="#%F0%9F%91%80-%E6%9C%AC%E5%9C%B0%E9%A2%84%E8%A7%88">本地预览</a></li>
+<li><a href="#%E2%9D%97-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3">常见问题解决</a></li>
+</ol>
+<h2 id="🔧-环境准备"><a href="#🔧-环境准备" class="headerlink" title="🔧 环境准备"></a>🔧 环境准备</h2><p>在开始搭建Hexo博客之前，我们需要准备好必要的环境。Hexo基于Node.js开发，所以需要安装Node.js和npm（Node.js包管理器）。</p>
+<h3 id="🔹-步骤1：安装Node-js"><a href="#🔹-步骤1：安装Node-js" class="headerlink" title="🔹 步骤1：安装Node.js"></a>🔹 步骤1：安装Node.js</h3><ol>
+<li>访问**<a href="https://nodejs.org/">Node.js官网</a>**</li>
+<li>下载适合你操作系统的<strong>LTS版本</strong>（推荐长期支持版本，更稳定）</li>
+<li>运行安装程序，按照提示完成安装</li>
+<li>验证安装是否成功</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 验证Node.js版本</span></span><br><span class="line">node -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证npm版本</span></span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-
-<figure class="image-container">
-  <figcaption><strong>📷 操作截图：验证Node.js和npm安装</strong></figcaption>
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
   <div class="image-grid">
-    <img src="/2026-01-25-how-to-create-vue3-project/node-npm-verify.png" class="" title="验证Node.js和npm安装">
+    <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/install-nodejs-verify.png" class="" title="node.js命令行验证结果">
   </div>
-</figure>
+</div>
 
-<h3 id="安装pnpm（可选，推荐）"><a href="#安装pnpm（可选，推荐）" class="headerlink" title="安装pnpm（可选，推荐）"></a>安装pnpm（可选，推荐）</h3><p>pnpm是一个更快、更节省磁盘空间的包管理器，推荐使用：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g pnpm</span><br></pre></td></tr></table></figure>
-
-<figure class="image-container">
-  <figcaption><strong>📷 操作截图：安装pnpm</strong></figcaption>
-  <div class="image-grid">
-    <img src="/2026-01-25-how-to-create-vue3-project/install-pnpm.png" class="" title="安装pnpm">
-  </div>
-</figure>
-
-<hr>
-<h2 id="⚖️-Vite与Vue-CLI对比"><a href="#⚖️-Vite与Vue-CLI对比" class="headerlink" title="⚖️ Vite与Vue CLI对比"></a><span id="vite与vue-cli对比">⚖️ Vite与Vue CLI对比</span></h2><p>在创建Vue3项目之前，让我们了解一下Vite和Vue CLI的主要区别，帮助你选择适合自己的构建工具：</p>
-<table>
-<thead>
-<tr>
-<th>特性</th>
-<th>Vite</th>
-<th>Vue CLI</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>构建工具</strong></td>
-<td>ESBuild</td>
-<td>Webpack</td>
-</tr>
-<tr>
-<td><strong>开发服务器启动速度</strong></td>
-<td>极快（秒级）</td>
-<td>较慢（秒级到十秒级）</td>
-</tr>
-<tr>
-<td><strong>热模块替换 (HMR)</strong></td>
-<td>极快</td>
-<td>一般</td>
-</tr>
-<tr>
-<td><strong>生产构建</strong></td>
-<td>Rollup</td>
-<td>Webpack</td>
-</tr>
-<tr>
-<td><strong>默认支持</strong></td>
-<td>Vue3</td>
-<td>Vue2&#x2F;Vue3</td>
-</tr>
-<tr>
-<td><strong>TypeScript支持</strong></td>
-<td>内置</td>
-<td>需要配置</td>
-</tr>
-<tr>
-<td><strong>按需编译</strong></td>
-<td>✅ 支持</td>
-<td>❌ 不支持</td>
-</tr>
-<tr>
-<td><strong>冷启动性能</strong></td>
-<td>优秀</td>
-<td>一般</td>
-</tr>
-<tr>
-<td><strong>生态系统</strong></td>
-<td>快速增长</td>
-<td>成熟完善</td>
-</tr>
-<tr>
-<td><strong>官方推荐</strong></td>
-<td>✅ Vue3推荐</td>
-<td>❌ 仍支持但非Vue3首选</td>
-</tr>
-</tbody></table>
-<h3 id="Vite的优势"><a href="#Vite的优势" class="headerlink" title="Vite的优势"></a>Vite的优势</h3><ul>
-<li>✅ <strong>极速的开发体验</strong> - 使用ESBuild进行依赖预构建，开发服务器启动速度极快</li>
-<li>✅ <strong>按需编译</strong> - 只编译当前修改的文件，热更新速度快</li>
-<li>✅ <strong>现代浏览器原生支持</strong> - 利用浏览器的ES模块支持，无需打包</li>
-<li>✅ <strong>更好的TypeScript支持</strong> - 内置TypeScript支持，无需复杂配置</li>
-<li>✅ <strong>Vue3优先</strong> - 专为Vue3设计，支持Vue3的新特性</li>
-</ul>
-<h3 id="Vue-CLI的优势"><a href="#Vue-CLI的优势" class="headerlink" title="Vue CLI的优势"></a>Vue CLI的优势</h3><ul>
-<li>✅ <strong>成熟的生态系统</strong> - 丰富的插件和社区支持</li>
-<li>✅ <strong>广泛的兼容性</strong> - 支持Vue2和Vue3</li>
-<li>✅ <strong>全面的功能</strong> - 内置了很多功能，如PWA、测试等</li>
-<li>✅ <strong>适合大型项目</strong> - Webpack的生态系统更适合复杂项目</li>
-</ul>
-<h3 id="如何选择"><a href="#如何选择" class="headerlink" title="如何选择"></a>如何选择</h3><ul>
-<li><strong>推荐使用Vite</strong>：如果你是Vue3新项目，追求开发效率和速度</li>
-<li><strong>继续使用Vue CLI</strong>：如果你有现有Vue CLI项目，或需要Webpack的特定功能</li>
-</ul>
-<hr>
-<h2 id="⚡-使用-Vite-创建-Vue3-项目"><a href="#⚡-使用-Vite-创建-Vue3-项目" class="headerlink" title="⚡ 使用 Vite 创建 Vue3 项目"></a><span id="使用-vite创建vue3项目">⚡ 使用 Vite 创建 Vue3 项目</span></h2><p>Vite是Vue官方推荐的构建工具，用于Vue3项目创建具有更快的开发体验和构建速度。</p>
-<h3 id="步骤1：创建项目"><a href="#步骤1：创建项目" class="headerlink" title="步骤1：创建项目"></a>步骤1：创建项目</h3><p>使用npm、yarn或pnpm等包管理器创建Vue3项目：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用npm</span></span><br><span class="line">npm create vite@latest vue3-project -- --template vue</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用yarn</span></span><br><span class="line">yarn create vite vue3-project -- --template vue</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用pnpm</span></span><br><span class="line">pnpm create vite vue3-project -- --template vue</span><br></pre></td></tr></table></figure>
-
-<figure class="image-container">
-  <figcaption><strong>📷 操作截图：执行Vite创建项目命令</strong></figcaption>
-  <div class="image-grid">
-    <img src="/2026-01-25-how-to-create-vue3-project/vite-create-command.png" class="" title="执行Vite创建项目命令">
-  </div>
-</figure>
-
-<h3 id="步骤2：执行创建命令（完整流程）"><a href="#步骤2：执行创建命令（完整流程）" class="headerlink" title="步骤2：执行创建命令（完整流程）"></a>步骤2：执行创建命令（完整流程）</h3><p>执行创建命令之后，你将看到如下完整的交互流程：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; npx create-vite vue3-project --template vue</span><br><span class="line"></span><br><span class="line">◇  Use rolldown-vite (Experimental)?:</span><br><span class="line">│  Yes</span><br><span class="line">│</span><br><span class="line">◇  Install with npm and start now?</span><br><span class="line">│  Yes</span><br><span class="line">│</span><br><span class="line">◇  Scaffolding project <span class="keyword">in</span> D:\vue3\vue3-project...</span><br><span class="line">│</span><br><span class="line">◇  Installing dependencies with npm...</span><br><span class="line"></span><br><span class="line">added 37 packages <span class="keyword">in</span> 4s</span><br><span class="line"></span><br><span class="line">9 packages are looking <span class="keyword">for</span> funding</span><br><span class="line">  run `npm fund` <span class="keyword">for</span> details</span><br><span class="line">│</span><br><span class="line">◇  Starting dev server...</span><br><span class="line"></span><br><span class="line">&gt; vue3-project@0.0.0 dev</span><br><span class="line">&gt; vite</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  ROLLDOWN-VITE v7.2.5  ready <span class="keyword">in</span> 375 ms</span><br><span class="line"></span><br><span class="line">  ➜  Local:   http://localhost:5173/</span><br><span class="line">  ➜  Network: use --host to expose</span><br><span class="line">  ➜  press h + enter to show <span class="built_in">help</span></span><br></pre></td></tr></table></figure>
-
-<figure class="image-container">
-  <figcaption><strong>📷 操作截图：Vite创建项目完整流程</strong></figcaption>
-  <div class="image-grid">
-    <img src="/2026-01-25-how-to-create-vue3-project/vite-create-full-flow.png" class="" title="Vite创建项目完整流程">
-  </div>
-</figure>
-
-<h3 id="交互选项说明"><a href="#交互选项说明" class="headerlink" title="交互选项说明"></a>交互选项说明</h3><ol>
-<li><p><strong>Use rolldown-vite (Experimental)?</strong> - 是否使用实验性的rolldown-vite构建工具</p>
-<ul>
-<li><strong>Yes</strong> - 推荐选择，体验最新的构建性能优化</li>
-<li><strong>No</strong> - 使用传统的Vite构建工具</li>
-</ul>
-</li>
-<li><p><strong>Install with npm and start now?</strong> - 是否立即安装依赖并启动开发服务器</p>
-<ul>
-<li><strong>Yes</strong> - 自动完成依赖安装并启动开发服务器</li>
-<li><strong>No</strong> - 只创建项目结构，后续手动安装依赖</li>
-</ul>
-</li>
+<h3 id="🔹-步骤2：安装Git"><a href="#🔹-步骤2：安装Git" class="headerlink" title="🔹 步骤2：安装Git"></a>🔹 步骤2：安装Git</h3><p>Hexo需要Git来管理博客内容和部署到GitHub Pages。</p>
+<ol>
+<li>访问**<a href="https://git-scm.com/">Git官网</a>**</li>
+<li>下载适合你操作系统的版本</li>
+<li>运行安装程序，按照提示完成安装</li>
+<li>验证安装是否成功</li>
 </ol>
-<h3 id="手动安装依赖（如果选择No）"><a href="#手动安装依赖（如果选择No）" class="headerlink" title="手动安装依赖（如果选择No）"></a>手动安装依赖（如果选择No）</h3><p>如果你在创建项目时选择了不立即安装依赖，可以手动执行以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 进入项目目录</span></span><br><span class="line"><span class="built_in">cd</span> vue3-project</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用npm安装依赖</span></span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动开发服务器</span></span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 验证Git版本</span></span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
 
-<figure class="image-container">
-  <figcaption><strong>📷 操作截图：手动安装依赖</strong></figcaption>
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
   <div class="image-grid">
-    <img src="/2026-01-25-how-to-create-vue3-project/manual-install-deps.png" class="" title="手动安装依赖">
+    <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/install-git-verify.png" class="" title="git命令行验证结果">
   </div>
-</figure>
+</div>
 
 <hr>
-<h2 id="📁-Vue3项目结构解析"><a href="#📁-Vue3项目结构解析" class="headerlink" title="📁 Vue3项目结构解析"></a><span id="vue3项目结构解析">📁 Vue3项目结构解析</span></h2><p>使用Vite成功创建Vue3项目后，我们来详细解析一下Vue3项目的目录结构：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vue3-project/</span><br><span class="line">├── node_modules/        # 项目依赖</span><br><span class="line">├── public/              # 静态资源</span><br><span class="line">│   └── favicon.ico      # 网站图标</span><br><span class="line">├── src/                 # 源代码</span><br><span class="line">│   ├── assets/          # 资源文件</span><br><span class="line">│   │   └── logo.png     # Vue logo</span><br><span class="line">│   ├── components/      # 组件目录</span><br><span class="line">│   │   └── HelloWorld.vue  # 示例组件</span><br><span class="line">│   ├── App.vue          # 根组件</span><br><span class="line">│   └── main.js          # 入口文件（JavaScript版本）</span><br><span class="line">│   └── main.ts          # 入口文件（TypeScript版本）</span><br><span class="line">├── .gitignore           # Git忽略文件</span><br><span class="line">├── index.html           # HTML模板</span><br><span class="line">├── package.json         # 项目配置和依赖</span><br><span class="line">└── vite.config.js       # Vite配置文件</span><br></pre></td></tr></table></figure>
+<h2 id="📦-安装Hexo"><a href="#📦-安装Hexo" class="headerlink" title="📦 安装Hexo"></a>📦 安装Hexo</h2><p>环境准备完成后，我们可以开始安装Hexo了。</p>
+<h3 id="🔹-步骤1：使用npm全局安装Hexo"><a href="#🔹-步骤1：使用npm全局安装Hexo" class="headerlink" title="🔹 步骤1：使用npm全局安装Hexo"></a>🔹 步骤1：使用npm全局安装Hexo</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 全局安装Hexo CLI</span></span><br><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 
-<h3 id="核心文件说明"><a href="#核心文件说明" class="headerlink" title="核心文件说明"></a>核心文件说明</h3><ul>
-<li>📄 <strong>main.js&#x2F;main.ts</strong> - 项目入口文件，创建Vue应用实例并挂载到DOM</li>
-<li>📄 <strong>App.vue</strong> - 根组件，包含应用的基本结构</li>
-<li>📁 <strong>components&#x2F;</strong> - 存放Vue组件的目录</li>
-<li>📁 <strong>assets&#x2F;</strong> - 存放图片、样式等资源文件</li>
-<li>⚙️ <strong>vite.config.js</strong> - Vite构建工具的配置文件</li>
-</ul>
+<h3 id="🔹-步骤2：验证Hexo安装是否成功"><a href="#🔹-步骤2：验证Hexo安装是否成功" class="headerlink" title="🔹 步骤2：验证Hexo安装是否成功"></a>🔹 步骤2：验证Hexo安装是否成功</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 验证Hexo版本</span></span><br><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
+  <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/install-hexo-verify.png" class="" title="安装Hexo命令">
+</div>
+
 <hr>
-<h2 id="🚀-运行Vue3项目"><a href="#🚀-运行Vue3项目" class="headerlink" title="🚀 运行Vue3项目"></a><span id="运行vue3项目">🚀 运行Vue3项目</span></h2><h3 id="开发模式运行"><a href="#开发模式运行" class="headerlink" title="开发模式运行"></a>开发模式运行</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用npm</span></span><br><span class="line">npm run dev</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用yarn</span></span><br><span class="line">yarn dev</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用pnpm</span></span><br><span class="line">pnpm dev</span><br></pre></td></tr></table></figure>
-
-<h3 id="访问项目"><a href="#访问项目" class="headerlink" title="访问项目"></a>访问项目</h3><p>运行成功后，会在命令行中显示访问地址，通常是 <code>http://localhost:5173</code>。</p>
-<p>在浏览器中访问该地址，即可看到Vue3项目的默认页面。</p>
-<figure class="image-container">
-  <figcaption><strong>📷 操作截图：Vue3默认页面</strong></figcaption>
+<h2 id="🚀-初始化博客"><a href="#🚀-初始化博客" class="headerlink" title="🚀 初始化博客"></a>🚀 初始化博客</h2><p>现在我们可以初始化一个新的Hexo博客了。</p>
+<h3 id="🔹-步骤1：创建博客目录"><a href="#🔹-步骤1：创建博客目录" class="headerlink" title="🔹 步骤1：创建博客目录"></a>🔹 步骤1：创建博客目录</h3><p>选择一个合适的位置创建博客目录，例如在桌面创建一个名为<code>my-blog</code>的目录。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建博客目录</span></span><br><span class="line"><span class="built_in">mkdir</span> my-blog</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入博客目录</span></span><br><span class="line"><span class="built_in">cd</span> my-blog</span><br></pre></td></tr></table></figure>
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
   <div class="image-grid">
-    <img src="/2026-01-25-how-to-create-vue3-project/vue3-default-page.png" class="" title="Vue3默认页面">
+    <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/create-blog-directory.png" class="" title="创建博客目录">
   </div>
-</figure>
+</div>
 
-<h3 id="构建生产版本"><a href="#构建生产版本" class="headerlink" title="构建生产版本"></a>构建生产版本</h3><p>当项目开发完成后，可以构建生产版本：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用npm</span></span><br><span class="line">npm run build</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用yarn</span></span><br><span class="line">yarn build</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用pnpm</span></span><br><span class="line">pnpm build</span><br></pre></td></tr></table></figure>
+<h3 id="🔹-步骤2：初始化Hexo博客"><a href="#🔹-步骤2：初始化Hexo博客" class="headerlink" title="🔹 步骤2：初始化Hexo博客"></a>🔹 步骤2：初始化Hexo博客</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 初始化Hexo博客</span></span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure>
 
-<figure class="image-container">
-  <figcaption><strong>📷 操作截图：构建生产版本</strong></figcaption>
+<h3 id="🔹-步骤3：安装依赖"><a href="#🔹-步骤3：安装依赖" class="headerlink" title="🔹 步骤3：安装依赖"></a>🔹 步骤3：安装依赖</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装博客依赖</span></span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
   <div class="image-grid">
-    <img src="/2026-01-25-how-to-create-vue3-project/build-production.png" class="" title="构建生产版本">
+    <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/init-hexo-install-deps.png" class="" title="初始化Hexo博客和安装依赖">
   </div>
-</figure>
+</div>
 
-<p>构建后的文件会生成在 <code>dist</code> 目录中，可直接部署到服务器。</p>
 <hr>
-<h2 id="🧩-简单的Vue3组件示例"><a href="#🧩-简单的Vue3组件示例" class="headerlink" title="🧩 简单的Vue3组件示例"></a><span id="简单的vue3组件示例">🧩 简单的Vue3组件示例</span></h2><p>让我们创建一个简单的Vue3组件，体验一下Vue3的组合式API，学习Vue3组件开发的基本流程：</p>
-<h3 id="创建组件"><a href="#创建组件" class="headerlink" title="创建组件"></a>创建组件</h3><p>在 <code>src/components/</code> 目录下创建一个 <code>Counter.vue</code> 组件：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;counter&quot;&gt;</span><br><span class="line">    &lt;h2&gt;Vue3计数器&lt;/h2&gt;</span><br><span class="line">    &lt;p&gt;当前计数: &#123;&#123; count &#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;div class=&quot;buttons&quot;&gt;</span><br><span class="line">      &lt;button @click=&quot;increment&quot;&gt;+&lt;/button&gt;</span><br><span class="line">      &lt;button @click=&quot;decrement&quot;&gt;-&lt;/button&gt;</span><br><span class="line">      &lt;button @click=&quot;reset&quot;&gt;重置&lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">// 使用ref创建响应式数据</span><br><span class="line">const count = ref(0)</span><br><span class="line"></span><br><span class="line">// 定义方法</span><br><span class="line">const increment = () =&gt; &#123;</span><br><span class="line">  count.value++</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const decrement = () =&gt; &#123;</span><br><span class="line">  count.value--</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const reset = () =&gt; &#123;</span><br><span class="line">  count.value = 0</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">.counter &#123;</span><br><span class="line">  text-align: center;</span><br><span class="line">  padding: 20px;</span><br><span class="line">  border: 1px solid #eee;</span><br><span class="line">  border-radius: 8px;</span><br><span class="line">  max-width: 300px;</span><br><span class="line">  margin: 20px auto;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.buttons &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  justify-content: center;</span><br><span class="line">  gap: 10px;</span><br><span class="line">  margin-top: 20px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">button &#123;</span><br><span class="line">  padding: 10px 20px;</span><br><span class="line">  font-size: 18px;</span><br><span class="line">  cursor: pointer;</span><br><span class="line">  border: none;</span><br><span class="line">  border-radius: 4px;</span><br><span class="line">  background-color: #42b983;</span><br><span class="line">  color: white;</span><br><span class="line">  transition: background-color 0.3s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">button:hover &#123;</span><br><span class="line">  background-color: #3aa876;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="⚙️-配置Hexo"><a href="#⚙️-配置Hexo" class="headerlink" title="⚙️ 配置Hexo"></a>⚙️ 配置Hexo</h2><p>Hexo初始化完成后，我们需要对博客进行基本配置。</p>
+<h3 id="🔹-步骤1：编辑配置文件"><a href="#🔹-步骤1：编辑配置文件" class="headerlink" title="🔹 步骤1：编辑配置文件"></a>🔹 步骤1：编辑配置文件</h3><p>Hexo的配置文件是<code>_config.yml</code>，位于博客根目录。使用文本编辑器（如VS Code、Sublime Text等）打开这个文件，对以下内容进行配置：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site - 网站基本信息</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">你的博客标题</span>          <span class="comment"># 博客标题，显示在网站顶部</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">你的博客副标题</span>    <span class="comment"># 博客副标题，显示在标题下方</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">你的博客描述</span>    <span class="comment"># 博客描述，用于SEO和元标签</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">你的名字</span>             <span class="comment"># 博客作者名称</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span>             <span class="comment"># 博客语言，中文使用zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">Asia/Shanghai</span>      <span class="comment"># 时区，亚洲/上海</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL - 链接配置</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://你的用户名.github.io</span>  <span class="comment"># 博客的完整URL</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span>                      <span class="comment"># 网站根目录</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span>  <span class="comment"># 文章永久链接格式</span></span><br><span class="line"><span class="attr">permalink_defaults:</span>          <span class="comment"># 永久链接默认值</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="在App-vue中使用组件"><a href="#在App-vue中使用组件" class="headerlink" title="在App.vue中使用组件"></a>在App.vue中使用组件</h3><p>修改 <code>src/App.vue</code>，引入并使用我们创建的Counter组件：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;Vue3项目示例&lt;/h1&gt;</span><br><span class="line">    &lt;Counter /&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import Counter from &#x27;./components/Counter.vue&#x27;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">/* 全局样式 */</span><br><span class="line">body &#123;</span><br><span class="line">  font-family: Arial, sans-serif;</span><br><span class="line">  max-width: 800px;</span><br><span class="line">  margin: 0 auto;</span><br><span class="line">  padding: 20px;</span><br><span class="line">  text-align: center;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="🔹-步骤2：保存配置文件"><a href="#🔹-步骤2：保存配置文件" class="headerlink" title="🔹 步骤2：保存配置文件"></a>🔹 步骤2：保存配置文件</h3><p>修改完成后，保存配置文件。</p>
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
+  <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/configure-hexo-config.png" class="" title="配置文件编辑界面">
+</div>
 
-<h3 id="查看效果"><a href="#查看效果" class="headerlink" title="查看效果"></a>查看效果</h3><p>保存文件后，开发服务器会自动重新加载，在浏览器中可以看到我们创建的计数器组件。</p>
-<figure class="image-container">
-  <figcaption><strong>📷 操作截图：Vue3计数器组件</strong></figcaption>
+<div class="tip info">
+  <strong>💡 配置提示：</strong>
+  - 配置文件中的冒号后面需要加空格
+  - 确保URL配置正确，特别是GitHub Pages的地址
+  - 语言设置为zh-CN可以确保中文显示正常
+</div>
+
+<hr>
+<h2 id="🎨-安装主题"><a href="#🎨-安装主题" class="headerlink" title="🎨 安装主题"></a>🎨 安装主题</h2><p>Hexo默认使用的是landscape主题，我们可以安装更美观、功能更丰富的主题，例如Butterfly主题。</p>
+<h3 id="🔹-步骤1：安装Butterfly主题"><a href="#🔹-步骤1：安装Butterfly主题" class="headerlink" title="🔹 步骤1：安装Butterfly主题"></a>🔹 步骤1：安装Butterfly主题</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 克隆Butterfly主题到themes目录</span></span><br><span class="line">git <span class="built_in">clone</span> -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure>
+
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
   <div class="image-grid">
-    <img src="/2026-01-25-how-to-create-vue3-project/vue3-counter-example.png" class="" title="Vue3计数器组件">
+    <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/install-butterfly-theme.png" class="" title="安装Butterfly主题">
   </div>
-</figure>
+</div>
 
-<hr>
-<h2 id="❓-常见问题及解决方案"><a href="#❓-常见问题及解决方案" class="headerlink" title="❓ 常见问题及解决方案"></a><span id="常见问题及解决方案">❓ 常见问题及解决方案</span></h2><h3 id="问题1：创建项目时网络超时"><a href="#问题1：创建项目时网络超时" class="headerlink" title="问题1：创建项目时网络超时"></a>问题1：创建项目时网络超时</h3><p><strong>解决方案</strong>：</p>
-<ul>
-<li>检查网络连接</li>
-<li>使用国内镜像：</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># npm镜像</span></span><br><span class="line">npm config <span class="built_in">set</span> registry https://registry.npmmirror.com</span><br><span class="line"></span><br><span class="line"><span class="comment"># pnpm镜像</span></span><br><span class="line">pnpm config <span class="built_in">set</span> registry https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
+<h3 id="🔹-步骤2：启用主题"><a href="#🔹-步骤2：启用主题" class="headerlink" title="🔹 步骤2：启用主题"></a>🔹 步骤2：启用主题</h3><p>编辑<code>_config.yml</code>文件，将theme设置为butterfly：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 主题设置</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">butterfly</span>  <span class="comment"># 使用Butterfly主题</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="问题2：依赖安装失败"><a href="#问题2：依赖安装失败" class="headerlink" title="问题2：依赖安装失败"></a>问题2：依赖安装失败</h3><p><strong>解决方案</strong>：</p>
-<ul>
-<li>删除 <code>node_modules</code> 目录和 <code>package-lock.json</code>&#x2F;<code>yarn.lock</code>&#x2F;<code>pnpm-lock.yaml</code> 文件</li>
-<li>重新安装依赖</li>
-<li>尝试使用不同的包管理器（npm → pnpm → yarn）</li>
-</ul>
-<h3 id="问题3：运行时出现语法错误"><a href="#问题3：运行时出现语法错误" class="headerlink" title="问题3：运行时出现语法错误"></a>问题3：运行时出现语法错误</h3><p><strong>解决方案</strong>：</p>
-<ul>
-<li>检查Node.js版本是否符合要求（Vue3要求Node.js 14.18+或16+）</li>
-<li>确保使用了正确的Vue3语法</li>
-<li>检查是否安装了必要的依赖</li>
-</ul>
-<h3 id="问题4：组件不显示"><a href="#问题4：组件不显示" class="headerlink" title="问题4：组件不显示"></a>问题4：组件不显示</h3><p><strong>解决方案</strong>：</p>
-<ul>
-<li>检查组件是否正确引入</li>
-<li>检查组件名称是否正确</li>
-<li>检查模板语法是否正确</li>
-</ul>
-<hr>
-<h2 id="🎯-总结与资源"><a href="#🎯-总结与资源" class="headerlink" title="🎯 总结与资源"></a><span id="总结与资源">🎯 总结与资源</span></h2><p>恭喜你！你已经成功学习了如何使用Vite创建Vue3项目，并了解了Vite与Vue CLI的区别以及Vue3项目的基本结构和组件开发流程。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
-<li>✅ <strong>环境准备</strong> - 安装了Node.js和可选的pnpm包管理器</li>
-<li>✅ <strong>Vite与Vue CLI对比</strong> - 了解了两者的区别和各自的优势</li>
-<li>✅ <strong>Vite创建Vue3项目</strong> - 掌握了使用Vite创建Vue3项目的完整流程</li>
-<li>✅ <strong>项目结构解析</strong> - 了解了Vue3项目的核心文件和目录结构</li>
-<li>✅ <strong>运行与构建</strong> - 学会了如何运行开发服务器和构建生产版本</li>
-<li>✅ <strong>组件开发</strong> - 创建了一个使用组合式API的Vue3计数器组件</li>
-<li>✅ <strong>问题解决方案</strong> - 了解了常见问题的排查和解决方法</li>
-</ul>
-<h3 id="推荐资源"><a href="#推荐资源" class="headerlink" title="推荐资源"></a>推荐资源</h3><ul>
-<li>📚 <strong><a href="https://vuejs.org/guide/introduction.html">Vue3官方文档</a></strong> - 最权威的Vue3学习资源</li>
-<li>⚡ <strong><a href="https://vitejs.dev/guide/">Vite官方文档</a></strong> - Vite构建工具使用指南</li>
-<li>🔀 <strong><a href="https://router.vuejs.org/">Vue Router 4</a></strong> - Vue3的路由库</li>
-<li>🗄️ <strong><a href="https://pinia.vuejs.org/">Pinia</a></strong> - Vue3的状态管理库（替代Vuex）</li>
-<li>🎓 <strong><a href="https://www.vuemastery.com/">Vue Mastery</a></strong> - Vue官方课程平台</li>
-</ul>
-<h3 id="下一步学习建议"><a href="#下一步学习建议" class="headerlink" title="下一步学习建议"></a>下一步学习建议</h3><ol>
-<li>深入学习Vue3的组合式API</li>
-<li>学习Vue Router和Pinia，构建完整应用</li>
-<li>掌握TypeScript在Vue3中的使用</li>
-<li>了解Vue3的性能优化技巧</li>
-<li>探索Vite的高级配置和插件生态</li>
-</ol>
-<hr>
+<h3 id="🔹-步骤3：安装必要的插件"><a href="#🔹-步骤3：安装必要的插件" class="headerlink" title="🔹 步骤3：安装必要的插件"></a>🔹 步骤3：安装必要的插件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装Butterfly主题所需的渲染插件</span></span><br><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus --save</span><br></pre></td></tr></table></figure>
+
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
+  <div class="image-grid">
+    <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/install-theme-plugins.png" class="" title="安装必要的插件">
+  </div>
+</div>
+
 <div class="tip success">
-  <strong>🎉 学习完成！</strong><br>
-  通过本文的学习，你已经掌握了使用Vite创建Vue3项目的基本技能，这为你进一步学习Vue3打下了坚实的基础。
-  <br><br>
-  <strong>🚀 继续探索Vue3的精彩世界吧！</strong>
+  <strong>✅ 主题优势：</strong>
+  - Butterfly主题美观现代，支持响应式设计
+  - 内置多种功能：搜索、评论、代码高亮等
+  - 支持自定义配置，易于个性化
+  - 活跃的社区支持和持续更新
 </div>
 
 <hr>
-<div class="article-info">
-  <strong>📅 更新时间：</strong>2026-01-25<br>
-  <strong>✍️ 作者：</strong>Jay<br>
+<h2 id="✨-个性化设置"><a href="#✨-个性化设置" class="headerlink" title="✨ 个性化设置"></a>✨ 个性化设置</h2><p>现在我们可以对博客进行个性化设置，让它更加符合我们的需求。</p>
+<h3 id="🔹-步骤1：创建主题配置文件"><a href="#🔹-步骤1：创建主题配置文件" class="headerlink" title="🔹 步骤1：创建主题配置文件"></a>🔹 步骤1：创建主题配置文件</h3><p>在博客根目录创建一个<code>_config.butterfly.yml</code>文件，用于配置Butterfly主题（推荐使用独立配置文件，便于主题更新）。</p>
+<h3 id="🔹-步骤2：基本配置"><a href="#🔹-步骤2：基本配置" class="headerlink" title="🔹 步骤2：基本配置"></a>🔹 步骤2：基本配置</h3><p>在<code>_config.butterfly.yml</code>文件中进行基本配置：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 网站图标设置</span></span><br><span class="line"><span class="attr">favicon:</span> <span class="string">/img/favicon.ico</span>  <span class="comment"># 网站图标，显示在浏览器标签页</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 导航菜单设置</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">首页:</span> <span class="string">/</span>                   <span class="comment"># 首页链接</span></span><br><span class="line">  <span class="string">归档:</span> <span class="string">/archives/</span>          <span class="comment"># 文章归档</span></span><br><span class="line">  <span class="string">分类:</span> <span class="string">/categories/</span>        <span class="comment"># 文章分类</span></span><br><span class="line">  <span class="string">标签:</span> <span class="string">/tags/</span>              <span class="comment"># 文章标签</span></span><br><span class="line">  <span class="string">关于:</span> <span class="string">/about/</span>             <span class="comment"># 关于页面</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 社交链接设置</span></span><br><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">GitHub:</span> <span class="string">https://github.com/你的用户名</span>  <span class="comment"># GitHub链接</span></span><br><span class="line">  <span class="string">微博:</span> <span class="string">https://weibo.com/你的用户名</span>     <span class="comment"># 微博链接</span></span><br><span class="line">  <span class="string">知乎:</span> <span class="string">https://www.zhihu.com/people/你的用户名</span>  <span class="comment"># 知乎链接</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="🔹-步骤3：个性化样式"><a href="#🔹-步骤3：个性化样式" class="headerlink" title="🔹 步骤3：个性化样式"></a>🔹 步骤3：个性化样式</h3><p>可以在<code>source/css/custom.css</code>文件中添加自定义样式，个性化你的博客：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 示例：自定义博客标题样式 */</span></span><br><span class="line"><span class="selector-class">.site-title</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">2rem</span>;</span><br><span class="line">  <span class="attribute">font-weight</span>: bold;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#667eea</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 示例：自定义链接颜色 */</span></span><br><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#7c3aed</span>;</span><br><span class="line">  <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#f093fb</span>;</span><br><span class="line">  <span class="attribute">text-decoration</span>: underline;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="tip warning">
+  <strong>🎯 个性化建议：</strong>
+  - 从简单的配置开始，逐步添加复杂功能
+  - 参考Butterfly主题的官方文档进行配置
+  - 定期备份你的配置文件
 </div>
+
+<hr>
+<h2 id="✍️-撰写第一篇文章"><a href="#✍️-撰写第一篇文章" class="headerlink" title="✍️ 撰写第一篇文章"></a>✍️ 撰写第一篇文章</h2><p>现在我们可以撰写第一篇博客文章了。</p>
+<h3 id="🔹-步骤1：创建新文章"><a href="#🔹-步骤1：创建新文章" class="headerlink" title="🔹 步骤1：创建新文章"></a>🔹 步骤1：创建新文章</h3><p>使用Hexo命令创建一篇新文章：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一篇新文章，标题为&quot;我的第一篇博客文章&quot;</span></span><br><span class="line">hexo new <span class="string">&quot;我的第一篇博客文章&quot;</span></span><br></pre></td></tr></table></figure>
+
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
+  <div class="image-grid">
+    <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/create-new-post.png" class="" title="创建新文章命令">
+  </div>
+</div>
+
+<h3 id="🔹-步骤2：编辑文章"><a href="#🔹-步骤2：编辑文章" class="headerlink" title="🔹 步骤2：编辑文章"></a>🔹 步骤2：编辑文章</h3><p>文章会创建在<code>source/_posts</code>目录下，使用Markdown格式编写。编辑文章内容，添加标题、标签、分类等信息。</p>
+<p>文章的基本结构如下：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 我的第一篇博客文章  # 文章标题</span><br><span class="line">date: 2026-01-18 10:00:00  # 文章发布日期</span><br><span class="line">tags: [Hexo, 博客]  # 文章标签</span><br><span class="line">categories: [博客教程]  # 文章分类</span><br><span class="line"><span class="section">description: 这是我的第一篇博客文章  # 文章描述</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line"><span class="section"># 欢迎阅读我的第一篇博客</span></span><br><span class="line"></span><br><span class="line">这是我的第一篇Hexo博客文章，使用Markdown格式编写。</span><br><span class="line"></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"></span><br><span class="line"><span class="section">### 三级标题</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> 列表项1</span><br><span class="line"><span class="bullet">-</span> 列表项2</span><br><span class="line"><span class="bullet">-</span> 列表项3</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
+  <div class="image-grid">
+    <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/edit-post-interface.png" class="" title="文章编辑界面">
+  </div>
+</div>
+
+<h3 id="🔹-步骤3：保存文章"><a href="#🔹-步骤3：保存文章" class="headerlink" title="🔹 步骤3：保存文章"></a>🔹 步骤3：保存文章</h3><p>编写完成后，保存文章。</p>
+<div class="tip success">
+  <strong>✏️ 写作建议：</strong>
+  - 使用Markdown格式编写，简洁高效
+  - 文章结构清晰，层次分明
+  - 适当使用图片和代码示例增强可读性
+  - 定期备份你的文章内容
+</div>
+
+<hr>
+<h2 id="👀-本地预览"><a href="#👀-本地预览" class="headerlink" title="👀 本地预览"></a>👀 本地预览</h2><p>在部署之前，我们可以在本地预览博客效果，检查是否有任何问题。</p>
+<h3 id="🔹-步骤1：生成静态文件"><a href="#🔹-步骤1：生成静态文件" class="headerlink" title="🔹 步骤1：生成静态文件"></a>🔹 步骤1：生成静态文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成静态文件</span></span><br><span class="line">hexo generate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者使用简写形式</span></span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+
+<h3 id="🔹-步骤2：启动本地服务器"><a href="#🔹-步骤2：启动本地服务器" class="headerlink" title="🔹 步骤2：启动本地服务器"></a>🔹 步骤2：启动本地服务器</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 启动本地服务器</span></span><br><span class="line">hexo server</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者使用简写形式</span></span><br><span class="line">hexo s</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可选：指定端口</span></span><br><span class="line">hexo s -p 8080</span><br></pre></td></tr></table></figure>
+
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
+  <div class="image-grid">
+    <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/generate-static-server.png" class="" title="生成静态文件和启动本地服务器">
+  </div>
+</div>
+
+<h3 id="🔹-步骤3：访问本地博客"><a href="#🔹-步骤3：访问本地博客" class="headerlink" title="🔹 步骤3：访问本地博客"></a>🔹 步骤3：访问本地博客</h3><p>在浏览器中访问<code>http://localhost:4000</code>，查看博客效果。</p>
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
+  <div class="image-grid">
+    <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/local-blog-preview.png" class="" title="本地博客效果">
+  </div>
+</div>
+
+<div class="tip info">
+  <strong>🔍 预览提示：</strong>
+  - 本地预览可以实时查看博客效果
+  - 修改文章或配置后，刷新浏览器即可看到更新
+  - 按下Ctrl+C可以停止本地服务器
+</div>
+
+<hr>
+<h2 id="❗-常见问题解决"><a href="#❗-常见问题解决" class="headerlink" title="❗ 常见问题解决"></a>❗ 常见问题解决</h2><p>在搭建Hexo博客的过程中，可能会遇到一些问题。这里列举几个常见问题及解决方法。</p>
+<h3 id="🔹-问题1：Hexo命令无法使用"><a href="#🔹-问题1：Hexo命令无法使用" class="headerlink" title="🔹 问题1：Hexo命令无法使用"></a>🔹 问题1：Hexo命令无法使用</h3><p><strong>症状：</strong> 执行<code>hexo</code>命令时提示”command not found”或类似错误</p>
+<p><strong>解决方法：</strong> </p>
+<ol>
+<li>检查Node.js和npm是否安装成功</li>
+<li>尝试重新安装Hexo：<code>npm install -g hexo-cli</code></li>
+<li>检查系统环境变量是否配置正确</li>
+</ol>
+<h3 id="🔹-问题2：本地预览时样式丢失"><a href="#🔹-问题2：本地预览时样式丢失" class="headerlink" title="🔹 问题2：本地预览时样式丢失"></a>🔹 问题2：本地预览时样式丢失</h3><p><strong>症状：</strong> 本地访问时，博客没有样式或样式显示异常</p>
+<p><strong>解决方法：</strong> </p>
+<ol>
+<li>检查主题配置是否正确</li>
+<li>确认必要的插件是否已安装</li>
+<li>尝试重新安装主题和依赖</li>
+<li>检查配置文件中的URL设置是否正确</li>
+</ol>
+<h3 id="🔹-问题3：文章图片无法显示"><a href="#🔹-问题3：文章图片无法显示" class="headerlink" title="🔹 问题3：文章图片无法显示"></a>🔹 问题3：文章图片无法显示</h3><p><strong>症状：</strong> 文章中的图片无法正常显示</p>
+<p><strong>解决方法：</strong> </p>
+<ol>
+<li>确保图片文件存放在与文章同名的文件夹中</li>
+<li>使用Hexo推荐的<code>&#123;% asset_img %&#125;</code>标签引用图片</li>
+<li>检查图片路径是否正确</li>
+</ol>
+<div class="tip warning">
+  <strong>💡 问题排查建议：</strong>
+  - 仔细查看命令行输出的错误信息
+  - 检查配置文件中的语法错误
+  - 参考Hexo和主题的官方文档
+  - 搜索相关问题的解决方案
+</div>
+
+<hr>
+<h2 id="🎊-结语"><a href="#🎊-结语" class="headerlink" title="🎊 结语"></a>🎊 结语</h2><p>恭喜你！现在你已经成功搭建了属于自己的Hexo博客网站。博客搭建只是开始，后续你可以通过以下方式让你的博客更加完美：</p>
+<ul>
+<li><strong>撰写优质内容</strong>：定期更新博客，分享你的知识和经验</li>
+<li><strong>优化博客性能</strong>：使用CDN、压缩资源、优化图片等</li>
+<li><strong>添加更多功能</strong>：评论系统、阅读统计、搜索功能等</li>
+<li><strong>美化博客样式</strong>：自定义主题、添加动画效果等</li>
+<li><strong>SEO优化</strong>：优化文章标题、描述、标签等</li>
+</ul>
+<p>希望本文对你有所帮助。如果你有任何问题或建议，欢迎在评论区留言交流！</p>
+<h2 id="📚-相关资源"><a href="#📚-相关资源" class="headerlink" title="📚 相关资源"></a>📚 相关资源</h2><ul>
+<li><strong><a href="https://hexo.io/zh-cn/docs/">Hexo官方文档</a></strong> - 最权威的Hexo使用指南</li>
+<li><strong><a href="https://butterfly.js.org/">Butterfly主题文档</a></strong> - Butterfly主题的详细配置说明</li>
+<li><strong><a href="https://docs.github.com/cn/pages">GitHub Pages官方文档</a></strong> - GitHub Pages的使用教程</li>
+<li><strong><a href="https://markdown.com.cn/basic-syntax/">Markdown语法指南</a></strong> - 学习Markdown写作语法</li>
+</ul>
+<hr>
+<p><strong>更新时间：</strong> 2026-01-18<br><strong>作者：</strong> Jay</p>
 ]]></content>
       <categories>
-        <category>技术教程</category>
+        <category>博客教程</category>
       </categories>
       <tags>
-        <tag>Vue3</tag>
-        <tag>Vite</tag>
-        <tag>Vue3项目创建</tag>
-        <tag>Vite搭建Vue3</tag>
-        <tag>前端开发</tag>
-        <tag>项目搭建</tag>
-        <tag>JavaScript</tag>
-        <tag>TypeScript</tag>
-        <tag>Vue3入门</tag>
-        <tag>Vue3教程</tag>
+        <tag>Hexo</tag>
+        <tag>博客教程</tag>
+        <tag>网站搭建</tag>
+        <tag>静态博客</tag>
+        <tag>Butterfly主题</tag>
+        <tag>Hexo博客搭建</tag>
+        <tag>个人博客</tag>
+        <tag>博客制作</tag>
+        <tag>网站建设</tag>
       </tags>
   </entry>
   <entry>
@@ -1962,7 +1962,7 @@
 <ul>
 <li><strong>GitHub</strong>：<a href="https://github.com/Jay-R-J/">https://github.com/Jay-R-J/</a></li>
 <li><strong>CSDN</strong>：<a href="https://blog.csdn.net/2401_82953028">https://blog.csdn.net/2401_82953028</a></li>
-<li><strong>电子邮件</strong>：<a href="mailto:&#51;&#x36;&#x30;&#57;&#53;&#48;&#54;&#50;&#x37;&#x38;&#64;&#101;&#120;&#97;&#109;&#112;&#x6c;&#101;&#46;&#x63;&#111;&#x6d;">3609506278@example.com</a></li>
+<li><strong>电子邮件</strong>：<a href="mailto:&#51;&#54;&#x30;&#x39;&#x35;&#48;&#54;&#x32;&#55;&#x38;&#64;&#101;&#x78;&#97;&#109;&#x70;&#x6c;&#x65;&#46;&#x63;&#111;&#x6d;">3609506278@example.com</a></li>
 <li><strong>微信</strong>：请在博客留言板留言获取</li>
 </ul>
 <h3 id="🤝-合作方式"><a href="#🤝-合作方式" class="headerlink" title="🤝 合作方式"></a>🤝 合作方式</h3><ul>
