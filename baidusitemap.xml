@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.jay-r-j.top/2026-01-29-coding-a-beating-heart.html</loc>
+    <loc>https://www.jay-r-j.top//weekend-toolbox-project/</loc>
+    <lastmod>2026-02-02</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jay-r-j.top//python-beating-heart-animation/</loc>
     <lastmod>2026-01-29</lastmod>
   </url>
   <url>
-    <loc>https://www.jay-r-j.top/2026-01-25-how-to-create-vue3-project.html</loc>
+    <loc>https://www.jay-r-j.top//create-vue3-project-vite/</loc>
     <lastmod>2026-01-25</lastmod>
   </url>
   <url>
-    <loc>https://www.jay-r-j.top/2026-01-18-how-to-build-hexo-blog-from-scratch.html</loc>
+    <loc>https://www.jay-r-j.top//build_hexo_blog/</loc>
     <lastmod>2026-01-24</lastmod>
   </url>
   <url>
-    <loc>https://www.jay-r-j.top/2026-01-21-project-backup-tool.html</loc>
+    <loc>https://www.jay-r-j.top//python_backup_tool/</loc>
     <lastmod>2026-01-23</lastmod>
   </url>
   <url>
-    <loc>https://www.jay-r-j.top/2026-01-20-hexo-comment-system-config.html</loc>
+    <loc>https://www.jay-r-j.top//hexo_comment_system/</loc>
     <lastmod>2026-01-23</lastmod>
   </url>
   <url>
-    <loc>https://www.jay-r-j.top/blog-usage-guide.html</loc>
+    <loc>https://www.jay-r-j.top//blog_usage_guide/</loc>
     <lastmod>2026-01-22</lastmod>
   </url>
 </urlset> 

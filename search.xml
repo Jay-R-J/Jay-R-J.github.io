@@ -1,283 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>如何从0到1搭建属于自己的Hexo博客网站 | 静态博客搭建教程</title>
-    <url>/2026-01-18-how-to-build-hexo-blog-from-scratch.html</url>
-    <content><![CDATA[<div class="tip success">
-  <strong>🎉 欢迎阅读本教程！</strong><br>
-  本文将带你从0到1搭建属于自己的Hexo博客网站，适合完全零基础的新手。
-</div>
-
-<h2 id="📝-前言"><a href="#📝-前言" class="headerlink" title="📝 前言"></a>📝 前言</h2><p>在数字化时代，拥有一个属于自己的博客网站是展示个人技术、分享知识和记录生活的绝佳方式。Hexo作为一款快速、简洁且高效的静态博客生成框架，受到了众多开发者的喜爱。</p>
-<p>本文将详细介绍如何从0到1搭建属于自己的Hexo博客网站，包括环境配置、主题安装、个性化设置、文章撰写和部署上线等完整流程。</p>
-<h2 id="📋-目录"><a href="#📋-目录" class="headerlink" title="📋 目录"></a>📋 目录</h2><ol>
-<li><a href="#%F0%9F%94%A7-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87">环境准备</a></li>
-<li><a href="#%F0%9F%93%A6-%E5%AE%89%E8%A3%85Hexo">安装Hexo</a></li>
-<li><a href="#%F0%9F%9A%80-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8D%9A%E5%AE%A2">初始化博客</a></li>
-<li><a href="#%E2%9A%99%EF%B8%8F-%E9%85%8D%E7%BD%AEHexo">配置Hexo</a></li>
-<li><a href="#%F0%9F%8E%A8-%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98">安装主题</a></li>
-<li><a href="#%E2%9C%A8-%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%BE%E7%BD%AE">个性化设置</a></li>
-<li><a href="#%E2%9C%8D%EF%B8%8F-%E6%92%B0%E5%86%99%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0">撰写第一篇文章</a></li>
-<li><a href="#%F0%9F%91%80-%E6%9C%AC%E5%9C%B0%E9%A2%84%E8%A7%88">本地预览</a></li>
-<li><a href="#%E2%9D%97-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3">常见问题解决</a></li>
-</ol>
-<h2 id="🔧-环境准备"><a href="#🔧-环境准备" class="headerlink" title="🔧 环境准备"></a>🔧 环境准备</h2><p>在开始搭建Hexo博客之前，我们需要准备好必要的环境。Hexo基于Node.js开发，所以需要安装Node.js和npm（Node.js包管理器）。</p>
-<h3 id="🔹-步骤1：安装Node-js"><a href="#🔹-步骤1：安装Node-js" class="headerlink" title="🔹 步骤1：安装Node.js"></a>🔹 步骤1：安装Node.js</h3><ol>
-<li>访问**<a href="https://nodejs.org/">Node.js官网</a>**</li>
-<li>下载适合你操作系统的<strong>LTS版本</strong>（推荐长期支持版本，更稳定）</li>
-<li>运行安装程序，按照提示完成安装</li>
-<li>验证安装是否成功</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 验证Node.js版本</span></span><br><span class="line">node -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证npm版本</span></span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <div class="image-grid">
-    <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/install-nodejs-verify.png" class="" title="node.js命令行验证结果">
-  </div>
-</div>
-
-<h3 id="🔹-步骤2：安装Git"><a href="#🔹-步骤2：安装Git" class="headerlink" title="🔹 步骤2：安装Git"></a>🔹 步骤2：安装Git</h3><p>Hexo需要Git来管理博客内容和部署到GitHub Pages。</p>
-<ol>
-<li>访问**<a href="https://git-scm.com/">Git官网</a>**</li>
-<li>下载适合你操作系统的版本</li>
-<li>运行安装程序，按照提示完成安装</li>
-<li>验证安装是否成功</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 验证Git版本</span></span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
-
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <div class="image-grid">
-    <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/install-git-verify.png" class="" title="git命令行验证结果">
-  </div>
-</div>
-
-<hr>
-<h2 id="📦-安装Hexo"><a href="#📦-安装Hexo" class="headerlink" title="📦 安装Hexo"></a>📦 安装Hexo</h2><p>环境准备完成后，我们可以开始安装Hexo了。</p>
-<h3 id="🔹-步骤1：使用npm全局安装Hexo"><a href="#🔹-步骤1：使用npm全局安装Hexo" class="headerlink" title="🔹 步骤1：使用npm全局安装Hexo"></a>🔹 步骤1：使用npm全局安装Hexo</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 全局安装Hexo CLI</span></span><br><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<h3 id="🔹-步骤2：验证Hexo安装是否成功"><a href="#🔹-步骤2：验证Hexo安装是否成功" class="headerlink" title="🔹 步骤2：验证Hexo安装是否成功"></a>🔹 步骤2：验证Hexo安装是否成功</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 验证Hexo版本</span></span><br><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/install-hexo-verify.png" class="" title="安装Hexo命令">
-</div>
-
-<hr>
-<h2 id="🚀-初始化博客"><a href="#🚀-初始化博客" class="headerlink" title="🚀 初始化博客"></a>🚀 初始化博客</h2><p>现在我们可以初始化一个新的Hexo博客了。</p>
-<h3 id="🔹-步骤1：创建博客目录"><a href="#🔹-步骤1：创建博客目录" class="headerlink" title="🔹 步骤1：创建博客目录"></a>🔹 步骤1：创建博客目录</h3><p>选择一个合适的位置创建博客目录，例如在桌面创建一个名为<code>my-blog</code>的目录。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建博客目录</span></span><br><span class="line"><span class="built_in">mkdir</span> my-blog</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入博客目录</span></span><br><span class="line"><span class="built_in">cd</span> my-blog</span><br></pre></td></tr></table></figure>
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <div class="image-grid">
-    <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/create-blog-directory.png" class="" title="创建博客目录">
-  </div>
-</div>
-
-<h3 id="🔹-步骤2：初始化Hexo博客"><a href="#🔹-步骤2：初始化Hexo博客" class="headerlink" title="🔹 步骤2：初始化Hexo博客"></a>🔹 步骤2：初始化Hexo博客</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 初始化Hexo博客</span></span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-
-<h3 id="🔹-步骤3：安装依赖"><a href="#🔹-步骤3：安装依赖" class="headerlink" title="🔹 步骤3：安装依赖"></a>🔹 步骤3：安装依赖</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装博客依赖</span></span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <div class="image-grid">
-    <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/init-hexo-install-deps.png" class="" title="初始化Hexo博客和安装依赖">
-  </div>
-</div>
-
-<hr>
-<h2 id="⚙️-配置Hexo"><a href="#⚙️-配置Hexo" class="headerlink" title="⚙️ 配置Hexo"></a>⚙️ 配置Hexo</h2><p>Hexo初始化完成后，我们需要对博客进行基本配置。</p>
-<h3 id="🔹-步骤1：编辑配置文件"><a href="#🔹-步骤1：编辑配置文件" class="headerlink" title="🔹 步骤1：编辑配置文件"></a>🔹 步骤1：编辑配置文件</h3><p>Hexo的配置文件是<code>_config.yml</code>，位于博客根目录。使用文本编辑器（如VS Code、Sublime Text等）打开这个文件，对以下内容进行配置：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site - 网站基本信息</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">你的博客标题</span>          <span class="comment"># 博客标题，显示在网站顶部</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">你的博客副标题</span>    <span class="comment"># 博客副标题，显示在标题下方</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">你的博客描述</span>    <span class="comment"># 博客描述，用于SEO和元标签</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">你的名字</span>             <span class="comment"># 博客作者名称</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span>             <span class="comment"># 博客语言，中文使用zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">Asia/Shanghai</span>      <span class="comment"># 时区，亚洲/上海</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL - 链接配置</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://你的用户名.github.io</span>  <span class="comment"># 博客的完整URL</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span>                      <span class="comment"># 网站根目录</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span>  <span class="comment"># 文章永久链接格式</span></span><br><span class="line"><span class="attr">permalink_defaults:</span>          <span class="comment"># 永久链接默认值</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="🔹-步骤2：保存配置文件"><a href="#🔹-步骤2：保存配置文件" class="headerlink" title="🔹 步骤2：保存配置文件"></a>🔹 步骤2：保存配置文件</h3><p>修改完成后，保存配置文件。</p>
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/configure-hexo-config.png" class="" title="配置文件编辑界面">
-</div>
-
-<div class="tip info">
-  <strong>💡 配置提示：</strong>
-  - 配置文件中的冒号后面需要加空格
-  - 确保URL配置正确，特别是GitHub Pages的地址
-  - 语言设置为zh-CN可以确保中文显示正常
-</div>
-
-<hr>
-<h2 id="🎨-安装主题"><a href="#🎨-安装主题" class="headerlink" title="🎨 安装主题"></a>🎨 安装主题</h2><p>Hexo默认使用的是landscape主题，我们可以安装更美观、功能更丰富的主题，例如Butterfly主题。</p>
-<h3 id="🔹-步骤1：安装Butterfly主题"><a href="#🔹-步骤1：安装Butterfly主题" class="headerlink" title="🔹 步骤1：安装Butterfly主题"></a>🔹 步骤1：安装Butterfly主题</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 克隆Butterfly主题到themes目录</span></span><br><span class="line">git <span class="built_in">clone</span> -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure>
-
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <div class="image-grid">
-    <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/install-butterfly-theme.png" class="" title="安装Butterfly主题">
-  </div>
-</div>
-
-<h3 id="🔹-步骤2：启用主题"><a href="#🔹-步骤2：启用主题" class="headerlink" title="🔹 步骤2：启用主题"></a>🔹 步骤2：启用主题</h3><p>编辑<code>_config.yml</code>文件，将theme设置为butterfly：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 主题设置</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">butterfly</span>  <span class="comment"># 使用Butterfly主题</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="🔹-步骤3：安装必要的插件"><a href="#🔹-步骤3：安装必要的插件" class="headerlink" title="🔹 步骤3：安装必要的插件"></a>🔹 步骤3：安装必要的插件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装Butterfly主题所需的渲染插件</span></span><br><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus --save</span><br></pre></td></tr></table></figure>
-
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <div class="image-grid">
-    <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/install-theme-plugins.png" class="" title="安装必要的插件">
-  </div>
-</div>
-
-<div class="tip success">
-  <strong>✅ 主题优势：</strong>
-  - Butterfly主题美观现代，支持响应式设计
-  - 内置多种功能：搜索、评论、代码高亮等
-  - 支持自定义配置，易于个性化
-  - 活跃的社区支持和持续更新
-</div>
-
-<hr>
-<h2 id="✨-个性化设置"><a href="#✨-个性化设置" class="headerlink" title="✨ 个性化设置"></a>✨ 个性化设置</h2><p>现在我们可以对博客进行个性化设置，让它更加符合我们的需求。</p>
-<h3 id="🔹-步骤1：创建主题配置文件"><a href="#🔹-步骤1：创建主题配置文件" class="headerlink" title="🔹 步骤1：创建主题配置文件"></a>🔹 步骤1：创建主题配置文件</h3><p>在博客根目录创建一个<code>_config.butterfly.yml</code>文件，用于配置Butterfly主题（推荐使用独立配置文件，便于主题更新）。</p>
-<h3 id="🔹-步骤2：基本配置"><a href="#🔹-步骤2：基本配置" class="headerlink" title="🔹 步骤2：基本配置"></a>🔹 步骤2：基本配置</h3><p>在<code>_config.butterfly.yml</code>文件中进行基本配置：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 网站图标设置</span></span><br><span class="line"><span class="attr">favicon:</span> <span class="string">/img/favicon.ico</span>  <span class="comment"># 网站图标，显示在浏览器标签页</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 导航菜单设置</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">首页:</span> <span class="string">/</span>                   <span class="comment"># 首页链接</span></span><br><span class="line">  <span class="string">归档:</span> <span class="string">/archives/</span>          <span class="comment"># 文章归档</span></span><br><span class="line">  <span class="string">分类:</span> <span class="string">/categories/</span>        <span class="comment"># 文章分类</span></span><br><span class="line">  <span class="string">标签:</span> <span class="string">/tags/</span>              <span class="comment"># 文章标签</span></span><br><span class="line">  <span class="string">关于:</span> <span class="string">/about/</span>             <span class="comment"># 关于页面</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 社交链接设置</span></span><br><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">GitHub:</span> <span class="string">https://github.com/你的用户名</span>  <span class="comment"># GitHub链接</span></span><br><span class="line">  <span class="string">微博:</span> <span class="string">https://weibo.com/你的用户名</span>     <span class="comment"># 微博链接</span></span><br><span class="line">  <span class="string">知乎:</span> <span class="string">https://www.zhihu.com/people/你的用户名</span>  <span class="comment"># 知乎链接</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="🔹-步骤3：个性化样式"><a href="#🔹-步骤3：个性化样式" class="headerlink" title="🔹 步骤3：个性化样式"></a>🔹 步骤3：个性化样式</h3><p>可以在<code>source/css/custom.css</code>文件中添加自定义样式，个性化你的博客：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 示例：自定义博客标题样式 */</span></span><br><span class="line"><span class="selector-class">.site-title</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">2rem</span>;</span><br><span class="line">  <span class="attribute">font-weight</span>: bold;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#667eea</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 示例：自定义链接颜色 */</span></span><br><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#7c3aed</span>;</span><br><span class="line">  <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#f093fb</span>;</span><br><span class="line">  <span class="attribute">text-decoration</span>: underline;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<div class="tip warning">
-  <strong>🎯 个性化建议：</strong>
-  - 从简单的配置开始，逐步添加复杂功能
-  - 参考Butterfly主题的官方文档进行配置
-  - 定期备份你的配置文件
-</div>
-
-<hr>
-<h2 id="✍️-撰写第一篇文章"><a href="#✍️-撰写第一篇文章" class="headerlink" title="✍️ 撰写第一篇文章"></a>✍️ 撰写第一篇文章</h2><p>现在我们可以撰写第一篇博客文章了。</p>
-<h3 id="🔹-步骤1：创建新文章"><a href="#🔹-步骤1：创建新文章" class="headerlink" title="🔹 步骤1：创建新文章"></a>🔹 步骤1：创建新文章</h3><p>使用Hexo命令创建一篇新文章：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一篇新文章，标题为&quot;我的第一篇博客文章&quot;</span></span><br><span class="line">hexo new <span class="string">&quot;我的第一篇博客文章&quot;</span></span><br></pre></td></tr></table></figure>
-
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <div class="image-grid">
-    <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/create-new-post.png" class="" title="创建新文章命令">
-  </div>
-</div>
-
-<h3 id="🔹-步骤2：编辑文章"><a href="#🔹-步骤2：编辑文章" class="headerlink" title="🔹 步骤2：编辑文章"></a>🔹 步骤2：编辑文章</h3><p>文章会创建在<code>source/_posts</code>目录下，使用Markdown格式编写。编辑文章内容，添加标题、标签、分类等信息。</p>
-<p>文章的基本结构如下：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 我的第一篇博客文章  # 文章标题</span><br><span class="line">date: 2026-01-18 10:00:00  # 文章发布日期</span><br><span class="line">tags: [Hexo, 博客]  # 文章标签</span><br><span class="line">categories: [博客教程]  # 文章分类</span><br><span class="line"><span class="section">description: 这是我的第一篇博客文章  # 文章描述</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line"><span class="section"># 欢迎阅读我的第一篇博客</span></span><br><span class="line"></span><br><span class="line">这是我的第一篇Hexo博客文章，使用Markdown格式编写。</span><br><span class="line"></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"></span><br><span class="line"><span class="section">### 三级标题</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> 列表项1</span><br><span class="line"><span class="bullet">-</span> 列表项2</span><br><span class="line"><span class="bullet">-</span> 列表项3</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <div class="image-grid">
-    <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/edit-post-interface.png" class="" title="文章编辑界面">
-  </div>
-</div>
-
-<h3 id="🔹-步骤3：保存文章"><a href="#🔹-步骤3：保存文章" class="headerlink" title="🔹 步骤3：保存文章"></a>🔹 步骤3：保存文章</h3><p>编写完成后，保存文章。</p>
-<div class="tip success">
-  <strong>✏️ 写作建议：</strong>
-  - 使用Markdown格式编写，简洁高效
-  - 文章结构清晰，层次分明
-  - 适当使用图片和代码示例增强可读性
-  - 定期备份你的文章内容
-</div>
-
-<hr>
-<h2 id="👀-本地预览"><a href="#👀-本地预览" class="headerlink" title="👀 本地预览"></a>👀 本地预览</h2><p>在部署之前，我们可以在本地预览博客效果，检查是否有任何问题。</p>
-<h3 id="🔹-步骤1：生成静态文件"><a href="#🔹-步骤1：生成静态文件" class="headerlink" title="🔹 步骤1：生成静态文件"></a>🔹 步骤1：生成静态文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成静态文件</span></span><br><span class="line">hexo generate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者使用简写形式</span></span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-
-<h3 id="🔹-步骤2：启动本地服务器"><a href="#🔹-步骤2：启动本地服务器" class="headerlink" title="🔹 步骤2：启动本地服务器"></a>🔹 步骤2：启动本地服务器</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 启动本地服务器</span></span><br><span class="line">hexo server</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者使用简写形式</span></span><br><span class="line">hexo s</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可选：指定端口</span></span><br><span class="line">hexo s -p 8080</span><br></pre></td></tr></table></figure>
-
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <div class="image-grid">
-    <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/generate-static-server.png" class="" title="生成静态文件和启动本地服务器">
-  </div>
-</div>
-
-<h3 id="🔹-步骤3：访问本地博客"><a href="#🔹-步骤3：访问本地博客" class="headerlink" title="🔹 步骤3：访问本地博客"></a>🔹 步骤3：访问本地博客</h3><p>在浏览器中访问<code>http://localhost:4000</code>，查看博客效果。</p>
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <div class="image-grid">
-    <img src="/2026-01-18-how-to-build-hexo-blog-from-scratch/local-blog-preview.png" class="" title="本地博客效果">
-  </div>
-</div>
-
-<div class="tip info">
-  <strong>🔍 预览提示：</strong>
-  - 本地预览可以实时查看博客效果
-  - 修改文章或配置后，刷新浏览器即可看到更新
-  - 按下Ctrl+C可以停止本地服务器
-</div>
-
-<hr>
-<h2 id="❗-常见问题解决"><a href="#❗-常见问题解决" class="headerlink" title="❗ 常见问题解决"></a>❗ 常见问题解决</h2><p>在搭建Hexo博客的过程中，可能会遇到一些问题。这里列举几个常见问题及解决方法。</p>
-<h3 id="🔹-问题1：Hexo命令无法使用"><a href="#🔹-问题1：Hexo命令无法使用" class="headerlink" title="🔹 问题1：Hexo命令无法使用"></a>🔹 问题1：Hexo命令无法使用</h3><p><strong>症状：</strong> 执行<code>hexo</code>命令时提示”command not found”或类似错误</p>
-<p><strong>解决方法：</strong> </p>
-<ol>
-<li>检查Node.js和npm是否安装成功</li>
-<li>尝试重新安装Hexo：<code>npm install -g hexo-cli</code></li>
-<li>检查系统环境变量是否配置正确</li>
-</ol>
-<h3 id="🔹-问题2：本地预览时样式丢失"><a href="#🔹-问题2：本地预览时样式丢失" class="headerlink" title="🔹 问题2：本地预览时样式丢失"></a>🔹 问题2：本地预览时样式丢失</h3><p><strong>症状：</strong> 本地访问时，博客没有样式或样式显示异常</p>
-<p><strong>解决方法：</strong> </p>
-<ol>
-<li>检查主题配置是否正确</li>
-<li>确认必要的插件是否已安装</li>
-<li>尝试重新安装主题和依赖</li>
-<li>检查配置文件中的URL设置是否正确</li>
-</ol>
-<h3 id="🔹-问题3：文章图片无法显示"><a href="#🔹-问题3：文章图片无法显示" class="headerlink" title="🔹 问题3：文章图片无法显示"></a>🔹 问题3：文章图片无法显示</h3><p><strong>症状：</strong> 文章中的图片无法正常显示</p>
-<p><strong>解决方法：</strong> </p>
-<ol>
-<li>确保图片文件存放在与文章同名的文件夹中</li>
-<li>使用Hexo推荐的<code>&#123;% asset_img %&#125;</code>标签引用图片</li>
-<li>检查图片路径是否正确</li>
-</ol>
-<div class="tip warning">
-  <strong>💡 问题排查建议：</strong>
-  - 仔细查看命令行输出的错误信息
-  - 检查配置文件中的语法错误
-  - 参考Hexo和主题的官方文档
-  - 搜索相关问题的解决方案
-</div>
-
-<hr>
-<h2 id="🎊-结语"><a href="#🎊-结语" class="headerlink" title="🎊 结语"></a>🎊 结语</h2><p>恭喜你！现在你已经成功搭建了属于自己的Hexo博客网站。博客搭建只是开始，后续你可以通过以下方式让你的博客更加完美：</p>
-<ul>
-<li><strong>撰写优质内容</strong>：定期更新博客，分享你的知识和经验</li>
-<li><strong>优化博客性能</strong>：使用CDN、压缩资源、优化图片等</li>
-<li><strong>添加更多功能</strong>：评论系统、阅读统计、搜索功能等</li>
-<li><strong>美化博客样式</strong>：自定义主题、添加动画效果等</li>
-<li><strong>SEO优化</strong>：优化文章标题、描述、标签等</li>
-</ul>
-<p>希望本文对你有所帮助。如果你有任何问题或建议，欢迎在评论区留言交流！</p>
-<h2 id="📚-相关资源"><a href="#📚-相关资源" class="headerlink" title="📚 相关资源"></a>📚 相关资源</h2><ul>
-<li><strong><a href="https://hexo.io/zh-cn/docs/">Hexo官方文档</a></strong> - 最权威的Hexo使用指南</li>
-<li><strong><a href="https://butterfly.js.org/">Butterfly主题文档</a></strong> - Butterfly主题的详细配置说明</li>
-<li><strong><a href="https://docs.github.com/cn/pages">GitHub Pages官方文档</a></strong> - GitHub Pages的使用教程</li>
-<li><strong><a href="https://markdown.com.cn/basic-syntax/">Markdown语法指南</a></strong> - 学习Markdown写作语法</li>
-</ul>
-<hr>
-<p><strong>更新时间：</strong> 2026-01-18<br><strong>作者：</strong> Jay</p>
-]]></content>
-      <categories>
-        <category>博客教程</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>博客教程</tag>
-        <tag>网站搭建</tag>
-        <tag>静态博客</tag>
-        <tag>Butterfly主题</tag>
-        <tag>Hexo博客搭建</tag>
-        <tag>个人博客</tag>
-        <tag>博客制作</tag>
-        <tag>网站建设</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo博客Giscus评论系统配置教程 | Butterfly主题GitHub评论插件安装与使用</title>
-    <url>/2026-01-20-hexo-comment-system-config.html</url>
+    <url>//hexo_comment_system/</url>
     <content><![CDATA[<blockquote>
 <p>🎉 欢迎阅读本教程！<br>本文将带你详细了解如何在Hexo Butterfly主题中配置和使用Giscus评论系统，适合Hexo博客零基础的用户。</p>
 </blockquote>
@@ -338,7 +63,7 @@
 <div class="image-container">
   <strong>📷 操作截图：</strong>
   <div class="image-grid">
-    <img src="/2026-01-20-hexo-comment-system-config/enable-discussions.png" class="" title="启用Discussions">
+    <img src="/hexo_comment_system/enable-discussions.png" class="" title="启用Discussions">
   </div>
 </div>
 
@@ -351,7 +76,7 @@
 <div class="image-container">
   <strong>📷 操作截图：</strong>
   <div class="image-grid">
-    <img src="/2026-01-20-hexo-comment-system-config/install-giscus-app.png" class="" title="安装Giscus应用">
+    <img src="/hexo_comment_system/install-giscus-app.png" class="" title="安装Giscus应用">
   </div>
 </div>
 
@@ -401,7 +126,7 @@
 <div class="image-container">
   <strong>📷 操作截图：</strong>
   <div class="image-grid">
-    <img src="/2026-01-20-hexo-comment-system-config/giscus_configuration.png" class="" title="Giscus配置">
+    <img src="/hexo_comment_system/giscus_configuration.png" class="" title="Giscus配置">
   </div>
 </div>
 
@@ -417,7 +142,7 @@
 <div class="image-container">
   <strong>📷 操作截图：</strong>
   <div class="image-grid">
-    <img src="/2026-01-20-hexo-comment-system-config/enable-giscus-in-theme.png" class="" title="启用Giscus评论系统">
+    <img src="/hexo_comment_system/enable-giscus-in-theme.png" class="" title="启用Giscus评论系统">
   </div>
 </div>
 
@@ -426,7 +151,7 @@
 <div class="image-container">
   <strong>📷 操作截图：</strong>
   <div class="image-grid">
-    <img src="/2026-01-20-hexo-comment-system-config/configure-giscus-params.png" class="" title="配置Giscus参数">
+    <img src="/hexo_comment_system/configure-giscus-params.png" class="" title="配置Giscus参数">
   </div>
 </div>
 
@@ -484,7 +209,7 @@
 <div class="image-container">
   <strong>📷 操作截图：</strong>
   <div class="image-grid">
-    <img src="/2026-01-20-hexo-comment-system-config/manage-giscus-comments.png" class="" title="管理Giscus评论">
+    <img src="/hexo_comment_system/manage-giscus-comments.png" class="" title="管理Giscus评论">
   </div>
 </div>
 
@@ -752,9 +477,9 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-        <tag>Butterfly主题</tag>
         <tag>Giscus</tag>
         <tag>评论系统</tag>
+        <tag>Butterfly主题</tag>
         <tag>GitHub评论</tag>
         <tag>博客评论</tag>
         <tag>静态博客评论</tag>
@@ -762,319 +487,283 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue3项目创建教程 | 如何使用Vite快速搭建Vue3应用</title>
-    <url>/2026-01-25-how-to-create-vue3-project.html</url>
+    <title>如何从0到1搭建属于自己的Hexo博客网站 | 静态博客搭建教程</title>
+    <url>//build_hexo_blog/</url>
     <content><![CDATA[<div class="tip success">
-  <strong>🎉 欢迎阅读Vue3项目创建教程！</strong><br>
-  本文将详细介绍如何使用Vite（Vue官方推荐的构建工具）快速搭建Vue3应用，从环境准备到Vue3组件开发，适合Vue3初学者和前端开发者学习Vue3项目创建。
+  <strong>🎉 欢迎阅读本教程！</strong><br>
+  本文将带你从0到1搭建属于自己的Hexo博客网站，适合完全零基础的新手。
 </div>
 
-<hr>
-<h2 id="📝-前言"><a href="#📝-前言" class="headerlink" title="📝 前言"></a>📝 前言</h2><p>Vue3是Vue.js的最新版本，作为目前最流行的前端框架之一，带来了许多激动人心的新特性和性能改进：</p>
-<ul>
-<li>✨ <strong>组合式API (Composition API)</strong> - 更灵活的代码组织方式</li>
-<li>✨ <strong>TypeScript支持</strong> - 更好的类型安全和开发体验</li>
-<li>✨ <strong>性能提升</strong> - 更小的打包体积，更快的渲染速度</li>
-<li>✨ <strong>Fragment、Teleport、Suspense</strong> - 新的组件特性</li>
-<li>✨ <strong>更好的响应式系统</strong> - 基于Proxy的响应式实现</li>
-</ul>
-<p>创建Vue3项目是学习Vue3的第一步，Vue生态提供了两种主要的构建工具：Vite和Vue CLI。本文将重点介绍如何使用Vite创建Vue3项目，Vite是Vue官方推荐的构建工具，具有更快的开发体验，是Vue3项目搭建的首选工具。</p>
-<hr>
-<h2 id="📋-目录"><a href="#📋-目录" class="headerlink" title="📋 目录"></a>📋 目录</h2><ul>
-<li><a href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87">环境准备</a></li>
-<li><a href="#vite%E4%B8%8Evue-cli%E5%AF%B9%E6%AF%94">Vite与Vue CLI对比</a></li>
-<li><a href="#%E4%BD%BF%E7%94%A8-vite%E5%88%9B%E5%BB%BAvue3%E9%A1%B9%E7%9B%AE">使用Vite创建Vue3项目</a></li>
-<li><a href="#vue3%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84%E8%A7%A3%E6%9E%90">Vue3项目结构解析</a></li>
-<li><a href="#%E8%BF%90%E8%A1%8Cvue3%E9%A1%B9%E7%9B%AE">运行Vue3项目</a></li>
-<li><a href="#%E7%AE%80%E5%8D%95%E7%9A%84vue3%E7%BB%84%E4%BB%B6%E7%A4%BA%E4%BE%8B">简单的Vue3组件示例</a></li>
-<li><a href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">常见问题及解决方案</a></li>
-<li><a href="#%E6%80%BB%E7%BB%93%E4%B8%8E%E8%B5%84%E6%BA%90">总结与资源</a></li>
-</ul>
-<hr>
-<h2 id="🔧-环境准备"><a href="#🔧-环境准备" class="headerlink" title="🔧 环境准备"></a><span id="环境准备">🔧 环境准备</span></h2><p>在进行Vue3项目搭建之前，我们需要准备好必要的开发环境。</p>
-<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>Vue3应用开发依赖Node.js和npm包管理器，所以首先需要安装Node.js：</p>
-<ol>
-<li>访问<a href="https://nodejs.org/">Node.js官网</a></li>
-<li>下载并安装<strong>LTS版本</strong>（推荐长期支持版本，更稳定）</li>
-<li>验证安装是否成功：</li>
+<h2 id="📝-前言"><a href="#📝-前言" class="headerlink" title="📝 前言"></a>📝 前言</h2><p>在数字化时代，拥有一个属于自己的博客网站是展示个人技术、分享知识和记录生活的绝佳方式。Hexo作为一款快速、简洁且高效的静态博客生成框架，受到了众多开发者的喜爱。</p>
+<p>本文将详细介绍如何从0到1搭建属于自己的Hexo博客网站，包括环境配置、主题安装、个性化设置、文章撰写和部署上线等完整流程。</p>
+<h2 id="📋-目录"><a href="#📋-目录" class="headerlink" title="📋 目录"></a>📋 目录</h2><ol>
+<li><a href="#%F0%9F%94%A7-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87">环境准备</a></li>
+<li><a href="#%F0%9F%93%A6-%E5%AE%89%E8%A3%85Hexo">安装Hexo</a></li>
+<li><a href="#%F0%9F%9A%80-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8D%9A%E5%AE%A2">初始化博客</a></li>
+<li><a href="#%E2%9A%99%EF%B8%8F-%E9%85%8D%E7%BD%AEHexo">配置Hexo</a></li>
+<li><a href="#%F0%9F%8E%A8-%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98">安装主题</a></li>
+<li><a href="#%E2%9C%A8-%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%BE%E7%BD%AE">个性化设置</a></li>
+<li><a href="#%E2%9C%8D%EF%B8%8F-%E6%92%B0%E5%86%99%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0">撰写第一篇文章</a></li>
+<li><a href="#%F0%9F%91%80-%E6%9C%AC%E5%9C%B0%E9%A2%84%E8%A7%88">本地预览</a></li>
+<li><a href="#%E2%9D%97-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3">常见问题解决</a></li>
+</ol>
+<h2 id="🔧-环境准备"><a href="#🔧-环境准备" class="headerlink" title="🔧 环境准备"></a>🔧 环境准备</h2><p>在开始搭建Hexo博客之前，我们需要准备好必要的环境。Hexo基于Node.js开发，所以需要安装Node.js和npm（Node.js包管理器）。</p>
+<h3 id="🔹-步骤1：安装Node-js"><a href="#🔹-步骤1：安装Node-js" class="headerlink" title="🔹 步骤1：安装Node.js"></a>🔹 步骤1：安装Node.js</h3><ol>
+<li>访问**<a href="https://nodejs.org/">Node.js官网</a>**</li>
+<li>下载适合你操作系统的<strong>LTS版本</strong>（推荐长期支持版本，更稳定）</li>
+<li>运行安装程序，按照提示完成安装</li>
+<li>验证安装是否成功</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 验证Node.js版本</span></span><br><span class="line">node -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证npm版本</span></span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-
-<figure class="image-container">
-  <figcaption><strong>📷 操作截图：验证Node.js和npm安装</strong></figcaption>
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
   <div class="image-grid">
-    <img src="/2026-01-25-how-to-create-vue3-project/node-npm-verify.png" class="" title="验证Node.js和npm安装">
+    <img src="/build_hexo_blog/install-nodejs-verify.png" class="" title="node.js命令行验证结果">
   </div>
-</figure>
+</div>
 
-<h3 id="安装pnpm（可选，推荐）"><a href="#安装pnpm（可选，推荐）" class="headerlink" title="安装pnpm（可选，推荐）"></a>安装pnpm（可选，推荐）</h3><p>pnpm是一个更快、更节省磁盘空间的包管理器，推荐使用：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g pnpm</span><br></pre></td></tr></table></figure>
-
-<figure class="image-container">
-  <figcaption><strong>📷 操作截图：安装pnpm</strong></figcaption>
-  <div class="image-grid">
-    <img src="/2026-01-25-how-to-create-vue3-project/install-pnpm.png" class="" title="安装pnpm">
-  </div>
-</figure>
-
-<hr>
-<h2 id="⚖️-Vite与Vue-CLI对比"><a href="#⚖️-Vite与Vue-CLI对比" class="headerlink" title="⚖️ Vite与Vue CLI对比"></a><span id="vite与vue-cli对比">⚖️ Vite与Vue CLI对比</span></h2><p>在创建Vue3项目之前，让我们了解一下Vite和Vue CLI的主要区别，帮助你选择适合自己的构建工具：</p>
-<table>
-<thead>
-<tr>
-<th>特性</th>
-<th>Vite</th>
-<th>Vue CLI</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>构建工具</strong></td>
-<td>ESBuild</td>
-<td>Webpack</td>
-</tr>
-<tr>
-<td><strong>开发服务器启动速度</strong></td>
-<td>极快（秒级）</td>
-<td>较慢（秒级到十秒级）</td>
-</tr>
-<tr>
-<td><strong>热模块替换 (HMR)</strong></td>
-<td>极快</td>
-<td>一般</td>
-</tr>
-<tr>
-<td><strong>生产构建</strong></td>
-<td>Rollup</td>
-<td>Webpack</td>
-</tr>
-<tr>
-<td><strong>默认支持</strong></td>
-<td>Vue3</td>
-<td>Vue2&#x2F;Vue3</td>
-</tr>
-<tr>
-<td><strong>TypeScript支持</strong></td>
-<td>内置</td>
-<td>需要配置</td>
-</tr>
-<tr>
-<td><strong>按需编译</strong></td>
-<td>✅ 支持</td>
-<td>❌ 不支持</td>
-</tr>
-<tr>
-<td><strong>冷启动性能</strong></td>
-<td>优秀</td>
-<td>一般</td>
-</tr>
-<tr>
-<td><strong>生态系统</strong></td>
-<td>快速增长</td>
-<td>成熟完善</td>
-</tr>
-<tr>
-<td><strong>官方推荐</strong></td>
-<td>✅ Vue3推荐</td>
-<td>❌ 仍支持但非Vue3首选</td>
-</tr>
-</tbody></table>
-<h3 id="Vite的优势"><a href="#Vite的优势" class="headerlink" title="Vite的优势"></a>Vite的优势</h3><ul>
-<li>✅ <strong>极速的开发体验</strong> - 使用ESBuild进行依赖预构建，开发服务器启动速度极快</li>
-<li>✅ <strong>按需编译</strong> - 只编译当前修改的文件，热更新速度快</li>
-<li>✅ <strong>现代浏览器原生支持</strong> - 利用浏览器的ES模块支持，无需打包</li>
-<li>✅ <strong>更好的TypeScript支持</strong> - 内置TypeScript支持，无需复杂配置</li>
-<li>✅ <strong>Vue3优先</strong> - 专为Vue3设计，支持Vue3的新特性</li>
-</ul>
-<h3 id="Vue-CLI的优势"><a href="#Vue-CLI的优势" class="headerlink" title="Vue CLI的优势"></a>Vue CLI的优势</h3><ul>
-<li>✅ <strong>成熟的生态系统</strong> - 丰富的插件和社区支持</li>
-<li>✅ <strong>广泛的兼容性</strong> - 支持Vue2和Vue3</li>
-<li>✅ <strong>全面的功能</strong> - 内置了很多功能，如PWA、测试等</li>
-<li>✅ <strong>适合大型项目</strong> - Webpack的生态系统更适合复杂项目</li>
-</ul>
-<h3 id="如何选择"><a href="#如何选择" class="headerlink" title="如何选择"></a>如何选择</h3><ul>
-<li><strong>推荐使用Vite</strong>：如果你是Vue3新项目，追求开发效率和速度</li>
-<li><strong>继续使用Vue CLI</strong>：如果你有现有Vue CLI项目，或需要Webpack的特定功能</li>
-</ul>
-<hr>
-<h2 id="⚡-使用-Vite-创建-Vue3-项目"><a href="#⚡-使用-Vite-创建-Vue3-项目" class="headerlink" title="⚡ 使用 Vite 创建 Vue3 项目"></a><span id="使用-vite创建vue3项目">⚡ 使用 Vite 创建 Vue3 项目</span></h2><p>Vite是Vue官方推荐的构建工具，用于Vue3项目创建具有更快的开发体验和构建速度。</p>
-<h3 id="步骤1：创建项目"><a href="#步骤1：创建项目" class="headerlink" title="步骤1：创建项目"></a>步骤1：创建项目</h3><p>使用npm、yarn或pnpm等包管理器创建Vue3项目：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用npm</span></span><br><span class="line">npm create vite@latest vue3-project -- --template vue</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用yarn</span></span><br><span class="line">yarn create vite vue3-project -- --template vue</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用pnpm</span></span><br><span class="line">pnpm create vite vue3-project -- --template vue</span><br></pre></td></tr></table></figure>
-
-<figure class="image-container">
-  <figcaption><strong>📷 操作截图：执行Vite创建项目命令</strong></figcaption>
-  <div class="image-grid">
-    <img src="/2026-01-25-how-to-create-vue3-project/vite-create-command.png" class="" title="执行Vite创建项目命令">
-  </div>
-</figure>
-
-<h3 id="步骤2：执行创建命令（完整流程）"><a href="#步骤2：执行创建命令（完整流程）" class="headerlink" title="步骤2：执行创建命令（完整流程）"></a>步骤2：执行创建命令（完整流程）</h3><p>执行创建命令之后，你将看到如下完整的交互流程：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; npx create-vite vue3-project --template vue</span><br><span class="line"></span><br><span class="line">◇  Use rolldown-vite (Experimental)?:</span><br><span class="line">│  Yes</span><br><span class="line">│</span><br><span class="line">◇  Install with npm and start now?</span><br><span class="line">│  Yes</span><br><span class="line">│</span><br><span class="line">◇  Scaffolding project <span class="keyword">in</span> D:\vue3\vue3-project...</span><br><span class="line">│</span><br><span class="line">◇  Installing dependencies with npm...</span><br><span class="line"></span><br><span class="line">added 37 packages <span class="keyword">in</span> 4s</span><br><span class="line"></span><br><span class="line">9 packages are looking <span class="keyword">for</span> funding</span><br><span class="line">  run `npm fund` <span class="keyword">for</span> details</span><br><span class="line">│</span><br><span class="line">◇  Starting dev server...</span><br><span class="line"></span><br><span class="line">&gt; vue3-project@0.0.0 dev</span><br><span class="line">&gt; vite</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  ROLLDOWN-VITE v7.2.5  ready <span class="keyword">in</span> 375 ms</span><br><span class="line"></span><br><span class="line">  ➜  Local:   http://localhost:5173/</span><br><span class="line">  ➜  Network: use --host to expose</span><br><span class="line">  ➜  press h + enter to show <span class="built_in">help</span></span><br></pre></td></tr></table></figure>
-
-<figure class="image-container">
-  <figcaption><strong>📷 操作截图：Vite创建项目完整流程</strong></figcaption>
-  <div class="image-grid">
-    <img src="/2026-01-25-how-to-create-vue3-project/vite-create-full-flow.png" class="" title="Vite创建项目完整流程">
-  </div>
-</figure>
-
-<h3 id="交互选项说明"><a href="#交互选项说明" class="headerlink" title="交互选项说明"></a>交互选项说明</h3><ol>
-<li><p><strong>Use rolldown-vite (Experimental)?</strong> - 是否使用实验性的rolldown-vite构建工具</p>
-<ul>
-<li><strong>Yes</strong> - 推荐选择，体验最新的构建性能优化</li>
-<li><strong>No</strong> - 使用传统的Vite构建工具</li>
-</ul>
-</li>
-<li><p><strong>Install with npm and start now?</strong> - 是否立即安装依赖并启动开发服务器</p>
-<ul>
-<li><strong>Yes</strong> - 自动完成依赖安装并启动开发服务器</li>
-<li><strong>No</strong> - 只创建项目结构，后续手动安装依赖</li>
-</ul>
-</li>
+<h3 id="🔹-步骤2：安装Git"><a href="#🔹-步骤2：安装Git" class="headerlink" title="🔹 步骤2：安装Git"></a>🔹 步骤2：安装Git</h3><p>Hexo需要Git来管理博客内容和部署到GitHub Pages。</p>
+<ol>
+<li>访问**<a href="https://git-scm.com/">Git官网</a>**</li>
+<li>下载适合你操作系统的版本</li>
+<li>运行安装程序，按照提示完成安装</li>
+<li>验证安装是否成功</li>
 </ol>
-<h3 id="手动安装依赖（如果选择No）"><a href="#手动安装依赖（如果选择No）" class="headerlink" title="手动安装依赖（如果选择No）"></a>手动安装依赖（如果选择No）</h3><p>如果你在创建项目时选择了不立即安装依赖，可以手动执行以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 进入项目目录</span></span><br><span class="line"><span class="built_in">cd</span> vue3-project</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用npm安装依赖</span></span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动开发服务器</span></span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 验证Git版本</span></span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
 
-<figure class="image-container">
-  <figcaption><strong>📷 操作截图：手动安装依赖</strong></figcaption>
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
   <div class="image-grid">
-    <img src="/2026-01-25-how-to-create-vue3-project/manual-install-deps.png" class="" title="手动安装依赖">
+    <img src="/build_hexo_blog/install-git-verify.png" class="" title="git命令行验证结果">
   </div>
-</figure>
+</div>
 
 <hr>
-<h2 id="📁-Vue3项目结构解析"><a href="#📁-Vue3项目结构解析" class="headerlink" title="📁 Vue3项目结构解析"></a><span id="vue3项目结构解析">📁 Vue3项目结构解析</span></h2><p>使用Vite成功创建Vue3项目后，我们来详细解析一下Vue3项目的目录结构：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vue3-project/</span><br><span class="line">├── node_modules/        # 项目依赖</span><br><span class="line">├── public/              # 静态资源</span><br><span class="line">│   └── favicon.ico      # 网站图标</span><br><span class="line">├── src/                 # 源代码</span><br><span class="line">│   ├── assets/          # 资源文件</span><br><span class="line">│   │   └── logo.png     # Vue logo</span><br><span class="line">│   ├── components/      # 组件目录</span><br><span class="line">│   │   └── HelloWorld.vue  # 示例组件</span><br><span class="line">│   ├── App.vue          # 根组件</span><br><span class="line">│   └── main.js          # 入口文件（JavaScript版本）</span><br><span class="line">│   └── main.ts          # 入口文件（TypeScript版本）</span><br><span class="line">├── .gitignore           # Git忽略文件</span><br><span class="line">├── index.html           # HTML模板</span><br><span class="line">├── package.json         # 项目配置和依赖</span><br><span class="line">└── vite.config.js       # Vite配置文件</span><br></pre></td></tr></table></figure>
+<h2 id="📦-安装Hexo"><a href="#📦-安装Hexo" class="headerlink" title="📦 安装Hexo"></a>📦 安装Hexo</h2><p>环境准备完成后，我们可以开始安装Hexo了。</p>
+<h3 id="🔹-步骤1：使用npm全局安装Hexo"><a href="#🔹-步骤1：使用npm全局安装Hexo" class="headerlink" title="🔹 步骤1：使用npm全局安装Hexo"></a>🔹 步骤1：使用npm全局安装Hexo</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 全局安装Hexo CLI</span></span><br><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 
-<h3 id="核心文件说明"><a href="#核心文件说明" class="headerlink" title="核心文件说明"></a>核心文件说明</h3><ul>
-<li>📄 <strong>main.js&#x2F;main.ts</strong> - 项目入口文件，创建Vue应用实例并挂载到DOM</li>
-<li>📄 <strong>App.vue</strong> - 根组件，包含应用的基本结构</li>
-<li>📁 <strong>components&#x2F;</strong> - 存放Vue组件的目录</li>
-<li>📁 <strong>assets&#x2F;</strong> - 存放图片、样式等资源文件</li>
-<li>⚙️ <strong>vite.config.js</strong> - Vite构建工具的配置文件</li>
-</ul>
+<h3 id="🔹-步骤2：验证Hexo安装是否成功"><a href="#🔹-步骤2：验证Hexo安装是否成功" class="headerlink" title="🔹 步骤2：验证Hexo安装是否成功"></a>🔹 步骤2：验证Hexo安装是否成功</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 验证Hexo版本</span></span><br><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
+  <img src="/build_hexo_blog/install-hexo-verify.png" class="" title="安装Hexo命令">
+</div>
+
 <hr>
-<h2 id="🚀-运行Vue3项目"><a href="#🚀-运行Vue3项目" class="headerlink" title="🚀 运行Vue3项目"></a><span id="运行vue3项目">🚀 运行Vue3项目</span></h2><h3 id="开发模式运行"><a href="#开发模式运行" class="headerlink" title="开发模式运行"></a>开发模式运行</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用npm</span></span><br><span class="line">npm run dev</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用yarn</span></span><br><span class="line">yarn dev</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用pnpm</span></span><br><span class="line">pnpm dev</span><br></pre></td></tr></table></figure>
-
-<h3 id="访问项目"><a href="#访问项目" class="headerlink" title="访问项目"></a>访问项目</h3><p>运行成功后，会在命令行中显示访问地址，通常是 <code>http://localhost:5173</code>。</p>
-<p>在浏览器中访问该地址，即可看到Vue3项目的默认页面。</p>
-<figure class="image-container">
-  <figcaption><strong>📷 操作截图：Vue3默认页面</strong></figcaption>
+<h2 id="🚀-初始化博客"><a href="#🚀-初始化博客" class="headerlink" title="🚀 初始化博客"></a>🚀 初始化博客</h2><p>现在我们可以初始化一个新的Hexo博客了。</p>
+<h3 id="🔹-步骤1：创建博客目录"><a href="#🔹-步骤1：创建博客目录" class="headerlink" title="🔹 步骤1：创建博客目录"></a>🔹 步骤1：创建博客目录</h3><p>选择一个合适的位置创建博客目录，例如在桌面创建一个名为<code>my-blog</code>的目录。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建博客目录</span></span><br><span class="line"><span class="built_in">mkdir</span> my-blog</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入博客目录</span></span><br><span class="line"><span class="built_in">cd</span> my-blog</span><br></pre></td></tr></table></figure>
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
   <div class="image-grid">
-    <img src="/2026-01-25-how-to-create-vue3-project/vue3-default-page.png" class="" title="Vue3默认页面">
+    <img src="/build_hexo_blog/create-blog-directory.png" class="" title="创建博客目录">
   </div>
-</figure>
+</div>
 
-<h3 id="构建生产版本"><a href="#构建生产版本" class="headerlink" title="构建生产版本"></a>构建生产版本</h3><p>当项目开发完成后，可以构建生产版本：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用npm</span></span><br><span class="line">npm run build</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用yarn</span></span><br><span class="line">yarn build</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用pnpm</span></span><br><span class="line">pnpm build</span><br></pre></td></tr></table></figure>
+<h3 id="🔹-步骤2：初始化Hexo博客"><a href="#🔹-步骤2：初始化Hexo博客" class="headerlink" title="🔹 步骤2：初始化Hexo博客"></a>🔹 步骤2：初始化Hexo博客</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 初始化Hexo博客</span></span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure>
 
-<figure class="image-container">
-  <figcaption><strong>📷 操作截图：构建生产版本</strong></figcaption>
+<h3 id="🔹-步骤3：安装依赖"><a href="#🔹-步骤3：安装依赖" class="headerlink" title="🔹 步骤3：安装依赖"></a>🔹 步骤3：安装依赖</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装博客依赖</span></span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
   <div class="image-grid">
-    <img src="/2026-01-25-how-to-create-vue3-project/build-production.png" class="" title="构建生产版本">
+    <img src="/build_hexo_blog/init-hexo-install-deps.png" class="" title="初始化Hexo博客和安装依赖">
   </div>
-</figure>
+</div>
 
-<p>构建后的文件会生成在 <code>dist</code> 目录中，可直接部署到服务器。</p>
 <hr>
-<h2 id="🧩-简单的Vue3组件示例"><a href="#🧩-简单的Vue3组件示例" class="headerlink" title="🧩 简单的Vue3组件示例"></a><span id="简单的vue3组件示例">🧩 简单的Vue3组件示例</span></h2><p>让我们创建一个简单的Vue3组件，体验一下Vue3的组合式API，学习Vue3组件开发的基本流程：</p>
-<h3 id="创建组件"><a href="#创建组件" class="headerlink" title="创建组件"></a>创建组件</h3><p>在 <code>src/components/</code> 目录下创建一个 <code>Counter.vue</code> 组件：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;counter&quot;&gt;</span><br><span class="line">    &lt;h2&gt;Vue3计数器&lt;/h2&gt;</span><br><span class="line">    &lt;p&gt;当前计数: &#123;&#123; count &#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;div class=&quot;buttons&quot;&gt;</span><br><span class="line">      &lt;button @click=&quot;increment&quot;&gt;+&lt;/button&gt;</span><br><span class="line">      &lt;button @click=&quot;decrement&quot;&gt;-&lt;/button&gt;</span><br><span class="line">      &lt;button @click=&quot;reset&quot;&gt;重置&lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">// 使用ref创建响应式数据</span><br><span class="line">const count = ref(0)</span><br><span class="line"></span><br><span class="line">// 定义方法</span><br><span class="line">const increment = () =&gt; &#123;</span><br><span class="line">  count.value++</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const decrement = () =&gt; &#123;</span><br><span class="line">  count.value--</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const reset = () =&gt; &#123;</span><br><span class="line">  count.value = 0</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">.counter &#123;</span><br><span class="line">  text-align: center;</span><br><span class="line">  padding: 20px;</span><br><span class="line">  border: 1px solid #eee;</span><br><span class="line">  border-radius: 8px;</span><br><span class="line">  max-width: 300px;</span><br><span class="line">  margin: 20px auto;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.buttons &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  justify-content: center;</span><br><span class="line">  gap: 10px;</span><br><span class="line">  margin-top: 20px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">button &#123;</span><br><span class="line">  padding: 10px 20px;</span><br><span class="line">  font-size: 18px;</span><br><span class="line">  cursor: pointer;</span><br><span class="line">  border: none;</span><br><span class="line">  border-radius: 4px;</span><br><span class="line">  background-color: #42b983;</span><br><span class="line">  color: white;</span><br><span class="line">  transition: background-color 0.3s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">button:hover &#123;</span><br><span class="line">  background-color: #3aa876;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="⚙️-配置Hexo"><a href="#⚙️-配置Hexo" class="headerlink" title="⚙️ 配置Hexo"></a>⚙️ 配置Hexo</h2><p>Hexo初始化完成后，我们需要对博客进行基本配置。</p>
+<h3 id="🔹-步骤1：编辑配置文件"><a href="#🔹-步骤1：编辑配置文件" class="headerlink" title="🔹 步骤1：编辑配置文件"></a>🔹 步骤1：编辑配置文件</h3><p>Hexo的配置文件是<code>_config.yml</code>，位于博客根目录。使用文本编辑器（如VS Code、Sublime Text等）打开这个文件，对以下内容进行配置：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site - 网站基本信息</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">你的博客标题</span>          <span class="comment"># 博客标题，显示在网站顶部</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">你的博客副标题</span>    <span class="comment"># 博客副标题，显示在标题下方</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">你的博客描述</span>    <span class="comment"># 博客描述，用于SEO和元标签</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">你的名字</span>             <span class="comment"># 博客作者名称</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span>             <span class="comment"># 博客语言，中文使用zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">Asia/Shanghai</span>      <span class="comment"># 时区，亚洲/上海</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL - 链接配置</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://你的用户名.github.io</span>  <span class="comment"># 博客的完整URL</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span>                      <span class="comment"># 网站根目录</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span>  <span class="comment"># 文章永久链接格式</span></span><br><span class="line"><span class="attr">permalink_defaults:</span>          <span class="comment"># 永久链接默认值</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="在App-vue中使用组件"><a href="#在App-vue中使用组件" class="headerlink" title="在App.vue中使用组件"></a>在App.vue中使用组件</h3><p>修改 <code>src/App.vue</code>，引入并使用我们创建的Counter组件：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;Vue3项目示例&lt;/h1&gt;</span><br><span class="line">    &lt;Counter /&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import Counter from &#x27;./components/Counter.vue&#x27;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">/* 全局样式 */</span><br><span class="line">body &#123;</span><br><span class="line">  font-family: Arial, sans-serif;</span><br><span class="line">  max-width: 800px;</span><br><span class="line">  margin: 0 auto;</span><br><span class="line">  padding: 20px;</span><br><span class="line">  text-align: center;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="🔹-步骤2：保存配置文件"><a href="#🔹-步骤2：保存配置文件" class="headerlink" title="🔹 步骤2：保存配置文件"></a>🔹 步骤2：保存配置文件</h3><p>修改完成后，保存配置文件。</p>
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
+  <img src="/build_hexo_blog/configure-hexo-config.png" class="" title="配置文件编辑界面">
+</div>
 
-<h3 id="查看效果"><a href="#查看效果" class="headerlink" title="查看效果"></a>查看效果</h3><p>保存文件后，开发服务器会自动重新加载，在浏览器中可以看到我们创建的计数器组件。</p>
-<figure class="image-container">
-  <figcaption><strong>📷 操作截图：Vue3计数器组件</strong></figcaption>
+<div class="tip info">
+  <strong>💡 配置提示：</strong>
+  - 配置文件中的冒号后面需要加空格
+  - 确保URL配置正确，特别是GitHub Pages的地址
+  - 语言设置为zh-CN可以确保中文显示正常
+</div>
+
+<hr>
+<h2 id="🎨-安装主题"><a href="#🎨-安装主题" class="headerlink" title="🎨 安装主题"></a>🎨 安装主题</h2><p>Hexo默认使用的是landscape主题，我们可以安装更美观、功能更丰富的主题，例如Butterfly主题。</p>
+<h3 id="🔹-步骤1：安装Butterfly主题"><a href="#🔹-步骤1：安装Butterfly主题" class="headerlink" title="🔹 步骤1：安装Butterfly主题"></a>🔹 步骤1：安装Butterfly主题</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 克隆Butterfly主题到themes目录</span></span><br><span class="line">git <span class="built_in">clone</span> -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure>
+
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
   <div class="image-grid">
-    <img src="/2026-01-25-how-to-create-vue3-project/vue3-counter-example.png" class="" title="Vue3计数器组件">
+    <img src="/build_hexo_blog/install-butterfly-theme.png" class="" title="安装Butterfly主题">
   </div>
-</figure>
+</div>
 
-<hr>
-<h2 id="❓-常见问题及解决方案"><a href="#❓-常见问题及解决方案" class="headerlink" title="❓ 常见问题及解决方案"></a><span id="常见问题及解决方案">❓ 常见问题及解决方案</span></h2><h3 id="问题1：创建项目时网络超时"><a href="#问题1：创建项目时网络超时" class="headerlink" title="问题1：创建项目时网络超时"></a>问题1：创建项目时网络超时</h3><p><strong>解决方案</strong>：</p>
-<ul>
-<li>检查网络连接</li>
-<li>使用国内镜像：</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># npm镜像</span></span><br><span class="line">npm config <span class="built_in">set</span> registry https://registry.npmmirror.com</span><br><span class="line"></span><br><span class="line"><span class="comment"># pnpm镜像</span></span><br><span class="line">pnpm config <span class="built_in">set</span> registry https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
+<h3 id="🔹-步骤2：启用主题"><a href="#🔹-步骤2：启用主题" class="headerlink" title="🔹 步骤2：启用主题"></a>🔹 步骤2：启用主题</h3><p>编辑<code>_config.yml</code>文件，将theme设置为butterfly：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 主题设置</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">butterfly</span>  <span class="comment"># 使用Butterfly主题</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="问题2：依赖安装失败"><a href="#问题2：依赖安装失败" class="headerlink" title="问题2：依赖安装失败"></a>问题2：依赖安装失败</h3><p><strong>解决方案</strong>：</p>
-<ul>
-<li>删除 <code>node_modules</code> 目录和 <code>package-lock.json</code>&#x2F;<code>yarn.lock</code>&#x2F;<code>pnpm-lock.yaml</code> 文件</li>
-<li>重新安装依赖</li>
-<li>尝试使用不同的包管理器（npm → pnpm → yarn）</li>
-</ul>
-<h3 id="问题3：运行时出现语法错误"><a href="#问题3：运行时出现语法错误" class="headerlink" title="问题3：运行时出现语法错误"></a>问题3：运行时出现语法错误</h3><p><strong>解决方案</strong>：</p>
-<ul>
-<li>检查Node.js版本是否符合要求（Vue3要求Node.js 14.18+或16+）</li>
-<li>确保使用了正确的Vue3语法</li>
-<li>检查是否安装了必要的依赖</li>
-</ul>
-<h3 id="问题4：组件不显示"><a href="#问题4：组件不显示" class="headerlink" title="问题4：组件不显示"></a>问题4：组件不显示</h3><p><strong>解决方案</strong>：</p>
-<ul>
-<li>检查组件是否正确引入</li>
-<li>检查组件名称是否正确</li>
-<li>检查模板语法是否正确</li>
-</ul>
-<hr>
-<h2 id="🎯-总结与资源"><a href="#🎯-总结与资源" class="headerlink" title="🎯 总结与资源"></a><span id="总结与资源">🎯 总结与资源</span></h2><p>恭喜你！你已经成功学习了如何使用Vite创建Vue3项目，并了解了Vite与Vue CLI的区别以及Vue3项目的基本结构和组件开发流程。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
-<li>✅ <strong>环境准备</strong> - 安装了Node.js和可选的pnpm包管理器</li>
-<li>✅ <strong>Vite与Vue CLI对比</strong> - 了解了两者的区别和各自的优势</li>
-<li>✅ <strong>Vite创建Vue3项目</strong> - 掌握了使用Vite创建Vue3项目的完整流程</li>
-<li>✅ <strong>项目结构解析</strong> - 了解了Vue3项目的核心文件和目录结构</li>
-<li>✅ <strong>运行与构建</strong> - 学会了如何运行开发服务器和构建生产版本</li>
-<li>✅ <strong>组件开发</strong> - 创建了一个使用组合式API的Vue3计数器组件</li>
-<li>✅ <strong>问题解决方案</strong> - 了解了常见问题的排查和解决方法</li>
-</ul>
-<h3 id="推荐资源"><a href="#推荐资源" class="headerlink" title="推荐资源"></a>推荐资源</h3><ul>
-<li>📚 <strong><a href="https://vuejs.org/guide/introduction.html">Vue3官方文档</a></strong> - 最权威的Vue3学习资源</li>
-<li>⚡ <strong><a href="https://vitejs.dev/guide/">Vite官方文档</a></strong> - Vite构建工具使用指南</li>
-<li>🔀 <strong><a href="https://router.vuejs.org/">Vue Router 4</a></strong> - Vue3的路由库</li>
-<li>🗄️ <strong><a href="https://pinia.vuejs.org/">Pinia</a></strong> - Vue3的状态管理库（替代Vuex）</li>
-<li>🎓 <strong><a href="https://www.vuemastery.com/">Vue Mastery</a></strong> - Vue官方课程平台</li>
-</ul>
-<h3 id="下一步学习建议"><a href="#下一步学习建议" class="headerlink" title="下一步学习建议"></a>下一步学习建议</h3><ol>
-<li>深入学习Vue3的组合式API</li>
-<li>学习Vue Router和Pinia，构建完整应用</li>
-<li>掌握TypeScript在Vue3中的使用</li>
-<li>了解Vue3的性能优化技巧</li>
-<li>探索Vite的高级配置和插件生态</li>
-</ol>
-<hr>
+<h3 id="🔹-步骤3：安装必要的插件"><a href="#🔹-步骤3：安装必要的插件" class="headerlink" title="🔹 步骤3：安装必要的插件"></a>🔹 步骤3：安装必要的插件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装Butterfly主题所需的渲染插件</span></span><br><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus --save</span><br></pre></td></tr></table></figure>
+
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
+  <div class="image-grid">
+    <img src="/build_hexo_blog/install-theme-plugins.png" class="" title="安装必要的插件">
+  </div>
+</div>
+
 <div class="tip success">
-  <strong>🎉 学习完成！</strong><br>
-  通过本文的学习，你已经掌握了使用Vite创建Vue3项目的基本技能，这为你进一步学习Vue3打下了坚实的基础。
-  <br><br>
-  <strong>🚀 继续探索Vue3的精彩世界吧！</strong>
+  <strong>✅ 主题优势：</strong>
+  - Butterfly主题美观现代，支持响应式设计
+  - 内置多种功能：搜索、评论、代码高亮等
+  - 支持自定义配置，易于个性化
+  - 活跃的社区支持和持续更新
 </div>
 
 <hr>
-<div class="article-info">
-  <strong>📅 更新时间：</strong>2026-01-25<br>
-  <strong>✍️ 作者：</strong>Jay<br>
+<h2 id="✨-个性化设置"><a href="#✨-个性化设置" class="headerlink" title="✨ 个性化设置"></a>✨ 个性化设置</h2><p>现在我们可以对博客进行个性化设置，让它更加符合我们的需求。</p>
+<h3 id="🔹-步骤1：创建主题配置文件"><a href="#🔹-步骤1：创建主题配置文件" class="headerlink" title="🔹 步骤1：创建主题配置文件"></a>🔹 步骤1：创建主题配置文件</h3><p>在博客根目录创建一个<code>_config.butterfly.yml</code>文件，用于配置Butterfly主题（推荐使用独立配置文件，便于主题更新）。</p>
+<h3 id="🔹-步骤2：基本配置"><a href="#🔹-步骤2：基本配置" class="headerlink" title="🔹 步骤2：基本配置"></a>🔹 步骤2：基本配置</h3><p>在<code>_config.butterfly.yml</code>文件中进行基本配置：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 网站图标设置</span></span><br><span class="line"><span class="attr">favicon:</span> <span class="string">/img/favicon.ico</span>  <span class="comment"># 网站图标，显示在浏览器标签页</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 导航菜单设置</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">首页:</span> <span class="string">/</span>                   <span class="comment"># 首页链接</span></span><br><span class="line">  <span class="string">归档:</span> <span class="string">/archives/</span>          <span class="comment"># 文章归档</span></span><br><span class="line">  <span class="string">分类:</span> <span class="string">/categories/</span>        <span class="comment"># 文章分类</span></span><br><span class="line">  <span class="string">标签:</span> <span class="string">/tags/</span>              <span class="comment"># 文章标签</span></span><br><span class="line">  <span class="string">关于:</span> <span class="string">/about/</span>             <span class="comment"># 关于页面</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 社交链接设置</span></span><br><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">GitHub:</span> <span class="string">https://github.com/你的用户名</span>  <span class="comment"># GitHub链接</span></span><br><span class="line">  <span class="string">微博:</span> <span class="string">https://weibo.com/你的用户名</span>     <span class="comment"># 微博链接</span></span><br><span class="line">  <span class="string">知乎:</span> <span class="string">https://www.zhihu.com/people/你的用户名</span>  <span class="comment"># 知乎链接</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="🔹-步骤3：个性化样式"><a href="#🔹-步骤3：个性化样式" class="headerlink" title="🔹 步骤3：个性化样式"></a>🔹 步骤3：个性化样式</h3><p>可以在<code>source/css/custom.css</code>文件中添加自定义样式，个性化你的博客：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 示例：自定义博客标题样式 */</span></span><br><span class="line"><span class="selector-class">.site-title</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">2rem</span>;</span><br><span class="line">  <span class="attribute">font-weight</span>: bold;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#667eea</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 示例：自定义链接颜色 */</span></span><br><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#7c3aed</span>;</span><br><span class="line">  <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#f093fb</span>;</span><br><span class="line">  <span class="attribute">text-decoration</span>: underline;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="tip warning">
+  <strong>🎯 个性化建议：</strong>
+  - 从简单的配置开始，逐步添加复杂功能
+  - 参考Butterfly主题的官方文档进行配置
+  - 定期备份你的配置文件
 </div>
+
+<hr>
+<h2 id="✍️-撰写第一篇文章"><a href="#✍️-撰写第一篇文章" class="headerlink" title="✍️ 撰写第一篇文章"></a>✍️ 撰写第一篇文章</h2><p>现在我们可以撰写第一篇博客文章了。</p>
+<h3 id="🔹-步骤1：创建新文章"><a href="#🔹-步骤1：创建新文章" class="headerlink" title="🔹 步骤1：创建新文章"></a>🔹 步骤1：创建新文章</h3><p>使用Hexo命令创建一篇新文章：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一篇新文章，标题为&quot;我的第一篇博客文章&quot;</span></span><br><span class="line">hexo new <span class="string">&quot;我的第一篇博客文章&quot;</span></span><br></pre></td></tr></table></figure>
+
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
+  <div class="image-grid">
+    <img src="/build_hexo_blog/create-new-post.png" class="" title="创建新文章命令">
+  </div>
+</div>
+
+<h3 id="🔹-步骤2：编辑文章"><a href="#🔹-步骤2：编辑文章" class="headerlink" title="🔹 步骤2：编辑文章"></a>🔹 步骤2：编辑文章</h3><p>文章会创建在<code>source/_posts</code>目录下，使用Markdown格式编写。编辑文章内容，添加标题、标签、分类等信息。</p>
+<p>文章的基本结构如下：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 我的第一篇博客文章  # 文章标题</span><br><span class="line">date: 2026-01-18 10:00:00  # 文章发布日期</span><br><span class="line">tags: [Hexo, 博客]  # 文章标签</span><br><span class="line">categories: [博客教程]  # 文章分类</span><br><span class="line"><span class="section">description: 这是我的第一篇博客文章  # 文章描述</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line"><span class="section"># 欢迎阅读我的第一篇博客</span></span><br><span class="line"></span><br><span class="line">这是我的第一篇Hexo博客文章，使用Markdown格式编写。</span><br><span class="line"></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"></span><br><span class="line"><span class="section">### 三级标题</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> 列表项1</span><br><span class="line"><span class="bullet">-</span> 列表项2</span><br><span class="line"><span class="bullet">-</span> 列表项3</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
+  <div class="image-grid">
+    <img src="/build_hexo_blog/edit-post-interface.png" class="" title="文章编辑界面">
+  </div>
+</div>
+
+<h3 id="🔹-步骤3：保存文章"><a href="#🔹-步骤3：保存文章" class="headerlink" title="🔹 步骤3：保存文章"></a>🔹 步骤3：保存文章</h3><p>编写完成后，保存文章。</p>
+<div class="tip success">
+  <strong>✏️ 写作建议：</strong>
+  - 使用Markdown格式编写，简洁高效
+  - 文章结构清晰，层次分明
+  - 适当使用图片和代码示例增强可读性
+  - 定期备份你的文章内容
+</div>
+
+<hr>
+<h2 id="👀-本地预览"><a href="#👀-本地预览" class="headerlink" title="👀 本地预览"></a>👀 本地预览</h2><p>在部署之前，我们可以在本地预览博客效果，检查是否有任何问题。</p>
+<h3 id="🔹-步骤1：生成静态文件"><a href="#🔹-步骤1：生成静态文件" class="headerlink" title="🔹 步骤1：生成静态文件"></a>🔹 步骤1：生成静态文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成静态文件</span></span><br><span class="line">hexo generate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者使用简写形式</span></span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+
+<h3 id="🔹-步骤2：启动本地服务器"><a href="#🔹-步骤2：启动本地服务器" class="headerlink" title="🔹 步骤2：启动本地服务器"></a>🔹 步骤2：启动本地服务器</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 启动本地服务器</span></span><br><span class="line">hexo server</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者使用简写形式</span></span><br><span class="line">hexo s</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可选：指定端口</span></span><br><span class="line">hexo s -p 8080</span><br></pre></td></tr></table></figure>
+
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
+  <div class="image-grid">
+    <img src="/build_hexo_blog/generate-static-server.png" class="" title="生成静态文件和启动本地服务器">
+  </div>
+</div>
+
+<h3 id="🔹-步骤3：访问本地博客"><a href="#🔹-步骤3：访问本地博客" class="headerlink" title="🔹 步骤3：访问本地博客"></a>🔹 步骤3：访问本地博客</h3><p>在浏览器中访问<code>http://localhost:4000</code>，查看博客效果。</p>
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
+  <div class="image-grid">
+    <img src="/build_hexo_blog/local-blog-preview.png" class="" title="本地博客效果">
+  </div>
+</div>
+
+<div class="tip info">
+  <strong>🔍 预览提示：</strong>
+  - 本地预览可以实时查看博客效果
+  - 修改文章或配置后，刷新浏览器即可看到更新
+  - 按下Ctrl+C可以停止本地服务器
+</div>
+
+<hr>
+<h2 id="❗-常见问题解决"><a href="#❗-常见问题解决" class="headerlink" title="❗ 常见问题解决"></a>❗ 常见问题解决</h2><p>在搭建Hexo博客的过程中，可能会遇到一些问题。这里列举几个常见问题及解决方法。</p>
+<h3 id="🔹-问题1：Hexo命令无法使用"><a href="#🔹-问题1：Hexo命令无法使用" class="headerlink" title="🔹 问题1：Hexo命令无法使用"></a>🔹 问题1：Hexo命令无法使用</h3><p><strong>症状：</strong> 执行<code>hexo</code>命令时提示”command not found”或类似错误</p>
+<p><strong>解决方法：</strong> </p>
+<ol>
+<li>检查Node.js和npm是否安装成功</li>
+<li>尝试重新安装Hexo：<code>npm install -g hexo-cli</code></li>
+<li>检查系统环境变量是否配置正确</li>
+</ol>
+<h3 id="🔹-问题2：本地预览时样式丢失"><a href="#🔹-问题2：本地预览时样式丢失" class="headerlink" title="🔹 问题2：本地预览时样式丢失"></a>🔹 问题2：本地预览时样式丢失</h3><p><strong>症状：</strong> 本地访问时，博客没有样式或样式显示异常</p>
+<p><strong>解决方法：</strong> </p>
+<ol>
+<li>检查主题配置是否正确</li>
+<li>确认必要的插件是否已安装</li>
+<li>尝试重新安装主题和依赖</li>
+<li>检查配置文件中的URL设置是否正确</li>
+</ol>
+<h3 id="🔹-问题3：文章图片无法显示"><a href="#🔹-问题3：文章图片无法显示" class="headerlink" title="🔹 问题3：文章图片无法显示"></a>🔹 问题3：文章图片无法显示</h3><p><strong>症状：</strong> 文章中的图片无法正常显示</p>
+<p><strong>解决方法：</strong> </p>
+<ol>
+<li>确保图片文件存放在与文章同名的文件夹中</li>
+<li>使用Hexo推荐的<code>&#123;% asset_img %&#125;</code>标签引用图片</li>
+<li>检查图片路径是否正确</li>
+</ol>
+<div class="tip warning">
+  <strong>💡 问题排查建议：</strong>
+  - 仔细查看命令行输出的错误信息
+  - 检查配置文件中的语法错误
+  - 参考Hexo和主题的官方文档
+  - 搜索相关问题的解决方案
+</div>
+
+<hr>
+<h2 id="🎊-结语"><a href="#🎊-结语" class="headerlink" title="🎊 结语"></a>🎊 结语</h2><p>恭喜你！现在你已经成功搭建了属于自己的Hexo博客网站。博客搭建只是开始，后续你可以通过以下方式让你的博客更加完美：</p>
+<ul>
+<li><strong>撰写优质内容</strong>：定期更新博客，分享你的知识和经验</li>
+<li><strong>优化博客性能</strong>：使用CDN、压缩资源、优化图片等</li>
+<li><strong>添加更多功能</strong>：评论系统、阅读统计、搜索功能等</li>
+<li><strong>美化博客样式</strong>：自定义主题、添加动画效果等</li>
+<li><strong>SEO优化</strong>：优化文章标题、描述、标签等</li>
+</ul>
+<p>希望本文对你有所帮助。如果你有任何问题或建议，欢迎在评论区留言交流！</p>
+<h2 id="📚-相关资源"><a href="#📚-相关资源" class="headerlink" title="📚 相关资源"></a>📚 相关资源</h2><ul>
+<li><strong><a href="https://hexo.io/zh-cn/docs/">Hexo官方文档</a></strong> - 最权威的Hexo使用指南</li>
+<li><strong><a href="https://butterfly.js.org/">Butterfly主题文档</a></strong> - Butterfly主题的详细配置说明</li>
+<li><strong><a href="https://docs.github.com/cn/pages">GitHub Pages官方文档</a></strong> - GitHub Pages的使用教程</li>
+<li><strong><a href="https://markdown.com.cn/basic-syntax/">Markdown语法指南</a></strong> - 学习Markdown写作语法</li>
+</ul>
+<hr>
+<p><strong>更新时间：</strong> 2026-01-18<br><strong>作者：</strong> Jay</p>
 ]]></content>
       <categories>
-        <category>技术教程</category>
+        <category>博客教程</category>
       </categories>
       <tags>
-        <tag>Vue3</tag>
-        <tag>Vite</tag>
-        <tag>Vue3项目创建</tag>
-        <tag>Vite搭建Vue3</tag>
-        <tag>前端开发</tag>
-        <tag>项目搭建</tag>
-        <tag>JavaScript</tag>
-        <tag>TypeScript</tag>
-        <tag>Vue3入门</tag>
-        <tag>Vue3教程</tag>
+        <tag>Hexo</tag>
+        <tag>Butterfly主题</tag>
+        <tag>博客教程</tag>
+        <tag>网站搭建</tag>
+        <tag>静态博客</tag>
+        <tag>Hexo博客搭建</tag>
+        <tag>个人博客</tag>
+        <tag>博客制作</tag>
+        <tag>网站建设</tag>
       </tags>
   </entry>
   <entry>
     <title>🛡️ Python项目备份工具 - 开发者的数据安全守护者 | 一键备份与版本管理工具</title>
-    <url>/2026-01-21-project-backup-tool.html</url>
+    <url>//python_backup_tool/</url>
     <content><![CDATA[<h1 id="🛡️-Python项目备份工具-开发者的数据安全守护者"><a href="#🛡️-Python项目备份工具-开发者的数据安全守护者" class="headerlink" title="🛡️ Python项目备份工具 - 开发者的数据安全守护者"></a>🛡️ Python项目备份工具 - 开发者的数据安全守护者</h1><p>你是否曾经历过：</p>
 <ul>
 <li>辛辛苦苦写了一天的代码，不小心误删且无法恢复？</li>
@@ -1409,7 +1098,7 @@
 <li><strong>🚀 无需安装</strong>：解压后直接使用，绿色便捷</li>
 </ul>
 <h3 id="🖼️-界面预览"><a href="#🖼️-界面预览" class="headerlink" title="🖼️ 界面预览"></a>🖼️ 界面预览</h3><p>这是工具的主界面截图，简洁直观，功能一目了然：</p>
-<h3 id="界面预览"><a href="#界面预览" class="headerlink" title="界面预览"></a>界面预览</h3><img src="/2026-01-21-project-backup-tool/backup-tool-interface.png" class="" title="项目备份工具界面">
+<h3 id="界面预览"><a href="#界面预览" class="headerlink" title="界面预览"></a>界面预览</h3><img src="/python_backup_tool/backup-tool-interface.png" class="" title="项目备份工具界面">
 
 <h3 id="📖-使用提示"><a href="#📖-使用提示" class="headerlink" title="📖 使用提示"></a>📖 使用提示</h3><ol>
 <li>首次运行会自动生成<code>config.json</code>配置文件</li>
@@ -1470,8 +1159,503 @@
       </tags>
   </entry>
   <entry>
+    <title>程序员的浪漫 | 用Python代码画一颗会跳动的爱心</title>
+    <url>//python-beating-heart-animation/</url>
+    <content><![CDATA[<div class="tip success">
+  <strong>🎉 欢迎阅读程序员的浪漫代码教程！</strong><br>
+  本文将详细介绍如何使用Python和tkinter库创建一颗会跳动的爱心，包含数学原理、代码分析、运行效果和可执行文件下载，适合Python爱好者和寻找创意代码的程序员。
+</div>
+
+<hr>
+<h2 id="📝-前言"><a href="#📝-前言" class="headerlink" title="📝 前言"></a>📝 前言</h2><p>各位亲爱的程序员朋友们，今天，我要给大家介绍一个神奇的代码项目，它能在你的屏幕上画出一颗会跳动的爱心，而且效果还非常酷炫！</p>
+<p>什么？你说你不会画画？没关系，我们有数学！什么？你说你没有艺术细胞？没关系，我们有代码！让我们一起看看，如何用几行代码，创造出属于程序员的浪漫。</p>
+<hr>
+<h2 id="📋-目录"><a href="#📋-目录" class="headerlink" title="📋 目录"></a>📋 目录</h2><ul>
+<li><a href="#%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D">项目介绍</a></li>
+<li><a href="#%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86%E5%BF%83%E5%BD%A2%E6%9B%B2%E7%BA%BF%E7%9A%84%E7%94%9F%E6%88%90">数学原理：心形曲线的生成</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E7%88%B1%E5%BF%83%E6%98%AF%E5%A6%82%E4%BD%95%E8%B7%B3%E5%8A%A8%E7%9A%84">代码分析：爱心是如何跳动的？</a></li>
+<li><a href="#%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81">完整代码</a></li>
+<li><a href="#%E8%BF%90%E8%A1%8C%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA">运行效果展示</a></li>
+<li><a href="#%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD">可执行文件下载</a></li>
+<li><a href="#%E6%89%A9%E5%B1%95%E5%92%8C%E6%94%B9%E8%BF%9B">扩展和改进</a></li>
+<li><a href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">常见问题及解决方案</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93%E4%B8%8E%E8%B5%84%E6%BA%90">总结与资源</a></li>
+</ul>
+<hr>
+<h2 id="🎨-项目介绍"><a href="#🎨-项目介绍" class="headerlink" title="🎨 项目介绍"></a><span id="项目介绍">🎨 项目介绍</span></h2><p>这个项目使用Python的tkinter库创建一个图形界面，通过数学函数生成心形曲线，并添加动画效果使其看起来像一颗跳动的心脏。项目的主要特点包括：</p>
+<ul>
+<li>✨ <strong>数学驱动</strong>：使用经典的心形曲线参数方程生成基本形状</li>
+<li>✨ <strong>动态效果</strong>：爱心会有规律地收缩和膨胀，模拟跳动效果</li>
+<li>✨ <strong>视觉层次感</strong>：通过随机扩散算法生成边缘模糊效果</li>
+<li>✨ <strong>光晕效果</strong>：爱心周围有淡淡的光晕，增强视觉效果</li>
+<li>✨ <strong>颜色渐变</strong>：内芯使用粉色，外层使用红色，形成层次感</li>
+</ul>
+<hr>
+<h2 id="🔢-数学原理：心形曲线的生成"><a href="#🔢-数学原理：心形曲线的生成" class="headerlink" title="🔢 数学原理：心形曲线的生成"></a><span id="数学原理心形曲线的生成">🔢 数学原理：心形曲线的生成</span></h2><p>心形曲线是如何通过数学公式生成的呢？这里使用了一个经典的心形曲线参数方程：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">heart_function</span>(<span class="params">t, shrink_ratio=IMAGE_ENLARGE</span>):</span><br><span class="line">    x = <span class="number">16</span> * (sin(t) ** <span class="number">3</span>)</span><br><span class="line">    y = -(<span class="number">13</span> * cos(t) - <span class="number">5</span> * cos(<span class="number">2</span> * t) - <span class="number">2</span> * cos(<span class="number">3</span> * t) - cos(<span class="number">4</span> * t))</span><br><span class="line">    x *= shrink_ratio</span><br><span class="line">    y *= shrink_ratio</span><br><span class="line">    x += CANVAS_CENTER_X</span><br><span class="line">    y += CANVAS_CENTER_Y</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">int</span>(x), <span class="built_in">int</span>(y)</span><br></pre></td></tr></table></figure>
+
+<p>这个方程是如何工作的呢？让我们来分解一下：</p>
+<ol>
+<li><strong>参数t</strong>：从0到2π变化，遍历心形曲线上的所有点</li>
+<li><strong>x坐标计算</strong>：使用正弦函数的三次方，形成心形的左右对称结构</li>
+<li><strong>y坐标计算</strong>：使用多个余弦函数的组合，形成心形的底部尖角和顶部曲线</li>
+<li><strong>缩放和平移</strong>：将生成的点放大并移动到画布中心</li>
+</ol>
+<p>这种参数方程的优点是计算简单，生成的曲线平滑美观，非常适合用于创建心形图案。</p>
+<hr>
+<h2 id="💻-代码分析：爱心是如何跳动的？"><a href="#💻-代码分析：爱心是如何跳动的？" class="headerlink" title="💻 代码分析：爱心是如何跳动的？"></a><span id="代码分析爱心是如何跳动的">💻 代码分析：爱心是如何跳动的？</span></h2><h3 id="1-扩散效果：让爱心更有层次感"><a href="#1-扩散效果：让爱心更有层次感" class="headerlink" title="1. 扩散效果：让爱心更有层次感"></a>1. 扩散效果：让爱心更有层次感</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">scatter_points</span>(<span class="params">x, y, beta=SCATTER_BETA</span>):</span><br><span class="line">    ratio_x = -beta * log(random.random())</span><br><span class="line">    ratio_y = -beta * log(random.random())</span><br><span class="line">    dx = ratio_x * (x - CANVAS_CENTER_X)</span><br><span class="line">    dy = ratio_y * (y - CANVAS_CENTER_Y)</span><br><span class="line">    <span class="keyword">return</span> x - dx, y - dy</span><br></pre></td></tr></table></figure>
+
+<p>为了让爱心看起来更有层次感，代码使用了随机扩散算法：</p>
+<ul>
+<li>使用对数函数生成扩散比例，使得扩散点更集中在心形中心</li>
+<li>从基本心形的点向外扩散，生成边缘模糊的效果</li>
+<li>这种随机扩散模拟了粒子效果，让爱心看起来更生动</li>
+</ul>
+<h3 id="2-动画效果：让爱心跳动起来"><a href="#2-动画效果：让爱心跳动起来" class="headerlink" title="2. 动画效果：让爱心跳动起来"></a>2. 动画效果：让爱心跳动起来</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">curve</span>(<span class="params">p</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * (<span class="number">3</span> * sin(<span class="number">4</span> * p)) / (<span class="number">2</span> * pi)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">calc</span>(<span class="params">self, generate_frame</span>):</span><br><span class="line">    ratio = CURVE_RATIO * curve(generate_frame / <span class="number">10</span> * pi)</span><br><span class="line">    halo_radius = <span class="built_in">int</span>(<span class="number">4</span> + <span class="number">6</span> * (<span class="number">1</span> + curve(generate_frame / <span class="number">10</span> * pi)))</span><br><span class="line">    halo_number = <span class="built_in">int</span>(<span class="number">3000</span> + <span class="number">4000</span> * <span class="built_in">abs</span>(curve(generate_frame / <span class="number">10</span> * pi) ** <span class="number">2</span>))</span><br><span class="line">    <span class="comment"># ... 计算所有点的位置 ...</span></span><br></pre></td></tr></table></figure>
+
+<p>为了让爱心跳动起来，代码使用了：</p>
+<ul>
+<li>一个周期性的正弦曲线函数，模拟心跳的节奏</li>
+<li>通过改变参数来调整爱心的大小和光晕效果</li>
+<li>随着时间的推移，爱心会有规律地收缩和膨胀</li>
+</ul>
+<h3 id="3-渲染效果：颜色和细节的处理"><a href="#3-渲染效果：颜色和细节的处理" class="headerlink" title="3. 渲染效果：颜色和细节的处理"></a>3. 渲染效果：颜色和细节的处理</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">render</span>(<span class="params">self, render_canvas, render_frame</span>):</span><br><span class="line">    <span class="keyword">for</span> x, y, size <span class="keyword">in</span> <span class="variable language_">self</span>.parameters.all_points[render_frame % <span class="variable language_">self</span>.generate_frame]:</span><br><span class="line">        <span class="keyword">if</span> size == <span class="number">2</span>:</span><br><span class="line">            render_canvas.create_rectangle(x, y, x + size, y + size, width=<span class="number">0</span>, fill=INNER_HEART_COLOR)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            render_canvas.create_rectangle(x, y, x + size, y + size, width=<span class="number">0</span>, fill=OUTER_HEART_COLOR)</span><br></pre></td></tr></table></figure>
+
+<p>在渲染时，代码：</p>
+<ul>
+<li>根据点的大小选择不同的颜色，形成层次感</li>
+<li>使用小矩形而不是圆形来绘制点，密集排列时产生更柔和的效果</li>
+<li>清除画布并重新绘制每一帧，实现动画效果</li>
+</ul>
+<hr>
+<h2 id="📄-完整代码"><a href="#📄-完整代码" class="headerlink" title="📄 完整代码"></a><span id="完整代码">📄 完整代码</span></h2><p>以下是完整的Python代码，你可以直接复制到本地运行：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> random </span><br><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sin, cos, pi, log </span><br><span class="line"><span class="keyword">from</span> tkinter <span class="keyword">import</span> * </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Constants </span></span><br><span class="line">CANVAS_WIDTH = <span class="number">640</span> </span><br><span class="line">CANVAS_HEIGHT = <span class="number">640</span> </span><br><span class="line">CANVAS_CENTER_X = CANVAS_WIDTH / <span class="number">2</span> </span><br><span class="line">CANVAS_CENTER_Y = CANVAS_HEIGHT / <span class="number">2</span> </span><br><span class="line">IMAGE_ENLARGE = <span class="number">11</span> </span><br><span class="line">INNER_HEART_COLOR = <span class="string">&quot;pink&quot;</span>  </span><br><span class="line">OUTER_HEART_COLOR = <span class="string">&quot;red&quot;</span>   </span><br><span class="line">SCATTER_BETA = <span class="number">0.15</span> </span><br><span class="line">SHRINK_RATIO = <span class="number">15</span> </span><br><span class="line">CURVE_RATIO = <span class="number">10</span> </span><br><span class="line">FRAME_DELAY = <span class="number">160</span> </span><br><span class="line">NUM_POINTS = <span class="number">2000</span> </span><br><span class="line">NUM_HALO_POINTS = <span class="number">3000</span> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">HeartParameters</span>: </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>): </span><br><span class="line">        <span class="variable language_">self</span>.points = <span class="built_in">set</span>() </span><br><span class="line">        <span class="variable language_">self</span>.edge_diffusion_points = <span class="built_in">set</span>() </span><br><span class="line">        <span class="variable language_">self</span>.center_diffusion_points = <span class="built_in">set</span>() </span><br><span class="line">        <span class="variable language_">self</span>.all_points = &#123;&#125; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Heart function </span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">heart_function</span>(<span class="params">t, shrink_ratio=IMAGE_ENLARGE</span>): </span><br><span class="line">    x = <span class="number">16</span> * (sin(t) ** <span class="number">3</span>) </span><br><span class="line">    y = -(<span class="number">13</span> * cos(t) - <span class="number">5</span> * cos(<span class="number">2</span> * t) - <span class="number">2</span> * cos(<span class="number">3</span> * t) - cos(<span class="number">4</span> * t)) </span><br><span class="line">    x *= shrink_ratio </span><br><span class="line">    y *= shrink_ratio </span><br><span class="line">    x += CANVAS_CENTER_X </span><br><span class="line">    y += CANVAS_CENTER_Y </span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">int</span>(x), <span class="built_in">int</span>(y) </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Scatter points </span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">scatter_points</span>(<span class="params">x, y, beta=SCATTER_BETA</span>): </span><br><span class="line">    ratio_x = -beta * log(random.random()) </span><br><span class="line">    ratio_y = -beta * log(random.random()) </span><br><span class="line">    dx = ratio_x * (x - CANVAS_CENTER_X) </span><br><span class="line">    dy = ratio_y * (y - CANVAS_CENTER_Y) </span><br><span class="line">    <span class="keyword">return</span> x - dx, y - dy </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Shrink points </span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">shrink_points</span>(<span class="params">x, y, ratio</span>): </span><br><span class="line">    force = -<span class="number">1</span> / (((x - CANVAS_CENTER_X) ** <span class="number">2</span> + (y - CANVAS_CENTER_Y) ** <span class="number">2</span>) ** <span class="number">0.6</span>) </span><br><span class="line">    dx = ratio * force * (x - CANVAS_CENTER_X) </span><br><span class="line">    dy = ratio * force * (y - CANVAS_CENTER_Y) </span><br><span class="line">    <span class="keyword">return</span> x - dx, y - dy </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Curve function </span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">curve</span>(<span class="params">p</span>): </span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * (<span class="number">3</span> * sin(<span class="number">4</span> * p)) / (<span class="number">2</span> * pi) </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Heart class </span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Heart</span>: </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, generate_frame=<span class="number">20</span></span>): </span><br><span class="line">        <span class="variable language_">self</span>.parameters = HeartParameters() </span><br><span class="line">        <span class="variable language_">self</span>.generate_frame = generate_frame </span><br><span class="line">        <span class="variable language_">self</span>.build(NUM_POINTS) </span><br><span class="line">        <span class="keyword">for</span> frame <span class="keyword">in</span> <span class="built_in">range</span>(generate_frame): </span><br><span class="line">            <span class="variable language_">self</span>.calc(frame) </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">build</span>(<span class="params">self, number</span>): </span><br><span class="line">        <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(number): </span><br><span class="line">            t = random.uniform(<span class="number">0</span>, <span class="number">2</span> * pi) </span><br><span class="line">            x, y = heart_function(t) </span><br><span class="line">            <span class="variable language_">self</span>.parameters.points.add((x, y)) </span><br><span class="line">        <span class="keyword">for</span> _x, _y <span class="keyword">in</span> <span class="built_in">list</span>(<span class="variable language_">self</span>.parameters.points): </span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>): </span><br><span class="line">                x, y = scatter_points(_x, _y) </span><br><span class="line">                <span class="variable language_">self</span>.parameters.edge_diffusion_points.add((x, y)) </span><br><span class="line">        point_list = <span class="built_in">list</span>(<span class="variable language_">self</span>.parameters.points) </span><br><span class="line">        <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(NUM_HALO_POINTS): </span><br><span class="line">            x, y = random.choice(point_list) </span><br><span class="line">            x, y = scatter_points(x, y, <span class="number">0.17</span>) </span><br><span class="line">            <span class="variable language_">self</span>.parameters.center_diffusion_points.add((x, y)) </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">    @staticmethod </span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">calc_position</span>(<span class="params">x, y, ratio</span>): </span><br><span class="line">        force = <span class="number">1</span> / (((x - CANVAS_CENTER_X) ** <span class="number">2</span> + (y - CANVAS_CENTER_Y) ** <span class="number">2</span>) ** <span class="number">0.520</span>) </span><br><span class="line">        dx = ratio * force * (x - CANVAS_CENTER_X) + random.randint(-<span class="number">1</span>, <span class="number">1</span>) </span><br><span class="line">        dy = ratio * force * (y - CANVAS_CENTER_Y) + random.randint(-<span class="number">1</span>, <span class="number">1</span>) </span><br><span class="line">        <span class="keyword">return</span> x - dx, y - dy </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">calc</span>(<span class="params">self, generate_frame</span>): </span><br><span class="line">        ratio = CURVE_RATIO * curve(generate_frame / <span class="number">10</span> * pi) </span><br><span class="line">        halo_radius = <span class="built_in">int</span>(<span class="number">4</span> + <span class="number">6</span> * (<span class="number">1</span> + curve(generate_frame / <span class="number">10</span> * pi))) </span><br><span class="line">        halo_number = <span class="built_in">int</span>(<span class="number">3000</span> + <span class="number">4000</span> * <span class="built_in">abs</span>(curve(generate_frame / <span class="number">10</span> * pi) ** <span class="number">2</span>)) </span><br><span class="line">        all_points = [] </span><br><span class="line">        heart_halo_point = <span class="built_in">set</span>() </span><br><span class="line">        <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(halo_number): </span><br><span class="line">            t = random.uniform(<span class="number">0</span>, <span class="number">2</span> * pi) </span><br><span class="line">            x, y = heart_function(t, shrink_ratio=SHRINK_RATIO) </span><br><span class="line">            x, y = shrink_points(x, y, halo_radius) </span><br><span class="line">            <span class="keyword">if</span> (x, y) <span class="keyword">not</span> <span class="keyword">in</span> heart_halo_point: </span><br><span class="line">                heart_halo_point.add((x, y)) </span><br><span class="line">                x += random.randint(-<span class="number">14</span>, <span class="number">14</span>) </span><br><span class="line">                y += random.randint(-<span class="number">14</span>, <span class="number">14</span>) </span><br><span class="line">                size = random.choice((<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>)) </span><br><span class="line">                all_points.append((x, y, size)) </span><br><span class="line">        <span class="keyword">for</span> x, y <span class="keyword">in</span> <span class="variable language_">self</span>.parameters.points: </span><br><span class="line">            x, y = <span class="variable language_">self</span>.calc_position(x, y, ratio) </span><br><span class="line">            size = random.randint(<span class="number">1</span>, <span class="number">3</span>) </span><br><span class="line">            all_points.append((x, y, size)) </span><br><span class="line">        <span class="keyword">for</span> x, y <span class="keyword">in</span> <span class="variable language_">self</span>.parameters.edge_diffusion_points: </span><br><span class="line">            x, y = <span class="variable language_">self</span>.calc_position(x, y, ratio) </span><br><span class="line">            size = random.randint(<span class="number">1</span>, <span class="number">2</span>) </span><br><span class="line">            all_points.append((x, y, size)) </span><br><span class="line">        <span class="keyword">for</span> x, y <span class="keyword">in</span> <span class="variable language_">self</span>.parameters.center_diffusion_points: </span><br><span class="line">            x, y = <span class="variable language_">self</span>.calc_position(x, y, ratio) </span><br><span class="line">            size = random.randint(<span class="number">1</span>, <span class="number">2</span>) </span><br><span class="line">            all_points.append((x, y, size)) </span><br><span class="line">        <span class="variable language_">self</span>.parameters.all_points[generate_frame] = all_points </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">render</span>(<span class="params">self, render_canvas, render_frame</span>): </span><br><span class="line">        <span class="keyword">for</span> x, y, size <span class="keyword">in</span> <span class="variable language_">self</span>.parameters.all_points[render_frame % <span class="variable language_">self</span>.generate_frame]: </span><br><span class="line">            <span class="keyword">if</span> size == <span class="number">2</span>: </span><br><span class="line">                render_canvas.create_rectangle(x, y, x + size, y + size, width=<span class="number">0</span>, fill=INNER_HEART_COLOR) </span><br><span class="line">            <span class="keyword">else</span>: </span><br><span class="line">                render_canvas.create_rectangle(x, y, x + size, y + size, width=<span class="number">0</span>, fill=OUTER_HEART_COLOR) </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">draw</span>(<span class="params">main: Tk, render_canvas: Canvas, render_heart: Heart, render_frame=<span class="number">0</span></span>): </span><br><span class="line">    render_canvas.delete(<span class="string">&#x27;all&#x27;</span>) </span><br><span class="line">    render_heart.render(render_canvas, render_frame) </span><br><span class="line">    main.after(FRAME_DELAY, draw, main, render_canvas, render_heart, render_frame + <span class="number">1</span>) </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>: </span><br><span class="line">    root = Tk() </span><br><span class="line">    root.title(<span class="string">&#x27;&#x27;</span>) </span><br><span class="line">    canvas = Canvas(root, bg=<span class="string">&#x27;black&#x27;</span>, height=CANVAS_HEIGHT, width=CANVAS_WIDTH) </span><br><span class="line">    canvas.pack() </span><br><span class="line">    heart = Heart() </span><br><span class="line">    draw(root, canvas, heart) </span><br><span class="line">    root.mainloop() </span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="🎬-运行效果展示"><a href="#🎬-运行效果展示" class="headerlink" title="🎬 运行效果展示"></a><span id="运行效果展示">🎬 运行效果展示</span></h2><p>当你运行这段代码时，你会看到一个黑色的画布上，一颗红色的爱心正在有规律地跳动。爱心的边缘有一些模糊的效果，中心部分则更亮更密集，就像一颗真正的心脏在跳动一样。</p>
+<p>而且，爱心的周围还有一些淡淡的光晕，随着爱心的跳动而变化，使得整个效果更加梦幻和浪漫。</p>
+<h3 id="🖼️-界面预览"><a href="#🖼️-界面预览" class="headerlink" title="🖼️ 界面预览"></a>🖼️ 界面预览</h3><img src="/python-beating-heart-animation/heart-animation.png" class="" title="python爱心跳动">
+
+<h2 id="💾-可执行文件下载"><a href="#💾-可执行文件下载" class="headerlink" title="💾 可执行文件下载"></a><span id="可执行文件下载">💾 可执行文件下载</span></h2><p>为了方便大家使用，我已经将这个项目打包成了可执行文件，你可以直接下载运行，无需安装Python环境。</p>
+<h3 id="📦-下载链接"><a href="#📦-下载链接" class="headerlink" title="📦 下载链接"></a>📦 下载链接</h3><ul>
+<li><strong>Windows版本</strong>：<a href="2026-01-29-coding-a-beating-heart/python爱心跳动.exe" download>python爱心跳动.exe</a> - 点击下载Windows版本，无需安装Python环境</li>
+</ul>
+<h3 id="📋-下载信息"><a href="#📋-下载信息" class="headerlink" title="📋 下载信息"></a>📋 下载信息</h3><ul>
+<li><strong>📦 文件大小</strong>：约7MB</li>
+<li><strong>🖥️ 运行环境</strong>：Windows 7及以上版本</li>
+<li><strong>🚀 无需安装</strong>：下载后直接使用，绿色便捷</li>
+</ul>
+<h3 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h3><ol>
+<li>下载对应操作系统的可执行文件</li>
+<li>双击运行</li>
+<li>享受跳动的爱心效果</li>
+<li>按窗口关闭按钮退出程序</li>
+</ol>
+<hr>
+<h2 id="🚀-扩展和改进"><a href="#🚀-扩展和改进" class="headerlink" title="🚀 扩展和改进"></a><span id="扩展和改进">🚀 扩展和改进</span></h2><p>如果你觉得这个爱心还不够酷，或者想要更个性化的效果，你可以尝试以下改进：</p>
+<h3 id="1-颜色自定义"><a href="#1-颜色自定义" class="headerlink" title="1. 颜色自定义"></a>1. 颜色自定义</h3><p>你可以修改<code>INNER_HEART_COLOR</code>和<code>OUTER_HEART_COLOR</code>变量，使用你喜欢的颜色组合：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 示例：使用紫色和粉色</span></span><br><span class="line">INNER_HEART_COLOR = <span class="string">&quot;#ff69b4&quot;</span>  <span class="comment"># 亮粉色</span></span><br><span class="line">OUTER_HEART_COLOR = <span class="string">&quot;#9370db&quot;</span>  <span class="comment"># 紫色</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例：使用蓝色和青色</span></span><br><span class="line">INNER_HEART_COLOR = <span class="string">&quot;#00bfff&quot;</span>  <span class="comment"># 深 sky blue</span></span><br><span class="line">OUTER_HEART_COLOR = <span class="string">&quot;#00ffff&quot;</span>  <span class="comment"># 青色</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-添加文本"><a href="#2-添加文本" class="headerlink" title="2. 添加文本"></a>2. 添加文本</h3><p>你可以在爱心的中心添加一些文字，比如”我爱你”、”Happy Valentine’s Day”，或者你喜欢的人的名字：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在draw函数中添加文本</span></span><br><span class="line">canvas.create_text(CANVAS_CENTER_X, CANVAS_CENTER_Y, text=<span class="string">&quot;我爱你&quot;</span>, </span><br><span class="line">                   font=(<span class="string">&quot;Arial&quot;</span>, <span class="number">20</span>, <span class="string">&quot;bold&quot;</span>), fill=<span class="string">&quot;white&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-交互效果"><a href="#3-交互效果" class="headerlink" title="3. 交互效果"></a>3. 交互效果</h3><p>你可以添加鼠标交互，当鼠标点击爱心时，爱心会有特殊的反应：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 添加鼠标点击事件</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">on_click</span>(<span class="params">event</span>):</span><br><span class="line">    <span class="comment"># 点击时改变颜色或大小</span></span><br><span class="line">    <span class="keyword">global</span> INNER_HEART_COLOR</span><br><span class="line">    INNER_HEART_COLOR = random.choice([<span class="string">&quot;pink&quot;</span>, <span class="string">&quot;red&quot;</span>, <span class="string">&quot;purple&quot;</span>, <span class="string">&quot;blue&quot;</span>, <span class="string">&quot;green&quot;</span>])</span><br><span class="line"></span><br><span class="line">canvas.bind(<span class="string">&quot;&lt;Button-1&gt;&quot;</span>, on_click)</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-背景效果"><a href="#4-背景效果" class="headerlink" title="4. 背景效果"></a>4. 背景效果</h3><p>你可以给画布添加一个渐变背景，或者一些星星、雪花等装饰元素：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 示例：添加渐变背景</span></span><br><span class="line"><span class="keyword">from</span> tkinter <span class="keyword">import</span> ttk</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建渐变背景</span></span><br><span class="line">style = ttk.Style()</span><br><span class="line">style.configure(<span class="string">&quot;Gradient.TFrame&quot;</span>, background=<span class="string">&quot;black&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者添加星星效果</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">draw_stars</span>(<span class="params">canvas, count=<span class="number">50</span></span>):</span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(count):</span><br><span class="line">        x = random.randint(<span class="number">0</span>, CANVAS_WIDTH)</span><br><span class="line">        y = random.randint(<span class="number">0</span>, CANVAS_HEIGHT)</span><br><span class="line">        size = random.randint(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">        canvas.create_oval(x, y, x+size, y+size, fill=<span class="string">&quot;white&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在主函数中调用</span></span><br><span class="line">draw_stars(canvas)</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-性能优化"><a href="#5-性能优化" class="headerlink" title="5. 性能优化"></a>5. 性能优化</h3><p>如果你的电脑运行起来有点卡，你可以减少<code>NUM_POINTS</code>和<code>NUM_HALO_POINTS</code>的值：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 降低点的数量以提高性能</span></span><br><span class="line">NUM_POINTS = <span class="number">1000</span>  <span class="comment"># 从2000减少到1000</span></span><br><span class="line">NUM_HALO_POINTS = <span class="number">1500</span>  <span class="comment"># 从3000减少到1500</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="❓-常见问题及解决方案"><a href="#❓-常见问题及解决方案" class="headerlink" title="❓ 常见问题及解决方案"></a><span id="常见问题及解决方案">❓ 常见问题及解决方案</span></h2><h3 id="问题1：运行时出现模块导入错误"><a href="#问题1：运行时出现模块导入错误" class="headerlink" title="问题1：运行时出现模块导入错误"></a>问题1：运行时出现模块导入错误</h3><p><strong>解决方案</strong>：</p>
+<ul>
+<li>确保安装了Python环境（推荐Python 3.6+）</li>
+<li>tkinter是Python标准库，通常不需要单独安装</li>
+</ul>
+<h3 id="问题2：窗口打开后无响应"><a href="#问题2：窗口打开后无响应" class="headerlink" title="问题2：窗口打开后无响应"></a>问题2：窗口打开后无响应</h3><p><strong>解决方案</strong>：</p>
+<ul>
+<li>检查电脑性能，较低配置的电脑可能需要更多时间初始化</li>
+<li>尝试减少<code>NUM_POINTS</code>和<code>NUM_HALO_POINTS</code>的值</li>
+<li>确保代码完整复制，没有语法错误</li>
+</ul>
+<h3 id="问题3：可执行文件无法运行"><a href="#问题3：可执行文件无法运行" class="headerlink" title="问题3：可执行文件无法运行"></a>问题3：可执行文件无法运行</h3><p><strong>解决方案</strong>：</p>
+<ul>
+<li>确保下载了对应操作系统的版本</li>
+<li>Windows用户可能需要允许来自未知发布者的应用</li>
+</ul>
+<h3 id="问题4：爱心大小不合适"><a href="#问题4：爱心大小不合适" class="headerlink" title="问题4：爱心大小不合适"></a>问题4：爱心大小不合适</h3><p><strong>解决方案</strong>：</p>
+<ul>
+<li>修改<code>IMAGE_ENLARGE</code>变量的值，增大或减小爱心的整体大小</li>
+<li>修改<code>CANVAS_WIDTH</code>和<code>CANVAS_HEIGHT</code>变量，调整窗口大小</li>
+</ul>
+<hr>
+<h2 id="🎯-总结与资源"><a href="#🎯-总结与资源" class="headerlink" title="🎯 总结与资源"></a><span id="总结与资源">🎯 总结与资源</span></h2><h3 id="项目总结"><a href="#项目总结" class="headerlink" title="项目总结"></a>项目总结</h3><p>通过这个项目，我们学习了：</p>
+<ul>
+<li>✅ <strong>数学应用</strong>：如何使用参数方程生成心形曲线</li>
+<li>✅ <strong>Python编程</strong>：如何使用tkinter创建图形界面和动画</li>
+<li>✅ <strong>算法设计</strong>：如何使用随机扩散算法生成视觉效果</li>
+<li>✅ <strong>性能优化</strong>：如何调整参数平衡视觉效果和性能</li>
+<li>✅ <strong>创意表达</strong>：如何通过代码创造艺术效果</li>
+</ul>
+<h3 id="推荐资源"><a href="#推荐资源" class="headerlink" title="推荐资源"></a>推荐资源</h3><ul>
+<li>📚 <strong><a href="https://docs.python.org/3/">Python官方文档</a></strong> - Python编程语言的官方文档</li>
+<li>🖼️ <strong><a href="https://docs.python.org/3/library/tkinter.html">Tkinter文档</a></strong> - Python的标准GUI库文档</li>
+<li>📐 <strong><a href="https://en.wikipedia.org/wiki/Heart_curve">心形曲线数学原理</a></strong> - 维基百科关于心形曲线的详细介绍</li>
+<li>🎨 <strong><a href="https://realpython.com/python-gui-tkinter/">Python图形编程入门</a></strong> - Real Python的Tkinter入门教程</li>
+</ul>
+<h3 id="下一步学习建议"><a href="#下一步学习建议" class="headerlink" title="下一步学习建议"></a>下一步学习建议</h3><ol>
+<li>尝试将这个项目打包成可执行文件，方便分享给朋友</li>
+<li>学习更多关于计算机图形学的知识，创建更复杂的视觉效果</li>
+<li>探索其他数学曲线的生成和可视化</li>
+<li>尝试添加更多交互元素，如声音效果或键盘控制</li>
+</ol>
+<hr>
+<div class="tip success">
+  <strong>🎉 学习完成！</strong><br>
+  通过本文的学习，你已经掌握了如何使用Python和数学知识创建一颗跳动的爱心。希望这个项目能为你带来灵感，展示程序员的创意和浪漫一面！
+  <br><br>
+  <strong>💖 祝你编码愉快，生活充满爱！</strong>
+</div>
+
+<hr>
+<div class="article-info">
+  <strong>📅 更新时间：</strong>2026-01-29<br>
+  <strong>✍️ 作者：</strong>Jay<br>
+</div>]]></content>
+      <categories>
+        <category>技术教程</category>
+        <category>Python编程</category>
+        <category>创意代码</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>tkinter</tag>
+        <tag>心形曲线</tag>
+        <tag>动画效果</tag>
+        <tag>数学艺术</tag>
+        <tag>程序员浪漫</tag>
+        <tag>情人节代码</tag>
+        <tag>Python爱心动画</tag>
+        <tag>心形图案生成</tag>
+        <tag>代码艺术</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue3项目创建教程 | 如何使用Vite快速搭建Vue3应用</title>
+    <url>//create-vue3-project-vite/</url>
+    <content><![CDATA[<div class="tip success">
+  <strong>🎉 欢迎阅读Vue3项目创建教程！</strong><br>
+  本文将详细介绍如何使用Vite（Vue官方推荐的构建工具）快速搭建Vue3应用，从环境准备到Vue3组件开发，适合Vue3初学者和前端开发者学习Vue3项目创建。
+</div>
+
+<hr>
+<h2 id="📝-前言"><a href="#📝-前言" class="headerlink" title="📝 前言"></a>📝 前言</h2><p>Vue3是Vue.js的最新版本，作为目前最流行的前端框架之一，带来了许多激动人心的新特性和性能改进：</p>
+<ul>
+<li>✨ <strong>组合式API (Composition API)</strong> - 更灵活的代码组织方式</li>
+<li>✨ <strong>TypeScript支持</strong> - 更好的类型安全和开发体验</li>
+<li>✨ <strong>性能提升</strong> - 更小的打包体积，更快的渲染速度</li>
+<li>✨ <strong>Fragment、Teleport、Suspense</strong> - 新的组件特性</li>
+<li>✨ <strong>更好的响应式系统</strong> - 基于Proxy的响应式实现</li>
+</ul>
+<p>创建Vue3项目是学习Vue3的第一步，Vue生态提供了两种主要的构建工具：Vite和Vue CLI。本文将重点介绍如何使用Vite创建Vue3项目，Vite是Vue官方推荐的构建工具，具有更快的开发体验，是Vue3项目搭建的首选工具。</p>
+<hr>
+<h2 id="📋-目录"><a href="#📋-目录" class="headerlink" title="📋 目录"></a>📋 目录</h2><ul>
+<li><a href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87">环境准备</a></li>
+<li><a href="#vite%E4%B8%8Evue-cli%E5%AF%B9%E6%AF%94">Vite与Vue CLI对比</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8-vite%E5%88%9B%E5%BB%BAvue3%E9%A1%B9%E7%9B%AE">使用Vite创建Vue3项目</a></li>
+<li><a href="#vue3%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84%E8%A7%A3%E6%9E%90">Vue3项目结构解析</a></li>
+<li><a href="#%E8%BF%90%E8%A1%8Cvue3%E9%A1%B9%E7%9B%AE">运行Vue3项目</a></li>
+<li><a href="#%E7%AE%80%E5%8D%95%E7%9A%84vue3%E7%BB%84%E4%BB%B6%E7%A4%BA%E4%BE%8B">简单的Vue3组件示例</a></li>
+<li><a href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">常见问题及解决方案</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93%E4%B8%8E%E8%B5%84%E6%BA%90">总结与资源</a></li>
+</ul>
+<hr>
+<h2 id="🔧-环境准备"><a href="#🔧-环境准备" class="headerlink" title="🔧 环境准备"></a><span id="环境准备">🔧 环境准备</span></h2><p>在进行Vue3项目搭建之前，我们需要准备好必要的开发环境。</p>
+<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>Vue3应用开发依赖Node.js和npm包管理器，所以首先需要安装Node.js：</p>
+<ol>
+<li>访问<a href="https://nodejs.org/">Node.js官网</a></li>
+<li>下载并安装<strong>LTS版本</strong>（推荐长期支持版本，更稳定）</li>
+<li>验证安装是否成功：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 验证Node.js版本</span></span><br><span class="line">node -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证npm版本</span></span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<figure class="image-container">
+  <figcaption><strong>📷 操作截图：验证Node.js和npm安装</strong></figcaption>
+  <div class="image-grid">
+    <img src="/create-vue3-project-vite/node-npm-verify.png" class="" title="验证Node.js和npm安装">
+  </div>
+</figure>
+
+<h3 id="安装pnpm（可选，推荐）"><a href="#安装pnpm（可选，推荐）" class="headerlink" title="安装pnpm（可选，推荐）"></a>安装pnpm（可选，推荐）</h3><p>pnpm是一个更快、更节省磁盘空间的包管理器，推荐使用：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g pnpm</span><br></pre></td></tr></table></figure>
+
+<figure class="image-container">
+  <figcaption><strong>📷 操作截图：安装pnpm</strong></figcaption>
+  <div class="image-grid">
+    <img src="/create-vue3-project-vite/install-pnpm.png" class="" title="安装pnpm">
+  </div>
+</figure>
+
+<hr>
+<h2 id="⚖️-Vite与Vue-CLI对比"><a href="#⚖️-Vite与Vue-CLI对比" class="headerlink" title="⚖️ Vite与Vue CLI对比"></a><span id="vite与vue-cli对比">⚖️ Vite与Vue CLI对比</span></h2><p>在创建Vue3项目之前，让我们了解一下Vite和Vue CLI的主要区别，帮助你选择适合自己的构建工具：</p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>Vite</th>
+<th>Vue CLI</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>构建工具</strong></td>
+<td>ESBuild</td>
+<td>Webpack</td>
+</tr>
+<tr>
+<td><strong>开发服务器启动速度</strong></td>
+<td>极快（秒级）</td>
+<td>较慢（秒级到十秒级）</td>
+</tr>
+<tr>
+<td><strong>热模块替换 (HMR)</strong></td>
+<td>极快</td>
+<td>一般</td>
+</tr>
+<tr>
+<td><strong>生产构建</strong></td>
+<td>Rollup</td>
+<td>Webpack</td>
+</tr>
+<tr>
+<td><strong>默认支持</strong></td>
+<td>Vue3</td>
+<td>Vue2&#x2F;Vue3</td>
+</tr>
+<tr>
+<td><strong>TypeScript支持</strong></td>
+<td>内置</td>
+<td>需要配置</td>
+</tr>
+<tr>
+<td><strong>按需编译</strong></td>
+<td>✅ 支持</td>
+<td>❌ 不支持</td>
+</tr>
+<tr>
+<td><strong>冷启动性能</strong></td>
+<td>优秀</td>
+<td>一般</td>
+</tr>
+<tr>
+<td><strong>生态系统</strong></td>
+<td>快速增长</td>
+<td>成熟完善</td>
+</tr>
+<tr>
+<td><strong>官方推荐</strong></td>
+<td>✅ Vue3推荐</td>
+<td>❌ 仍支持但非Vue3首选</td>
+</tr>
+</tbody></table>
+<h3 id="Vite的优势"><a href="#Vite的优势" class="headerlink" title="Vite的优势"></a>Vite的优势</h3><ul>
+<li>✅ <strong>极速的开发体验</strong> - 使用ESBuild进行依赖预构建，开发服务器启动速度极快</li>
+<li>✅ <strong>按需编译</strong> - 只编译当前修改的文件，热更新速度快</li>
+<li>✅ <strong>现代浏览器原生支持</strong> - 利用浏览器的ES模块支持，无需打包</li>
+<li>✅ <strong>更好的TypeScript支持</strong> - 内置TypeScript支持，无需复杂配置</li>
+<li>✅ <strong>Vue3优先</strong> - 专为Vue3设计，支持Vue3的新特性</li>
+</ul>
+<h3 id="Vue-CLI的优势"><a href="#Vue-CLI的优势" class="headerlink" title="Vue CLI的优势"></a>Vue CLI的优势</h3><ul>
+<li>✅ <strong>成熟的生态系统</strong> - 丰富的插件和社区支持</li>
+<li>✅ <strong>广泛的兼容性</strong> - 支持Vue2和Vue3</li>
+<li>✅ <strong>全面的功能</strong> - 内置了很多功能，如PWA、测试等</li>
+<li>✅ <strong>适合大型项目</strong> - Webpack的生态系统更适合复杂项目</li>
+</ul>
+<h3 id="如何选择"><a href="#如何选择" class="headerlink" title="如何选择"></a>如何选择</h3><ul>
+<li><strong>推荐使用Vite</strong>：如果你是Vue3新项目，追求开发效率和速度</li>
+<li><strong>继续使用Vue CLI</strong>：如果你有现有Vue CLI项目，或需要Webpack的特定功能</li>
+</ul>
+<hr>
+<h2 id="⚡-使用-Vite-创建-Vue3-项目"><a href="#⚡-使用-Vite-创建-Vue3-项目" class="headerlink" title="⚡ 使用 Vite 创建 Vue3 项目"></a><span id="使用-vite创建vue3项目">⚡ 使用 Vite 创建 Vue3 项目</span></h2><p>Vite是Vue官方推荐的构建工具，用于Vue3项目创建具有更快的开发体验和构建速度。</p>
+<h3 id="步骤1：创建项目"><a href="#步骤1：创建项目" class="headerlink" title="步骤1：创建项目"></a>步骤1：创建项目</h3><p>使用npm、yarn或pnpm等包管理器创建Vue3项目：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用npm</span></span><br><span class="line">npm create vite@latest vue3-project -- --template vue</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用yarn</span></span><br><span class="line">yarn create vite vue3-project -- --template vue</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用pnpm</span></span><br><span class="line">pnpm create vite vue3-project -- --template vue</span><br></pre></td></tr></table></figure>
+
+<figure class="image-container">
+  <figcaption><strong>📷 操作截图：执行Vite创建项目命令</strong></figcaption>
+  <div class="image-grid">
+    <img src="/create-vue3-project-vite/vite-create-command.png" class="" title="执行Vite创建项目命令">
+  </div>
+</figure>
+
+<h3 id="步骤2：执行创建命令（完整流程）"><a href="#步骤2：执行创建命令（完整流程）" class="headerlink" title="步骤2：执行创建命令（完整流程）"></a>步骤2：执行创建命令（完整流程）</h3><p>执行创建命令之后，你将看到如下完整的交互流程：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; npx create-vite vue3-project --template vue</span><br><span class="line"></span><br><span class="line">◇  Use rolldown-vite (Experimental)?:</span><br><span class="line">│  Yes</span><br><span class="line">│</span><br><span class="line">◇  Install with npm and start now?</span><br><span class="line">│  Yes</span><br><span class="line">│</span><br><span class="line">◇  Scaffolding project <span class="keyword">in</span> D:\vue3\vue3-project...</span><br><span class="line">│</span><br><span class="line">◇  Installing dependencies with npm...</span><br><span class="line"></span><br><span class="line">added 37 packages <span class="keyword">in</span> 4s</span><br><span class="line"></span><br><span class="line">9 packages are looking <span class="keyword">for</span> funding</span><br><span class="line">  run `npm fund` <span class="keyword">for</span> details</span><br><span class="line">│</span><br><span class="line">◇  Starting dev server...</span><br><span class="line"></span><br><span class="line">&gt; vue3-project@0.0.0 dev</span><br><span class="line">&gt; vite</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  ROLLDOWN-VITE v7.2.5  ready <span class="keyword">in</span> 375 ms</span><br><span class="line"></span><br><span class="line">  ➜  Local:   http://localhost:5173/</span><br><span class="line">  ➜  Network: use --host to expose</span><br><span class="line">  ➜  press h + enter to show <span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+
+<figure class="image-container">
+  <figcaption><strong>📷 操作截图：Vite创建项目完整流程</strong></figcaption>
+  <div class="image-grid">
+    <img src="/create-vue3-project-vite/vite-create-full-flow.png" class="" title="Vite创建项目完整流程">
+  </div>
+</figure>
+
+<h3 id="交互选项说明"><a href="#交互选项说明" class="headerlink" title="交互选项说明"></a>交互选项说明</h3><ol>
+<li><p><strong>Use rolldown-vite (Experimental)?</strong> - 是否使用实验性的rolldown-vite构建工具</p>
+<ul>
+<li><strong>Yes</strong> - 推荐选择，体验最新的构建性能优化</li>
+<li><strong>No</strong> - 使用传统的Vite构建工具</li>
+</ul>
+</li>
+<li><p><strong>Install with npm and start now?</strong> - 是否立即安装依赖并启动开发服务器</p>
+<ul>
+<li><strong>Yes</strong> - 自动完成依赖安装并启动开发服务器</li>
+<li><strong>No</strong> - 只创建项目结构，后续手动安装依赖</li>
+</ul>
+</li>
+</ol>
+<h3 id="手动安装依赖（如果选择No）"><a href="#手动安装依赖（如果选择No）" class="headerlink" title="手动安装依赖（如果选择No）"></a>手动安装依赖（如果选择No）</h3><p>如果你在创建项目时选择了不立即安装依赖，可以手动执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 进入项目目录</span></span><br><span class="line"><span class="built_in">cd</span> vue3-project</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用npm安装依赖</span></span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动开发服务器</span></span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+
+<figure class="image-container">
+  <figcaption><strong>📷 操作截图：手动安装依赖</strong></figcaption>
+  <div class="image-grid">
+    <img src="/create-vue3-project-vite/manual-install-deps.png" class="" title="手动安装依赖">
+  </div>
+</figure>
+
+<hr>
+<h2 id="📁-Vue3项目结构解析"><a href="#📁-Vue3项目结构解析" class="headerlink" title="📁 Vue3项目结构解析"></a><span id="vue3项目结构解析">📁 Vue3项目结构解析</span></h2><p>使用Vite成功创建Vue3项目后，我们来详细解析一下Vue3项目的目录结构：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vue3-project/</span><br><span class="line">├── node_modules/        # 项目依赖</span><br><span class="line">├── public/              # 静态资源</span><br><span class="line">│   └── favicon.ico      # 网站图标</span><br><span class="line">├── src/                 # 源代码</span><br><span class="line">│   ├── assets/          # 资源文件</span><br><span class="line">│   │   └── logo.png     # Vue logo</span><br><span class="line">│   ├── components/      # 组件目录</span><br><span class="line">│   │   └── HelloWorld.vue  # 示例组件</span><br><span class="line">│   ├── App.vue          # 根组件</span><br><span class="line">│   └── main.js          # 入口文件（JavaScript版本）</span><br><span class="line">│   └── main.ts          # 入口文件（TypeScript版本）</span><br><span class="line">├── .gitignore           # Git忽略文件</span><br><span class="line">├── index.html           # HTML模板</span><br><span class="line">├── package.json         # 项目配置和依赖</span><br><span class="line">└── vite.config.js       # Vite配置文件</span><br></pre></td></tr></table></figure>
+
+<h3 id="核心文件说明"><a href="#核心文件说明" class="headerlink" title="核心文件说明"></a>核心文件说明</h3><ul>
+<li>📄 <strong>main.js&#x2F;main.ts</strong> - 项目入口文件，创建Vue应用实例并挂载到DOM</li>
+<li>📄 <strong>App.vue</strong> - 根组件，包含应用的基本结构</li>
+<li>📁 <strong>components&#x2F;</strong> - 存放Vue组件的目录</li>
+<li>📁 <strong>assets&#x2F;</strong> - 存放图片、样式等资源文件</li>
+<li>⚙️ <strong>vite.config.js</strong> - Vite构建工具的配置文件</li>
+</ul>
+<hr>
+<h2 id="🚀-运行Vue3项目"><a href="#🚀-运行Vue3项目" class="headerlink" title="🚀 运行Vue3项目"></a><span id="运行vue3项目">🚀 运行Vue3项目</span></h2><h3 id="开发模式运行"><a href="#开发模式运行" class="headerlink" title="开发模式运行"></a>开发模式运行</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用npm</span></span><br><span class="line">npm run dev</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用yarn</span></span><br><span class="line">yarn dev</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用pnpm</span></span><br><span class="line">pnpm dev</span><br></pre></td></tr></table></figure>
+
+<h3 id="访问项目"><a href="#访问项目" class="headerlink" title="访问项目"></a>访问项目</h3><p>运行成功后，会在命令行中显示访问地址，通常是 <code>http://localhost:5173</code>。</p>
+<p>在浏览器中访问该地址，即可看到Vue3项目的默认页面。</p>
+<figure class="image-container">
+  <figcaption><strong>📷 操作截图：Vue3默认页面</strong></figcaption>
+  <div class="image-grid">
+    <img src="/create-vue3-project-vite/vue3-default-page.png" class="" title="Vue3默认页面">
+  </div>
+</figure>
+
+<h3 id="构建生产版本"><a href="#构建生产版本" class="headerlink" title="构建生产版本"></a>构建生产版本</h3><p>当项目开发完成后，可以构建生产版本：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用npm</span></span><br><span class="line">npm run build</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用yarn</span></span><br><span class="line">yarn build</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用pnpm</span></span><br><span class="line">pnpm build</span><br></pre></td></tr></table></figure>
+
+<figure class="image-container">
+  <figcaption><strong>📷 操作截图：构建生产版本</strong></figcaption>
+  <div class="image-grid">
+    <img src="/create-vue3-project-vite/build-production.png" class="" title="构建生产版本">
+  </div>
+</figure>
+
+<p>构建后的文件会生成在 <code>dist</code> 目录中，可直接部署到服务器。</p>
+<hr>
+<h2 id="🧩-简单的Vue3组件示例"><a href="#🧩-简单的Vue3组件示例" class="headerlink" title="🧩 简单的Vue3组件示例"></a><span id="简单的vue3组件示例">🧩 简单的Vue3组件示例</span></h2><p>让我们创建一个简单的Vue3组件，体验一下Vue3的组合式API，学习Vue3组件开发的基本流程：</p>
+<h3 id="创建组件"><a href="#创建组件" class="headerlink" title="创建组件"></a>创建组件</h3><p>在 <code>src/components/</code> 目录下创建一个 <code>Counter.vue</code> 组件：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;counter&quot;&gt;</span><br><span class="line">    &lt;h2&gt;Vue3计数器&lt;/h2&gt;</span><br><span class="line">    &lt;p&gt;当前计数: &#123;&#123; count &#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;div class=&quot;buttons&quot;&gt;</span><br><span class="line">      &lt;button @click=&quot;increment&quot;&gt;+&lt;/button&gt;</span><br><span class="line">      &lt;button @click=&quot;decrement&quot;&gt;-&lt;/button&gt;</span><br><span class="line">      &lt;button @click=&quot;reset&quot;&gt;重置&lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">// 使用ref创建响应式数据</span><br><span class="line">const count = ref(0)</span><br><span class="line"></span><br><span class="line">// 定义方法</span><br><span class="line">const increment = () =&gt; &#123;</span><br><span class="line">  count.value++</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const decrement = () =&gt; &#123;</span><br><span class="line">  count.value--</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const reset = () =&gt; &#123;</span><br><span class="line">  count.value = 0</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">.counter &#123;</span><br><span class="line">  text-align: center;</span><br><span class="line">  padding: 20px;</span><br><span class="line">  border: 1px solid #eee;</span><br><span class="line">  border-radius: 8px;</span><br><span class="line">  max-width: 300px;</span><br><span class="line">  margin: 20px auto;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.buttons &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  justify-content: center;</span><br><span class="line">  gap: 10px;</span><br><span class="line">  margin-top: 20px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">button &#123;</span><br><span class="line">  padding: 10px 20px;</span><br><span class="line">  font-size: 18px;</span><br><span class="line">  cursor: pointer;</span><br><span class="line">  border: none;</span><br><span class="line">  border-radius: 4px;</span><br><span class="line">  background-color: #42b983;</span><br><span class="line">  color: white;</span><br><span class="line">  transition: background-color 0.3s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">button:hover &#123;</span><br><span class="line">  background-color: #3aa876;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="在App-vue中使用组件"><a href="#在App-vue中使用组件" class="headerlink" title="在App.vue中使用组件"></a>在App.vue中使用组件</h3><p>修改 <code>src/App.vue</code>，引入并使用我们创建的Counter组件：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;Vue3项目示例&lt;/h1&gt;</span><br><span class="line">    &lt;Counter /&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">import Counter from &#x27;./components/Counter.vue&#x27;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">/* 全局样式 */</span><br><span class="line">body &#123;</span><br><span class="line">  font-family: Arial, sans-serif;</span><br><span class="line">  max-width: 800px;</span><br><span class="line">  margin: 0 auto;</span><br><span class="line">  padding: 20px;</span><br><span class="line">  text-align: center;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看效果"><a href="#查看效果" class="headerlink" title="查看效果"></a>查看效果</h3><p>保存文件后，开发服务器会自动重新加载，在浏览器中可以看到我们创建的计数器组件。</p>
+<figure class="image-container">
+  <figcaption><strong>📷 操作截图：Vue3计数器组件</strong></figcaption>
+  <div class="image-grid">
+    <img src="/create-vue3-project-vite/vue3-counter-example.png" class="" title="Vue3计数器组件">
+  </div>
+</figure>
+
+<hr>
+<h2 id="❓-常见问题及解决方案"><a href="#❓-常见问题及解决方案" class="headerlink" title="❓ 常见问题及解决方案"></a><span id="常见问题及解决方案">❓ 常见问题及解决方案</span></h2><h3 id="问题1：创建项目时网络超时"><a href="#问题1：创建项目时网络超时" class="headerlink" title="问题1：创建项目时网络超时"></a>问题1：创建项目时网络超时</h3><p><strong>解决方案</strong>：</p>
+<ul>
+<li>检查网络连接</li>
+<li>使用国内镜像：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># npm镜像</span></span><br><span class="line">npm config <span class="built_in">set</span> registry https://registry.npmmirror.com</span><br><span class="line"></span><br><span class="line"><span class="comment"># pnpm镜像</span></span><br><span class="line">pnpm config <span class="built_in">set</span> registry https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
+
+<h3 id="问题2：依赖安装失败"><a href="#问题2：依赖安装失败" class="headerlink" title="问题2：依赖安装失败"></a>问题2：依赖安装失败</h3><p><strong>解决方案</strong>：</p>
+<ul>
+<li>删除 <code>node_modules</code> 目录和 <code>package-lock.json</code>&#x2F;<code>yarn.lock</code>&#x2F;<code>pnpm-lock.yaml</code> 文件</li>
+<li>重新安装依赖</li>
+<li>尝试使用不同的包管理器（npm → pnpm → yarn）</li>
+</ul>
+<h3 id="问题3：运行时出现语法错误"><a href="#问题3：运行时出现语法错误" class="headerlink" title="问题3：运行时出现语法错误"></a>问题3：运行时出现语法错误</h3><p><strong>解决方案</strong>：</p>
+<ul>
+<li>检查Node.js版本是否符合要求（Vue3要求Node.js 14.18+或16+）</li>
+<li>确保使用了正确的Vue3语法</li>
+<li>检查是否安装了必要的依赖</li>
+</ul>
+<h3 id="问题4：组件不显示"><a href="#问题4：组件不显示" class="headerlink" title="问题4：组件不显示"></a>问题4：组件不显示</h3><p><strong>解决方案</strong>：</p>
+<ul>
+<li>检查组件是否正确引入</li>
+<li>检查组件名称是否正确</li>
+<li>检查模板语法是否正确</li>
+</ul>
+<hr>
+<h2 id="🎯-总结与资源"><a href="#🎯-总结与资源" class="headerlink" title="🎯 总结与资源"></a><span id="总结与资源">🎯 总结与资源</span></h2><p>恭喜你！你已经成功学习了如何使用Vite创建Vue3项目，并了解了Vite与Vue CLI的区别以及Vue3项目的基本结构和组件开发流程。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>✅ <strong>环境准备</strong> - 安装了Node.js和可选的pnpm包管理器</li>
+<li>✅ <strong>Vite与Vue CLI对比</strong> - 了解了两者的区别和各自的优势</li>
+<li>✅ <strong>Vite创建Vue3项目</strong> - 掌握了使用Vite创建Vue3项目的完整流程</li>
+<li>✅ <strong>项目结构解析</strong> - 了解了Vue3项目的核心文件和目录结构</li>
+<li>✅ <strong>运行与构建</strong> - 学会了如何运行开发服务器和构建生产版本</li>
+<li>✅ <strong>组件开发</strong> - 创建了一个使用组合式API的Vue3计数器组件</li>
+<li>✅ <strong>问题解决方案</strong> - 了解了常见问题的排查和解决方法</li>
+</ul>
+<h3 id="推荐资源"><a href="#推荐资源" class="headerlink" title="推荐资源"></a>推荐资源</h3><ul>
+<li>📚 <strong><a href="https://vuejs.org/guide/introduction.html">Vue3官方文档</a></strong> - 最权威的Vue3学习资源</li>
+<li>⚡ <strong><a href="https://vitejs.dev/guide/">Vite官方文档</a></strong> - Vite构建工具使用指南</li>
+<li>🔀 <strong><a href="https://router.vuejs.org/">Vue Router 4</a></strong> - Vue3的路由库</li>
+<li>🗄️ <strong><a href="https://pinia.vuejs.org/">Pinia</a></strong> - Vue3的状态管理库（替代Vuex）</li>
+<li>🎓 <strong><a href="https://www.vuemastery.com/">Vue Mastery</a></strong> - Vue官方课程平台</li>
+</ul>
+<h3 id="下一步学习建议"><a href="#下一步学习建议" class="headerlink" title="下一步学习建议"></a>下一步学习建议</h3><ol>
+<li>深入学习Vue3的组合式API</li>
+<li>学习Vue Router和Pinia，构建完整应用</li>
+<li>掌握TypeScript在Vue3中的使用</li>
+<li>了解Vue3的性能优化技巧</li>
+<li>探索Vite的高级配置和插件生态</li>
+</ol>
+<hr>
+<div class="tip success">
+  <strong>🎉 学习完成！</strong><br>
+  通过本文的学习，你已经掌握了使用Vite创建Vue3项目的基本技能，这为你进一步学习Vue3打下了坚实的基础。
+  <br><br>
+  <strong>🚀 继续探索Vue3的精彩世界吧！</strong>
+</div>
+
+<hr>
+<div class="article-info">
+  <strong>📅 更新时间：</strong>2026-01-25<br>
+  <strong>✍️ 作者：</strong>Jay<br>
+</div>
+]]></content>
+      <categories>
+        <category>技术教程</category>
+      </categories>
+      <tags>
+        <tag>Vue3</tag>
+        <tag>Vite</tag>
+        <tag>Vue3项目创建</tag>
+        <tag>Vite搭建Vue3</tag>
+        <tag>前端开发</tag>
+        <tag>项目搭建</tag>
+        <tag>JavaScript</tag>
+        <tag>TypeScript</tag>
+        <tag>Vue3入门</tag>
+        <tag>Vue3教程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>博客网站使用指南 - 功能介绍与浏览技巧</title>
-    <url>/blog-usage-guide.html</url>
+    <url>//blog_usage_guide/</url>
     <content><![CDATA[<h1 id="📖-博客网站使用指南"><a href="#📖-博客网站使用指南" class="headerlink" title="📖 博客网站使用指南"></a>📖 博客网站使用指南</h1><blockquote>
 <p>欢迎使用我的个人博客网站！本指南将详细介绍博客网站的各项功能和使用方法，包括导航菜单、文章阅读、搜索功能、主题切换等，帮助您更好地浏览和使用博客网站。</p>
 </blockquote>
@@ -1962,7 +2146,7 @@
 <ul>
 <li><strong>GitHub</strong>：<a href="https://github.com/Jay-R-J/">https://github.com/Jay-R-J/</a></li>
 <li><strong>CSDN</strong>：<a href="https://blog.csdn.net/2401_82953028">https://blog.csdn.net/2401_82953028</a></li>
-<li><strong>电子邮件</strong>：<a href="mailto:&#51;&#54;&#48;&#57;&#53;&#48;&#54;&#50;&#x37;&#x38;&#64;&#x65;&#120;&#x61;&#109;&#x70;&#108;&#x65;&#x2e;&#x63;&#111;&#x6d;">3609506278@example.com</a></li>
+<li><strong>电子邮件</strong>：<a href="mailto:&#51;&#x36;&#48;&#57;&#x35;&#48;&#x36;&#x32;&#x37;&#x38;&#64;&#x65;&#x78;&#x61;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#x6d;">3609506278@example.com</a></li>
 <li><strong>微信</strong>：请在博客留言板留言获取</li>
 </ul>
 <h3 id="🤝-合作方式"><a href="#🤝-合作方式" class="headerlink" title="🤝 合作方式"></a>🤝 合作方式</h3><ul>
@@ -2004,187 +2188,334 @@
       </tags>
   </entry>
   <entry>
-    <title>程序员的浪漫 | 用Python代码画一颗会跳动的爱心</title>
-    <url>/2026-01-29-coding-a-beating-heart.html</url>
+    <title>【2026最新】22个实用开发工具集成 | 自制工具箱网页分享</title>
+    <url>//weekend-toolbox-project/</url>
     <content><![CDATA[<div class="tip success">
-  <strong>🎉 欢迎阅读程序员的浪漫代码教程！</strong><br>
-  本文将详细介绍如何使用Python和tkinter库创建一颗会跳动的爱心，包含数学原理、代码分析、运行效果和可执行文件下载，适合Python爱好者和寻找创意代码的程序员。
+  <strong>🎉 欢迎阅读2026最新工具箱网页开发分享！</strong><br>
+  本文将详细介绍我开发的一站式工具箱网页项目，包含22个实用开发工具，采用现代渐变背景和玻璃态效果，从开发动机到核心功能的完整技术分享，帮助你提高开发效率。
 </div>
 
 <hr>
-<h2 id="📝-前言"><a href="#📝-前言" class="headerlink" title="📝 前言"></a>📝 前言</h2><p>各位亲爱的程序员朋友们，今天，我要给大家介绍一个神奇的代码项目，它能在你的屏幕上画出一颗会跳动的爱心，而且效果还非常酷炫！</p>
-<p>什么？你说你不会画画？没关系，我们有数学！什么？你说你没有艺术细胞？没关系，我们有代码！让我们一起看看，如何用几行代码，创造出属于程序员的浪漫。</p>
+<h2 id="📝-前言"><a href="#📝-前言" class="headerlink" title="📝 前言"></a>📝 前言</h2><p>大家好，我是Jay，一名热爱开发的技术爱好者。在日常开发中，我发现需要频繁切换各种在线工具网站，不仅效率低下，而且书签栏也变得杂乱无章。于是在2026年初，我利用空闲时间开发了一个集成式工具箱网页，没想到分享后朋友们都抢着使用，一致好评说比网上那些花里胡哨的工具网站更实用、更高效。</p>
+<p>今天，我将详细分享这个工具箱网页的开发过程、核心功能和技术实现，希望能给同样热爱技术的你带来一些启发。</p>
 <hr>
 <h2 id="📋-目录"><a href="#📋-目录" class="headerlink" title="📋 目录"></a>📋 目录</h2><ul>
-<li><a href="#%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D">项目介绍</a></li>
-<li><a href="#%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86%E5%BF%83%E5%BD%A2%E6%9B%B2%E7%BA%BF%E7%9A%84%E7%94%9F%E6%88%90">数学原理：心形曲线的生成</a></li>
-<li><a href="#%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E7%88%B1%E5%BF%83%E6%98%AF%E5%A6%82%E4%BD%95%E8%B7%B3%E5%8A%A8%E7%9A%84">代码分析：爱心是如何跳动的？</a></li>
-<li><a href="#%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81">完整代码</a></li>
-<li><a href="#%E8%BF%90%E8%A1%8C%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA">运行效果展示</a></li>
-<li><a href="#%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD">可执行文件下载</a></li>
-<li><a href="#%E6%89%A9%E5%B1%95%E5%92%8C%E6%94%B9%E8%BF%9B">扩展和改进</a></li>
-<li><a href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">常见问题及解决方案</a></li>
-<li><a href="#%E6%80%BB%E7%BB%93%E4%B8%8E%E8%B5%84%E6%BA%90">总结与资源</a></li>
+<li><a href="#%E5%BC%80%E5%8F%91%E5%8A%A8%E6%9C%BA%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E5%B7%A5%E5%85%B7%E8%8D%92">开发动机：程序员的工具荒</a></li>
+<li><a href="#%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84%E7%AE%80%E6%B4%81%E4%BD%86%E4%B8%8D%E7%AE%80%E5%8D%95">项目结构：简洁但不简单</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E9%A3%8E%E6%A0%BC%E7%8E%B0%E4%BB%A3%E6%84%9F%E6%8B%89%E6%BB%A1">设计风格：现代感拉满</a></li>
+<li><a href="#%E6%A0%B8%E5%BF%83%E5%8A%9F%E8%83%BD22%E4%B8%AA%E5%B7%A5%E5%85%B7%E4%B8%80%E4%B8%AA%E9%83%BD%E4%B8%8D%E8%83%BD%E5%B0%91">核心功能：22个工具，一个都不能少</a></li>
+<li><a href="#%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%B0%8F%E6%8F%92%E6%9B%B2">开发过程中的小插曲</a></li>
+<li><a href="#%E6%9C%AA%E6%9D%A5%E8%A7%84%E5%88%92">未来规划</a></li>
+<li><a href="#%E7%BD%91%E7%AB%99%E9%93%BE%E6%8E%A5%E5%9C%A8%E7%BA%BF%E8%AE%BF%E9%97%AE%E4%B8%8E%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93">网站链接：在线访问与代码仓库</a></li>
+<li><a href="#%E7%BB%93%E8%AF%AD">结语</a></li>
 </ul>
 <hr>
-<h2 id="🎨-项目介绍"><a href="#🎨-项目介绍" class="headerlink" title="🎨 项目介绍"></a><span id="项目介绍">🎨 项目介绍</span></h2><p>这个项目使用Python的tkinter库创建一个图形界面，通过数学函数生成心形曲线，并添加动画效果使其看起来像一颗跳动的心脏。项目的主要特点包括：</p>
+<h2 id="💡-开发动机：程序员的工具荒"><a href="#💡-开发动机：程序员的工具荒" class="headerlink" title="💡 开发动机：程序员的工具荒"></a><span id="开发动机程序员的工具荒">💡 开发动机：程序员的工具荒</span></h2><p>作为一名热开发探索的大学生，在日常生活中，我发现自己经常面临以下痛点：</p>
+<h3 id="🔍-工具分散的痛点"><a href="#🔍-工具分散的痛点" class="headerlink" title="🔍 工具分散的痛点"></a>🔍 工具分散的痛点</h3><ul>
+<li><strong>多网站切换</strong>：写文档需要Lorem Ipsum生成器，调试API需要JSON格式化工具，设计需要颜色转换器，写代码需要随机数生成器，每次都要在多个网站间切换</li>
+<li><strong>书签栏混乱</strong>：各种工具网站的书签堆积如山，查找不便</li>
+<li><strong>加载速度慢</strong>：很多在线工具网站加载慢，有大量广告和不必要的功能</li>
+<li><strong>体验不一致</strong>：不同工具网站的界面风格和操作方式各不相同，学习成本高</li>
+</ul>
+<h3 id="🎯-解决方案"><a href="#🎯-解决方案" class="headerlink" title="🎯 解决方案"></a>🎯 解决方案</h3><p>为了解决这些痛点，我决定开发一个<strong>一站式工具箱网页</strong>，将常用的开发工具集成到一个页面中，实现：</p>
 <ul>
-<li>✨ <strong>数学驱动</strong>：使用经典的心形曲线参数方程生成基本形状</li>
-<li>✨ <strong>动态效果</strong>：爱心会有规律地收缩和膨胀，模拟跳动效果</li>
-<li>✨ <strong>视觉层次感</strong>：通过随机扩散算法生成边缘模糊效果</li>
-<li>✨ <strong>光晕效果</strong>：爱心周围有淡淡的光晕，增强视觉效果</li>
-<li>✨ <strong>颜色渐变</strong>：内芯使用粉色，外层使用红色，形成层次感</li>
+<li><strong>统一入口</strong>：所有工具在一个页面中，无需切换网站</li>
+<li><strong>快速加载</strong>：无依赖纯原生JavaScript实现，加载速度快</li>
+<li><strong>一致体验</strong>：统一的界面设计和操作方式</li>
+<li><strong>无广告干扰</strong>：纯净的工具环境，专注于功能</li>
+</ul>
+<p>这样不仅提高了开发效率，也让工具使用体验更加流畅。</p>
+<hr>
+<h2 id="📁-项目结构：简洁但不简单"><a href="#📁-项目结构：简洁但不简单" class="headerlink" title="📁 项目结构：简洁但不简单"></a><span id="项目结构简洁但不简单">📁 项目结构：简洁但不简单</span></h2><p>项目采用了极简的文件结构，只包含三个核心文件，便于维护和部署：</p>
+<h3 id="📂-文件结构"><a href="#📂-文件结构" class="headerlink" title="📂 文件结构"></a>📂 文件结构</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">toolbox/</span><br><span class="line">├── index.html          # 页面结构，包含所有工具的HTML模板</span><br><span class="line">├── style.css           # 样式设计，实现现代视觉效果</span><br><span class="line">└── script.js           # 工具功能，22个工具的核心逻辑</span><br></pre></td></tr></table></figure>
+
+<h3 id="🛠️-技术栈选择"><a href="#🛠️-技术栈选择" class="headerlink" title="🛠️ 技术栈选择"></a>🛠️ 技术栈选择</h3><ul>
+<li><strong>HTML5</strong> - 使用语义化标签，结构清晰，SEO友好</li>
+<li><strong>CSS3</strong> - 实现渐变背景、玻璃态效果、响应式设计，提升用户体验</li>
+<li><strong>JavaScript (ES6+)</strong> - 纯原生JS实现所有功能，无第三方依赖，加载速度快</li>
+</ul>
+<h3 id="🔧-技术实现亮点"><a href="#🔧-技术实现亮点" class="headerlink" title="🔧 技术实现亮点"></a>🔧 技术实现亮点</h3><ul>
+<li><strong>模块化设计</strong>：JavaScript代码采用模块化结构，每个工具独立封装，便于维护和扩展</li>
+<li><strong>事件委托</strong>：使用事件委托减少DOM事件绑定，提高性能</li>
+<li><strong>懒加载思想</strong>：工具切换时动态加载对应功能，减少初始加载时间</li>
+<li><strong>本地存储</strong>：使用localStorage实现数据持久化，如记事本和待办事项的内容保存</li>
+<li><strong>响应式布局</strong>：使用CSS Grid和Flexbox实现适配各种屏幕尺寸的布局</li>
+</ul>
+<p>这种简洁而高效的项目结构，使得工具箱网页在保持功能丰富的同时，依然保持了出色的加载速度和用户体验。</p>
+<hr>
+<h2 id="🎨-设计风格：现代感拉满"><a href="#🎨-设计风格：现代感拉满" class="headerlink" title="🎨 设计风格：现代感拉满"></a><span id="设计风格现代感拉满">🎨 设计风格：现代感拉满</span></h2><h3 id="📐-布局设计"><a href="#📐-布局设计" class="headerlink" title="📐 布局设计"></a>📐 布局设计</h3><p>采用了<strong>侧边栏+主内容区</strong>的经典布局：</p>
+<ul>
+<li><strong>左侧侧边栏</strong>：工具分类列表，支持滚动，快速定位所需工具</li>
+<li><strong>右侧主内容区</strong>：工具操作界面，根据选择的工具动态切换</li>
+<li><strong>响应式适配</strong>：在移动设备上自动切换为上下布局，确保良好的移动端体验</li>
+</ul>
+<h3 id="✨-视觉效果"><a href="#✨-视觉效果" class="headerlink" title="✨ 视觉效果"></a>✨ 视觉效果</h3><h4 id="1-渐变背景"><a href="#1-渐变背景" class="headerlink" title="1. 渐变背景"></a>1. 渐变背景</h4><ul>
+<li>使用了<strong>紫色到蓝色的渐变背景</strong>，营造现代科技感</li>
+<li>CSS代码：<code>background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)</code></li>
+<li>渐变角度和颜色精心调整，既美观又不影响内容可读性</li>
+</ul>
+<h4 id="2-玻璃态效果"><a href="#2-玻璃态效果" class="headerlink" title="2. 玻璃态效果"></a>2. 玻璃态效果</h4><ul>
+<li>工具卡片使用了 <code>backdrop-filter: blur(10px)</code> 实现玻璃态效果</li>
+<li>搭配半透明背景：<code>background: rgba(255, 255, 255, 0.1)</code></li>
+<li>增强界面层次感，符合现代UI设计趋势</li>
+</ul>
+<h4 id="3-平滑动画"><a href="#3-平滑动画" class="headerlink" title="3. 平滑动画"></a>3. 平滑动画</h4><ul>
+<li><strong>工具切换动画</strong>：工具切换时有淡入淡出效果，提升用户体验</li>
+<li><strong>按钮悬停效果</strong>：按钮有缩放和颜色变化的悬停动画</li>
+<li><strong>滚动动画</strong>：侧边栏滚动时的平滑效果</li>
+<li><strong>加载动画</strong>：工具初始化时的加载指示动画</li>
+</ul>
+<h4 id="4-响应式设计"><a href="#4-响应式设计" class="headerlink" title="4. 响应式设计"></a>4. 响应式设计</h4><ul>
+<li>使用CSS媒体查询和弹性布局</li>
+<li>适配从320px到2560px的各种屏幕尺寸</li>
+<li>在移动设备上优化触摸目标大小，提升触摸体验</li>
+</ul>
+<h3 id="🎯-设计理念"><a href="#🎯-设计理念" class="headerlink" title="🎯 设计理念"></a>🎯 设计理念</h3><ul>
+<li><strong>简洁明了</strong>：界面干净整洁，没有多余的装饰元素</li>
+<li><strong>功能优先</strong>：所有设计元素都为功能服务，不喧宾夺主</li>
+<li><strong>用户友好</strong>：直观的视觉层次，清晰的操作指引</li>
+<li><strong>现代美感</strong>：符合2026年的设计趋势，使用最新的CSS特性</li>
+</ul>
+<p>这种现代化的设计风格，不仅让工具箱网页看起来专业美观，也提升了用户的使用体验，使得工具操作更加高效流畅。</p>
+<hr>
+<h2 id="🛠️-核心功能：22个工具，一个都不能少"><a href="#🛠️-核心功能：22个工具，一个都不能少" class="headerlink" title="🛠️ 核心功能：22个工具，一个都不能少"></a><span id="核心功能22个工具一个都不能少">🛠️ 核心功能：22个工具，一个都不能少</span></h2><p>为了满足日常开发和办公需求，我精心集成了22个实用工具，涵盖基础工具和开发工具两大类：</p>
+<h3 id="📱-基础工具"><a href="#📱-基础工具" class="headerlink" title="📱 基础工具"></a>📱 基础工具</h3><h4 id="1-🧮-计算器"><a href="#1-🧮-计算器" class="headerlink" title="1. 🧮 计算器"></a>1. 🧮 计算器</h4><ul>
+<li><strong>功能</strong>：支持基本的加减乘除、百分比计算</li>
+<li><strong>特点</strong>：界面简洁，操作流畅，响应迅速</li>
+<li><strong>适用场景</strong>：日常计算、快速数值转换</li>
+</ul>
+<h4 id="2-📝-记事本"><a href="#2-📝-记事本" class="headerlink" title="2. 📝 记事本"></a>2. 📝 记事本</h4><ul>
+<li><strong>功能</strong>：支持文本编辑，自动保存</li>
+<li><strong>特点</strong>：使用localStorage实现本地存储，刷新页面不丢失内容</li>
+<li><strong>适用场景</strong>：临时记录、代码片段保存</li>
+</ul>
+<h4 id="3-✅-待办事项"><a href="#3-✅-待办事项" class="headerlink" title="3. ✅ 待办事项"></a>3. ✅ 待办事项</h4><ul>
+<li><strong>功能</strong>：支持添加、删除、标记完成待办事项</li>
+<li><strong>特点</strong>：本地存储，自动排序，支持批量操作</li>
+<li><strong>适用场景</strong>：任务管理、工作规划</li>
+</ul>
+<h4 id="4-⏰-计时器"><a href="#4-⏰-计时器" class="headerlink" title="4. ⏰ 计时器"></a>4. ⏰ 计时器</h4><ul>
+<li><strong>功能</strong>：精确到秒的倒计时和正计时</li>
+<li><strong>特点</strong>：支持暂停、重置，时间到提醒</li>
+<li><strong>适用场景</strong>：会议计时、任务时间管理</li>
+</ul>
+<h4 id="5-🔄-单位转换"><a href="#5-🔄-单位转换" class="headerlink" title="5. 🔄 单位转换"></a>5. 🔄 单位转换</h4><ul>
+<li><strong>功能</strong>：支持米、千米、厘米、毫米之间的转换</li>
+<li><strong>特点</strong>：实时转换，支持双向转换</li>
+<li><strong>适用场景</strong>：尺寸计算、单位换算</li>
+</ul>
+<h4 id="6-🔒-密码生成器"><a href="#6-🔒-密码生成器" class="headerlink" title="6. 🔒 密码生成器"></a>6. 🔒 密码生成器</h4><ul>
+<li><strong>功能</strong>：生成高强度随机密码</li>
+<li><strong>特点</strong>：支持自定义长度、字符类型（大小写字母、数字、特殊字符）</li>
+<li><strong>适用场景</strong>：账户注册、密码重置</li>
+</ul>
+<h3 id="💻-开发工具"><a href="#💻-开发工具" class="headerlink" title="💻 开发工具"></a>💻 开发工具</h3><h4 id="7-📋-JSON工具"><a href="#7-📋-JSON工具" class="headerlink" title="7. 📋 JSON工具"></a>7. 📋 JSON工具</h4><ul>
+<li><strong>功能</strong>：JSON格式化、压缩、验证</li>
+<li><strong>特点</strong>：支持语法高亮，错误提示，大文件处理</li>
+<li><strong>适用场景</strong>：API调试、配置文件编辑</li>
+</ul>
+<h4 id="8-🔐-Base64工具"><a href="#8-🔐-Base64工具" class="headerlink" title="8. 🔐 Base64工具"></a>8. 🔐 Base64工具</h4><ul>
+<li><strong>功能</strong>：Base64编码解码</li>
+<li><strong>特点</strong>：支持Unicode字符，批量处理</li>
+<li><strong>适用场景</strong>：数据传输、图片编码</li>
+</ul>
+<h4 id="9-🎨-颜色转换"><a href="#9-🎨-颜色转换" class="headerlink" title="9. 🎨 颜色转换"></a>9. 🎨 颜色转换</h4><ul>
+<li><strong>功能</strong>：HEX、RGB、HSL之间互转</li>
+<li><strong>特点</strong>：实时预览，颜色选择器</li>
+<li><strong>适用场景</strong>：前端开发、UI设计</li>
+</ul>
+<h4 id="10-🕐-时间戳转换"><a href="#10-🕐-时间戳转换" class="headerlink" title="10. 🕐 时间戳转换"></a>10. 🕐 时间戳转换</h4><ul>
+<li><strong>功能</strong>：时间戳和日期互转</li>
+<li><strong>特点</strong>：支持多种时间格式，时区转换</li>
+<li><strong>适用场景</strong>：日志分析、时间计算</li>
+</ul>
+<h4 id="11-🎲-随机数生成"><a href="#11-🎲-随机数生成" class="headerlink" title="11. 🎲 随机数生成"></a>11. 🎲 随机数生成</h4><ul>
+<li><strong>功能</strong>：生成随机整数、浮点数、UUID</li>
+<li><strong>特点</strong>：支持自定义范围，批量生成</li>
+<li><strong>适用场景</strong>：测试数据生成、唯一ID创建</li>
+</ul>
+<h4 id="12-🔍-正则表达式调试器"><a href="#12-🔍-正则表达式调试器" class="headerlink" title="12. 🔍 正则表达式调试器"></a>12. 🔍 正则表达式调试器</h4><ul>
+<li><strong>功能</strong>：正则表达式实时测试</li>
+<li><strong>特点</strong>：高亮匹配结果，语法提示</li>
+<li><strong>适用场景</strong>：正则表达式编写、调试</li>
+</ul>
+<h4 id="13-📦-CSS阴影渐变"><a href="#13-📦-CSS阴影渐变" class="headerlink" title="13. 📦 CSS阴影渐变"></a>13. 📦 CSS阴影渐变</h4><ul>
+<li><strong>功能</strong>：可视化生成CSS阴影和渐变代码</li>
+<li><strong>特点</strong>：实时预览，代码复制</li>
+<li><strong>适用场景</strong>：前端开发、UI设计</li>
+</ul>
+<h4 id="14-🖼️-图像压缩"><a href="#14-🖼️-图像压缩" class="headerlink" title="14. 🖼️ 图像压缩"></a>14. 🖼️ 图像压缩</h4><ul>
+<li><strong>功能</strong>：调整图片质量和尺寸</li>
+<li><strong>特点</strong>：支持多种图片格式，实时预览</li>
+<li><strong>适用场景</strong>：网页图片优化、图片大小调整</li>
+</ul>
+<h4 id="15-📝-Markdown编辑器"><a href="#15-📝-Markdown编辑器" class="headerlink" title="15. 📝 Markdown编辑器"></a>15. 📝 Markdown编辑器</h4><ul>
+<li><strong>功能</strong>：Markdown实时预览</li>
+<li><strong>特点</strong>：语法高亮，支持常用Markdown语法</li>
+<li><strong>适用场景</strong>：文档编写、README文件创建</li>
+</ul>
+<h4 id="16-🔐-加密哈希"><a href="#16-🔐-加密哈希" class="headerlink" title="16. 🔐 加密哈希"></a>16. 🔐 加密哈希</h4><ul>
+<li><strong>功能</strong>：生成MD5、SHA-1、SHA-256、SHA-512哈希值</li>
+<li><strong>特点</strong>：支持文件和文本哈希，批量处理</li>
+<li><strong>适用场景</strong>：数据验证、密码加密</li>
+</ul>
+<h4 id="17-🌐-UA解析器"><a href="#17-🌐-UA解析器" class="headerlink" title="17. 🌐 UA解析器"></a>17. 🌐 UA解析器</h4><ul>
+<li><strong>功能</strong>：解析用户代理字符串</li>
+<li><strong>特点</strong>：识别浏览器、操作系统、设备类型</li>
+<li><strong>适用场景</strong>：日志分析、用户行为分析</li>
+</ul>
+<h4 id="18-🎨-颜色拾取器"><a href="#18-🎨-颜色拾取器" class="headerlink" title="18. 🎨 颜色拾取器"></a>18. 🎨 颜色拾取器</h4><ul>
+<li><strong>功能</strong>：从图片中提取颜色</li>
+<li><strong>特点</strong>：支持多种颜色格式，实时预览</li>
+<li><strong>适用场景</strong>：UI设计、配色方案选择</li>
+</ul>
+<h4 id="19-🔗-URL解析器"><a href="#19-🔗-URL解析器" class="headerlink" title="19. 🔗 URL解析器"></a>19. 🔗 URL解析器</h4><ul>
+<li><strong>功能</strong>：解析URL的各个部分</li>
+<li><strong>特点</strong>：分解协议、域名、路径、参数等</li>
+<li><strong>适用场景</strong>：URL分析、参数提取</li>
+</ul>
+<h4 id="20-📊-字数统计"><a href="#20-📊-字数统计" class="headerlink" title="20. 📊 字数统计"></a>20. 📊 字数统计</h4><ul>
+<li><strong>功能</strong>：统计字符数、字数、行数</li>
+<li><strong>特点</strong>：实时统计，支持中英文混合文本</li>
+<li><strong>适用场景</strong>：文章写作、内容编辑</li>
+</ul>
+<h4 id="21-🔠-大小写转换"><a href="#21-🔠-大小写转换" class="headerlink" title="21. 🔠 大小写转换"></a>21. 🔠 大小写转换</h4><ul>
+<li><strong>功能</strong>：多种文本大小写转换模式</li>
+<li><strong>特点</strong>：支持首字母大写、全部大写、全部小写等模式</li>
+<li><strong>适用场景</strong>：代码规范、文本格式化</li>
+</ul>
+<h4 id="22-📝-Lorem-Ipsum生成器"><a href="#22-📝-Lorem-Ipsum生成器" class="headerlink" title="22. 📝 Lorem Ipsum生成器"></a>22. 📝 Lorem Ipsum生成器</h4><ul>
+<li><strong>功能</strong>：生成占位文本</li>
+<li><strong>特点</strong>：支持自定义长度，多种语言</li>
+<li><strong>适用场景</strong>：UI设计、布局测试</li>
+</ul>
+<h3 id="🔣-特殊字符映射表"><a href="#🔣-特殊字符映射表" class="headerlink" title="🔣 特殊字符映射表"></a>🔣 特殊字符映射表</h3><ul>
+<li><strong>功能</strong>：常用特殊字符快速复制</li>
+<li><strong>特点</strong>：分类展示，一键复制</li>
+<li><strong>适用场景</strong>：文档编写、代码注释</li>
+</ul>
+<p>这些工具覆盖了日常开发和办公的大部分需求，通过一站式集成，大大提高了工作效率。</p>
+<hr>
+<h2 id="🎯-开发过程中的小插曲"><a href="#🎯-开发过程中的小插曲" class="headerlink" title="🎯 开发过程中的小插曲"></a><span id="开发过程中的小插曲">🎯 开发过程中的小插曲</span></h2><h3 id="1-移动端适配的坑"><a href="#1-移动端适配的坑" class="headerlink" title="1. 移动端适配的坑"></a>1. 移动端适配的坑</h3><p>最开始做响应式设计时，在手机上侧边栏总是显示不全。后来才发现是 <code>overflow-x: hidden</code> 的问题，设置后就好了。</p>
+<h3 id="2-Base64编码的Unicode问题"><a href="#2-Base64编码的Unicode问题" class="headerlink" title="2. Base64编码的Unicode问题"></a>2. Base64编码的Unicode问题</h3><p>一开始Base64编码中文时总是乱码，查了资料才知道需要用 <code>btoa(unescape(encodeURIComponent(input)))</code> 来处理Unicode字符。</p>
+<h3 id="3-性能优化"><a href="#3-性能优化" class="headerlink" title="3. 性能优化"></a>3. 性能优化</h3><p>22个工具的JavaScript代码加起来有1700多行，一开始担心页面加载会慢。后来用了事件委托和懒加载的思想，把工具切换逻辑统一处理，性能表现非常好。</p>
+<hr>
+<h2 id="🚀-未来规划"><a href="#🚀-未来规划" class="headerlink" title="🚀 未来规划"></a><span id="未来规划">🚀 未来规划</span></h2><p>虽然工具箱网页已经具备了22个实用工具，但我计划在未来版本中继续改进和扩展：</p>
+<h3 id="📦-功能扩展"><a href="#📦-功能扩展" class="headerlink" title="📦 功能扩展"></a>📦 功能扩展</h3><ul>
+<li><strong>更多实用工具</strong>：添加二维码生成器、SVG编辑器、文件对比工具、正则表达式测试器等</li>
+<li><strong>工具分类优化</strong>：增加更详细的工具分类，方便用户快速找到所需工具</li>
+<li><strong>自定义工具</strong>：支持用户添加自定义工具和脚本</li>
+</ul>
+<h3 id="☁️-云服务集成"><a href="#☁️-云服务集成" class="headerlink" title="☁️ 云服务集成"></a>☁️ 云服务集成</h3><ul>
+<li><strong>数据云同步</strong>：实现工具数据的云同步，支持跨设备使用</li>
+<li><strong>用户账户系统</strong>：添加简单的用户账户，保存个人设置和历史记录</li>
+<li><strong>API接口</strong>：提供简单的API接口，支持其他应用集成</li>
+</ul>
+<h3 id="🎨-用户体验优化"><a href="#🎨-用户体验优化" class="headerlink" title="🎨 用户体验优化"></a>🎨 用户体验优化</h3><ul>
+<li><strong>暗黑模式</strong>：添加暗黑模式，保护眼睛，减少夜间使用的视觉疲劳</li>
+<li><strong>个性化主题</strong>：支持自定义主题颜色和布局</li>
+<li><strong>快捷键支持</strong>：添加键盘快捷键，提升操作效率</li>
+<li><strong>语音控制</strong>：集成简单的语音控制功能，支持基本操作</li>
+</ul>
+<h3 id="📱-移动端优化"><a href="#📱-移动端优化" class="headerlink" title="📱 移动端优化"></a>📱 移动端优化</h3><ul>
+<li><strong>PWA支持</strong>：实现渐进式Web应用，支持离线使用</li>
+<li><strong>手势操作</strong>：优化移动端手势操作，提升触摸体验</li>
+<li><strong>移动应用</strong>：考虑开发原生移动应用，提供更流畅的体验</li>
+</ul>
+<h3 id="🌍-国际化支持"><a href="#🌍-国际化支持" class="headerlink" title="🌍 国际化支持"></a>🌍 国际化支持</h3><ul>
+<li><strong>多语言支持</strong>：添加英文、日文等多语言支持</li>
+<li><strong>区域设置</strong>：根据用户地区自动调整时间格式、单位等设置</li>
+</ul>
+<p>这些规划将使工具箱网页更加完善，为用户提供更好的使用体验，成为日常开发和日常办公的必备工具。</p>
+<hr>
+<h2 id="🎬-结语"><a href="#🎬-结语" class="headerlink" title="🎬 结语"></a><span id="结语">🎬 结语</span></h2><h3 id="🎉-项目总结"><a href="#🎉-项目总结" class="headerlink" title="🎉 项目总结"></a>🎉 项目总结</h3><p>这个工具箱网页是我在2026年初开发的一个个人项目，虽然开发时间不长，但它解决了我在日常开发中面临的工具分散、切换繁琐的痛点。现在，它已经成为我和同学们日常工作中的得力助手，大大提高了开发效率。</p>
+<h3 id="🔍-技术价值"><a href="#🔍-技术价值" class="headerlink" title="🔍 技术价值"></a>🔍 技术价值</h3><ul>
+<li><strong>前端技术实践</strong>：通过这个项目，我实践了HTML5、CSS3和JavaScript的现代特性，特别是在响应式设计、玻璃态效果和性能优化方面积累了宝贵经验</li>
+<li><strong>用户体验设计</strong>：注重用户体验，从布局到交互都经过精心设计，确保工具使用流畅直观</li>
+<li><strong>问题解决能力</strong>：在开发过程中遇到并解决了多个技术挑战，如移动端适配、Unicode处理和性能优化</li>
+</ul>
+<h3 id="🎯-开发心得"><a href="#🎯-开发心得" class="headerlink" title="🎯 开发心得"></a>🎯 开发心得</h3><p>开发这个工具箱网页让我深刻体会到：</p>
+<ul>
+<li><strong>实用主义</strong>：好的工具不需要华丽的外表，而是要能真正解决用户的实际问题</li>
+<li><strong>持续优化</strong>：即使是小项目，也需要不断优化和改进，才能达到更好的效果</li>
+<li><strong>分享精神</strong>：将自己的作品分享给他人，不仅能帮助他人，也能获得宝贵的反馈</li>
+</ul>
+<h3 id="💡-给开发者的建议"><a href="#💡-给开发者的建议" class="headerlink" title="💡 给开发者的建议"></a>💡 给开发者的建议</h3><p>如果你也想开发一个类似的工具箱网页，我的建议是：</p>
+<ul>
+<li><strong>从需求出发</strong>：先明确自己的核心需求，不要一开始就想做一个大而全的工具集</li>
+<li><strong>注重性能</strong>：保持代码简洁，优化加载速度，提供流畅的用户体验</li>
+<li><strong>持续迭代</strong>：先完成核心功能，然后逐步添加新工具和优化体验</li>
+<li><strong>分享反馈</strong>：将作品分享给他人，收集反馈，不断改进</li>
+</ul>
+<h3 id="📸-项目预览"><a href="#📸-项目预览" class="headerlink" title="📸 项目预览"></a>📸 项目预览</h3><p>最后，放一张项目的截图，感受一下这个现代设计风格：</p>
+<figure class="image-container">
+  <figcaption><strong>📷 工具箱网页截图</strong></figcaption>
+  <div class="image-grid">
+    <img src="/weekend-toolbox-project/toolbox-screenshot.png" class="" title="工具箱网页截图">
+  </div>
+</figure>
+
+<hr>
+<h2 id="🌐-网站链接：在线访问与代码仓库"><a href="#🌐-网站链接：在线访问与代码仓库" class="headerlink" title="🌐 网站链接：在线访问与代码仓库"></a><span id="网站链接在线访问与代码仓库">🌐 网站链接：在线访问与代码仓库</span></h2><h3 id="🔗-在线访问"><a href="#🔗-在线访问" class="headerlink" title="🔗 在线访问"></a>🔗 在线访问</h3><ul>
+<li><strong>工具箱网页</strong>：<a href="https://jay-r-j.github.io/toolbox">https://jay-r-j.github.io/toolbox</a></li>
+<li><strong>访问体验</strong>：无需安装，直接在浏览器中打开即可使用，支持所有现代浏览器</li>
+</ul>
+<h3 id="📁-代码仓库"><a href="#📁-代码仓库" class="headerlink" title="📁 代码仓库"></a>📁 代码仓库</h3><ul>
+<li><strong>GitHub仓库</strong>：<a href="https://github.com/Jay-R-J/toolbox">https://github.com/Jay-R-J/toolbox</a></li>
+<li><strong>开源协议</strong>：MIT开源协议，欢迎Star和Fork</li>
+<li><strong>贡献指南</strong>：如果有好的建议或改进，欢迎提交Pull Request</li>
 </ul>
 <hr>
-<h2 id="🔢-数学原理：心形曲线的生成"><a href="#🔢-数学原理：心形曲线的生成" class="headerlink" title="🔢 数学原理：心形曲线的生成"></a><span id="数学原理心形曲线的生成">🔢 数学原理：心形曲线的生成</span></h2><p>心形曲线是如何通过数学公式生成的呢？这里使用了一个经典的心形曲线参数方程：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">heart_function</span>(<span class="params">t, shrink_ratio=IMAGE_ENLARGE</span>):</span><br><span class="line">    x = <span class="number">16</span> * (sin(t) ** <span class="number">3</span>)</span><br><span class="line">    y = -(<span class="number">13</span> * cos(t) - <span class="number">5</span> * cos(<span class="number">2</span> * t) - <span class="number">2</span> * cos(<span class="number">3</span> * t) - cos(<span class="number">4</span> * t))</span><br><span class="line">    x *= shrink_ratio</span><br><span class="line">    y *= shrink_ratio</span><br><span class="line">    x += CANVAS_CENTER_X</span><br><span class="line">    y += CANVAS_CENTER_Y</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">int</span>(x), <span class="built_in">int</span>(y)</span><br></pre></td></tr></table></figure>
-
-<p>这个方程是如何工作的呢？让我们来分解一下：</p>
-<ol>
-<li><strong>参数t</strong>：从0到2π变化，遍历心形曲线上的所有点</li>
-<li><strong>x坐标计算</strong>：使用正弦函数的三次方，形成心形的左右对称结构</li>
-<li><strong>y坐标计算</strong>：使用多个余弦函数的组合，形成心形的底部尖角和顶部曲线</li>
-<li><strong>缩放和平移</strong>：将生成的点放大并移动到画布中心</li>
-</ol>
-<p>这种参数方程的优点是计算简单，生成的曲线平滑美观，非常适合用于创建心形图案。</p>
-<hr>
-<h2 id="💻-代码分析：爱心是如何跳动的？"><a href="#💻-代码分析：爱心是如何跳动的？" class="headerlink" title="💻 代码分析：爱心是如何跳动的？"></a><span id="代码分析爱心是如何跳动的">💻 代码分析：爱心是如何跳动的？</span></h2><h3 id="1-扩散效果：让爱心更有层次感"><a href="#1-扩散效果：让爱心更有层次感" class="headerlink" title="1. 扩散效果：让爱心更有层次感"></a>1. 扩散效果：让爱心更有层次感</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">scatter_points</span>(<span class="params">x, y, beta=SCATTER_BETA</span>):</span><br><span class="line">    ratio_x = -beta * log(random.random())</span><br><span class="line">    ratio_y = -beta * log(random.random())</span><br><span class="line">    dx = ratio_x * (x - CANVAS_CENTER_X)</span><br><span class="line">    dy = ratio_y * (y - CANVAS_CENTER_Y)</span><br><span class="line">    <span class="keyword">return</span> x - dx, y - dy</span><br></pre></td></tr></table></figure>
-
-<p>为了让爱心看起来更有层次感，代码使用了随机扩散算法：</p>
+<h3 id="🙏-感谢支持"><a href="#🙏-感谢支持" class="headerlink" title="🙏 感谢支持"></a>🙏 感谢支持</h3><p>如果你觉得这个工具箱网页有用，欢迎：</p>
 <ul>
-<li>使用对数函数生成扩散比例，使得扩散点更集中在心形中心</li>
-<li>从基本心形的点向外扩散，生成边缘模糊的效果</li>
-<li>这种随机扩散模拟了粒子效果，让爱心看起来更生动</li>
+<li><strong>Star支持</strong>：在GitHub上给项目点个Star</li>
+<li><strong>分享传播</strong>：分享给你的朋友和同事</li>
+<li><strong>反馈建议</strong>：在评论区留下你的使用体验和建议</li>
+<li><strong>贡献代码</strong>：如果你有好的工具想法，欢迎贡献代码</li>
 </ul>
-<h3 id="2-动画效果：让爱心跳动起来"><a href="#2-动画效果：让爱心跳动起来" class="headerlink" title="2. 动画效果：让爱心跳动起来"></a>2. 动画效果：让爱心跳动起来</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">curve</span>(<span class="params">p</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * (<span class="number">3</span> * sin(<span class="number">4</span> * p)) / (<span class="number">2</span> * pi)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">calc</span>(<span class="params">self, generate_frame</span>):</span><br><span class="line">    ratio = CURVE_RATIO * curve(generate_frame / <span class="number">10</span> * pi)</span><br><span class="line">    halo_radius = <span class="built_in">int</span>(<span class="number">4</span> + <span class="number">6</span> * (<span class="number">1</span> + curve(generate_frame / <span class="number">10</span> * pi)))</span><br><span class="line">    halo_number = <span class="built_in">int</span>(<span class="number">3000</span> + <span class="number">4000</span> * <span class="built_in">abs</span>(curve(generate_frame / <span class="number">10</span> * pi) ** <span class="number">2</span>))</span><br><span class="line">    <span class="comment"># ... 计算所有点的位置 ...</span></span><br></pre></td></tr></table></figure>
-
-<p>为了让爱心跳动起来，代码使用了：</p>
-<ul>
-<li>一个周期性的正弦曲线函数，模拟心跳的节奏</li>
-<li>通过改变参数来调整爱心的大小和光晕效果</li>
-<li>随着时间的推移，爱心会有规律地收缩和膨胀</li>
-</ul>
-<h3 id="3-渲染效果：颜色和细节的处理"><a href="#3-渲染效果：颜色和细节的处理" class="headerlink" title="3. 渲染效果：颜色和细节的处理"></a>3. 渲染效果：颜色和细节的处理</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">render</span>(<span class="params">self, render_canvas, render_frame</span>):</span><br><span class="line">    <span class="keyword">for</span> x, y, size <span class="keyword">in</span> <span class="variable language_">self</span>.parameters.all_points[render_frame % <span class="variable language_">self</span>.generate_frame]:</span><br><span class="line">        <span class="keyword">if</span> size == <span class="number">2</span>:</span><br><span class="line">            render_canvas.create_rectangle(x, y, x + size, y + size, width=<span class="number">0</span>, fill=INNER_HEART_COLOR)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            render_canvas.create_rectangle(x, y, x + size, y + size, width=<span class="number">0</span>, fill=OUTER_HEART_COLOR)</span><br></pre></td></tr></table></figure>
-
-<p>在渲染时，代码：</p>
-<ul>
-<li>根据点的大小选择不同的颜色，形成层次感</li>
-<li>使用小矩形而不是圆形来绘制点，密集排列时产生更柔和的效果</li>
-<li>清除画布并重新绘制每一帧，实现动画效果</li>
-</ul>
-<hr>
-<h2 id="📄-完整代码"><a href="#📄-完整代码" class="headerlink" title="📄 完整代码"></a><span id="完整代码">📄 完整代码</span></h2><p>以下是完整的Python代码，你可以直接复制到本地运行：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> random </span><br><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sin, cos, pi, log </span><br><span class="line"><span class="keyword">from</span> tkinter <span class="keyword">import</span> * </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Constants </span></span><br><span class="line">CANVAS_WIDTH = <span class="number">640</span> </span><br><span class="line">CANVAS_HEIGHT = <span class="number">640</span> </span><br><span class="line">CANVAS_CENTER_X = CANVAS_WIDTH / <span class="number">2</span> </span><br><span class="line">CANVAS_CENTER_Y = CANVAS_HEIGHT / <span class="number">2</span> </span><br><span class="line">IMAGE_ENLARGE = <span class="number">11</span> </span><br><span class="line">INNER_HEART_COLOR = <span class="string">&quot;pink&quot;</span>  </span><br><span class="line">OUTER_HEART_COLOR = <span class="string">&quot;red&quot;</span>   </span><br><span class="line">SCATTER_BETA = <span class="number">0.15</span> </span><br><span class="line">SHRINK_RATIO = <span class="number">15</span> </span><br><span class="line">CURVE_RATIO = <span class="number">10</span> </span><br><span class="line">FRAME_DELAY = <span class="number">160</span> </span><br><span class="line">NUM_POINTS = <span class="number">2000</span> </span><br><span class="line">NUM_HALO_POINTS = <span class="number">3000</span> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">HeartParameters</span>: </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>): </span><br><span class="line">        <span class="variable language_">self</span>.points = <span class="built_in">set</span>() </span><br><span class="line">        <span class="variable language_">self</span>.edge_diffusion_points = <span class="built_in">set</span>() </span><br><span class="line">        <span class="variable language_">self</span>.center_diffusion_points = <span class="built_in">set</span>() </span><br><span class="line">        <span class="variable language_">self</span>.all_points = &#123;&#125; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Heart function </span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">heart_function</span>(<span class="params">t, shrink_ratio=IMAGE_ENLARGE</span>): </span><br><span class="line">    x = <span class="number">16</span> * (sin(t) ** <span class="number">3</span>) </span><br><span class="line">    y = -(<span class="number">13</span> * cos(t) - <span class="number">5</span> * cos(<span class="number">2</span> * t) - <span class="number">2</span> * cos(<span class="number">3</span> * t) - cos(<span class="number">4</span> * t)) </span><br><span class="line">    x *= shrink_ratio </span><br><span class="line">    y *= shrink_ratio </span><br><span class="line">    x += CANVAS_CENTER_X </span><br><span class="line">    y += CANVAS_CENTER_Y </span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">int</span>(x), <span class="built_in">int</span>(y) </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Scatter points </span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">scatter_points</span>(<span class="params">x, y, beta=SCATTER_BETA</span>): </span><br><span class="line">    ratio_x = -beta * log(random.random()) </span><br><span class="line">    ratio_y = -beta * log(random.random()) </span><br><span class="line">    dx = ratio_x * (x - CANVAS_CENTER_X) </span><br><span class="line">    dy = ratio_y * (y - CANVAS_CENTER_Y) </span><br><span class="line">    <span class="keyword">return</span> x - dx, y - dy </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Shrink points </span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">shrink_points</span>(<span class="params">x, y, ratio</span>): </span><br><span class="line">    force = -<span class="number">1</span> / (((x - CANVAS_CENTER_X) ** <span class="number">2</span> + (y - CANVAS_CENTER_Y) ** <span class="number">2</span>) ** <span class="number">0.6</span>) </span><br><span class="line">    dx = ratio * force * (x - CANVAS_CENTER_X) </span><br><span class="line">    dy = ratio * force * (y - CANVAS_CENTER_Y) </span><br><span class="line">    <span class="keyword">return</span> x - dx, y - dy </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Curve function </span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">curve</span>(<span class="params">p</span>): </span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * (<span class="number">3</span> * sin(<span class="number">4</span> * p)) / (<span class="number">2</span> * pi) </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Heart class </span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Heart</span>: </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, generate_frame=<span class="number">20</span></span>): </span><br><span class="line">        <span class="variable language_">self</span>.parameters = HeartParameters() </span><br><span class="line">        <span class="variable language_">self</span>.generate_frame = generate_frame </span><br><span class="line">        <span class="variable language_">self</span>.build(NUM_POINTS) </span><br><span class="line">        <span class="keyword">for</span> frame <span class="keyword">in</span> <span class="built_in">range</span>(generate_frame): </span><br><span class="line">            <span class="variable language_">self</span>.calc(frame) </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">build</span>(<span class="params">self, number</span>): </span><br><span class="line">        <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(number): </span><br><span class="line">            t = random.uniform(<span class="number">0</span>, <span class="number">2</span> * pi) </span><br><span class="line">            x, y = heart_function(t) </span><br><span class="line">            <span class="variable language_">self</span>.parameters.points.add((x, y)) </span><br><span class="line">        <span class="keyword">for</span> _x, _y <span class="keyword">in</span> <span class="built_in">list</span>(<span class="variable language_">self</span>.parameters.points): </span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>): </span><br><span class="line">                x, y = scatter_points(_x, _y) </span><br><span class="line">                <span class="variable language_">self</span>.parameters.edge_diffusion_points.add((x, y)) </span><br><span class="line">        point_list = <span class="built_in">list</span>(<span class="variable language_">self</span>.parameters.points) </span><br><span class="line">        <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(NUM_HALO_POINTS): </span><br><span class="line">            x, y = random.choice(point_list) </span><br><span class="line">            x, y = scatter_points(x, y, <span class="number">0.17</span>) </span><br><span class="line">            <span class="variable language_">self</span>.parameters.center_diffusion_points.add((x, y)) </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">    @staticmethod </span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">calc_position</span>(<span class="params">x, y, ratio</span>): </span><br><span class="line">        force = <span class="number">1</span> / (((x - CANVAS_CENTER_X) ** <span class="number">2</span> + (y - CANVAS_CENTER_Y) ** <span class="number">2</span>) ** <span class="number">0.520</span>) </span><br><span class="line">        dx = ratio * force * (x - CANVAS_CENTER_X) + random.randint(-<span class="number">1</span>, <span class="number">1</span>) </span><br><span class="line">        dy = ratio * force * (y - CANVAS_CENTER_Y) + random.randint(-<span class="number">1</span>, <span class="number">1</span>) </span><br><span class="line">        <span class="keyword">return</span> x - dx, y - dy </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">calc</span>(<span class="params">self, generate_frame</span>): </span><br><span class="line">        ratio = CURVE_RATIO * curve(generate_frame / <span class="number">10</span> * pi) </span><br><span class="line">        halo_radius = <span class="built_in">int</span>(<span class="number">4</span> + <span class="number">6</span> * (<span class="number">1</span> + curve(generate_frame / <span class="number">10</span> * pi))) </span><br><span class="line">        halo_number = <span class="built_in">int</span>(<span class="number">3000</span> + <span class="number">4000</span> * <span class="built_in">abs</span>(curve(generate_frame / <span class="number">10</span> * pi) ** <span class="number">2</span>)) </span><br><span class="line">        all_points = [] </span><br><span class="line">        heart_halo_point = <span class="built_in">set</span>() </span><br><span class="line">        <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(halo_number): </span><br><span class="line">            t = random.uniform(<span class="number">0</span>, <span class="number">2</span> * pi) </span><br><span class="line">            x, y = heart_function(t, shrink_ratio=SHRINK_RATIO) </span><br><span class="line">            x, y = shrink_points(x, y, halo_radius) </span><br><span class="line">            <span class="keyword">if</span> (x, y) <span class="keyword">not</span> <span class="keyword">in</span> heart_halo_point: </span><br><span class="line">                heart_halo_point.add((x, y)) </span><br><span class="line">                x += random.randint(-<span class="number">14</span>, <span class="number">14</span>) </span><br><span class="line">                y += random.randint(-<span class="number">14</span>, <span class="number">14</span>) </span><br><span class="line">                size = random.choice((<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>)) </span><br><span class="line">                all_points.append((x, y, size)) </span><br><span class="line">        <span class="keyword">for</span> x, y <span class="keyword">in</span> <span class="variable language_">self</span>.parameters.points: </span><br><span class="line">            x, y = <span class="variable language_">self</span>.calc_position(x, y, ratio) </span><br><span class="line">            size = random.randint(<span class="number">1</span>, <span class="number">3</span>) </span><br><span class="line">            all_points.append((x, y, size)) </span><br><span class="line">        <span class="keyword">for</span> x, y <span class="keyword">in</span> <span class="variable language_">self</span>.parameters.edge_diffusion_points: </span><br><span class="line">            x, y = <span class="variable language_">self</span>.calc_position(x, y, ratio) </span><br><span class="line">            size = random.randint(<span class="number">1</span>, <span class="number">2</span>) </span><br><span class="line">            all_points.append((x, y, size)) </span><br><span class="line">        <span class="keyword">for</span> x, y <span class="keyword">in</span> <span class="variable language_">self</span>.parameters.center_diffusion_points: </span><br><span class="line">            x, y = <span class="variable language_">self</span>.calc_position(x, y, ratio) </span><br><span class="line">            size = random.randint(<span class="number">1</span>, <span class="number">2</span>) </span><br><span class="line">            all_points.append((x, y, size)) </span><br><span class="line">        <span class="variable language_">self</span>.parameters.all_points[generate_frame] = all_points </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">render</span>(<span class="params">self, render_canvas, render_frame</span>): </span><br><span class="line">        <span class="keyword">for</span> x, y, size <span class="keyword">in</span> <span class="variable language_">self</span>.parameters.all_points[render_frame % <span class="variable language_">self</span>.generate_frame]: </span><br><span class="line">            <span class="keyword">if</span> size == <span class="number">2</span>: </span><br><span class="line">                render_canvas.create_rectangle(x, y, x + size, y + size, width=<span class="number">0</span>, fill=INNER_HEART_COLOR) </span><br><span class="line">            <span class="keyword">else</span>: </span><br><span class="line">                render_canvas.create_rectangle(x, y, x + size, y + size, width=<span class="number">0</span>, fill=OUTER_HEART_COLOR) </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">draw</span>(<span class="params">main: Tk, render_canvas: Canvas, render_heart: Heart, render_frame=<span class="number">0</span></span>): </span><br><span class="line">    render_canvas.delete(<span class="string">&#x27;all&#x27;</span>) </span><br><span class="line">    render_heart.render(render_canvas, render_frame) </span><br><span class="line">    main.after(FRAME_DELAY, draw, main, render_canvas, render_heart, render_frame + <span class="number">1</span>) </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>: </span><br><span class="line">    root = Tk() </span><br><span class="line">    root.title(<span class="string">&#x27;&#x27;</span>) </span><br><span class="line">    canvas = Canvas(root, bg=<span class="string">&#x27;black&#x27;</span>, height=CANVAS_HEIGHT, width=CANVAS_WIDTH) </span><br><span class="line">    canvas.pack() </span><br><span class="line">    heart = Heart() </span><br><span class="line">    draw(root, canvas, heart) </span><br><span class="line">    root.mainloop() </span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="🎬-运行效果展示"><a href="#🎬-运行效果展示" class="headerlink" title="🎬 运行效果展示"></a><span id="运行效果展示">🎬 运行效果展示</span></h2><p>当你运行这段代码时，你会看到一个黑色的画布上，一颗红色的爱心正在有规律地跳动。爱心的边缘有一些模糊的效果，中心部分则更亮更密集，就像一颗真正的心脏在跳动一样。</p>
-<p>而且，爱心的周围还有一些淡淡的光晕，随着爱心的跳动而变化，使得整个效果更加梦幻和浪漫。</p>
-<h3 id="🖼️-界面预览"><a href="#🖼️-界面预览" class="headerlink" title="🖼️ 界面预览"></a>🖼️ 界面预览</h3><img src="/2026-01-29-coding-a-beating-heart/heart-animation.png" class="" title="python爱心跳动">
-
-<h2 id="💾-可执行文件下载"><a href="#💾-可执行文件下载" class="headerlink" title="💾 可执行文件下载"></a><span id="可执行文件下载">💾 可执行文件下载</span></h2><p>为了方便大家使用，我已经将这个项目打包成了可执行文件，你可以直接下载运行，无需安装Python环境。</p>
-<h3 id="📦-下载链接"><a href="#📦-下载链接" class="headerlink" title="📦 下载链接"></a>📦 下载链接</h3><ul>
-<li><strong>Windows版本</strong>：<a href="2026-01-29-coding-a-beating-heart/python爱心跳动.exe" download>python爱心跳动.exe</a> - 点击下载Windows版本，无需安装Python环境</li>
-</ul>
-<h3 id="📋-下载信息"><a href="#📋-下载信息" class="headerlink" title="📋 下载信息"></a>📋 下载信息</h3><ul>
-<li><strong>📦 文件大小</strong>：约7MB</li>
-<li><strong>🖥️ 运行环境</strong>：Windows 7及以上版本</li>
-<li><strong>🚀 无需安装</strong>：下载后直接使用，绿色便捷</li>
-</ul>
-<h3 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h3><ol>
-<li>下载对应操作系统的可执行文件</li>
-<li>双击运行</li>
-<li>享受跳动的爱心效果</li>
-<li>按窗口关闭按钮退出程序</li>
-</ol>
-<hr>
-<h2 id="🚀-扩展和改进"><a href="#🚀-扩展和改进" class="headerlink" title="🚀 扩展和改进"></a><span id="扩展和改进">🚀 扩展和改进</span></h2><p>如果你觉得这个爱心还不够酷，或者想要更个性化的效果，你可以尝试以下改进：</p>
-<h3 id="1-颜色自定义"><a href="#1-颜色自定义" class="headerlink" title="1. 颜色自定义"></a>1. 颜色自定义</h3><p>你可以修改<code>INNER_HEART_COLOR</code>和<code>OUTER_HEART_COLOR</code>变量，使用你喜欢的颜色组合：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 示例：使用紫色和粉色</span></span><br><span class="line">INNER_HEART_COLOR = <span class="string">&quot;#ff69b4&quot;</span>  <span class="comment"># 亮粉色</span></span><br><span class="line">OUTER_HEART_COLOR = <span class="string">&quot;#9370db&quot;</span>  <span class="comment"># 紫色</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例：使用蓝色和青色</span></span><br><span class="line">INNER_HEART_COLOR = <span class="string">&quot;#00bfff&quot;</span>  <span class="comment"># 深 sky blue</span></span><br><span class="line">OUTER_HEART_COLOR = <span class="string">&quot;#00ffff&quot;</span>  <span class="comment"># 青色</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="2-添加文本"><a href="#2-添加文本" class="headerlink" title="2. 添加文本"></a>2. 添加文本</h3><p>你可以在爱心的中心添加一些文字，比如”我爱你”、”Happy Valentine’s Day”，或者你喜欢的人的名字：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在draw函数中添加文本</span></span><br><span class="line">canvas.create_text(CANVAS_CENTER_X, CANVAS_CENTER_Y, text=<span class="string">&quot;我爱你&quot;</span>, </span><br><span class="line">                   font=(<span class="string">&quot;Arial&quot;</span>, <span class="number">20</span>, <span class="string">&quot;bold&quot;</span>), fill=<span class="string">&quot;white&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-交互效果"><a href="#3-交互效果" class="headerlink" title="3. 交互效果"></a>3. 交互效果</h3><p>你可以添加鼠标交互，当鼠标点击爱心时，爱心会有特殊的反应：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 添加鼠标点击事件</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">on_click</span>(<span class="params">event</span>):</span><br><span class="line">    <span class="comment"># 点击时改变颜色或大小</span></span><br><span class="line">    <span class="keyword">global</span> INNER_HEART_COLOR</span><br><span class="line">    INNER_HEART_COLOR = random.choice([<span class="string">&quot;pink&quot;</span>, <span class="string">&quot;red&quot;</span>, <span class="string">&quot;purple&quot;</span>, <span class="string">&quot;blue&quot;</span>, <span class="string">&quot;green&quot;</span>])</span><br><span class="line"></span><br><span class="line">canvas.bind(<span class="string">&quot;&lt;Button-1&gt;&quot;</span>, on_click)</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-背景效果"><a href="#4-背景效果" class="headerlink" title="4. 背景效果"></a>4. 背景效果</h3><p>你可以给画布添加一个渐变背景，或者一些星星、雪花等装饰元素：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 示例：添加渐变背景</span></span><br><span class="line"><span class="keyword">from</span> tkinter <span class="keyword">import</span> ttk</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建渐变背景</span></span><br><span class="line">style = ttk.Style()</span><br><span class="line">style.configure(<span class="string">&quot;Gradient.TFrame&quot;</span>, background=<span class="string">&quot;black&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者添加星星效果</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">draw_stars</span>(<span class="params">canvas, count=<span class="number">50</span></span>):</span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(count):</span><br><span class="line">        x = random.randint(<span class="number">0</span>, CANVAS_WIDTH)</span><br><span class="line">        y = random.randint(<span class="number">0</span>, CANVAS_HEIGHT)</span><br><span class="line">        size = random.randint(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">        canvas.create_oval(x, y, x+size, y+size, fill=<span class="string">&quot;white&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在主函数中调用</span></span><br><span class="line">draw_stars(canvas)</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-性能优化"><a href="#5-性能优化" class="headerlink" title="5. 性能优化"></a>5. 性能优化</h3><p>如果你的电脑运行起来有点卡，你可以减少<code>NUM_POINTS</code>和<code>NUM_HALO_POINTS</code>的值：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 降低点的数量以提高性能</span></span><br><span class="line">NUM_POINTS = <span class="number">1000</span>  <span class="comment"># 从2000减少到1000</span></span><br><span class="line">NUM_HALO_POINTS = <span class="number">1500</span>  <span class="comment"># 从3000减少到1500</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="❓-常见问题及解决方案"><a href="#❓-常见问题及解决方案" class="headerlink" title="❓ 常见问题及解决方案"></a><span id="常见问题及解决方案">❓ 常见问题及解决方案</span></h2><h3 id="问题1：运行时出现模块导入错误"><a href="#问题1：运行时出现模块导入错误" class="headerlink" title="问题1：运行时出现模块导入错误"></a>问题1：运行时出现模块导入错误</h3><p><strong>解决方案</strong>：</p>
-<ul>
-<li>确保安装了Python环境（推荐Python 3.6+）</li>
-<li>tkinter是Python标准库，通常不需要单独安装</li>
-</ul>
-<h3 id="问题2：窗口打开后无响应"><a href="#问题2：窗口打开后无响应" class="headerlink" title="问题2：窗口打开后无响应"></a>问题2：窗口打开后无响应</h3><p><strong>解决方案</strong>：</p>
-<ul>
-<li>检查电脑性能，较低配置的电脑可能需要更多时间初始化</li>
-<li>尝试减少<code>NUM_POINTS</code>和<code>NUM_HALO_POINTS</code>的值</li>
-<li>确保代码完整复制，没有语法错误</li>
-</ul>
-<h3 id="问题3：可执行文件无法运行"><a href="#问题3：可执行文件无法运行" class="headerlink" title="问题3：可执行文件无法运行"></a>问题3：可执行文件无法运行</h3><p><strong>解决方案</strong>：</p>
-<ul>
-<li>确保下载了对应操作系统的版本</li>
-<li>Windows用户可能需要允许来自未知发布者的应用</li>
-</ul>
-<h3 id="问题4：爱心大小不合适"><a href="#问题4：爱心大小不合适" class="headerlink" title="问题4：爱心大小不合适"></a>问题4：爱心大小不合适</h3><p><strong>解决方案</strong>：</p>
-<ul>
-<li>修改<code>IMAGE_ENLARGE</code>变量的值，增大或减小爱心的整体大小</li>
-<li>修改<code>CANVAS_WIDTH</code>和<code>CANVAS_HEIGHT</code>变量，调整窗口大小</li>
-</ul>
-<hr>
-<h2 id="🎯-总结与资源"><a href="#🎯-总结与资源" class="headerlink" title="🎯 总结与资源"></a><span id="总结与资源">🎯 总结与资源</span></h2><h3 id="项目总结"><a href="#项目总结" class="headerlink" title="项目总结"></a>项目总结</h3><p>通过这个项目，我们学习了：</p>
-<ul>
-<li>✅ <strong>数学应用</strong>：如何使用参数方程生成心形曲线</li>
-<li>✅ <strong>Python编程</strong>：如何使用tkinter创建图形界面和动画</li>
-<li>✅ <strong>算法设计</strong>：如何使用随机扩散算法生成视觉效果</li>
-<li>✅ <strong>性能优化</strong>：如何调整参数平衡视觉效果和性能</li>
-<li>✅ <strong>创意表达</strong>：如何通过代码创造艺术效果</li>
-</ul>
-<h3 id="推荐资源"><a href="#推荐资源" class="headerlink" title="推荐资源"></a>推荐资源</h3><ul>
-<li>📚 <strong><a href="https://docs.python.org/3/">Python官方文档</a></strong> - Python编程语言的官方文档</li>
-<li>🖼️ <strong><a href="https://docs.python.org/3/library/tkinter.html">Tkinter文档</a></strong> - Python的标准GUI库文档</li>
-<li>📐 <strong><a href="https://en.wikipedia.org/wiki/Heart_curve">心形曲线数学原理</a></strong> - 维基百科关于心形曲线的详细介绍</li>
-<li>🎨 <strong><a href="https://realpython.com/python-gui-tkinter/">Python图形编程入门</a></strong> - Real Python的Tkinter入门教程</li>
-</ul>
-<h3 id="下一步学习建议"><a href="#下一步学习建议" class="headerlink" title="下一步学习建议"></a>下一步学习建议</h3><ol>
-<li>尝试将这个项目打包成可执行文件，方便分享给朋友</li>
-<li>学习更多关于计算机图形学的知识，创建更复杂的视觉效果</li>
-<li>探索其他数学曲线的生成和可视化</li>
-<li>尝试添加更多交互元素，如声音效果或键盘控制</li>
-</ol>
 <hr>
 <div class="tip success">
-  <strong>🎉 学习完成！</strong><br>
-  通过本文的学习，你已经掌握了如何使用Python和数学知识创建一颗跳动的爱心。希望这个项目能为你带来灵感，展示程序员的创意和浪漫一面！
-  <br><br>
-  <strong>💖 祝你编码愉快，生活充满爱！</strong>
+  <strong>🌟 项目亮点总结</strong><br>
+  - ✅ <strong>22个实用工具</strong>：涵盖前端开发和日常办公的必备工具，一站式解决工具需求<br>
+  - ✅ <strong>现代设计风格</strong>：采用紫色到蓝色的渐变背景和玻璃态效果，符合2026年设计趋势<br>
+  - ✅ <strong>响应式布局</strong>：适配从320px到2560px的各种屏幕尺寸，移动端体验优秀<br>
+  - ✅ <strong>高性能实现</strong>：纯原生JavaScript实现，无第三方依赖，加载速度快<br>
+  - ✅ <strong>数据持久化</strong>：使用localStorage实现数据本地存储，刷新页面不丢失数据<br>
+  - ✅ <strong>平滑动画效果</strong>：工具切换、按钮悬停等都有流畅的动画效果<br>
+  - ✅ <strong>模块化设计</strong>：代码结构清晰，便于维护和扩展<br>
+  - ✅ <strong>用户友好界面</strong>：直观的布局和操作方式，学习成本低<br>
+  - ✅ <strong>开源免费</strong>：MIT开源协议，欢迎贡献和改进<br>
+  - ✅ <strong>持续更新</strong>：计划添加更多工具和功能，不断优化用户体验
 </div>
 
 <hr>
 <div class="article-info">
-  <strong>📅 更新时间：</strong>2026-01-29<br>
+  <strong>📅 更新时间：</strong>2026-02-02<br>
   <strong>✍️ 作者：</strong>Jay<br>
 </div>]]></content>
       <categories>
         <category>技术教程</category>
-        <category>Python编程</category>
-        <category>创意代码</category>
+        <category>前端开发</category>
+        <category>项目分享</category>
+        <category>工具推荐</category>
+        <category>网页开发</category>
       </categories>
       <tags>
-        <tag>Python</tag>
-        <tag>tkinter</tag>
-        <tag>心形曲线</tag>
-        <tag>动画效果</tag>
-        <tag>数学艺术</tag>
-        <tag>程序员浪漫</tag>
-        <tag>情人节代码</tag>
-        <tag>Python爱心动画</tag>
-        <tag>心形图案生成</tag>
-        <tag>代码艺术</tag>
+        <tag>前端开发</tag>
+        <tag>工具箱网页</tag>
+        <tag>HTML5开发</tag>
+        <tag>CSS3设计</tag>
+        <tag>JavaScript工具</tag>
+        <tag>响应式网页</tag>
+        <tag>玻璃态效果</tag>
+        <tag>实用开发工具</tag>
+        <tag>SEO优化</tag>
+        <tag>前端项目</tag>
+        <tag>无依赖工具</tag>
+        <tag>现代网页设计</tag>
+        <tag>开发效率工具</tag>
+        <tag>程序员工具集</tag>
+        <tag>前端工具推荐</tag>
       </tags>
   </entry>
 </search>
