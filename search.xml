@@ -1,261 +1,278 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>如何打造一个自动科技新闻摘要邮件机器人（附完整代码）</title>
-    <url>//tech-news-email-bot/</url>
-    <content><![CDATA[<h1 id="如何使用Python打造自动科技新闻摘要邮件机器人（附完整代码和部署指南）"><a href="#如何使用Python打造自动科技新闻摘要邮件机器人（附完整代码和部署指南）" class="headerlink" title="如何使用Python打造自动科技新闻摘要邮件机器人（附完整代码和部署指南）"></a>如何使用Python打造自动科技新闻摘要邮件机器人（附完整代码和部署指南）</h1><h2 id="📰-项目简介"><a href="#📰-项目简介" class="headerlink" title="📰 项目简介"></a>📰 项目简介</h2><p>无需手动操作，每天自动抓取CCTV科技频道的最新新闻，通过Python爬虫技术处理数据，生成美观的响应式HTML邮件，并使用GitHub Actions实现定时自动化发送</p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>你是否每天都想了解最新的科技动态，却苦于没有时间浏览各大科技网站？今天我要分享一个我自己开发的实用小项目——<strong>自动CCTV科技新闻摘要邮件机器人</strong>，它能够通过Python脚本自动抓取CCTV科技频道的最新新闻，使用SMTP协议发送美观的HTML格式邮件，并通过GitHub Actions实现完全自动化的定时运行，让你每天轻松获取最新的科技新闻。</p>
-<h2 id="项目亮点"><a href="#项目亮点" class="headerlink" title="项目亮点"></a>项目亮点</h2><ul>
-<li><strong>✨ 全自动运行</strong>：无需手动操作，通过GitHub Actions实现每天定时发送</li>
-<li><strong>📊 真实数据</strong>：直接从CCTV科技频道获取最新新闻，使用Python爬虫技术确保数据准确性</li>
-<li><strong>🎨 美观邮件</strong>：响应式HTML格式邮件，支持各种设备，专业的邮件模板设计</li>
-<li><strong>🔒 稳定可靠</strong>：3次重试机制，确保Python爬虫数据抓取成功率</li>
-<li><strong>🚀 易于部署</strong>：支持GitHub Actions自动化运行，包含详细的自动化部署指南</li>
-<li><strong>💻 免费工具</strong>：完全免费的自动化工具，无需服务器成本</li>
-</ul>
-<h2 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h2><table>
-<thead>
-<tr>
-<th>技术</th>
-<th>用途</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Python 3.9</td>
-<td>核心编程语言，用于开发Python爬虫和自动化脚本</td>
-</tr>
-<tr>
-<td>Requests</td>
-<td>网络请求库，用于抓取CCTV科技频道数据</td>
-</tr>
-<tr>
-<td>BeautifulSoup4</td>
-<td>HTML解析库，用于处理和提取网页数据</td>
-</tr>
-<tr>
-<td>SMTP_SSL</td>
-<td>安全邮件发送协议，用于通过SMTP服务器发送邮件</td>
-</tr>
-<tr>
-<td>GitHub Actions</td>
-<td>自动化运行平台，用于实现定时任务和自动化部署</td>
-</tr>
-<tr>
-<td>JSON</td>
-<td>数据存储格式，用于存储和处理新闻数据</td>
-</tr>
-<tr>
-<td>Regular Expressions</td>
-<td>正则表达式，用于JSONP数据解析</td>
-</tr>
-</tbody></table>
-<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">├── crawl_news.py         # 新闻抓取脚本</span><br><span class="line">├── send_email.py         # 邮件发送脚本</span><br><span class="line">├── news_data.json        # 新闻数据存储</span><br><span class="line">└── .github/workflows/</span><br><span class="line">    └── daily-news.yml    # GitHub Actions配置</span><br></pre></td></tr></table></figure>
+    <title>如何从0到1搭建属于自己的Hexo博客网站 | 静态博客搭建教程</title>
+    <url>//build_hexo_blog/</url>
+    <content><![CDATA[<div class="tip success">
+  <strong>🎉 欢迎阅读本教程！</strong><br>
+  本文将带你从0到1搭建属于自己的Hexo博客网站，适合完全零基础的新手。
+</div>
 
-<h2 id="核心功能解析"><a href="#核心功能解析" class="headerlink" title="核心功能解析"></a>核心功能解析</h2><h3 id="智能新闻抓取"><a href="#智能新闻抓取" class="headerlink" title="智能新闻抓取"></a>智能新闻抓取</h3><p>项目使用JSONP API直接从CCTV科技频道获取真实新闻数据，而非简单的HTML解析，确保了数据的准确性和完整性。</p>
-<h4 id="部分代码：crawl-news-py"><a href="#部分代码：crawl-news-py" class="headerlink" title="部分代码：crawl_news.py"></a>部分代码：crawl_news.py</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">crawl_cctv_tech_news</span>():</span><br><span class="line">    url = <span class="string">&quot;https://news.cctv.com/tech/&quot;</span></span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = requests.get(url, headers=headers, timeout=<span class="number">15</span>)</span><br><span class="line">        response.encoding = <span class="string">&quot;utf-8&quot;</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 保存页面内容以便分析</span></span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;page_content.html&quot;</span>, <span class="string">&quot;w&quot;</span>, encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(response.text)</span><br><span class="line">        </span><br><span class="line">        soup = BeautifulSoup(response.text, <span class="string">&quot;html.parser&quot;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 获取所有a标签</span></span><br><span class="line">        all_links = []</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 方法1：获取所有a标签</span></span><br><span class="line">        <span class="keyword">for</span> a <span class="keyword">in</span> soup.find_all(<span class="string">&quot;a&quot;</span>, href=<span class="literal">True</span>):</span><br><span class="line">            text = a.get_text(strip=<span class="literal">True</span>)</span><br><span class="line">            href = a.get(<span class="string">&quot;href&quot;</span>)</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> text <span class="keyword">and</span> <span class="built_in">len</span>(text) &gt; <span class="number">5</span>:</span><br><span class="line">                <span class="comment"># 确保链接完整</span></span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> href.startswith(<span class="string">&quot;http&quot;</span>):</span><br><span class="line">                    href = <span class="string">&quot;https://news.cctv.com&quot;</span> + href</span><br><span class="line">                all_links.append((text, href))</span><br></pre></td></tr></table></figure>
-
-<h3 id="QQ邮箱配置与邮件发送"><a href="#QQ邮箱配置与邮件发送" class="headerlink" title="QQ邮箱配置与邮件发送"></a>QQ邮箱配置与邮件发送</h3><h4 id="QQ邮箱授权码获取步骤"><a href="#QQ邮箱授权码获取步骤" class="headerlink" title="QQ邮箱授权码获取步骤"></a>QQ邮箱授权码获取步骤</h4><ol>
-<li><strong>登录QQ邮箱</strong>：打开 <a href="https://mail.qq.com/">mail.qq.com</a></li>
-<li><strong>进入设置</strong>：点击顶部导航栏的「设置」按钮</li>
-<li><strong>选择账户</strong>：在左侧菜单中选择「账号与安全」选项</li>
-<li><strong>开启SMTP服务</strong>：找到「POP3&#x2F;IMAP&#x2F;SMTP&#x2F;Exchange&#x2F;CardDAV&#x2F;CalDAV服务」部分</li>
-<li><strong>生成授权码</strong>：点击「生成授权码」，按照提示操作获取16位授权码</li>
+<h2 id="📝-前言"><a href="#📝-前言" class="headerlink" title="📝 前言"></a>📝 前言</h2><p>在数字化时代，拥有一个属于自己的博客网站是展示个人技术、分享知识和记录生活的绝佳方式。Hexo作为一款快速、简洁且高效的静态博客生成框架，受到了众多开发者的喜爱。</p>
+<p>本文将详细介绍如何从0到1搭建属于自己的Hexo博客网站，包括环境配置、主题安装、个性化设置、文章撰写和部署上线等完整流程。</p>
+<h2 id="📋-目录"><a href="#📋-目录" class="headerlink" title="📋 目录"></a>📋 目录</h2><ol>
+<li><a href="#%F0%9F%94%A7-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87">环境准备</a></li>
+<li><a href="#%F0%9F%93%A6-%E5%AE%89%E8%A3%85Hexo">安装Hexo</a></li>
+<li><a href="#%F0%9F%9A%80-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8D%9A%E5%AE%A2">初始化博客</a></li>
+<li><a href="#%E2%9A%99%EF%B8%8F-%E9%85%8D%E7%BD%AEHexo">配置Hexo</a></li>
+<li><a href="#%F0%9F%8E%A8-%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98">安装主题</a></li>
+<li><a href="#%E2%9C%A8-%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%BE%E7%BD%AE">个性化设置</a></li>
+<li><a href="#%E2%9C%8D%EF%B8%8F-%E6%92%B0%E5%86%99%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0">撰写第一篇文章</a></li>
+<li><a href="#%F0%9F%91%80-%E6%9C%AC%E5%9C%B0%E9%A2%84%E8%A7%88">本地预览</a></li>
+<li><a href="#%E2%9D%97-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3">常见问题解决</a></li>
 </ol>
-<h4 id="操作截图"><a href="#操作截图" class="headerlink" title="操作截图"></a>操作截图</h4><img src="/tech-news-email-bot/qq-email-smtp.png" class="" title="QQ邮箱SMTP设置页面">
+<h2 id="🔧-环境准备"><a href="#🔧-环境准备" class="headerlink" title="🔧 环境准备"></a>🔧 环境准备</h2><p>在开始搭建Hexo博客之前，我们需要准备好必要的环境。Hexo基于Node.js开发，所以需要安装Node.js和npm（Node.js包管理器）。</p>
+<h3 id="🔹-步骤1：安装Node-js"><a href="#🔹-步骤1：安装Node-js" class="headerlink" title="🔹 步骤1：安装Node.js"></a>🔹 步骤1：安装Node.js</h3><ol>
+<li>访问**<a href="https://nodejs.org/">Node.js官网</a>**</li>
+<li>下载适合你操作系统的<strong>LTS版本</strong>（推荐长期支持版本，更稳定）</li>
+<li>运行安装程序，按照提示完成安装</li>
+<li>验证安装是否成功</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 验证Node.js版本</span></span><br><span class="line">node -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证npm版本</span></span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
+  <div class="image-grid">
+    <img src="/build_hexo_blog/install-nodejs-verify.png" class="" title="node.js命令行验证结果">
+  </div>
+</div>
 
-<h4 id="部分代码：send-email-py"><a href="#部分代码：send-email-py" class="headerlink" title="部分代码：send_email.py"></a>部分代码：send_email.py</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建邮件</span></span><br><span class="line">msg = MIMEMultipart(<span class="string">&#x27;alternative&#x27;</span>)</span><br><span class="line">msg[<span class="string">&quot;From&quot;</span>] = smtp_user</span><br><span class="line">msg[<span class="string">&quot;To&quot;</span>] = to_email</span><br><span class="line">msg[<span class="string">&quot;Subject&quot;</span>] = Header(<span class="string">f&quot;CCTV科技新闻摘要 (<span class="subst">&#123;today&#125;</span>)&quot;</span>, <span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加文本和HTML内容</span></span><br><span class="line">text_part = MIMEText(summary, <span class="string">&quot;plain&quot;</span>, <span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line">html_part = MIMEText(html_content, <span class="string">&quot;html&quot;</span>, <span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line"></span><br><span class="line">msg.attach(text_part)</span><br><span class="line">msg.attach(html_part)</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># 使用SMTP_SSL直接创建SSL连接</span></span><br><span class="line">    <span class="keyword">import</span> ssl</span><br><span class="line">    context = ssl.create_default_context()</span><br><span class="line">    context.check_hostname = <span class="literal">False</span></span><br><span class="line">    context.verify_mode = ssl.CERT_NONE</span><br><span class="line">    </span><br><span class="line">    server = smtplib.SMTP_SSL(smtp_server, <span class="number">465</span>, context=context, timeout=<span class="number">30</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;成功创建SMTP_SSL对象: <span class="subst">&#123;smtp_server&#125;</span>:465&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    server.login(smtp_user, smtp_password)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;成功登录邮箱: <span class="subst">&#123;smtp_user&#125;</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    server.send_message(msg)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;邮件发送成功&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;发送到：<span class="subst">&#123;to_email&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;主题：CCTV科技新闻摘要 (<span class="subst">&#123;today&#125;</span>)&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="自动化部署（GitHub-Actions）"><a href="#自动化部署（GitHub-Actions）" class="headerlink" title="自动化部署（GitHub Actions）"></a>自动化部署（GitHub Actions）</h3><p>通过GitHub Actions配置，实现每日自动运行，无需服务器。</p>
-<h4 id="时区说明"><a href="#时区说明" class="headerlink" title="时区说明"></a>时区说明</h4><ul>
-<li>GitHub服务器使用UTC时区</li>
-<li>中国时区是UTC+8，所以UTC时间02:44:59对应中国时间10:44:59</li>
-<li>以下配置设置为UTC时间02:45运行，对应中国时间10:45</li>
-</ul>
-<h2 id="邮件效果展示"><a href="#邮件效果展示" class="headerlink" title="邮件效果展示"></a>邮件效果展示</h2><h3 id="邮件效果"><a href="#邮件效果" class="headerlink" title="邮件效果"></a>邮件效果</h3><img src="/tech-news-email-bot/email-desktop.png" class="" title="电脑端邮件效果">
-
-<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="创建项目文件"><a href="#创建项目文件" class="headerlink" title="创建项目文件"></a>创建项目文件</h3><p>创建以下三个核心文件，构建完整的Python自动化新闻邮件系统：</p>
-<h4 id="📄-crawl-news-py"><a href="#📄-crawl-news-py" class="headerlink" title="📄 crawl_news.py"></a>📄 crawl_news.py</h4><ul>
-<li><strong>功能</strong>：使用Python爬虫技术从CCTV科技频道抓取最新新闻</li>
-<li><strong>特性</strong>：3次重试机制，确保Python爬虫数据抓取成功率</li>
-</ul>
-<h4 id="📄-send-email-py"><a href="#📄-send-email-py" class="headerlink" title="📄 send_email.py"></a>📄 send_email.py</h4><ul>
-<li><strong>功能</strong>：生成美观的响应式HTML邮件并通过SMTP协议发送</li>
-<li><strong>特性</strong>：响应式设计，支持各种设备，专业邮件模板</li>
-</ul>
-<h4 id="📄-github-workflows-daily-news-yml"><a href="#📄-github-workflows-daily-news-yml" class="headerlink" title="📄 .github&#x2F;workflows&#x2F;daily-news.yml"></a>📄 .github&#x2F;workflows&#x2F;daily-news.yml</h4><ul>
-<li><strong>功能</strong>：通过GitHub Actions实现每日自动运行的定时任务</li>
-<li><strong>特性</strong>：支持手动触发测试，方便调试和验证</li>
-</ul>
-<h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install requests beautifulsoup4</span><br></pre></td></tr></table></figure>
-
-<h3 id="本地测试"><a href="#本地测试" class="headerlink" title="本地测试"></a>本地测试</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 抓取新闻</span></span><br><span class="line">python crawl_news.py</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从环境变量读取配置</span></span><br><span class="line">smtp_server = os.environ.get(<span class="string">&#x27;SMTP_SERVER&#x27;</span>, <span class="string">&#x27;smtp.qq.com&#x27;</span>)           <span class="comment"># SMTP服务器地址</span></span><br><span class="line">smtp_user = os.environ.get(<span class="string">&#x27;SENDER_EMAIL&#x27;</span>, <span class="string">&#x27;自己的qq邮箱&#x27;</span>)  <span class="comment"># 发件人邮箱</span></span><br><span class="line">smtp_password = os.environ.get(<span class="string">&#x27;SENDER_PASSWORD&#x27;</span>, <span class="string">&#x27;自己的授权码&#x27;</span>)    <span class="comment"># 发件人密码或授权码</span></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行发送脚本</span></span><br><span class="line">python send_email.py</span><br></pre></td></tr></table></figure>
-
-<h4 id="操作截图-1"><a href="#操作截图-1" class="headerlink" title="操作截图"></a>操作截图</h4><img src="/tech-news-email-bot/local-test-config.png" class="" title="本地测试配置">
-
-<h3 id="创建GitHub仓库"><a href="#创建GitHub仓库" class="headerlink" title="创建GitHub仓库"></a>创建GitHub仓库</h3><p>按照以下步骤创建GitHub仓库：</p>
+<h3 id="🔹-步骤2：安装Git"><a href="#🔹-步骤2：安装Git" class="headerlink" title="🔹 步骤2：安装Git"></a>🔹 步骤2：安装Git</h3><p>Hexo需要Git来管理博客内容和部署到GitHub Pages。</p>
 <ol>
-<li><strong>登录GitHub</strong>：打开 <a href="https://github.com/">github.com</a></li>
-<li><strong>创建新仓库</strong>：点击右上角的「+」按钮，选择「New repository」</li>
-<li><strong>填写仓库信息</strong>：<ul>
-<li>Repository name: <code>daily-tech-news</code></li>
-<li>Description: <code>自动科技新闻摘要邮件机器人</code></li>
-<li>选择 Public 或 Private</li>
-<li>点击「Create repository」</li>
-</ul>
-</li>
+<li>访问**<a href="https://git-scm.com/">Git官网</a>**</li>
+<li>下载适合你操作系统的版本</li>
+<li>运行安装程序，按照提示完成安装</li>
+<li>验证安装是否成功</li>
 </ol>
-<h4 id="操作截图-2"><a href="#操作截图-2" class="headerlink" title="操作截图"></a>操作截图</h4><img src="/tech-news-email-bot/github-create-repo.png" class="" title="GitHub创建仓库页面">
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 验证Git版本</span></span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
 
-<h3 id="上传项目代码"><a href="#上传项目代码" class="headerlink" title="上传项目代码"></a>上传项目代码</h3><p>使用GitHub网页界面上传文件：</p>
-<ol>
-<li><strong>进入仓库</strong>：打开您创建的GitHub仓库页面</li>
-<li><strong>上传文件</strong>：<ul>
-<li>点击「Add file」按钮</li>
-<li>选择「Upload files」选项</li>
-</ul>
-</li>
-<li><strong>选择文件</strong>：<ul>
-<li>拖拽或点击选择您的项目文件（crawl_news.py、send_email.py、news_data.json ）</li>
-<li>同时创建 <code>.github/workflows/</code> 目录和 daily-news.yml 文件</li>
-</ul>
-</li>
-<li><strong>提交更改</strong>：<ul>
-<li>在页面底部填写提交信息（如 “初始化项目”）</li>
-<li>点击「Commit changes」按钮完成上传</li>
-</ul>
-</li>
-</ol>
-<h4 id="操作截图-3"><a href="#操作截图-3" class="headerlink" title="操作截图"></a>操作截图</h4><img src="/tech-news-email-bot/github-commit-changes.png" class="" title="GitHub提交更改页面">
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
+  <div class="image-grid">
+    <img src="/build_hexo_blog/install-git-verify.png" class="" title="git命令行验证结果">
+  </div>
+</div>
 
-<h3 id="配置GitHub-Actions"><a href="#配置GitHub-Actions" class="headerlink" title="配置GitHub Actions"></a>配置GitHub Actions</h3><p>在 <code>.github/workflows/daily-news.yml</code> 文件中添加以下配置：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">每日科技新闻摘要</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">schedule:</span></span><br><span class="line">    <span class="comment"># 每天UTC时间02:00运行，对应中国时间10:00</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">cron:</span> <span class="string">&#x27;0 2 * * *&#x27;</span></span><br><span class="line">  <span class="attr">workflow_dispatch:</span></span><br><span class="line">    <span class="comment"># 允许手动触发</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">send-news:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    </span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/checkout@v4</span></span><br><span class="line">    </span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">设置时区为中国时区</span></span><br><span class="line">      <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">        echo &quot;TZ=Asia/Shanghai&quot; &gt;&gt; $GITHUB_ENV</span></span><br><span class="line"><span class="string"></span>    </span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">设置Python环境</span></span><br><span class="line">      <span class="attr">uses:</span> <span class="string">actions/setup-python@v5</span></span><br><span class="line">      <span class="attr">with:</span></span><br><span class="line">        <span class="attr">python-version:</span> <span class="string">&#x27;3.9&#x27;</span></span><br><span class="line">    </span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">安装依赖</span></span><br><span class="line">      <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">        python -m pip install --upgrade pip</span></span><br><span class="line"><span class="string">        pip install requests beautifulsoup4</span></span><br><span class="line"><span class="string"></span>    </span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">运行爬取脚本</span></span><br><span class="line">      <span class="attr">run:</span> <span class="string">python</span> <span class="string">crawl_news.py</span></span><br><span class="line">    </span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">运行邮件发送脚本</span></span><br><span class="line">      <span class="attr">env:</span></span><br><span class="line">        <span class="attr">SENDER_EMAIL:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.SENDER_EMAIL</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">SENDER_PASSWORD:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.SENDER_PASSWORD</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">RECEIVER_EMAIL:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.RECEIVER_EMAIL</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">SMTP_SERVER:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.SMTP_SERVER</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">SMTP_PORT:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.SMTP_PORT</span> <span class="string">&#125;&#125;</span></span><br><span class="line">      <span class="attr">run:</span> <span class="string">python</span> <span class="string">send_email.py</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="操作截图-4"><a href="#操作截图-4" class="headerlink" title="操作截图"></a>操作截图</h4><img src="/tech-news-email-bot/github-actions-config.png" class="" title="GitHub Actions配置文件编辑">
-
-<h3 id="配置GitHub-Secrets"><a href="#配置GitHub-Secrets" class="headerlink" title="配置GitHub Secrets"></a>配置GitHub Secrets</h3><h4 id="进入Secrets设置"><a href="#进入Secrets设置" class="headerlink" title="进入Secrets设置"></a>进入Secrets设置</h4><p>按照以下路径进入Secrets设置页面：</p>
-<p><strong>进入GitHub仓库 → Settings → Secrets and variables → Actions</strong></p>
-<h4 id="添加Secrets"><a href="#添加Secrets" class="headerlink" title="添加Secrets"></a>添加Secrets</h4><p>点击 “New repository secret” 按钮，添加以下Secrets：</p>
-<table>
-<thead>
-<tr>
-<th>Secret名称</th>
-<th>描述</th>
-<th>示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>SENDER_EMAIL</code></td>
-<td>您的QQ邮箱地址</td>
-<td><code>3609506278@qq.com</code></td>
-</tr>
-<tr>
-<td><code>SENDER_PASSWORD</code></td>
-<td>您的QQ邮箱授权码（不是密码）</td>
-<td><code>xxxxxxxxxxxxxxxx</code></td>
-</tr>
-<tr>
-<td><code>RECEIVER_EMAIL</code></td>
-<td>收件人邮箱（可以和发件人相同）</td>
-<td><code>3609506278@qq.com</code></td>
-</tr>
-<tr>
-<td><code>SMTP_SERVER</code></td>
-<td>SMTP服务器地址</td>
-<td><code>smtp.qq.com</code></td>
-</tr>
-<tr>
-<td><code>SMTP_PORT</code></td>
-<td>SMTP服务器端口</td>
-<td><code>465</code></td>
-</tr>
-</tbody></table>
-<h4 id="操作截图-5"><a href="#操作截图-5" class="headerlink" title="操作截图"></a>操作截图</h4><img src="/tech-news-email-bot/github-settings.png" class="" title="GitHub仓库Settings页面">
-
-<h3 id="测试和验证"><a href="#测试和验证" class="headerlink" title="测试和验证"></a>测试和验证</h3><h4 id="手动触发测试"><a href="#手动触发测试" class="headerlink" title="手动触发测试"></a>手动触发测试</h4><p>按照以下步骤手动触发工作流测试：</p>
-<p><strong>进入GitHub仓库 → Actions → 每日科技新闻摘要 → Run workflow</strong></p>
-<p>点击 “Run workflow” 按钮手动触发工作流，无需等待定时执行</p>
-<h4 id="查看运行结果"><a href="#查看运行结果" class="headerlink" title="查看运行结果"></a>查看运行结果</h4><p>在Actions页面查看工作流的运行状态和详细日志：</p>
-<ul>
-<li>检查工作流是否成功启动</li>
-<li>查看每个步骤的执行状态</li>
-<li>检查是否成功发送邮件</li>
-<li>查看任何可能的错误信息</li>
-</ul>
-<h4 id="操作截图-6"><a href="#操作截图-6" class="headerlink" title="操作截图"></a>操作截图</h4><img src="/tech-news-email-bot/github-actions-page.png" class="" title="GitHub Actions页面">
-
-<h4 id="验证邮件"><a href="#验证邮件" class="headerlink" title="验证邮件"></a>验证邮件</h4><p>查看您的QQ邮箱，确认是否收到了科技新闻摘要邮件：</p>
-<ul>
-<li>检查收件箱或邮件</li>
-<li>确认邮件主题是否为 “CCTV科技新闻摘要”</li>
-<li>查看邮件内容是否完整</li>
-<li>验证新闻链接是否可点击</li>
-</ul>
-<h4 id="操作截图-7"><a href="#操作截图-7" class="headerlink" title="操作截图"></a>操作截图</h4><img src="/tech-news-email-bot/email-desktop.png" class="" title="QQ邮箱收到邮件">
-
-<h3 id="常见问题排查"><a href="#常见问题排查" class="headerlink" title="常见问题排查"></a>常见问题排查</h3><table>
-<thead>
-<tr>
-<th>问题</th>
-<th>解决方案</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>邮件发送失败</strong></td>
-<td>检查授权码是否正确，SMTP服务是否开启</td>
-</tr>
-<tr>
-<td><strong>新闻抓取失败</strong></td>
-<td>检查网络连接，确认CCTV科技频道API是否可访问</td>
-</tr>
-<tr>
-<td><strong>GitHub Actions运行失败</strong></td>
-<td>查看Actions日志，检查Secrets配置是否正确</td>
-</tr>
-</tbody></table>
-<h3 id="项目维护"><a href="#项目维护" class="headerlink" title="项目维护"></a>项目维护</h3><ul>
-<li><strong>🔍 定期检查</strong>：确保项目正常运行</li>
-<li><strong>📦 更新依赖</strong>：定期更新Python依赖包</li>
-<li><strong>⏰ 调整时间</strong>：根据需要修改GitHub Actions的运行时间</li>
-<li><strong>🌟 扩展功能</strong>：根据需求添加更多新闻源或功能</li>
-</ul>
-<h2 id="技术难点与解决方案"><a href="#技术难点与解决方案" class="headerlink" title="技术难点与解决方案"></a>技术难点与解决方案</h2><h3 id="JSONP数据解析"><a href="#JSONP数据解析" class="headerlink" title="JSONP数据解析"></a>JSONP数据解析</h3><ul>
-<li><strong>问题</strong>：CCTV科技频道使用JSONP格式返回数据，直接解析困难。</li>
-<li><strong>解决方案</strong>：使用正则表达式提取JSON数据，再进行解析。</li>
-</ul>
-<h3 id="SMTP连接问题"><a href="#SMTP连接问题" class="headerlink" title="SMTP连接问题"></a>SMTP连接问题</h3><ul>
-<li><strong>问题</strong>：不同邮箱服务商的SMTP设置不同，容易出现连接错误。</li>
-<li><strong>解决方案</strong>：使用SMTP_SSL直接创建安全连接，简化连接流程。</li>
-</ul>
-<h3 id="定时任务部署"><a href="#定时任务部署" class="headerlink" title="定时任务部署"></a>定时任务部署</h3><ul>
-<li><strong>问题</strong>：需要服务器才能实现定时任务。</li>
-<li><strong>解决方案</strong>：使用GitHub Actions免费实现自动化运行。</li>
-</ul>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>这个项目不仅是一个实用的工具，也是学习Python爬虫、邮件发送和自动化部署的好案例。通过它，你可以每天轻松获取最新的科技动态，同时也能提升自己的编程技能。</p>
-<p>如果你对这个项目感兴趣，欢迎到我的GitHub仓库查看和Star，也可以在评论区分享你的使用体验和改进建议。<br><strong>完整项目地址</strong>：<a href="https://github.com/Jay-R-J/daily_news">https://github.com/Jay-R-J/daily_news</a></p>
 <hr>
-<div class="article-info">
-  <strong>📅 更新时间：</strong>2026-02-5<br>
-  <strong>✍️ 作者：</strong>Jay<br>
-</div>]]></content>
+<h2 id="📦-安装Hexo"><a href="#📦-安装Hexo" class="headerlink" title="📦 安装Hexo"></a>📦 安装Hexo</h2><p>环境准备完成后，我们可以开始安装Hexo了。</p>
+<h3 id="🔹-步骤1：使用npm全局安装Hexo"><a href="#🔹-步骤1：使用npm全局安装Hexo" class="headerlink" title="🔹 步骤1：使用npm全局安装Hexo"></a>🔹 步骤1：使用npm全局安装Hexo</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 全局安装Hexo CLI</span></span><br><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<h3 id="🔹-步骤2：验证Hexo安装是否成功"><a href="#🔹-步骤2：验证Hexo安装是否成功" class="headerlink" title="🔹 步骤2：验证Hexo安装是否成功"></a>🔹 步骤2：验证Hexo安装是否成功</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 验证Hexo版本</span></span><br><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
+  <img src="/build_hexo_blog/install-hexo-verify.png" class="" title="安装Hexo命令">
+</div>
+
+<hr>
+<h2 id="🚀-初始化博客"><a href="#🚀-初始化博客" class="headerlink" title="🚀 初始化博客"></a>🚀 初始化博客</h2><p>现在我们可以初始化一个新的Hexo博客了。</p>
+<h3 id="🔹-步骤1：创建博客目录"><a href="#🔹-步骤1：创建博客目录" class="headerlink" title="🔹 步骤1：创建博客目录"></a>🔹 步骤1：创建博客目录</h3><p>选择一个合适的位置创建博客目录，例如在桌面创建一个名为<code>my-blog</code>的目录。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建博客目录</span></span><br><span class="line"><span class="built_in">mkdir</span> my-blog</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入博客目录</span></span><br><span class="line"><span class="built_in">cd</span> my-blog</span><br></pre></td></tr></table></figure>
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
+  <div class="image-grid">
+    <img src="/build_hexo_blog/create-blog-directory.png" class="" title="创建博客目录">
+  </div>
+</div>
+
+<h3 id="🔹-步骤2：初始化Hexo博客"><a href="#🔹-步骤2：初始化Hexo博客" class="headerlink" title="🔹 步骤2：初始化Hexo博客"></a>🔹 步骤2：初始化Hexo博客</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 初始化Hexo博客</span></span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+
+<h3 id="🔹-步骤3：安装依赖"><a href="#🔹-步骤3：安装依赖" class="headerlink" title="🔹 步骤3：安装依赖"></a>🔹 步骤3：安装依赖</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装博客依赖</span></span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
+  <div class="image-grid">
+    <img src="/build_hexo_blog/init-hexo-install-deps.png" class="" title="初始化Hexo博客和安装依赖">
+  </div>
+</div>
+
+<hr>
+<h2 id="⚙️-配置Hexo"><a href="#⚙️-配置Hexo" class="headerlink" title="⚙️ 配置Hexo"></a>⚙️ 配置Hexo</h2><p>Hexo初始化完成后，我们需要对博客进行基本配置。</p>
+<h3 id="🔹-步骤1：编辑配置文件"><a href="#🔹-步骤1：编辑配置文件" class="headerlink" title="🔹 步骤1：编辑配置文件"></a>🔹 步骤1：编辑配置文件</h3><p>Hexo的配置文件是<code>_config.yml</code>，位于博客根目录。使用文本编辑器（如VS Code、Sublime Text等）打开这个文件，对以下内容进行配置：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site - 网站基本信息</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">你的博客标题</span>          <span class="comment"># 博客标题，显示在网站顶部</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">你的博客副标题</span>    <span class="comment"># 博客副标题，显示在标题下方</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">你的博客描述</span>    <span class="comment"># 博客描述，用于SEO和元标签</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">你的名字</span>             <span class="comment"># 博客作者名称</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span>             <span class="comment"># 博客语言，中文使用zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">Asia/Shanghai</span>      <span class="comment"># 时区，亚洲/上海</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL - 链接配置</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://你的用户名.github.io</span>  <span class="comment"># 博客的完整URL</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span>                      <span class="comment"># 网站根目录</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span>  <span class="comment"># 文章永久链接格式</span></span><br><span class="line"><span class="attr">permalink_defaults:</span>          <span class="comment"># 永久链接默认值</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="🔹-步骤2：保存配置文件"><a href="#🔹-步骤2：保存配置文件" class="headerlink" title="🔹 步骤2：保存配置文件"></a>🔹 步骤2：保存配置文件</h3><p>修改完成后，保存配置文件。</p>
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
+  <img src="/build_hexo_blog/configure-hexo-config.png" class="" title="配置文件编辑界面">
+</div>
+
+<div class="tip info">
+  <strong>💡 配置提示：</strong>
+  - 配置文件中的冒号后面需要加空格
+  - 确保URL配置正确，特别是GitHub Pages的地址
+  - 语言设置为zh-CN可以确保中文显示正常
+</div>
+
+<hr>
+<h2 id="🎨-安装主题"><a href="#🎨-安装主题" class="headerlink" title="🎨 安装主题"></a>🎨 安装主题</h2><p>Hexo默认使用的是landscape主题，我们可以安装更美观、功能更丰富的主题，例如Butterfly主题。</p>
+<h3 id="🔹-步骤1：安装Butterfly主题"><a href="#🔹-步骤1：安装Butterfly主题" class="headerlink" title="🔹 步骤1：安装Butterfly主题"></a>🔹 步骤1：安装Butterfly主题</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 克隆Butterfly主题到themes目录</span></span><br><span class="line">git <span class="built_in">clone</span> -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure>
+
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
+  <div class="image-grid">
+    <img src="/build_hexo_blog/install-butterfly-theme.png" class="" title="安装Butterfly主题">
+  </div>
+</div>
+
+<h3 id="🔹-步骤2：启用主题"><a href="#🔹-步骤2：启用主题" class="headerlink" title="🔹 步骤2：启用主题"></a>🔹 步骤2：启用主题</h3><p>编辑<code>_config.yml</code>文件，将theme设置为butterfly：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 主题设置</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">butterfly</span>  <span class="comment"># 使用Butterfly主题</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="🔹-步骤3：安装必要的插件"><a href="#🔹-步骤3：安装必要的插件" class="headerlink" title="🔹 步骤3：安装必要的插件"></a>🔹 步骤3：安装必要的插件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装Butterfly主题所需的渲染插件</span></span><br><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus --save</span><br></pre></td></tr></table></figure>
+
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
+  <div class="image-grid">
+    <img src="/build_hexo_blog/install-theme-plugins.png" class="" title="安装必要的插件">
+  </div>
+</div>
+
+<div class="tip success">
+  <strong>✅ 主题优势：</strong>
+  - Butterfly主题美观现代，支持响应式设计
+  - 内置多种功能：搜索、评论、代码高亮等
+  - 支持自定义配置，易于个性化
+  - 活跃的社区支持和持续更新
+</div>
+
+<hr>
+<h2 id="✨-个性化设置"><a href="#✨-个性化设置" class="headerlink" title="✨ 个性化设置"></a>✨ 个性化设置</h2><p>现在我们可以对博客进行个性化设置，让它更加符合我们的需求。</p>
+<h3 id="🔹-步骤1：创建主题配置文件"><a href="#🔹-步骤1：创建主题配置文件" class="headerlink" title="🔹 步骤1：创建主题配置文件"></a>🔹 步骤1：创建主题配置文件</h3><p>在博客根目录创建一个<code>_config.butterfly.yml</code>文件，用于配置Butterfly主题（推荐使用独立配置文件，便于主题更新）。</p>
+<h3 id="🔹-步骤2：基本配置"><a href="#🔹-步骤2：基本配置" class="headerlink" title="🔹 步骤2：基本配置"></a>🔹 步骤2：基本配置</h3><p>在<code>_config.butterfly.yml</code>文件中进行基本配置：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 网站图标设置</span></span><br><span class="line"><span class="attr">favicon:</span> <span class="string">/img/favicon.ico</span>  <span class="comment"># 网站图标，显示在浏览器标签页</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 导航菜单设置</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">首页:</span> <span class="string">/</span>                   <span class="comment"># 首页链接</span></span><br><span class="line">  <span class="string">归档:</span> <span class="string">/archives/</span>          <span class="comment"># 文章归档</span></span><br><span class="line">  <span class="string">分类:</span> <span class="string">/categories/</span>        <span class="comment"># 文章分类</span></span><br><span class="line">  <span class="string">标签:</span> <span class="string">/tags/</span>              <span class="comment"># 文章标签</span></span><br><span class="line">  <span class="string">关于:</span> <span class="string">/about/</span>             <span class="comment"># 关于页面</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 社交链接设置</span></span><br><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">GitHub:</span> <span class="string">https://github.com/你的用户名</span>  <span class="comment"># GitHub链接</span></span><br><span class="line">  <span class="string">微博:</span> <span class="string">https://weibo.com/你的用户名</span>     <span class="comment"># 微博链接</span></span><br><span class="line">  <span class="string">知乎:</span> <span class="string">https://www.zhihu.com/people/你的用户名</span>  <span class="comment"># 知乎链接</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="🔹-步骤3：个性化样式"><a href="#🔹-步骤3：个性化样式" class="headerlink" title="🔹 步骤3：个性化样式"></a>🔹 步骤3：个性化样式</h3><p>可以在<code>source/css/custom.css</code>文件中添加自定义样式，个性化你的博客：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 示例：自定义博客标题样式 */</span></span><br><span class="line"><span class="selector-class">.site-title</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">2rem</span>;</span><br><span class="line">  <span class="attribute">font-weight</span>: bold;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#667eea</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 示例：自定义链接颜色 */</span></span><br><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#7c3aed</span>;</span><br><span class="line">  <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#f093fb</span>;</span><br><span class="line">  <span class="attribute">text-decoration</span>: underline;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="tip warning">
+  <strong>🎯 个性化建议：</strong>
+  - 从简单的配置开始，逐步添加复杂功能
+  - 参考Butterfly主题的官方文档进行配置
+  - 定期备份你的配置文件
+</div>
+
+<hr>
+<h2 id="✍️-撰写第一篇文章"><a href="#✍️-撰写第一篇文章" class="headerlink" title="✍️ 撰写第一篇文章"></a>✍️ 撰写第一篇文章</h2><p>现在我们可以撰写第一篇博客文章了。</p>
+<h3 id="🔹-步骤1：创建新文章"><a href="#🔹-步骤1：创建新文章" class="headerlink" title="🔹 步骤1：创建新文章"></a>🔹 步骤1：创建新文章</h3><p>使用Hexo命令创建一篇新文章：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一篇新文章，标题为&quot;我的第一篇博客文章&quot;</span></span><br><span class="line">hexo new <span class="string">&quot;我的第一篇博客文章&quot;</span></span><br></pre></td></tr></table></figure>
+
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
+  <div class="image-grid">
+    <img src="/build_hexo_blog/create-new-post.png" class="" title="创建新文章命令">
+  </div>
+</div>
+
+<h3 id="🔹-步骤2：编辑文章"><a href="#🔹-步骤2：编辑文章" class="headerlink" title="🔹 步骤2：编辑文章"></a>🔹 步骤2：编辑文章</h3><p>文章会创建在<code>source/_posts</code>目录下，使用Markdown格式编写。编辑文章内容，添加标题、标签、分类等信息。</p>
+<p>文章的基本结构如下：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 我的第一篇博客文章  # 文章标题</span><br><span class="line">date: 2026-01-18 10:00:00  # 文章发布日期</span><br><span class="line">tags: [Hexo, 博客]  # 文章标签</span><br><span class="line">categories: [博客教程]  # 文章分类</span><br><span class="line"><span class="section">description: 这是我的第一篇博客文章  # 文章描述</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line"><span class="section"># 欢迎阅读我的第一篇博客</span></span><br><span class="line"></span><br><span class="line">这是我的第一篇Hexo博客文章，使用Markdown格式编写。</span><br><span class="line"></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"></span><br><span class="line"><span class="section">### 三级标题</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> 列表项1</span><br><span class="line"><span class="bullet">-</span> 列表项2</span><br><span class="line"><span class="bullet">-</span> 列表项3</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
+  <div class="image-grid">
+    <img src="/build_hexo_blog/edit-post-interface.png" class="" title="文章编辑界面">
+  </div>
+</div>
+
+<h3 id="🔹-步骤3：保存文章"><a href="#🔹-步骤3：保存文章" class="headerlink" title="🔹 步骤3：保存文章"></a>🔹 步骤3：保存文章</h3><p>编写完成后，保存文章。</p>
+<div class="tip success">
+  <strong>✏️ 写作建议：</strong>
+  - 使用Markdown格式编写，简洁高效
+  - 文章结构清晰，层次分明
+  - 适当使用图片和代码示例增强可读性
+  - 定期备份你的文章内容
+</div>
+
+<hr>
+<h2 id="👀-本地预览"><a href="#👀-本地预览" class="headerlink" title="👀 本地预览"></a>👀 本地预览</h2><p>在部署之前，我们可以在本地预览博客效果，检查是否有任何问题。</p>
+<h3 id="🔹-步骤1：生成静态文件"><a href="#🔹-步骤1：生成静态文件" class="headerlink" title="🔹 步骤1：生成静态文件"></a>🔹 步骤1：生成静态文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成静态文件</span></span><br><span class="line">hexo generate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者使用简写形式</span></span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+
+<h3 id="🔹-步骤2：启动本地服务器"><a href="#🔹-步骤2：启动本地服务器" class="headerlink" title="🔹 步骤2：启动本地服务器"></a>🔹 步骤2：启动本地服务器</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 启动本地服务器</span></span><br><span class="line">hexo server</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者使用简写形式</span></span><br><span class="line">hexo s</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可选：指定端口</span></span><br><span class="line">hexo s -p 8080</span><br></pre></td></tr></table></figure>
+
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
+  <div class="image-grid">
+    <img src="/build_hexo_blog/generate-static-server.png" class="" title="生成静态文件和启动本地服务器">
+  </div>
+</div>
+
+<h3 id="🔹-步骤3：访问本地博客"><a href="#🔹-步骤3：访问本地博客" class="headerlink" title="🔹 步骤3：访问本地博客"></a>🔹 步骤3：访问本地博客</h3><p>在浏览器中访问<code>http://localhost:4000</code>，查看博客效果。</p>
+<div class="image-container">
+  <strong>📷 操作截图：</strong>
+  <div class="image-grid">
+    <img src="/build_hexo_blog/local-blog-preview.png" class="" title="本地博客效果">
+  </div>
+</div>
+
+<div class="tip info">
+  <strong>🔍 预览提示：</strong>
+  - 本地预览可以实时查看博客效果
+  - 修改文章或配置后，刷新浏览器即可看到更新
+  - 按下Ctrl+C可以停止本地服务器
+</div>
+
+<hr>
+<h2 id="❗-常见问题解决"><a href="#❗-常见问题解决" class="headerlink" title="❗ 常见问题解决"></a>❗ 常见问题解决</h2><p>在搭建Hexo博客的过程中，可能会遇到一些问题。这里列举几个常见问题及解决方法。</p>
+<h3 id="🔹-问题1：Hexo命令无法使用"><a href="#🔹-问题1：Hexo命令无法使用" class="headerlink" title="🔹 问题1：Hexo命令无法使用"></a>🔹 问题1：Hexo命令无法使用</h3><p><strong>症状：</strong> 执行<code>hexo</code>命令时提示”command not found”或类似错误</p>
+<p><strong>解决方法：</strong> </p>
+<ol>
+<li>检查Node.js和npm是否安装成功</li>
+<li>尝试重新安装Hexo：<code>npm install -g hexo-cli</code></li>
+<li>检查系统环境变量是否配置正确</li>
+</ol>
+<h3 id="🔹-问题2：本地预览时样式丢失"><a href="#🔹-问题2：本地预览时样式丢失" class="headerlink" title="🔹 问题2：本地预览时样式丢失"></a>🔹 问题2：本地预览时样式丢失</h3><p><strong>症状：</strong> 本地访问时，博客没有样式或样式显示异常</p>
+<p><strong>解决方法：</strong> </p>
+<ol>
+<li>检查主题配置是否正确</li>
+<li>确认必要的插件是否已安装</li>
+<li>尝试重新安装主题和依赖</li>
+<li>检查配置文件中的URL设置是否正确</li>
+</ol>
+<h3 id="🔹-问题3：文章图片无法显示"><a href="#🔹-问题3：文章图片无法显示" class="headerlink" title="🔹 问题3：文章图片无法显示"></a>🔹 问题3：文章图片无法显示</h3><p><strong>症状：</strong> 文章中的图片无法正常显示</p>
+<p><strong>解决方法：</strong> </p>
+<ol>
+<li>确保图片文件存放在与文章同名的文件夹中</li>
+<li>使用Hexo推荐的<code>&#123;% asset_img %&#125;</code>标签引用图片</li>
+<li>检查图片路径是否正确</li>
+</ol>
+<div class="tip warning">
+  <strong>💡 问题排查建议：</strong>
+  - 仔细查看命令行输出的错误信息
+  - 检查配置文件中的语法错误
+  - 参考Hexo和主题的官方文档
+  - 搜索相关问题的解决方案
+</div>
+
+<hr>
+<h2 id="🎊-结语"><a href="#🎊-结语" class="headerlink" title="🎊 结语"></a>🎊 结语</h2><p>恭喜你！现在你已经成功搭建了属于自己的Hexo博客网站。博客搭建只是开始，后续你可以通过以下方式让你的博客更加完美：</p>
+<ul>
+<li><strong>撰写优质内容</strong>：定期更新博客，分享你的知识和经验</li>
+<li><strong>优化博客性能</strong>：使用CDN、压缩资源、优化图片等</li>
+<li><strong>添加更多功能</strong>：评论系统、阅读统计、搜索功能等</li>
+<li><strong>美化博客样式</strong>：自定义主题、添加动画效果等</li>
+<li><strong>SEO优化</strong>：优化文章标题、描述、标签等</li>
+</ul>
+<p>希望本文对你有所帮助。如果你有任何问题或建议，欢迎在评论区留言交流！</p>
+<h2 id="📚-相关资源"><a href="#📚-相关资源" class="headerlink" title="📚 相关资源"></a>📚 相关资源</h2><ul>
+<li><strong><a href="https://hexo.io/zh-cn/docs/">Hexo官方文档</a></strong> - 最权威的Hexo使用指南</li>
+<li><strong><a href="https://butterfly.js.org/">Butterfly主题文档</a></strong> - Butterfly主题的详细配置说明</li>
+<li><strong><a href="https://docs.github.com/cn/pages">GitHub Pages官方文档</a></strong> - GitHub Pages的使用教程</li>
+<li><strong><a href="https://markdown.com.cn/basic-syntax/">Markdown语法指南</a></strong> - 学习Markdown写作语法</li>
+</ul>
+<hr>
+<p><strong>更新时间：</strong> 2026-01-18<br><strong>作者：</strong> Jay</p>
+]]></content>
       <categories>
-        <category>技术教程</category>
-        <category>Python</category>
-        <category>自动化</category>
-        <category>爬虫</category>
-        <category>邮件</category>
-        <category>GitHub Actions</category>
+        <category>博客教程</category>
       </categories>
       <tags>
-        <tag>Python</tag>
-        <tag>爬虫</tag>
-        <tag>邮件自动化</tag>
-        <tag>GitHub Actions</tag>
-        <tag>科技新闻</tag>
-        <tag>SEO优化</tag>
-        <tag>自动化工具</tag>
-        <tag>数据抓取</tag>
-        <tag>SMTP</tag>
-        <tag>响应式设计</tag>
+        <tag>Hexo</tag>
+        <tag>博客教程</tag>
+        <tag>网站搭建</tag>
+        <tag>静态博客</tag>
+        <tag>Butterfly主题</tag>
+        <tag>Hexo博客搭建</tag>
+        <tag>个人博客</tag>
+        <tag>博客制作</tag>
+        <tag>网站建设</tag>
       </tags>
   </entry>
   <entry>
@@ -776,25 +793,25 @@
 <li>同时也想通过实践提升Python GUI开发技术</li>
 </ul>
 <hr>
-<h2 id="🚀-功能特性"><a href="#🚀-功能特性" class="headerlink" title="🚀 功能特性"></a>🚀 功能特性</h2><h3 id="🎯-核心功能"><a href="#🎯-核心功能" class="headerlink" title="🎯 核心功能"></a>🎯 核心功能</h3><h4 id="1-🔄-一键备份"><a href="#1-🔄-一键备份" class="headerlink" title="1. 🔄 一键备份"></a>1. 🔄 一键备份</h4><ul>
+<h2 id="🚀-功能特性"><a href="#🚀-功能特性" class="headerlink" title="🚀 功能特性"></a>🚀 功能特性</h2><h3 id="🎯-核心功能"><a href="#🎯-核心功能" class="headerlink" title="🎯 核心功能"></a>🎯 核心功能</h3><h4 id="🔄-一键备份"><a href="#🔄-一键备份" class="headerlink" title="🔄 一键备份"></a>🔄 一键备份</h4><ul>
 <li>支持选择任意文件夹进行备份</li>
 <li>智能排除不需要的文件（如<code>.git</code>、<code>node_modules</code>等）</li>
 <li>支持添加自定义注释，方便识别不同版本</li>
 <li>备份过程实时显示进度，清晰直观</li>
 </ul>
-<h4 id="2-📊-智能版本管理"><a href="#2-📊-智能版本管理" class="headerlink" title="2. 📊 智能版本管理"></a>2. 📊 智能版本管理</h4><ul>
+<h4 id="📊-智能版本管理"><a href="#📊-智能版本管理" class="headerlink" title="📊 智能版本管理"></a>📊 智能版本管理</h4><ul>
 <li>自动为每个备份生成唯一版本号</li>
 <li>完整记录备份时间、注释和文件大小</li>
 <li>支持按时间、版本号排序查看备份列表</li>
 <li>可视化展示备份历史，方便回溯</li>
 </ul>
-<h4 id="3-⏱️-快速恢复"><a href="#3-⏱️-快速恢复" class="headerlink" title="3. ⏱️ 快速恢复"></a>3. ⏱️ 快速恢复</h4><ul>
+<h4 id="⏱️-快速恢复"><a href="#⏱️-快速恢复" class="headerlink" title="⏱️ 快速恢复"></a>⏱️ 快速恢复</h4><ul>
 <li>一键恢复到指定版本，操作简单快捷</li>
 <li>智能处理权限问题，跳过无法访问的文件</li>
 <li>生成详细的恢复报告，包含成功&#x2F;失败记录</li>
 <li>支持选择性恢复，灵活方便</li>
 </ul>
-<h4 id="4-💾-灵活的存储选项"><a href="#4-💾-灵活的存储选项" class="headerlink" title="4. 💾 灵活的存储选项"></a>4. 💾 灵活的存储选项</h4><ul>
+<h4 id="💾-灵活的存储选项"><a href="#💾-灵活的存储选项" class="headerlink" title="💾 灵活的存储选项"></a>💾 灵活的存储选项</h4><ul>
 <li>可自定义备份保存位置，支持外部存储</li>
 <li>支持压缩备份，显著节省磁盘空间</li>
 <li>自动清理旧备份，可设置保留数量</li>
@@ -810,22 +827,22 @@
 <li><strong>🔒 安全可靠</strong>：完整的错误处理，确保数据安全</li>
 </ul>
 <hr>
-<h2 id="🎯-解决什么问题"><a href="#🎯-解决什么问题" class="headerlink" title="🎯 解决什么问题"></a>🎯 解决什么问题</h2><h3 id="💢-开发者常见痛点"><a href="#💢-开发者常见痛点" class="headerlink" title="💢 开发者常见痛点"></a>💢 开发者常见痛点</h3><h4 id="1-❌-文件误删恢复难"><a href="#1-❌-文件误删恢复难" class="headerlink" title="1. ❌ 文件误删恢复难"></a>1. ❌ 文件误删恢复难</h4><ul>
+<h2 id="🎯-解决什么问题"><a href="#🎯-解决什么问题" class="headerlink" title="🎯 解决什么问题"></a>🎯 解决什么问题</h2><h3 id="💢-开发者常见痛点"><a href="#💢-开发者常见痛点" class="headerlink" title="💢 开发者常见痛点"></a>💢 开发者常见痛点</h3><h4 id="❌-文件误删恢复难"><a href="#❌-文件误删恢复难" class="headerlink" title="❌ 文件误删恢复难"></a>❌ 文件误删恢复难</h4><ul>
 <li>工作中不小心删除了重要文件，懊悔不已</li>
 <li>没有版本控制，无法找回历史版本</li>
 <li><strong>解决方案</strong>：定期自动备份，一键即可恢复到任意时间点</li>
 </ul>
-<h4 id="2-🔀-代码混乱难以回溯"><a href="#2-🔀-代码混乱难以回溯" class="headerlink" title="2. 🔀 代码混乱难以回溯"></a>2. 🔀 代码混乱难以回溯</h4><ul>
+<h4 id="🔀-代码混乱难以回溯"><a href="#🔀-代码混乱难以回溯" class="headerlink" title="🔀 代码混乱难以回溯"></a>🔀 代码混乱难以回溯</h4><ul>
 <li>多个人协作，代码版本混乱不堪</li>
 <li>不知道哪个版本是稳定可用的</li>
 <li><strong>解决方案</strong>：完整记录每个版本，方便对比和回溯，清晰掌握项目演进</li>
 </ul>
-<h4 id="3-⏳-备份操作繁琐易错"><a href="#3-⏳-备份操作繁琐易错" class="headerlink" title="3. ⏳ 备份操作繁琐易错"></a>3. ⏳ 备份操作繁琐易错</h4><ul>
+<h4 id="⏳-备份操作繁琐易错"><a href="#⏳-备份操作繁琐易错" class="headerlink" title="⏳ 备份操作繁琐易错"></a>⏳ 备份操作繁琐易错</h4><ul>
 <li>手动复制粘贴容易遗漏文件</li>
 <li>不知道该备份哪些文件，费时费力</li>
 <li><strong>解决方案</strong>：智能识别需要备份的文件，自动排除无用文件，一键完成备份</li>
 </ul>
-<h4 id="4-📁-版本管理混乱"><a href="#4-📁-版本管理混乱" class="headerlink" title="4. 📁 版本管理混乱"></a>4. 📁 版本管理混乱</h4><ul>
+<h4 id="📁-版本管理混乱"><a href="#📁-版本管理混乱" class="headerlink" title="📁 版本管理混乱"></a>📁 版本管理混乱</h4><ul>
 <li>文件命名不规范，如”最终版”、”最终最终版_v2”</li>
 <li>不知道哪个版本包含哪些具体修改</li>
 <li><strong>解决方案</strong>：自动生成唯一版本号和时间戳，配合自定义注释，版本管理一目了然</li>
@@ -834,43 +851,82 @@
 <h2 id="📖-使用指南"><a href="#📖-使用指南" class="headerlink" title="📖 使用指南"></a>📖 使用指南</h2><h3 id="🖥️-界面介绍"><a href="#🖥️-界面介绍" class="headerlink" title="🖥️ 界面介绍"></a>🖥️ 界面介绍</h3><p>打开程序后，您将看到简洁直观的主界面，分为以下几个区域：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">┌─────────────────────────────────────────────────────────────┐</span><br><span class="line">│ 项目备份工具 v1.0                                            │</span><br><span class="line">├─────────────────────────────────────────────────────────────┤</span><br><span class="line">│ 备份设置                                                     │</span><br><span class="line">│                                                             │</span><br><span class="line">│  要备份的目录:  [C:\Users\MyProject      ] [浏览...]        │</span><br><span class="line">│  备份保存位置:  [D:\Backups              ] [浏览...]        │</span><br><span class="line">│                                           备份数量: 5 个    │</span><br><span class="line">├─────────────────────────────────────────────────────────────┤</span><br><span class="line">│ [创建备份] [恢复备份] [删除备份] [刷新列表]                  │</span><br><span class="line">├─────────────────────────────────────────────────────────────┤</span><br><span class="line">│ 备份列表                                                     │</span><br><span class="line">│ ┌─────────────────────────────────────────────────────────┐ │</span><br><span class="line">│ │ 版本ID     │ 备份时间          │ 注释      │ 类型        │ │</span><br><span class="line">│ ├─────────────────────────────────────────────────────────┤ │</span><br><span class="line">│ │ v001_xxx   │ 2026-01-21 10:30 │ 初始备份  │ 压缩        │ │</span><br><span class="line">│ │ v002_xxx   │ 2026-01-21 11:00 │ 添加功能A │ 压缩        │ │</span><br><span class="line">│ └─────────────────────────────────────────────────────────┘ │</span><br><span class="line">├─────────────────────────────────────────────────────────────┤</span><br><span class="line">│ 状态栏: 就绪                                                │</span><br><span class="line">└─────────────────────────────────────────────────────────────┘</span><br></pre></td></tr></table></figure>
 
-<h3 id="🎮-按钮功能详解"><a href="#🎮-按钮功能详解" class="headerlink" title="🎮 按钮功能详解"></a>🎮 按钮功能详解</h3><h4 id="1-🔄-创建备份"><a href="#1-🔄-创建备份" class="headerlink" title="1. 🔄 创建备份"></a>1. 🔄 创建备份</h4><p><strong>📋 功能</strong>：将选定的源目录完整备份到指定位置</p>
+<h3 id="🎮-按钮功能详解"><a href="#🎮-按钮功能详解" class="headerlink" title="🎮 按钮功能详解"></a>🎮 按钮功能详解</h3><h4 id="🔄-创建备份"><a href="#🔄-创建备份" class="headerlink" title="🔄 创建备份"></a>🔄 创建备份</h4><p><strong>📋 功能</strong>：将选定的源目录完整备份到指定位置</p>
 <p><strong>📝 使用方法</strong>：</p>
-<ol>
+<ul>
+<li><ol>
 <li>点击「要备份的目录」旁边的「浏览…」按钮，选择您想要备份的文件夹</li>
+</ol>
+</li>
+<li><ol start="2">
 <li>点击「备份保存位置」旁边的「浏览…」按钮，选择备份文件的保存位置</li>
+</ol>
+</li>
+<li><ol start="3">
 <li>点击「创建备份」按钮，弹出注释输入窗口</li>
+</ol>
+</li>
+<li><ol start="4">
 <li>输入备份注释（建议简洁描述本次备份的内容）</li>
+</ol>
+</li>
+<li><ol start="5">
 <li>点击「确定」开始备份，等待进度完成</li>
 </ol>
+</li>
+</ul>
 <p><strong>🌟 示例</strong>：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入注释: &quot;完成了用户登录功能&quot;</span><br><span class="line">点击确定</span><br><span class="line">→ 程序会自动创建备份文件：项目名_v001_20260121_103000_完成了用户登录功能.zip</span><br></pre></td></tr></table></figure>
 
-<h4 id="2-⏱️-恢复备份"><a href="#2-⏱️-恢复备份" class="headerlink" title="2. ⏱️ 恢复备份"></a>2. ⏱️ 恢复备份</h4><p><strong>📋 功能</strong>：将选定的备份版本恢复到源目录</p>
+<h4 id="⏱️-恢复备份"><a href="#⏱️-恢复备份" class="headerlink" title="⏱️ 恢复备份"></a>⏱️ 恢复备份</h4><p><strong>📋 功能</strong>：将选定的备份版本恢复到源目录</p>
 <p><strong>⚠️ 重要注意事项</strong>：恢复操作会覆盖源目录中的现有文件，请务必谨慎操作！</p>
 <p><strong>📝 使用方法</strong>：</p>
-<ol>
+<ul>
+<li><ol>
 <li>在备份列表中点击选择您想要恢复的版本</li>
+</ol>
+</li>
+<li><ol start="2">
 <li>点击「恢复备份」按钮，弹出确认对话框</li>
+</ol>
+</li>
+<li><ol start="3">
 <li>仔细检查确认要恢复的版本，点击「是」</li>
+</ol>
+</li>
+<li><ol start="4">
 <li>等待恢复完成，查看恢复报告</li>
 </ol>
+</li>
+</ul>
 <p><strong>🌟 示例</strong>：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">选择: v002_20260121_110000_添加功能A</span><br><span class="line">点击「恢复备份」</span><br><span class="line">确认: 是</span><br><span class="line">→ 源目录的文件会恢复到备份时的状态</span><br></pre></td></tr></table></figure>
 
-<h4 id="3-🗑️-删除备份"><a href="#3-🗑️-删除备份" class="headerlink" title="3. 🗑️ 删除备份"></a>3. 🗑️ 删除备份</h4><p><strong>📋 功能</strong>：从备份列表和文件系统中永久删除指定的备份</p>
+<h4 id="🗑️-删除备份"><a href="#🗑️-删除备份" class="headerlink" title="🗑️ 删除备份"></a>🗑️ 删除备份</h4><p><strong>📋 功能</strong>：从备份列表和文件系统中永久删除指定的备份</p>
 <p><strong>⚠️ 重要注意事项</strong>：删除操作不可恢复，请确认后再执行！</p>
 <p><strong>📝 使用方法</strong>：</p>
-<ol>
+<ul>
+<li><ol>
 <li>在备份列表中点击选择要删除的版本</li>
+</ol>
+</li>
+<li><ol start="2">
 <li>点击「删除备份」按钮，弹出确认对话框</li>
+</ol>
+</li>
+<li><ol start="3">
 <li>点击「是」确认删除</li>
+</ol>
+</li>
+<li><ol start="4">
 <li>备份会立即从列表和磁盘中移除</li>
 </ol>
+</li>
+</ul>
 <p><strong>🌟 示例</strong>：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">选择: v001_20260121_103000_初始备份</span><br><span class="line">点击「删除备份」</span><br><span class="line">确认: 是</span><br><span class="line">→ 该备份文件会从列表和文件系统中删除</span><br></pre></td></tr></table></figure>
 
-<h4 id="4-🔄-刷新列表"><a href="#4-🔄-刷新列表" class="headerlink" title="4. 🔄 刷新列表"></a>4. 🔄 刷新列表</h4><p><strong>📋 功能</strong>：重新加载备份列表，同步最新的备份状态</p>
+<h4 id="🔄-刷新列表"><a href="#🔄-刷新列表" class="headerlink" title="🔄 刷新列表"></a>🔄 刷新列表</h4><p><strong>📋 功能</strong>：重新加载备份列表，同步最新的备份状态</p>
 <p><strong>📝 使用方法</strong>：</p>
 <ul>
 <li>直接点击「刷新列表」按钮即可</li>
@@ -937,20 +993,20 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 每天晚上10点执行自动备份</span></span><br><span class="line">0 22 * * * /path/to/python /path/to/backup_tool.py --create --comment <span class="string">&quot;自动定时备份&quot;</span></span><br></pre></td></tr></table></figure>
 
 <hr>
-<h2 id="💡-最佳实践"><a href="#💡-最佳实践" class="headerlink" title="💡 最佳实践"></a>💡 最佳实践</h2><h3 id="📋-备份策略建议"><a href="#📋-备份策略建议" class="headerlink" title="📋 备份策略建议"></a>📋 备份策略建议</h3><h4 id="1-🔑-重要节点备份"><a href="#1-🔑-重要节点备份" class="headerlink" title="1. 🔑 重要节点备份"></a>1. 🔑 重要节点备份</h4><ul>
+<h2 id="💡-最佳实践"><a href="#💡-最佳实践" class="headerlink" title="💡 最佳实践"></a>💡 最佳实践</h2><h3 id="📋-备份策略建议"><a href="#📋-备份策略建议" class="headerlink" title="📋 备份策略建议"></a>📋 备份策略建议</h3><h4 id="🔑-重要节点备份"><a href="#🔑-重要节点备份" class="headerlink" title="🔑 重要节点备份"></a>🔑 重要节点备份</h4><ul>
 <li><strong>功能完成后</strong>：每次完成一个功能模块，立即备份</li>
 <li><strong>配置修改前</strong>：修改关键配置文件前，先备份当前状态</li>
 <li><strong>代码重构前</strong>：重构代码前，备份稳定版本</li>
 <li><strong>下班前</strong>：每天下班前，进行一次完整备份</li>
 <li><strong>版本发布前</strong>：发布新版本前，进行最终备份</li>
 </ul>
-<h4 id="2-📍-备份位置选择"><a href="#2-📍-备份位置选择" class="headerlink" title="2. 📍 备份位置选择"></a>2. 📍 备份位置选择</h4><ul>
+<h4 id="📍-备份位置选择"><a href="#📍-备份位置选择" class="headerlink" title="📍 备份位置选择"></a>📍 备份位置选择</h4><ul>
 <li><strong>本地多磁盘</strong>：备份到不同物理磁盘，防止单盘故障</li>
 <li><strong>云盘同步</strong>：使用云盘同步备份文件夹，实现异地备份</li>
 <li><strong>外部存储</strong>：重要项目备份到移动硬盘或U盘，离线保存</li>
 <li><strong>混合策略</strong>：结合本地、云盘和外部存储，实现多层次保护</li>
 </ul>
-<h4 id="3-📝-注释规范"><a href="#3-📝-注释规范" class="headerlink" title="3. 📝 注释规范"></a>3. 📝 注释规范</h4><ul>
+<h4 id="📝-注释规范"><a href="#📝-注释规范" class="headerlink" title="📝 注释规范"></a>📝 注释规范</h4><ul>
 <li><strong>清晰描述</strong>：简单明了描述本次备份的内容或变更</li>
 <li><strong>标注里程碑</strong>：重要版本标注版本号或里程碑</li>
 <li><strong>使用关键词</strong>：包含功能、修复、重构等关键词</li>
@@ -984,23 +1040,23 @@
 <h3 id="❔-Q-程序支持增量备份吗？"><a href="#❔-Q-程序支持增量备份吗？" class="headerlink" title="❔ Q: 程序支持增量备份吗？"></a>❔ Q: 程序支持增量备份吗？</h3><p>✅ <strong>A</strong>: 是的，工具支持智能增量备份，仅备份变化的文件，大幅提高备份效率并节省磁盘空间。</p>
 <hr>
 <h2 id="🔧-技术实现"><a href="#🔧-技术实现" class="headerlink" title="🔧 技术实现"></a>🔧 技术实现</h2><h3 id="📝-个人开发历程"><a href="#📝-个人开发历程" class="headerlink" title="📝 个人开发历程"></a>📝 个人开发历程</h3><p>作为独立开发者，我经历了从需求分析到最终发布的完整开发流程，每一步都凝聚了我的心血：</p>
-<h4 id="1-🎯-需求分析与规划"><a href="#1-🎯-需求分析与规划" class="headerlink" title="1. 🎯 需求分析与规划"></a>1. 🎯 需求分析与规划</h4><ul>
+<h4 id="🎯-需求分析与规划"><a href="#🎯-需求分析与规划" class="headerlink" title="🎯 需求分析与规划"></a>🎯 需求分析与规划</h4><ul>
 <li>调研了市面上现有备份工具的优缺点</li>
 <li>明确了核心功能：一键备份、版本管理、快速恢复</li>
 <li>确定了目标用户：开发者和需要数据保护的普通用户</li>
 </ul>
-<h4 id="2-💡-技术选型"><a href="#2-💡-技术选型" class="headerlink" title="2. 💡 技术选型"></a>2. 💡 技术选型</h4><ul>
+<h4 id="💡-技术选型"><a href="#💡-技术选型" class="headerlink" title="💡 技术选型"></a>💡 技术选型</h4><ul>
 <li><strong>语言</strong>：选择Python，看重其跨平台性和易用性</li>
 <li><strong>GUI框架</strong>：Tkinter，纯Python标准库，无需额外依赖</li>
 <li><strong>设计理念</strong>：简洁易用，零依赖，跨平台兼容</li>
 </ul>
-<h4 id="3-🔨-核心实现"><a href="#3-🔨-核心实现" class="headerlink" title="3. 🔨 核心实现"></a>3. 🔨 核心实现</h4><ul>
+<h4 id="🔨-核心实现"><a href="#🔨-核心实现" class="headerlink" title="🔨 核心实现"></a>🔨 核心实现</h4><ul>
 <li>编写<code>backup_tool.py</code>，实现命令行版核心备份逻辑</li>
 <li>开发<code>gui_backup_tool.py</code>，打造友好直观的图形界面</li>
 <li>设计智能配置系统，自动生成和管理<code>config.json</code></li>
 <li>实现智能文件排除规则，自动忽略无用文件</li>
 </ul>
-<h4 id="4-✨-优化迭代"><a href="#4-✨-优化迭代" class="headerlink" title="4. ✨ 优化迭代"></a>4. ✨ 优化迭代</h4><ul>
+<h4 id="✨-优化迭代"><a href="#✨-优化迭代" class="headerlink" title="✨ 优化迭代"></a>✨ 优化迭代</h4><ul>
 <li>修复了权限处理问题，增强了程序稳定性</li>
 <li>优化了大文件处理逻辑，支持GB级文件备份</li>
 <li>改进了界面设计，提升了用户体验</li>
@@ -1627,288 +1683,13 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
+        <tag>Butterfly主题</tag>
         <tag>Giscus</tag>
         <tag>评论系统</tag>
-        <tag>Butterfly主题</tag>
         <tag>GitHub评论</tag>
         <tag>博客评论</tag>
         <tag>静态博客评论</tag>
         <tag>评论插件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何从0到1搭建属于自己的Hexo博客网站 | 静态博客搭建教程</title>
-    <url>//build_hexo_blog/</url>
-    <content><![CDATA[<div class="tip success">
-  <strong>🎉 欢迎阅读本教程！</strong><br>
-  本文将带你从0到1搭建属于自己的Hexo博客网站，适合完全零基础的新手。
-</div>
-
-<h2 id="📝-前言"><a href="#📝-前言" class="headerlink" title="📝 前言"></a>📝 前言</h2><p>在数字化时代，拥有一个属于自己的博客网站是展示个人技术、分享知识和记录生活的绝佳方式。Hexo作为一款快速、简洁且高效的静态博客生成框架，受到了众多开发者的喜爱。</p>
-<p>本文将详细介绍如何从0到1搭建属于自己的Hexo博客网站，包括环境配置、主题安装、个性化设置、文章撰写和部署上线等完整流程。</p>
-<h2 id="📋-目录"><a href="#📋-目录" class="headerlink" title="📋 目录"></a>📋 目录</h2><ol>
-<li><a href="#%F0%9F%94%A7-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87">环境准备</a></li>
-<li><a href="#%F0%9F%93%A6-%E5%AE%89%E8%A3%85Hexo">安装Hexo</a></li>
-<li><a href="#%F0%9F%9A%80-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8D%9A%E5%AE%A2">初始化博客</a></li>
-<li><a href="#%E2%9A%99%EF%B8%8F-%E9%85%8D%E7%BD%AEHexo">配置Hexo</a></li>
-<li><a href="#%F0%9F%8E%A8-%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98">安装主题</a></li>
-<li><a href="#%E2%9C%A8-%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%BE%E7%BD%AE">个性化设置</a></li>
-<li><a href="#%E2%9C%8D%EF%B8%8F-%E6%92%B0%E5%86%99%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0">撰写第一篇文章</a></li>
-<li><a href="#%F0%9F%91%80-%E6%9C%AC%E5%9C%B0%E9%A2%84%E8%A7%88">本地预览</a></li>
-<li><a href="#%E2%9D%97-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3">常见问题解决</a></li>
-</ol>
-<h2 id="🔧-环境准备"><a href="#🔧-环境准备" class="headerlink" title="🔧 环境准备"></a>🔧 环境准备</h2><p>在开始搭建Hexo博客之前，我们需要准备好必要的环境。Hexo基于Node.js开发，所以需要安装Node.js和npm（Node.js包管理器）。</p>
-<h3 id="🔹-步骤1：安装Node-js"><a href="#🔹-步骤1：安装Node-js" class="headerlink" title="🔹 步骤1：安装Node.js"></a>🔹 步骤1：安装Node.js</h3><ol>
-<li>访问**<a href="https://nodejs.org/">Node.js官网</a>**</li>
-<li>下载适合你操作系统的<strong>LTS版本</strong>（推荐长期支持版本，更稳定）</li>
-<li>运行安装程序，按照提示完成安装</li>
-<li>验证安装是否成功</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 验证Node.js版本</span></span><br><span class="line">node -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证npm版本</span></span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <div class="image-grid">
-    <img src="/build_hexo_blog/install-nodejs-verify.png" class="" title="node.js命令行验证结果">
-  </div>
-</div>
-
-<h3 id="🔹-步骤2：安装Git"><a href="#🔹-步骤2：安装Git" class="headerlink" title="🔹 步骤2：安装Git"></a>🔹 步骤2：安装Git</h3><p>Hexo需要Git来管理博客内容和部署到GitHub Pages。</p>
-<ol>
-<li>访问**<a href="https://git-scm.com/">Git官网</a>**</li>
-<li>下载适合你操作系统的版本</li>
-<li>运行安装程序，按照提示完成安装</li>
-<li>验证安装是否成功</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 验证Git版本</span></span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
-
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <div class="image-grid">
-    <img src="/build_hexo_blog/install-git-verify.png" class="" title="git命令行验证结果">
-  </div>
-</div>
-
-<hr>
-<h2 id="📦-安装Hexo"><a href="#📦-安装Hexo" class="headerlink" title="📦 安装Hexo"></a>📦 安装Hexo</h2><p>环境准备完成后，我们可以开始安装Hexo了。</p>
-<h3 id="🔹-步骤1：使用npm全局安装Hexo"><a href="#🔹-步骤1：使用npm全局安装Hexo" class="headerlink" title="🔹 步骤1：使用npm全局安装Hexo"></a>🔹 步骤1：使用npm全局安装Hexo</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 全局安装Hexo CLI</span></span><br><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<h3 id="🔹-步骤2：验证Hexo安装是否成功"><a href="#🔹-步骤2：验证Hexo安装是否成功" class="headerlink" title="🔹 步骤2：验证Hexo安装是否成功"></a>🔹 步骤2：验证Hexo安装是否成功</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 验证Hexo版本</span></span><br><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <img src="/build_hexo_blog/install-hexo-verify.png" class="" title="安装Hexo命令">
-</div>
-
-<hr>
-<h2 id="🚀-初始化博客"><a href="#🚀-初始化博客" class="headerlink" title="🚀 初始化博客"></a>🚀 初始化博客</h2><p>现在我们可以初始化一个新的Hexo博客了。</p>
-<h3 id="🔹-步骤1：创建博客目录"><a href="#🔹-步骤1：创建博客目录" class="headerlink" title="🔹 步骤1：创建博客目录"></a>🔹 步骤1：创建博客目录</h3><p>选择一个合适的位置创建博客目录，例如在桌面创建一个名为<code>my-blog</code>的目录。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建博客目录</span></span><br><span class="line"><span class="built_in">mkdir</span> my-blog</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入博客目录</span></span><br><span class="line"><span class="built_in">cd</span> my-blog</span><br></pre></td></tr></table></figure>
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <div class="image-grid">
-    <img src="/build_hexo_blog/create-blog-directory.png" class="" title="创建博客目录">
-  </div>
-</div>
-
-<h3 id="🔹-步骤2：初始化Hexo博客"><a href="#🔹-步骤2：初始化Hexo博客" class="headerlink" title="🔹 步骤2：初始化Hexo博客"></a>🔹 步骤2：初始化Hexo博客</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 初始化Hexo博客</span></span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-
-<h3 id="🔹-步骤3：安装依赖"><a href="#🔹-步骤3：安装依赖" class="headerlink" title="🔹 步骤3：安装依赖"></a>🔹 步骤3：安装依赖</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装博客依赖</span></span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <div class="image-grid">
-    <img src="/build_hexo_blog/init-hexo-install-deps.png" class="" title="初始化Hexo博客和安装依赖">
-  </div>
-</div>
-
-<hr>
-<h2 id="⚙️-配置Hexo"><a href="#⚙️-配置Hexo" class="headerlink" title="⚙️ 配置Hexo"></a>⚙️ 配置Hexo</h2><p>Hexo初始化完成后，我们需要对博客进行基本配置。</p>
-<h3 id="🔹-步骤1：编辑配置文件"><a href="#🔹-步骤1：编辑配置文件" class="headerlink" title="🔹 步骤1：编辑配置文件"></a>🔹 步骤1：编辑配置文件</h3><p>Hexo的配置文件是<code>_config.yml</code>，位于博客根目录。使用文本编辑器（如VS Code、Sublime Text等）打开这个文件，对以下内容进行配置：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site - 网站基本信息</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">你的博客标题</span>          <span class="comment"># 博客标题，显示在网站顶部</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">你的博客副标题</span>    <span class="comment"># 博客副标题，显示在标题下方</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">你的博客描述</span>    <span class="comment"># 博客描述，用于SEO和元标签</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">你的名字</span>             <span class="comment"># 博客作者名称</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span>             <span class="comment"># 博客语言，中文使用zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">Asia/Shanghai</span>      <span class="comment"># 时区，亚洲/上海</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL - 链接配置</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://你的用户名.github.io</span>  <span class="comment"># 博客的完整URL</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span>                      <span class="comment"># 网站根目录</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span>  <span class="comment"># 文章永久链接格式</span></span><br><span class="line"><span class="attr">permalink_defaults:</span>          <span class="comment"># 永久链接默认值</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="🔹-步骤2：保存配置文件"><a href="#🔹-步骤2：保存配置文件" class="headerlink" title="🔹 步骤2：保存配置文件"></a>🔹 步骤2：保存配置文件</h3><p>修改完成后，保存配置文件。</p>
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <img src="/build_hexo_blog/configure-hexo-config.png" class="" title="配置文件编辑界面">
-</div>
-
-<div class="tip info">
-  <strong>💡 配置提示：</strong>
-  - 配置文件中的冒号后面需要加空格
-  - 确保URL配置正确，特别是GitHub Pages的地址
-  - 语言设置为zh-CN可以确保中文显示正常
-</div>
-
-<hr>
-<h2 id="🎨-安装主题"><a href="#🎨-安装主题" class="headerlink" title="🎨 安装主题"></a>🎨 安装主题</h2><p>Hexo默认使用的是landscape主题，我们可以安装更美观、功能更丰富的主题，例如Butterfly主题。</p>
-<h3 id="🔹-步骤1：安装Butterfly主题"><a href="#🔹-步骤1：安装Butterfly主题" class="headerlink" title="🔹 步骤1：安装Butterfly主题"></a>🔹 步骤1：安装Butterfly主题</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 克隆Butterfly主题到themes目录</span></span><br><span class="line">git <span class="built_in">clone</span> -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure>
-
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <div class="image-grid">
-    <img src="/build_hexo_blog/install-butterfly-theme.png" class="" title="安装Butterfly主题">
-  </div>
-</div>
-
-<h3 id="🔹-步骤2：启用主题"><a href="#🔹-步骤2：启用主题" class="headerlink" title="🔹 步骤2：启用主题"></a>🔹 步骤2：启用主题</h3><p>编辑<code>_config.yml</code>文件，将theme设置为butterfly：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 主题设置</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">butterfly</span>  <span class="comment"># 使用Butterfly主题</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="🔹-步骤3：安装必要的插件"><a href="#🔹-步骤3：安装必要的插件" class="headerlink" title="🔹 步骤3：安装必要的插件"></a>🔹 步骤3：安装必要的插件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装Butterfly主题所需的渲染插件</span></span><br><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus --save</span><br></pre></td></tr></table></figure>
-
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <div class="image-grid">
-    <img src="/build_hexo_blog/install-theme-plugins.png" class="" title="安装必要的插件">
-  </div>
-</div>
-
-<div class="tip success">
-  <strong>✅ 主题优势：</strong>
-  - Butterfly主题美观现代，支持响应式设计
-  - 内置多种功能：搜索、评论、代码高亮等
-  - 支持自定义配置，易于个性化
-  - 活跃的社区支持和持续更新
-</div>
-
-<hr>
-<h2 id="✨-个性化设置"><a href="#✨-个性化设置" class="headerlink" title="✨ 个性化设置"></a>✨ 个性化设置</h2><p>现在我们可以对博客进行个性化设置，让它更加符合我们的需求。</p>
-<h3 id="🔹-步骤1：创建主题配置文件"><a href="#🔹-步骤1：创建主题配置文件" class="headerlink" title="🔹 步骤1：创建主题配置文件"></a>🔹 步骤1：创建主题配置文件</h3><p>在博客根目录创建一个<code>_config.butterfly.yml</code>文件，用于配置Butterfly主题（推荐使用独立配置文件，便于主题更新）。</p>
-<h3 id="🔹-步骤2：基本配置"><a href="#🔹-步骤2：基本配置" class="headerlink" title="🔹 步骤2：基本配置"></a>🔹 步骤2：基本配置</h3><p>在<code>_config.butterfly.yml</code>文件中进行基本配置：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 网站图标设置</span></span><br><span class="line"><span class="attr">favicon:</span> <span class="string">/img/favicon.ico</span>  <span class="comment"># 网站图标，显示在浏览器标签页</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 导航菜单设置</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">首页:</span> <span class="string">/</span>                   <span class="comment"># 首页链接</span></span><br><span class="line">  <span class="string">归档:</span> <span class="string">/archives/</span>          <span class="comment"># 文章归档</span></span><br><span class="line">  <span class="string">分类:</span> <span class="string">/categories/</span>        <span class="comment"># 文章分类</span></span><br><span class="line">  <span class="string">标签:</span> <span class="string">/tags/</span>              <span class="comment"># 文章标签</span></span><br><span class="line">  <span class="string">关于:</span> <span class="string">/about/</span>             <span class="comment"># 关于页面</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 社交链接设置</span></span><br><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">GitHub:</span> <span class="string">https://github.com/你的用户名</span>  <span class="comment"># GitHub链接</span></span><br><span class="line">  <span class="string">微博:</span> <span class="string">https://weibo.com/你的用户名</span>     <span class="comment"># 微博链接</span></span><br><span class="line">  <span class="string">知乎:</span> <span class="string">https://www.zhihu.com/people/你的用户名</span>  <span class="comment"># 知乎链接</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="🔹-步骤3：个性化样式"><a href="#🔹-步骤3：个性化样式" class="headerlink" title="🔹 步骤3：个性化样式"></a>🔹 步骤3：个性化样式</h3><p>可以在<code>source/css/custom.css</code>文件中添加自定义样式，个性化你的博客：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 示例：自定义博客标题样式 */</span></span><br><span class="line"><span class="selector-class">.site-title</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">2rem</span>;</span><br><span class="line">  <span class="attribute">font-weight</span>: bold;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#667eea</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 示例：自定义链接颜色 */</span></span><br><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#7c3aed</span>;</span><br><span class="line">  <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#f093fb</span>;</span><br><span class="line">  <span class="attribute">text-decoration</span>: underline;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<div class="tip warning">
-  <strong>🎯 个性化建议：</strong>
-  - 从简单的配置开始，逐步添加复杂功能
-  - 参考Butterfly主题的官方文档进行配置
-  - 定期备份你的配置文件
-</div>
-
-<hr>
-<h2 id="✍️-撰写第一篇文章"><a href="#✍️-撰写第一篇文章" class="headerlink" title="✍️ 撰写第一篇文章"></a>✍️ 撰写第一篇文章</h2><p>现在我们可以撰写第一篇博客文章了。</p>
-<h3 id="🔹-步骤1：创建新文章"><a href="#🔹-步骤1：创建新文章" class="headerlink" title="🔹 步骤1：创建新文章"></a>🔹 步骤1：创建新文章</h3><p>使用Hexo命令创建一篇新文章：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一篇新文章，标题为&quot;我的第一篇博客文章&quot;</span></span><br><span class="line">hexo new <span class="string">&quot;我的第一篇博客文章&quot;</span></span><br></pre></td></tr></table></figure>
-
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <div class="image-grid">
-    <img src="/build_hexo_blog/create-new-post.png" class="" title="创建新文章命令">
-  </div>
-</div>
-
-<h3 id="🔹-步骤2：编辑文章"><a href="#🔹-步骤2：编辑文章" class="headerlink" title="🔹 步骤2：编辑文章"></a>🔹 步骤2：编辑文章</h3><p>文章会创建在<code>source/_posts</code>目录下，使用Markdown格式编写。编辑文章内容，添加标题、标签、分类等信息。</p>
-<p>文章的基本结构如下：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 我的第一篇博客文章  # 文章标题</span><br><span class="line">date: 2026-01-18 10:00:00  # 文章发布日期</span><br><span class="line">tags: [Hexo, 博客]  # 文章标签</span><br><span class="line">categories: [博客教程]  # 文章分类</span><br><span class="line"><span class="section">description: 这是我的第一篇博客文章  # 文章描述</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line"><span class="section"># 欢迎阅读我的第一篇博客</span></span><br><span class="line"></span><br><span class="line">这是我的第一篇Hexo博客文章，使用Markdown格式编写。</span><br><span class="line"></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"></span><br><span class="line"><span class="section">### 三级标题</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> 列表项1</span><br><span class="line"><span class="bullet">-</span> 列表项2</span><br><span class="line"><span class="bullet">-</span> 列表项3</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <div class="image-grid">
-    <img src="/build_hexo_blog/edit-post-interface.png" class="" title="文章编辑界面">
-  </div>
-</div>
-
-<h3 id="🔹-步骤3：保存文章"><a href="#🔹-步骤3：保存文章" class="headerlink" title="🔹 步骤3：保存文章"></a>🔹 步骤3：保存文章</h3><p>编写完成后，保存文章。</p>
-<div class="tip success">
-  <strong>✏️ 写作建议：</strong>
-  - 使用Markdown格式编写，简洁高效
-  - 文章结构清晰，层次分明
-  - 适当使用图片和代码示例增强可读性
-  - 定期备份你的文章内容
-</div>
-
-<hr>
-<h2 id="👀-本地预览"><a href="#👀-本地预览" class="headerlink" title="👀 本地预览"></a>👀 本地预览</h2><p>在部署之前，我们可以在本地预览博客效果，检查是否有任何问题。</p>
-<h3 id="🔹-步骤1：生成静态文件"><a href="#🔹-步骤1：生成静态文件" class="headerlink" title="🔹 步骤1：生成静态文件"></a>🔹 步骤1：生成静态文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成静态文件</span></span><br><span class="line">hexo generate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者使用简写形式</span></span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-
-<h3 id="🔹-步骤2：启动本地服务器"><a href="#🔹-步骤2：启动本地服务器" class="headerlink" title="🔹 步骤2：启动本地服务器"></a>🔹 步骤2：启动本地服务器</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 启动本地服务器</span></span><br><span class="line">hexo server</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者使用简写形式</span></span><br><span class="line">hexo s</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可选：指定端口</span></span><br><span class="line">hexo s -p 8080</span><br></pre></td></tr></table></figure>
-
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <div class="image-grid">
-    <img src="/build_hexo_blog/generate-static-server.png" class="" title="生成静态文件和启动本地服务器">
-  </div>
-</div>
-
-<h3 id="🔹-步骤3：访问本地博客"><a href="#🔹-步骤3：访问本地博客" class="headerlink" title="🔹 步骤3：访问本地博客"></a>🔹 步骤3：访问本地博客</h3><p>在浏览器中访问<code>http://localhost:4000</code>，查看博客效果。</p>
-<div class="image-container">
-  <strong>📷 操作截图：</strong>
-  <div class="image-grid">
-    <img src="/build_hexo_blog/local-blog-preview.png" class="" title="本地博客效果">
-  </div>
-</div>
-
-<div class="tip info">
-  <strong>🔍 预览提示：</strong>
-  - 本地预览可以实时查看博客效果
-  - 修改文章或配置后，刷新浏览器即可看到更新
-  - 按下Ctrl+C可以停止本地服务器
-</div>
-
-<hr>
-<h2 id="❗-常见问题解决"><a href="#❗-常见问题解决" class="headerlink" title="❗ 常见问题解决"></a>❗ 常见问题解决</h2><p>在搭建Hexo博客的过程中，可能会遇到一些问题。这里列举几个常见问题及解决方法。</p>
-<h3 id="🔹-问题1：Hexo命令无法使用"><a href="#🔹-问题1：Hexo命令无法使用" class="headerlink" title="🔹 问题1：Hexo命令无法使用"></a>🔹 问题1：Hexo命令无法使用</h3><p><strong>症状：</strong> 执行<code>hexo</code>命令时提示”command not found”或类似错误</p>
-<p><strong>解决方法：</strong> </p>
-<ol>
-<li>检查Node.js和npm是否安装成功</li>
-<li>尝试重新安装Hexo：<code>npm install -g hexo-cli</code></li>
-<li>检查系统环境变量是否配置正确</li>
-</ol>
-<h3 id="🔹-问题2：本地预览时样式丢失"><a href="#🔹-问题2：本地预览时样式丢失" class="headerlink" title="🔹 问题2：本地预览时样式丢失"></a>🔹 问题2：本地预览时样式丢失</h3><p><strong>症状：</strong> 本地访问时，博客没有样式或样式显示异常</p>
-<p><strong>解决方法：</strong> </p>
-<ol>
-<li>检查主题配置是否正确</li>
-<li>确认必要的插件是否已安装</li>
-<li>尝试重新安装主题和依赖</li>
-<li>检查配置文件中的URL设置是否正确</li>
-</ol>
-<h3 id="🔹-问题3：文章图片无法显示"><a href="#🔹-问题3：文章图片无法显示" class="headerlink" title="🔹 问题3：文章图片无法显示"></a>🔹 问题3：文章图片无法显示</h3><p><strong>症状：</strong> 文章中的图片无法正常显示</p>
-<p><strong>解决方法：</strong> </p>
-<ol>
-<li>确保图片文件存放在与文章同名的文件夹中</li>
-<li>使用Hexo推荐的<code>&#123;% asset_img %&#125;</code>标签引用图片</li>
-<li>检查图片路径是否正确</li>
-</ol>
-<div class="tip warning">
-  <strong>💡 问题排查建议：</strong>
-  - 仔细查看命令行输出的错误信息
-  - 检查配置文件中的语法错误
-  - 参考Hexo和主题的官方文档
-  - 搜索相关问题的解决方案
-</div>
-
-<hr>
-<h2 id="🎊-结语"><a href="#🎊-结语" class="headerlink" title="🎊 结语"></a>🎊 结语</h2><p>恭喜你！现在你已经成功搭建了属于自己的Hexo博客网站。博客搭建只是开始，后续你可以通过以下方式让你的博客更加完美：</p>
-<ul>
-<li><strong>撰写优质内容</strong>：定期更新博客，分享你的知识和经验</li>
-<li><strong>优化博客性能</strong>：使用CDN、压缩资源、优化图片等</li>
-<li><strong>添加更多功能</strong>：评论系统、阅读统计、搜索功能等</li>
-<li><strong>美化博客样式</strong>：自定义主题、添加动画效果等</li>
-<li><strong>SEO优化</strong>：优化文章标题、描述、标签等</li>
-</ul>
-<p>希望本文对你有所帮助。如果你有任何问题或建议，欢迎在评论区留言交流！</p>
-<h2 id="📚-相关资源"><a href="#📚-相关资源" class="headerlink" title="📚 相关资源"></a>📚 相关资源</h2><ul>
-<li><strong><a href="https://hexo.io/zh-cn/docs/">Hexo官方文档</a></strong> - 最权威的Hexo使用指南</li>
-<li><strong><a href="https://butterfly.js.org/">Butterfly主题文档</a></strong> - Butterfly主题的详细配置说明</li>
-<li><strong><a href="https://docs.github.com/cn/pages">GitHub Pages官方文档</a></strong> - GitHub Pages的使用教程</li>
-<li><strong><a href="https://markdown.com.cn/basic-syntax/">Markdown语法指南</a></strong> - 学习Markdown写作语法</li>
-</ul>
-<hr>
-<p><strong>更新时间：</strong> 2026-01-18<br><strong>作者：</strong> Jay</p>
-]]></content>
-      <categories>
-        <category>博客教程</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Butterfly主题</tag>
-        <tag>博客教程</tag>
-        <tag>网站搭建</tag>
-        <tag>静态博客</tag>
-        <tag>Hexo博客搭建</tag>
-        <tag>个人博客</tag>
-        <tag>博客制作</tag>
-        <tag>网站建设</tag>
       </tags>
   </entry>
   <entry>
@@ -2404,7 +2185,7 @@
 <ul>
 <li><strong>GitHub</strong>：<a href="https://github.com/Jay-R-J/">https://github.com/Jay-R-J/</a></li>
 <li><strong>CSDN</strong>：<a href="https://blog.csdn.net/2401_82953028">https://blog.csdn.net/2401_82953028</a></li>
-<li><strong>电子邮件</strong>：<a href="mailto:&#x33;&#x36;&#48;&#57;&#53;&#x30;&#x36;&#50;&#55;&#x38;&#x40;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#x63;&#111;&#109;">3609506278@example.com</a></li>
+<li><strong>电子邮件</strong>：<a href="mailto:&#x33;&#54;&#x30;&#x39;&#x35;&#x30;&#54;&#50;&#55;&#x38;&#64;&#x65;&#120;&#x61;&#x6d;&#x70;&#x6c;&#101;&#46;&#x63;&#x6f;&#109;">3609506278@example.com</a></li>
 <li><strong>微信</strong>：请在博客留言板留言获取</li>
 </ul>
 <h3 id="🤝-合作方式"><a href="#🤝-合作方式" class="headerlink" title="🤝 合作方式"></a>🤝 合作方式</h3><ul>
@@ -2443,6 +2224,348 @@
         <tag>博客功能</tag>
         <tag>博客浏览技巧</tag>
         <tag>博客使用教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何打造一个自动科技新闻摘要邮件机器人（附完整代码）</title>
+    <url>//tech-news-email-bot/</url>
+    <content><![CDATA[<div align="center">
+  <h1>🌟 如何使用Python打造自动科技新闻摘要邮件机器人</h1>
+  <p>📧 附完整代码和详细部署指南</p>
+  <hr style="border: 2px solid #f0f0f0; width: 80%; margin: 20px auto;">
+</div>
+
+<h2 id="📰-项目简介"><a href="#📰-项目简介" class="headerlink" title="📰 项目简介"></a>📰 项目简介</h2><div class="tip-box" style="background-color: #f8f9fa; border-left: 4px solid #4CAF50; padding: 15px; margin: 20px 0;">
+  <p style="margin: 0; font-size: 16px;">无需手动操作，每天自动抓取CCTV科技频道的最新新闻，通过Python爬虫技术处理数据，生成美观的响应式HTML邮件，并使用GitHub Actions实现定时自动化发送</p>
+</div>
+
+<h2 id="🌟-前言"><a href="#🌟-前言" class="headerlink" title="🌟 前言"></a>🌟 前言</h2><p>你是否每天都想了解最新的科技动态，却苦于没有时间浏览各大科技网站？今天我要分享一个我自己开发的实用小项目——<strong>自动CCTV科技新闻摘要邮件机器人</strong>，它能够通过Python脚本自动抓取CCTV科技频道的最新新闻，使用SMTP协议发送美观的HTML格式邮件，并通过GitHub Actions实现完全自动化的定时运行，让你每天轻松获取最新的科技新闻。</p>
+<div class="feature-box" style="background-color: #f0f8ff; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  <h3 style="margin-top: 0; color: #1E90FF;">✨ 项目价值</h3>
+  <p>这个项目不仅可以帮助你节省时间，自动获取科技新闻，还可以作为学习Python爬虫、邮件发送和自动化部署的实用案例。</p>
+</div>
+
+<h2 id="✨-项目亮点"><a href="#✨-项目亮点" class="headerlink" title="✨ 项目亮点"></a>✨ 项目亮点</h2><div class="highlights-box" style="background-color: #fafafa; border-radius: 10px; padding: 25px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+  <ul style="list-style-type: none; padding-left: 0;">
+    <li style="margin: 15px 0; padding-left: 30px; position: relative;">
+      <span style="position: absolute; left: 0; top: 0; font-size: 18px;">✨</span>
+      <strong style="font-size: 16px; color: #333;">全自动运行</strong>
+      <p style="margin: 5px 0 0 20px; color: #666;">无需手动操作，通过GitHub Actions实现每天定时发送</p>
+    </li>
+    <li style="margin: 15px 0; padding-left: 30px; position: relative;">
+      <span style="position: absolute; left: 0; top: 0; font-size: 18px;">📊</span>
+      <strong style="font-size: 16px; color: #333;">真实数据</strong>
+      <p style="margin: 5px 0 0 20px; color: #666;">直接从CCTV科技频道获取最新新闻，使用Python爬虫技术确保数据准确性</p>
+    </li>
+    <li style="margin: 15px 0; padding-left: 30px; position: relative;">
+      <span style="position: absolute; left: 0; top: 0; font-size: 18px;">🎨</span>
+      <strong style="font-size: 16px; color: #333;">美观邮件</strong>
+      <p style="margin: 5px 0 0 20px; color: #666;">响应式HTML格式邮件，支持各种设备，专业的邮件模板设计</p>
+    </li>
+    <li style="margin: 15px 0; padding-left: 30px; position: relative;">
+      <span style="position: absolute; left: 0; top: 0; font-size: 18px;">🔒</span>
+      <strong style="font-size: 16px; color: #333;">稳定可靠</strong>
+      <p style="margin: 5px 0 0 20px; color: #666;">3次重试机制，确保Python爬虫数据抓取成功率</p>
+    </li>
+    <li style="margin: 15px 0; padding-left: 30px; position: relative;">
+      <span style="position: absolute; left: 0; top: 0; font-size: 18px;">🚀</span>
+      <strong style="font-size: 16px; color: #333;">易于部署</strong>
+      <p style="margin: 5px 0 0 20px; color: #666;">支持GitHub Actions自动化运行，包含详细的自动化部署指南</p>
+    </li>
+    <li style="margin: 15px 0; padding-left: 30px; position: relative;">
+      <span style="position: absolute; left: 0; top: 0; font-size: 18px;">💻</span>
+      <strong style="font-size: 16px; color: #333;">免费工具</strong>
+      <p style="margin: 5px 0 0 20px; color: #666;">完全免费的自动化工具，无需服务器成本</p>
+    </li>
+  </ul>
+</div>
+
+<h2 id="🛠️-技术栈"><a href="#🛠️-技术栈" class="headerlink" title="🛠️ 技术栈"></a>🛠️ 技术栈</h2><div class="tech-stack-box" style="background-color: #f8f9fa; border-radius: 10px; padding: 25px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+  <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+    <thead>
+      <tr style="background-color: #e9ecef;">
+        <th style="padding: 12px; text-align: left; border-bottom: 2px solid #dee2e6; font-size: 16px; color: #333;">技术</th>
+        <th style="padding: 12px; text-align: left; border-bottom: 2px solid #dee2e6; font-size: 16px; color: #333;">用途</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom: 1px solid #dee2e6;">
+        <td style="padding: 12px; font-weight: 500; color: #495057;">Python 3.9</td>
+        <td style="padding: 12px; color: #6c757d;">核心编程语言，用于开发Python爬虫和自动化脚本</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #dee2e6; background-color: #f8f9fa;">
+        <td style="padding: 12px; font-weight: 500; color: #495057;">Requests</td>
+        <td style="padding: 12px; color: #6c757d;">网络请求库，用于抓取CCTV科技频道数据</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #dee2e6;">
+        <td style="padding: 12px; font-weight: 500; color: #495057;">BeautifulSoup4</td>
+        <td style="padding: 12px; color: #6c757d;">HTML解析库，用于处理和提取网页数据</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #dee2e6; background-color: #f8f9fa;">
+        <td style="padding: 12px; font-weight: 500; color: #495057;">SMTP_SSL</td>
+        <td style="padding: 12px; color: #6c757d;">安全邮件发送协议，用于通过SMTP服务器发送邮件</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #dee2e6;">
+        <td style="padding: 12px; font-weight: 500; color: #495057;">GitHub Actions</td>
+        <td style="padding: 12px; color: #6c757d;">自动化运行平台，用于实现定时任务和自动化部署</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #dee2e6; background-color: #f8f9fa;">
+        <td style="padding: 12px; font-weight: 500; color: #495057;">JSON</td>
+        <td style="padding: 12px; color: #6c757d;">数据存储格式，用于存储和处理新闻数据</td>
+      </tr>
+      <tr>
+        <td style="padding: 12px; font-weight: 500; color: #495057;">Regular Expressions</td>
+        <td style="padding: 12px; color: #6c757d;">正则表达式，用于JSONP数据解析</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 id="📁-项目结构"><a href="#📁-项目结构" class="headerlink" title="📁 项目结构"></a>📁 项目结构</h2><div class="code-box" style="background-color: #2d2d2d; border-radius: 8px; padding: 20px; margin: 20px 0; overflow: auto;">
+  <pre style="margin: 0; color: #f8f8f2; font-family: 'Courier New', monospace; font-size: 14px;">
+├── crawl_news.py         # 新闻抓取脚本
+├── send_email.py         # 邮件发送脚本
+├── news_data.json        # 新闻数据存储
+└── .github/workflows/
+    └── daily-news.yml    # GitHub Actions配置
+  </pre>
+</div>
+
+<div class="info-box" style="background-color: #e7f3ff; border-left: 4px solid #007bff; padding: 15px; margin: 20px 0;">
+  <p style="margin: 0; color: #004085;"><strong>提示：</strong>项目结构清晰简洁，包含了所有必要的文件，易于理解和维护。</p>
+</div>
+
+<h2 id="核心功能解析"><a href="#核心功能解析" class="headerlink" title="核心功能解析"></a>核心功能解析</h2><h3 id="智能新闻抓取"><a href="#智能新闻抓取" class="headerlink" title="智能新闻抓取"></a>智能新闻抓取</h3><p>项目使用JSONP API直接从CCTV科技频道获取真实新闻数据，而非简单的HTML解析，确保了数据的准确性和完整性。</p>
+<h4 id="🐍-部分代码：crawl-news-py"><a href="#🐍-部分代码：crawl-news-py" class="headerlink" title="🐍 部分代码：crawl_news.py"></a>🐍 部分代码：crawl_news.py</h4><div class="code-block" style="background-color: #f5f5f5; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); overflow: auto;">
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">crawl_cctv_tech_news</span>():</span><br><span class="line">    url = <span class="string">&quot;https://news.cctv.com/tech/&quot;</span></span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = requests.get(url, headers=headers, timeout=<span class="number">15</span>)</span><br><span class="line">        response.encoding = <span class="string">&quot;utf-8&quot;</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 保存页面内容以便分析</span></span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;page_content.html&quot;</span>, <span class="string">&quot;w&quot;</span>, encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(response.text)</span><br><span class="line">        </span><br><span class="line">        soup = BeautifulSoup(response.text, <span class="string">&quot;html.parser&quot;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 获取所有a标签</span></span><br><span class="line">        all_links = []</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 方法1：获取所有a标签</span></span><br><span class="line">        <span class="keyword">for</span> a <span class="keyword">in</span> soup.find_all(<span class="string">&quot;a&quot;</span>, href=<span class="literal">True</span>):</span><br><span class="line">            text = a.get_text(strip=<span class="literal">True</span>)</span><br><span class="line">            href = a.get(<span class="string">&quot;href&quot;</span>)</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> text <span class="keyword">and</span> <span class="built_in">len</span>(text) &gt; <span class="number">5</span>:</span><br><span class="line">                <span class="comment"># 确保链接完整</span></span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> href.startswith(<span class="string">&quot;http&quot;</span>):</span><br><span class="line">                    href = <span class="string">&quot;https://news.cctv.com&quot;</span> + href</span><br><span class="line">                all_links.append((text, href))</span><br></pre></td></tr></table></figure>
+</div>
+
+<div class="code-info" style="background-color: #e8f4f8; border-left: 4px solid #3498db; padding: 12px; margin: 10px 0 20px 0;">
+  <p style="margin: 0; font-size: 14px; color: #2c3e50;"><strong>代码说明：</strong>这段代码使用BeautifulSoup库解析CCTV科技频道的HTML页面，提取所有有效的新闻链接。</p>
+</div>
+
+<h3 id="QQ邮箱配置与邮件发送"><a href="#QQ邮箱配置与邮件发送" class="headerlink" title="QQ邮箱配置与邮件发送"></a>QQ邮箱配置与邮件发送</h3><h4 id="QQ邮箱授权码获取步骤"><a href="#QQ邮箱授权码获取步骤" class="headerlink" title="QQ邮箱授权码获取步骤"></a>QQ邮箱授权码获取步骤</h4><ol>
+<li><strong>登录QQ邮箱</strong>：打开 <a href="https://mail.qq.com/">mail.qq.com</a></li>
+<li><strong>进入设置</strong>：点击顶部导航栏的「设置」按钮</li>
+<li><strong>选择账户</strong>：在左侧菜单中选择「账号与安全」选项</li>
+<li><strong>开启SMTP服务</strong>：找到「POP3&#x2F;IMAP&#x2F;SMTP&#x2F;Exchange&#x2F;CardDAV&#x2F;CalDAV服务」部分</li>
+<li><strong>生成授权码</strong>：点击「生成授权码」，按照提示操作获取16位授权码</li>
+</ol>
+<h4 id="📷-操作截图"><a href="#📷-操作截图" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><div class="image-box" style="background-color: #ffffff; border-radius: 8px; padding: 15px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center;">
+  <div style="overflow: hidden; border-radius: 6px;">
+    <img src="/tech-news-email-bot/qq-email-smtp.png" class="" title="QQ邮箱SMTP设置页面">
+  </div>
+  <p style="margin: 10px 0 0 0; font-size: 14px; color: #666;">QQ邮箱SMTP设置页面，开启SMTP服务并生成授权码</p>
+</div>
+
+<h4 id="📧-部分代码：send-email-py"><a href="#📧-部分代码：send-email-py" class="headerlink" title="📧 部分代码：send_email.py"></a>📧 部分代码：send_email.py</h4><div class="code-block" style="background-color: #f5f5f5; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); overflow: auto;">
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建邮件</span></span><br><span class="line">msg = MIMEMultipart(<span class="string">&#x27;alternative&#x27;</span>)</span><br><span class="line">msg[<span class="string">&quot;From&quot;</span>] = smtp_user</span><br><span class="line">msg[<span class="string">&quot;To&quot;</span>] = to_email</span><br><span class="line">msg[<span class="string">&quot;Subject&quot;</span>] = Header(<span class="string">f&quot;CCTV科技新闻摘要 (<span class="subst">&#123;today&#125;</span>)&quot;</span>, <span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加文本和HTML内容</span></span><br><span class="line">text_part = MIMEText(summary, <span class="string">&quot;plain&quot;</span>, <span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line">html_part = MIMEText(html_content, <span class="string">&quot;html&quot;</span>, <span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line"></span><br><span class="line">msg.attach(text_part)</span><br><span class="line">msg.attach(html_part)</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># 使用SMTP_SSL直接创建SSL连接</span></span><br><span class="line">    <span class="keyword">import</span> ssl</span><br><span class="line">    context = ssl.create_default_context()</span><br><span class="line">    context.check_hostname = <span class="literal">False</span></span><br><span class="line">    context.verify_mode = ssl.CERT_NONE</span><br><span class="line">    </span><br><span class="line">    server = smtplib.SMTP_SSL(smtp_server, <span class="number">465</span>, context=context, timeout=<span class="number">30</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;成功创建SMTP_SSL对象: <span class="subst">&#123;smtp_server&#125;</span>:465&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    server.login(smtp_user, smtp_password)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;成功登录邮箱: <span class="subst">&#123;smtp_user&#125;</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    server.send_message(msg)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;邮件发送成功&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;发送到：<span class="subst">&#123;to_email&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;主题：CCTV科技新闻摘要 (<span class="subst">&#123;today&#125;</span>)&quot;</span>)</span><br></pre></td></tr></table></figure>
+</div>
+
+<div class="code-info" style="background-color: #e8f4f8; border-left: 4px solid #3498db; padding: 12px; margin: 10px 0 20px 0;">
+  <p style="margin: 0; font-size: 14px; color: #2c3e50;"><strong>代码说明：</strong>这段代码使用SMTP_SSL创建安全连接，发送包含HTML和文本内容的邮件，确保邮件能够正确送达。</p>
+</div>
+
+<h3 id="自动化部署（GitHub-Actions）"><a href="#自动化部署（GitHub-Actions）" class="headerlink" title="自动化部署（GitHub Actions）"></a>自动化部署（GitHub Actions）</h3><p>通过GitHub Actions配置，实现每日自动运行，无需服务器。</p>
+<h4 id="时区说明"><a href="#时区说明" class="headerlink" title="时区说明"></a>时区说明</h4><ul>
+<li>GitHub服务器使用UTC时区</li>
+<li>中国时区是UTC+8，所以UTC时间02:44:59对应中国时间10:44:59</li>
+<li>以下配置设置为UTC时间02:45运行，对应中国时间10:45</li>
+</ul>
+<h2 id="邮件效果展示"><a href="#邮件效果展示" class="headerlink" title="邮件效果展示"></a>邮件效果展示</h2><h3 id="📱-邮件效果"><a href="#📱-邮件效果" class="headerlink" title="📱 邮件效果"></a>📱 邮件效果</h3><div class="image-box" style="background-color: #ffffff; border-radius: 8px; padding: 15px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center;">
+  <div style="overflow: hidden; border-radius: 6px;">
+    <img src="/tech-news-email-bot/email-desktop.png" class="" title="电脑端邮件效果">
+  </div>
+  <p style="margin: 10px 0 0 0; font-size: 14px; color: #666;">电脑端邮件效果，美观的HTML格式邮件，响应式设计</p>
+</div>
+
+<h2 id="🚀-快速开始"><a href="#🚀-快速开始" class="headerlink" title="🚀 快速开始"></a>🚀 快速开始</h2><div class="section-divider" style="height: 2px; background: linear-gradient(to right, transparent, #4CAF50, transparent); margin: 30px 0;"></div>
+
+<h3 id="📁-创建项目文件"><a href="#📁-创建项目文件" class="headerlink" title="📁 创建项目文件"></a>📁 创建项目文件</h3><p>创建以下三个核心文件，构建完整的Python自动化新闻邮件系统：</p>
+<h4 id="📄-crawl-news-py"><a href="#📄-crawl-news-py" class="headerlink" title="📄 crawl_news.py"></a>📄 crawl_news.py</h4><ul>
+<li><strong>功能</strong>：使用Python爬虫技术从CCTV科技频道抓取最新新闻</li>
+<li><strong>特性</strong>：3次重试机制，确保Python爬虫数据抓取成功率</li>
+</ul>
+<h4 id="📄-send-email-py"><a href="#📄-send-email-py" class="headerlink" title="📄 send_email.py"></a>📄 send_email.py</h4><ul>
+<li><strong>功能</strong>：生成美观的响应式HTML邮件并通过SMTP协议发送</li>
+<li><strong>特性</strong>：响应式设计，支持各种设备，专业邮件模板</li>
+</ul>
+<h4 id="📄-github-workflows-daily-news-yml"><a href="#📄-github-workflows-daily-news-yml" class="headerlink" title="📄 .github&#x2F;workflows&#x2F;daily-news.yml"></a>📄 .github&#x2F;workflows&#x2F;daily-news.yml</h4><ul>
+<li><strong>功能</strong>：通过GitHub Actions实现每日自动运行的定时任务</li>
+<li><strong>特性</strong>：支持手动触发测试，方便调试和验证</li>
+</ul>
+<h3 id="🔧-安装依赖"><a href="#🔧-安装依赖" class="headerlink" title="🔧 安装依赖"></a>🔧 安装依赖</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install requests beautifulsoup4</span><br></pre></td></tr></table></figure>
+
+<h3 id="🖥️-本地测试"><a href="#🖥️-本地测试" class="headerlink" title="🖥️ 本地测试"></a>🖥️ 本地测试</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 抓取新闻</span></span><br><span class="line">python crawl_news.py</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从环境变量读取配置</span></span><br><span class="line">smtp_server = os.environ.get(<span class="string">&#x27;SMTP_SERVER&#x27;</span>, <span class="string">&#x27;smtp.qq.com&#x27;</span>)           <span class="comment"># SMTP服务器地址</span></span><br><span class="line">smtp_user = os.environ.get(<span class="string">&#x27;SENDER_EMAIL&#x27;</span>, <span class="string">&#x27;自己的qq邮箱&#x27;</span>)  <span class="comment"># 发件人邮箱</span></span><br><span class="line">smtp_password = os.environ.get(<span class="string">&#x27;SENDER_PASSWORD&#x27;</span>, <span class="string">&#x27;自己的授权码&#x27;</span>)    <span class="comment"># 发件人密码或授权码</span></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行发送脚本</span></span><br><span class="line">python send_email.py</span><br></pre></td></tr></table></figure>
+
+<h4 id="📷-操作截图-1"><a href="#📷-操作截图-1" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><img src="/tech-news-email-bot/local-test-config.png" class="" title="本地测试配置">
+
+<h3 id="📦-创建GitHub仓库"><a href="#📦-创建GitHub仓库" class="headerlink" title="📦 创建GitHub仓库"></a>📦 创建GitHub仓库</h3><p>按照以下步骤创建GitHub仓库：</p>
+<ol>
+<li><strong>登录GitHub</strong>：打开 <a href="https://github.com/">github.com</a></li>
+<li><strong>创建新仓库</strong>：点击右上角的「+」按钮，选择「New repository」</li>
+<li><strong>填写仓库信息</strong>：<ul>
+<li>Repository name: <code>daily-tech-news</code></li>
+<li>Description: <code>自动科技新闻摘要邮件机器人</code></li>
+<li>选择 Public 或 Private</li>
+<li>点击「Create repository」</li>
+</ul>
+</li>
+</ol>
+<h4 id="📷-操作截图-2"><a href="#📷-操作截图-2" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><img src="/tech-news-email-bot/github-create-repo.png" class="" title="GitHub创建仓库页面">
+
+<h3 id="📤-上传项目代码"><a href="#📤-上传项目代码" class="headerlink" title="📤 上传项目代码"></a>📤 上传项目代码</h3><p>使用GitHub网页界面上传文件：</p>
+<ol>
+<li><strong>进入仓库</strong>：打开您创建的GitHub仓库页面</li>
+<li><strong>上传文件</strong>：<ul>
+<li>点击「Add file」按钮</li>
+<li>选择「Upload files」选项</li>
+</ul>
+</li>
+<li><strong>选择文件</strong>：<ul>
+<li>拖拽或点击选择您的项目文件（crawl_news.py、send_email.py、news_data.json ）</li>
+<li>同时创建 <code>.github/workflows/</code> 目录和 daily-news.yml 文件</li>
+</ul>
+</li>
+<li><strong>提交更改</strong>：<ul>
+<li>在页面底部填写提交信息（如 “初始化项目”）</li>
+<li>点击「Commit changes」按钮完成上传</li>
+</ul>
+</li>
+</ol>
+<h4 id="📷-操作截图-3"><a href="#📷-操作截图-3" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><img src="/tech-news-email-bot/github-commit-changes.png" class="" title="GitHub提交更改页面">
+
+<h3 id="⚙️-配置GitHub-Actions"><a href="#⚙️-配置GitHub-Actions" class="headerlink" title="⚙️ 配置GitHub Actions"></a>⚙️ 配置GitHub Actions</h3><p>在 <code>.github/workflows/daily-news.yml</code> 文件中添加以下配置：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">每日科技新闻摘要</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">schedule:</span></span><br><span class="line">    <span class="comment"># 每天UTC时间02:00运行，对应中国时间10:00</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">cron:</span> <span class="string">&#x27;0 2 * * *&#x27;</span></span><br><span class="line">  <span class="attr">workflow_dispatch:</span></span><br><span class="line">    <span class="comment"># 允许手动触发</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">send-news:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    </span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/checkout@v4</span></span><br><span class="line">    </span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">设置时区为中国时区</span></span><br><span class="line">      <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">        echo &quot;TZ=Asia/Shanghai&quot; &gt;&gt; $GITHUB_ENV</span></span><br><span class="line"><span class="string"></span>    </span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">设置Python环境</span></span><br><span class="line">      <span class="attr">uses:</span> <span class="string">actions/setup-python@v5</span></span><br><span class="line">      <span class="attr">with:</span></span><br><span class="line">        <span class="attr">python-version:</span> <span class="string">&#x27;3.9&#x27;</span></span><br><span class="line">    </span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">安装依赖</span></span><br><span class="line">      <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">        python -m pip install --upgrade pip</span></span><br><span class="line"><span class="string">        pip install requests beautifulsoup4</span></span><br><span class="line"><span class="string"></span>    </span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">运行爬取脚本</span></span><br><span class="line">      <span class="attr">run:</span> <span class="string">python</span> <span class="string">crawl_news.py</span></span><br><span class="line">    </span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">运行邮件发送脚本</span></span><br><span class="line">      <span class="attr">env:</span></span><br><span class="line">        <span class="attr">SENDER_EMAIL:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.SENDER_EMAIL</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">SENDER_PASSWORD:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.SENDER_PASSWORD</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">RECEIVER_EMAIL:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.RECEIVER_EMAIL</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">SMTP_SERVER:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.SMTP_SERVER</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">SMTP_PORT:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.SMTP_PORT</span> <span class="string">&#125;&#125;</span></span><br><span class="line">      <span class="attr">run:</span> <span class="string">python</span> <span class="string">send_email.py</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="📷-操作截图-4"><a href="#📷-操作截图-4" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><img src="/tech-news-email-bot/github-actions-config.png" class="" title="GitHub Actions配置文件编辑">
+
+<h3 id="🔒-配置GitHub-Secrets"><a href="#🔒-配置GitHub-Secrets" class="headerlink" title="🔒 配置GitHub Secrets"></a>🔒 配置GitHub Secrets</h3><h4 id="📝-进入Secrets设置"><a href="#📝-进入Secrets设置" class="headerlink" title="📝 进入Secrets设置"></a>📝 进入Secrets设置</h4><p>按照以下路径进入Secrets设置页面：</p>
+<p><strong>进入GitHub仓库 → Settings → Secrets and variables → Actions</strong></p>
+<h4 id="🔑-添加Secrets"><a href="#🔑-添加Secrets" class="headerlink" title="🔑 添加Secrets"></a>🔑 添加Secrets</h4><p>点击 “New repository secret” 按钮，添加以下Secrets：</p>
+<table>
+<thead>
+<tr>
+<th>Secret名称</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>SENDER_EMAIL</code></td>
+<td>您的QQ邮箱地址</td>
+<td><code>3609506278@qq.com</code></td>
+</tr>
+<tr>
+<td><code>SENDER_PASSWORD</code></td>
+<td>您的QQ邮箱授权码（不是密码）</td>
+<td><code>xxxxxxxxxxxxxxxx</code></td>
+</tr>
+<tr>
+<td><code>RECEIVER_EMAIL</code></td>
+<td>收件人邮箱（可以和发件人相同）</td>
+<td><code>3609506278@qq.com</code></td>
+</tr>
+<tr>
+<td><code>SMTP_SERVER</code></td>
+<td>SMTP服务器地址</td>
+<td><code>smtp.qq.com</code></td>
+</tr>
+<tr>
+<td><code>SMTP_PORT</code></td>
+<td>SMTP服务器端口</td>
+<td><code>465</code></td>
+</tr>
+</tbody></table>
+<h4 id="📷-操作截图-5"><a href="#📷-操作截图-5" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><img src="/tech-news-email-bot/github-settings.png" class="" title="GitHub仓库Settings页面">
+
+<h3 id="✅-测试和验证"><a href="#✅-测试和验证" class="headerlink" title="✅ 测试和验证"></a>✅ 测试和验证</h3><h4 id="🚀-手动触发测试"><a href="#🚀-手动触发测试" class="headerlink" title="🚀 手动触发测试"></a>🚀 手动触发测试</h4><p>按照以下步骤手动触发工作流测试：</p>
+<p><strong>进入GitHub仓库 → Actions → 每日科技新闻摘要 → Run workflow</strong></p>
+<p>点击 “Run workflow” 按钮手动触发工作流，无需等待定时执行</p>
+<h4 id="📊-查看运行结果"><a href="#📊-查看运行结果" class="headerlink" title="📊 查看运行结果"></a>📊 查看运行结果</h4><p>在Actions页面查看工作流的运行状态和详细日志：</p>
+<ul>
+<li>检查工作流是否成功启动</li>
+<li>查看每个步骤的执行状态</li>
+<li>检查是否成功发送邮件</li>
+<li>查看任何可能的错误信息</li>
+</ul>
+<h4 id="📷-操作截图-6"><a href="#📷-操作截图-6" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><img src="/tech-news-email-bot/github-actions-page.png" class="" title="GitHub Actions页面">
+
+<h4 id="📧-验证邮件"><a href="#📧-验证邮件" class="headerlink" title="📧 验证邮件"></a>📧 验证邮件</h4><p>查看您的QQ邮箱，确认是否收到了科技新闻摘要邮件：</p>
+<ul>
+<li>检查收件箱或邮件</li>
+<li>确认邮件主题是否为 “CCTV科技新闻摘要”</li>
+<li>查看邮件内容是否完整</li>
+<li>验证新闻链接是否可点击</li>
+</ul>
+<h4 id="📷-操作截图-7"><a href="#📷-操作截图-7" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><img src="/tech-news-email-bot/email-desktop.png" class="" title="QQ邮箱收到邮件">
+
+<h3 id="❓-常见问题排查"><a href="#❓-常见问题排查" class="headerlink" title="❓ 常见问题排查"></a>❓ 常见问题排查</h3><table>
+<thead>
+<tr>
+<th>问题</th>
+<th>解决方案</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>邮件发送失败</strong></td>
+<td>检查授权码是否正确，SMTP服务是否开启</td>
+</tr>
+<tr>
+<td><strong>新闻抓取失败</strong></td>
+<td>检查网络连接，确认CCTV科技频道API是否可访问</td>
+</tr>
+<tr>
+<td><strong>GitHub Actions运行失败</strong></td>
+<td>查看Actions日志，检查Secrets配置是否正确</td>
+</tr>
+</tbody></table>
+<h3 id="🛠️-项目维护"><a href="#🛠️-项目维护" class="headerlink" title="🛠️ 项目维护"></a>🛠️ 项目维护</h3><ul>
+<li><strong>🔍 定期检查</strong>：确保项目正常运行</li>
+<li><strong>📦 更新依赖</strong>：定期更新Python依赖包</li>
+<li><strong>⏰ 调整时间</strong>：根据需要修改GitHub Actions的运行时间</li>
+<li><strong>🌟 扩展功能</strong>：根据需求添加更多新闻源或功能</li>
+</ul>
+<h2 id="🎯-技术难点与解决方案"><a href="#🎯-技术难点与解决方案" class="headerlink" title="🎯 技术难点与解决方案"></a>🎯 技术难点与解决方案</h2><div class="section-divider" style="height: 2px; background: linear-gradient(to right, transparent, #4CAF50, transparent); margin: 30px 0;"></div>
+
+<h3 id="🔍-JSONP数据解析"><a href="#🔍-JSONP数据解析" class="headerlink" title="🔍 JSONP数据解析"></a>🔍 JSONP数据解析</h3><ul>
+<li><strong>问题</strong>：CCTV科技频道使用JSONP格式返回数据，直接解析困难。</li>
+<li><strong>解决方案</strong>：使用正则表达式提取JSON数据，再进行解析。</li>
+</ul>
+<h3 id="📧-SMTP连接问题"><a href="#📧-SMTP连接问题" class="headerlink" title="📧 SMTP连接问题"></a>📧 SMTP连接问题</h3><ul>
+<li><strong>问题</strong>：不同邮箱服务商的SMTP设置不同，容易出现连接错误。</li>
+<li><strong>解决方案</strong>：使用SMTP_SSL直接创建安全连接，简化连接流程。</li>
+</ul>
+<h3 id="⏰-定时任务部署"><a href="#⏰-定时任务部署" class="headerlink" title="⏰ 定时任务部署"></a>⏰ 定时任务部署</h3><ul>
+<li><strong>问题</strong>：需要服务器才能实现定时任务。</li>
+<li><strong>解决方案</strong>：使用GitHub Actions免费实现自动化运行。</li>
+</ul>
+<h2 id="📝-结语"><a href="#📝-结语" class="headerlink" title="📝 结语"></a>📝 结语</h2><p>这个项目不仅是一个实用的工具，也是学习Python爬虫、邮件发送和自动化部署的好案例。通过它，你可以每天轻松获取最新的科技动态，同时也能提升自己的编程技能。</p>
+<p>如果你对这个项目感兴趣，欢迎到我的GitHub仓库查看和Star，也可以在评论区分享你的使用体验和改进建议。<br><strong>完整项目地址</strong>：<a href="https://github.com/Jay-R-J/daily_news">https://github.com/Jay-R-J/daily_news</a></p>
+<hr>
+<div class="article-info">
+  <strong>📅 更新时间：</strong>2026-02-5<br>
+  <strong>✍️ 作者：</strong>Jay<br>
+</div>]]></content>
+      <categories>
+        <category>技术教程</category>
+        <category>Python</category>
+        <category>自动化</category>
+        <category>爬虫</category>
+        <category>邮件</category>
+        <category>GitHub Actions</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
+        <tag>邮件自动化</tag>
+        <tag>GitHub Actions</tag>
+        <tag>科技新闻</tag>
+        <tag>SEO优化</tag>
+        <tag>自动化工具</tag>
+        <tag>数据抓取</tag>
+        <tag>SMTP</tag>
+        <tag>响应式设计</tag>
       </tags>
   </entry>
 </search>

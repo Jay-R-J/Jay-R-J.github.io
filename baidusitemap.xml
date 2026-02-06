@@ -2,7 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.jay-r-j.top//tech-news-email-bot/</loc>
-    <lastmod>2026-02-05</lastmod>
+    <lastmod>2026-02-06</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jay-r-j.top//python_backup_tool/</loc>
+    <lastmod>2026-02-06</lastmod>
   </url>
   <url>
     <loc>https://www.jay-r-j.top//python-beating-heart-animation/</loc>
@@ -15,10 +19,6 @@
   <url>
     <loc>https://www.jay-r-j.top//build_hexo_blog/</loc>
     <lastmod>2026-01-24</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jay-r-j.top//python_backup_tool/</loc>
-    <lastmod>2026-01-23</lastmod>
   </url>
   <url>
     <loc>https://www.jay-r-j.top//hexo_comment_system/</loc>
