@@ -1,5 +1,9 @@
-https://www.jay-r-j.top/2026-01-25-how-to-create-vue3-project
-https://www.jay-r-j.top/2026-01-21-project-backup-tool
-https://www.jay-r-j.top/2026-01-20-hexo-comment-system-config
-https://www.jay-r-j.top/2026-01-18-how-to-build-hexo-blog-from-scratch
-https://www.jay-r-j.top/blog-usage-guide
+https://www.jay-r-j.top/aliyun-domain-github-pages/
+https://www.jay-r-j.top/watt-toolkit-guide/
+https://www.jay-r-j.top/tech-news-email-bot/
+https://www.jay-r-j.top/python-beating-heart-animation/
+https://www.jay-r-j.top/create-vue3-project-vite/
+https://www.jay-r-j.top/python_backup_tool/
+https://www.jay-r-j.top/hexo_comment_system/
+https://www.jay-r-j.top/build_hexo_blog/
+https://www.jay-r-j.top/blog_usage_guide/
