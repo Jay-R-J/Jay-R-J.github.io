@@ -1198,374 +1198,6 @@
       </tags>
   </entry>
   <entry>
-    <title>如何打造一个自动科技新闻摘要邮件机器人（附完整代码）</title>
-    <url>//tech-news-email-bot/</url>
-    <content><![CDATA[<div align="center">
-  <h1>🌟 如何使用Python打造自动科技新闻摘要邮件机器人</h1>
-  <p>📧 附完整代码和详细部署指南</p>
-  <hr style="border: 2px solid #f0f0f0; width: 80%; margin: 20px auto;">
-</div>
-
-<h2 id="📰-项目简介"><a href="#📰-项目简介" class="headerlink" title="📰 项目简介"></a>📰 项目简介</h2><div class="tip-box" style="background-color: #f8f9fa; border-left: 4px solid #4CAF50; padding: 15px; margin: 20px 0;">
-  <p style="margin: 0; font-size: 16px;">无需手动操作，每天自动抓取CCTV科技频道的最新新闻，通过Python爬虫技术处理数据，生成美观的响应式HTML邮件，并使用GitHub Actions实现定时自动化发送</p>
-</div>
-
-<h2 id="🌟-前言"><a href="#🌟-前言" class="headerlink" title="🌟 前言"></a>🌟 前言</h2><p>你是否每天都想了解最新的科技动态，却苦于没有时间浏览各大科技网站？今天我要分享一个我自己开发的实用小项目——<strong>自动CCTV科技新闻摘要邮件机器人</strong>，它能够通过Python脚本自动抓取CCTV科技频道的最新新闻，使用SMTP协议发送美观的HTML格式邮件，并通过GitHub Actions实现完全自动化的定时运行，让你每天轻松获取最新的科技新闻。</p>
-<div class="feature-box" style="background-color: #f0f8ff; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-  <h3 style="margin-top: 0; color: #1E90FF;">✨ 项目价值</h3>
-  <p>这个项目不仅可以帮助你节省时间，自动获取科技新闻，还可以作为学习Python爬虫、邮件发送和自动化部署的实用案例。</p>
-</div>
-
-<h2 id="✨-项目亮点"><a href="#✨-项目亮点" class="headerlink" title="✨ 项目亮点"></a>✨ 项目亮点</h2><div class="highlights-box" style="background-color: #fafafa; border-radius: 10px; padding: 25px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-  <ul style="list-style-type: none; padding-left: 0;">
-    <li style="margin: 15px 0; padding-left: 30px; position: relative;">
-      <span style="position: absolute; left: 0; top: 0; font-size: 18px;">✨</span>
-      <strong style="font-size: 16px; color: #333;">全自动运行</strong>
-      <p style="margin: 5px 0 0 20px; color: #666;">无需手动操作，通过GitHub Actions实现每天定时发送</p>
-    </li>
-    <li style="margin: 15px 0; padding-left: 30px; position: relative;">
-      <span style="position: absolute; left: 0; top: 0; font-size: 18px;">📊</span>
-      <strong style="font-size: 16px; color: #333;">真实数据</strong>
-      <p style="margin: 5px 0 0 20px; color: #666;">直接从CCTV科技频道获取最新新闻，使用Python爬虫技术确保数据准确性</p>
-    </li>
-    <li style="margin: 15px 0; padding-left: 30px; position: relative;">
-      <span style="position: absolute; left: 0; top: 0; font-size: 18px;">🎨</span>
-      <strong style="font-size: 16px; color: #333;">美观邮件</strong>
-      <p style="margin: 5px 0 0 20px; color: #666;">响应式HTML格式邮件，支持各种设备，专业的邮件模板设计</p>
-    </li>
-    <li style="margin: 15px 0; padding-left: 30px; position: relative;">
-      <span style="position: absolute; left: 0; top: 0; font-size: 18px;">🔒</span>
-      <strong style="font-size: 16px; color: #333;">稳定可靠</strong>
-      <p style="margin: 5px 0 0 20px; color: #666;">3次重试机制，确保Python爬虫数据抓取成功率</p>
-    </li>
-    <li style="margin: 15px 0; padding-left: 30px; position: relative;">
-      <span style="position: absolute; left: 0; top: 0; font-size: 18px;">🚀</span>
-      <strong style="font-size: 16px; color: #333;">易于部署</strong>
-      <p style="margin: 5px 0 0 20px; color: #666;">支持GitHub Actions自动化运行，包含详细的自动化部署指南</p>
-    </li>
-    <li style="margin: 15px 0; padding-left: 30px; position: relative;">
-      <span style="position: absolute; left: 0; top: 0; font-size: 18px;">💻</span>
-      <strong style="font-size: 16px; color: #333;">免费工具</strong>
-      <p style="margin: 5px 0 0 20px; color: #666;">完全免费的自动化工具，无需服务器成本</p>
-    </li>
-  </ul>
-</div>
-
-<h2 id="🛠️-技术栈"><a href="#🛠️-技术栈" class="headerlink" title="🛠️ 技术栈"></a>🛠️ 技术栈</h2><div class="tech-stack-box" style="background-color: #f8f9fa; border-radius: 10px; padding: 25px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-  <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
-    <thead>
-      <tr style="background-color: #e9ecef;">
-        <th style="padding: 12px; text-align: left; border-bottom: 2px solid #dee2e6; font-size: 16px; color: #333;">技术</th>
-        <th style="padding: 12px; text-align: left; border-bottom: 2px solid #dee2e6; font-size: 16px; color: #333;">用途</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr style="border-bottom: 1px solid #dee2e6;">
-        <td style="padding: 12px; font-weight: 500; color: #495057;">Python 3.9</td>
-        <td style="padding: 12px; color: #6c757d;">核心编程语言，用于开发Python爬虫和自动化脚本</td>
-      </tr>
-      <tr style="border-bottom: 1px solid #dee2e6; background-color: #f8f9fa;">
-        <td style="padding: 12px; font-weight: 500; color: #495057;">Requests</td>
-        <td style="padding: 12px; color: #6c757d;">网络请求库，用于抓取CCTV科技频道数据</td>
-      </tr>
-      <tr style="border-bottom: 1px solid #dee2e6;">
-        <td style="padding: 12px; font-weight: 500; color: #495057;">BeautifulSoup4</td>
-        <td style="padding: 12px; color: #6c757d;">HTML解析库，用于处理和提取网页数据</td>
-      </tr>
-      <tr style="border-bottom: 1px solid #dee2e6; background-color: #f8f9fa;">
-        <td style="padding: 12px; font-weight: 500; color: #495057;">SMTP_SSL</td>
-        <td style="padding: 12px; color: #6c757d;">安全邮件发送协议，用于通过SMTP服务器发送邮件</td>
-      </tr>
-      <tr style="border-bottom: 1px solid #dee2e6;">
-        <td style="padding: 12px; font-weight: 500; color: #495057;">GitHub Actions</td>
-        <td style="padding: 12px; color: #6c757d;">自动化运行平台，用于实现定时任务和自动化部署</td>
-      </tr>
-      <tr style="border-bottom: 1px solid #dee2e6; background-color: #f8f9fa;">
-        <td style="padding: 12px; font-weight: 500; color: #495057;">JSON</td>
-        <td style="padding: 12px; color: #6c757d;">数据存储格式，用于存储和处理新闻数据</td>
-      </tr>
-      <tr>
-        <td style="padding: 12px; font-weight: 500; color: #495057;">Regular Expressions</td>
-        <td style="padding: 12px; color: #6c757d;">正则表达式，用于JSONP数据解析</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<h2 id="📁-项目结构"><a href="#📁-项目结构" class="headerlink" title="📁 项目结构"></a>📁 项目结构</h2><div class="code-box" style="background-color: #2d2d2d; border-radius: 8px; padding: 20px; margin: 20px 0; overflow: auto;">
-  <pre style="margin: 0; color: #f8f8f2; font-family: 'Courier New', monospace; font-size: 14px;">
-├── crawl_news.py         # 新闻抓取脚本
-├── send_email.py         # 邮件发送脚本
-├── news_data.json        # 新闻数据存储
-└── .github/workflows/
-    └── daily-news.yml    # GitHub Actions配置
-  </pre>
-</div>
-
-<div class="info-box" style="background-color: #e7f3ff; border-left: 4px solid #007bff; padding: 15px; margin: 20px 0;">
-  <p style="margin: 0; color: #004085;"><strong>提示：</strong>项目结构清晰简洁，包含了所有必要的文件，易于理解和维护。</p>
-</div>
-
-<h2 id="核心功能解析"><a href="#核心功能解析" class="headerlink" title="核心功能解析"></a>核心功能解析</h2><h3 id="智能新闻抓取"><a href="#智能新闻抓取" class="headerlink" title="智能新闻抓取"></a>智能新闻抓取</h3><p>项目使用JSONP API直接从CCTV科技频道获取真实新闻数据，而非简单的HTML解析，确保了数据的准确性和完整性。</p>
-<h4 id="🐍-部分代码：crawl-news-py"><a href="#🐍-部分代码：crawl-news-py" class="headerlink" title="🐍 部分代码：crawl_news.py"></a>🐍 部分代码：crawl_news.py</h4><div class="code-block" style="background-color: #f5f5f5; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); overflow: auto;">
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">crawl_cctv_tech_news</span>():</span><br><span class="line">    url = <span class="string">&quot;https://news.cctv.com/tech/&quot;</span></span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = requests.get(url, headers=headers, timeout=<span class="number">15</span>)</span><br><span class="line">        response.encoding = <span class="string">&quot;utf-8&quot;</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 保存页面内容以便分析</span></span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;page_content.html&quot;</span>, <span class="string">&quot;w&quot;</span>, encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(response.text)</span><br><span class="line">        </span><br><span class="line">        soup = BeautifulSoup(response.text, <span class="string">&quot;html.parser&quot;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 获取所有a标签</span></span><br><span class="line">        all_links = []</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 方法1：获取所有a标签</span></span><br><span class="line">        <span class="keyword">for</span> a <span class="keyword">in</span> soup.find_all(<span class="string">&quot;a&quot;</span>, href=<span class="literal">True</span>):</span><br><span class="line">            text = a.get_text(strip=<span class="literal">True</span>)</span><br><span class="line">            href = a.get(<span class="string">&quot;href&quot;</span>)</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> text <span class="keyword">and</span> <span class="built_in">len</span>(text) &gt; <span class="number">5</span>:</span><br><span class="line">                <span class="comment"># 确保链接完整</span></span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> href.startswith(<span class="string">&quot;http&quot;</span>):</span><br><span class="line">                    href = <span class="string">&quot;https://news.cctv.com&quot;</span> + href</span><br><span class="line">                all_links.append((text, href))</span><br></pre></td></tr></table></figure>
-</div>
-
-<div class="code-info" style="background-color: #e8f4f8; border-left: 4px solid #3498db; padding: 12px; margin: 10px 0 20px 0;">
-  <p style="margin: 0; font-size: 14px; color: #2c3e50;"><strong>代码说明：</strong>这段代码使用BeautifulSoup库解析CCTV科技频道的HTML页面，提取所有有效的新闻链接。</p>
-</div>
-
-<h3 id="QQ邮箱配置与邮件发送"><a href="#QQ邮箱配置与邮件发送" class="headerlink" title="QQ邮箱配置与邮件发送"></a>QQ邮箱配置与邮件发送</h3><h4 id="QQ邮箱授权码获取步骤"><a href="#QQ邮箱授权码获取步骤" class="headerlink" title="QQ邮箱授权码获取步骤"></a>QQ邮箱授权码获取步骤</h4><ol>
-<li><strong>登录QQ邮箱</strong>：打开 <a href="https://mail.qq.com/">mail.qq.com</a></li>
-<li><strong>进入设置</strong>：点击顶部导航栏的「设置」按钮</li>
-<li><strong>选择账户</strong>：在左侧菜单中选择「账号与安全」选项</li>
-<li><strong>开启SMTP服务</strong>：找到「POP3&#x2F;IMAP&#x2F;SMTP&#x2F;Exchange&#x2F;CardDAV&#x2F;CalDAV服务」部分</li>
-<li><strong>生成授权码</strong>：点击「生成授权码」，按照提示操作获取16位授权码</li>
-</ol>
-<h4 id="📷-操作截图"><a href="#📷-操作截图" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><div class="image-box" style="background-color: #ffffff; border-radius: 8px; padding: 15px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center;">
-  <div style="overflow: hidden; border-radius: 6px;">
-    <img src="/tech-news-email-bot/qq-email-smtp.png" class="" title="QQ邮箱SMTP设置页面">
-  </div>
-  <p style="margin: 10px 0 0 0; font-size: 14px; color: #666;">QQ邮箱SMTP设置页面，开启SMTP服务并生成授权码</p>
-</div>
-
-<h4 id="📧-部分代码：send-email-py"><a href="#📧-部分代码：send-email-py" class="headerlink" title="📧 部分代码：send_email.py"></a>📧 部分代码：send_email.py</h4><div class="code-block" style="background-color: #f5f5f5; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); overflow: auto;">
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建邮件</span></span><br><span class="line">msg = MIMEMultipart(<span class="string">&#x27;alternative&#x27;</span>)</span><br><span class="line">msg[<span class="string">&quot;From&quot;</span>] = smtp_user</span><br><span class="line">msg[<span class="string">&quot;To&quot;</span>] = to_email</span><br><span class="line">msg[<span class="string">&quot;Subject&quot;</span>] = Header(<span class="string">f&quot;CCTV科技新闻摘要 (<span class="subst">&#123;today&#125;</span>)&quot;</span>, <span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加文本和HTML内容</span></span><br><span class="line">text_part = MIMEText(summary, <span class="string">&quot;plain&quot;</span>, <span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line">html_part = MIMEText(html_content, <span class="string">&quot;html&quot;</span>, <span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line"></span><br><span class="line">msg.attach(text_part)</span><br><span class="line">msg.attach(html_part)</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># 使用SMTP_SSL直接创建SSL连接</span></span><br><span class="line">    <span class="keyword">import</span> ssl</span><br><span class="line">    context = ssl.create_default_context()</span><br><span class="line">    context.check_hostname = <span class="literal">False</span></span><br><span class="line">    context.verify_mode = ssl.CERT_NONE</span><br><span class="line">    </span><br><span class="line">    server = smtplib.SMTP_SSL(smtp_server, <span class="number">465</span>, context=context, timeout=<span class="number">30</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;成功创建SMTP_SSL对象: <span class="subst">&#123;smtp_server&#125;</span>:465&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    server.login(smtp_user, smtp_password)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;成功登录邮箱: <span class="subst">&#123;smtp_user&#125;</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    server.send_message(msg)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;邮件发送成功&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;发送到：<span class="subst">&#123;to_email&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;主题：CCTV科技新闻摘要 (<span class="subst">&#123;today&#125;</span>)&quot;</span>)</span><br></pre></td></tr></table></figure>
-</div>
-
-<div class="code-info" style="background-color: #e8f4f8; border-left: 4px solid #3498db; padding: 12px; margin: 10px 0 20px 0;">
-  <p style="margin: 0; font-size: 14px; color: #2c3e50;"><strong>代码说明：</strong>这段代码使用SMTP_SSL创建安全连接，发送包含HTML和文本内容的邮件，确保邮件能够正确送达。</p>
-</div>
-
-<h3 id="自动化部署（GitHub-Actions）"><a href="#自动化部署（GitHub-Actions）" class="headerlink" title="自动化部署（GitHub Actions）"></a>自动化部署（GitHub Actions）</h3><p>通过GitHub Actions配置，实现每日自动运行，无需服务器。</p>
-<h4 id="时区说明"><a href="#时区说明" class="headerlink" title="时区说明"></a>时区说明</h4><ul>
-<li>GitHub服务器使用UTC时区</li>
-<li>中国时区是UTC+8，所以UTC时间02:44:59对应中国时间10:44:59</li>
-<li>以下配置设置为UTC时间02:45运行，对应中国时间10:45</li>
-</ul>
-<h2 id="邮件效果展示"><a href="#邮件效果展示" class="headerlink" title="邮件效果展示"></a>邮件效果展示</h2><h3 id="📱-邮件效果"><a href="#📱-邮件效果" class="headerlink" title="📱 邮件效果"></a>📱 邮件效果</h3><div class="image-box" style="background-color: #ffffff; border-radius: 8px; padding: 15px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center;">
-  <div style="overflow: hidden; border-radius: 6px;">
-    <img src="/tech-news-email-bot/email-desktop.png" class="" title="电脑端邮件效果">
-  </div>
-  <p style="margin: 10px 0 0 0; font-size: 14px; color: #666;">电脑端邮件效果，美观的HTML格式邮件，响应式设计</p>
-</div>
-
-<h2 id="🚀-快速开始"><a href="#🚀-快速开始" class="headerlink" title="🚀 快速开始"></a>🚀 快速开始</h2><div class="section-divider" style="height: 2px; background: linear-gradient(to right, transparent, #4CAF50, transparent); margin: 30px 0;"></div>
-
-<h3 id="📁-创建项目文件"><a href="#📁-创建项目文件" class="headerlink" title="📁 创建项目文件"></a>📁 创建项目文件</h3><p>创建以下三个核心文件，构建完整的Python自动化新闻邮件系统：</p>
-<h4 id="📄-crawl-news-py"><a href="#📄-crawl-news-py" class="headerlink" title="📄 crawl_news.py"></a>📄 crawl_news.py</h4><ul>
-<li><strong>功能</strong>：使用Python爬虫技术从CCTV科技频道抓取最新新闻</li>
-<li><strong>特性</strong>：3次重试机制，确保Python爬虫数据抓取成功率</li>
-</ul>
-<h4 id="📄-send-email-py"><a href="#📄-send-email-py" class="headerlink" title="📄 send_email.py"></a>📄 send_email.py</h4><ul>
-<li><strong>功能</strong>：生成美观的响应式HTML邮件并通过SMTP协议发送</li>
-<li><strong>特性</strong>：响应式设计，支持各种设备，专业邮件模板</li>
-</ul>
-<h4 id="📄-github-workflows-daily-news-yml"><a href="#📄-github-workflows-daily-news-yml" class="headerlink" title="📄 .github&#x2F;workflows&#x2F;daily-news.yml"></a>📄 .github&#x2F;workflows&#x2F;daily-news.yml</h4><ul>
-<li><strong>功能</strong>：通过GitHub Actions实现每日自动运行的定时任务</li>
-<li><strong>特性</strong>：支持手动触发测试，方便调试和验证</li>
-</ul>
-<h3 id="🔧-安装依赖"><a href="#🔧-安装依赖" class="headerlink" title="🔧 安装依赖"></a>🔧 安装依赖</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install requests beautifulsoup4</span><br></pre></td></tr></table></figure>
-
-<h3 id="🖥️-本地测试"><a href="#🖥️-本地测试" class="headerlink" title="🖥️ 本地测试"></a>🖥️ 本地测试</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 抓取新闻</span></span><br><span class="line">python crawl_news.py</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从环境变量读取配置</span></span><br><span class="line">smtp_server = os.environ.get(<span class="string">&#x27;SMTP_SERVER&#x27;</span>, <span class="string">&#x27;smtp.qq.com&#x27;</span>)           <span class="comment"># SMTP服务器地址</span></span><br><span class="line">smtp_user = os.environ.get(<span class="string">&#x27;SENDER_EMAIL&#x27;</span>, <span class="string">&#x27;自己的qq邮箱&#x27;</span>)  <span class="comment"># 发件人邮箱</span></span><br><span class="line">smtp_password = os.environ.get(<span class="string">&#x27;SENDER_PASSWORD&#x27;</span>, <span class="string">&#x27;自己的授权码&#x27;</span>)    <span class="comment"># 发件人密码或授权码</span></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行发送脚本</span></span><br><span class="line">python send_email.py</span><br></pre></td></tr></table></figure>
-
-<h4 id="📷-操作截图-1"><a href="#📷-操作截图-1" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><img src="/tech-news-email-bot/local-test-config.png" class="" title="本地测试配置">
-
-<h3 id="📦-创建GitHub仓库"><a href="#📦-创建GitHub仓库" class="headerlink" title="📦 创建GitHub仓库"></a>📦 创建GitHub仓库</h3><p>按照以下步骤创建GitHub仓库：</p>
-<ol>
-<li><strong>登录GitHub</strong>：打开 <a href="https://github.com/">github.com</a></li>
-<li><strong>创建新仓库</strong>：点击右上角的「+」按钮，选择「New repository」</li>
-<li><strong>填写仓库信息</strong>：<ul>
-<li>Repository name: <code>daily-tech-news</code></li>
-<li>Description: <code>自动科技新闻摘要邮件机器人</code></li>
-<li>选择 Public 或 Private</li>
-<li>点击「Create repository」</li>
-</ul>
-</li>
-</ol>
-<h4 id="📷-操作截图-2"><a href="#📷-操作截图-2" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><img src="/tech-news-email-bot/github-create-repo.png" class="" title="GitHub创建仓库页面">
-
-<h3 id="📤-上传项目代码"><a href="#📤-上传项目代码" class="headerlink" title="📤 上传项目代码"></a>📤 上传项目代码</h3><p>使用GitHub网页界面上传文件：</p>
-<ol>
-<li><strong>进入仓库</strong>：打开您创建的GitHub仓库页面</li>
-<li><strong>上传文件</strong>：<ul>
-<li>点击「Add file」按钮</li>
-<li>选择「Upload files」选项</li>
-</ul>
-</li>
-<li><strong>选择文件</strong>：<ul>
-<li>拖拽或点击选择您的项目文件（crawl_news.py、send_email.py、news_data.json ）</li>
-<li>同时创建 <code>.github/workflows/</code> 目录和 daily-news.yml 文件</li>
-</ul>
-</li>
-<li><strong>提交更改</strong>：<ul>
-<li>在页面底部填写提交信息（如 “初始化项目”）</li>
-<li>点击「Commit changes」按钮完成上传</li>
-</ul>
-</li>
-</ol>
-<h4 id="📷-操作截图-3"><a href="#📷-操作截图-3" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><img src="/tech-news-email-bot/github-commit-changes.png" class="" title="GitHub提交更改页面">
-
-<h3 id="⚙️-配置GitHub-Actions"><a href="#⚙️-配置GitHub-Actions" class="headerlink" title="⚙️ 配置GitHub Actions"></a>⚙️ 配置GitHub Actions</h3><p>在 <code>.github/workflows/daily-news.yml</code> 文件中添加以下配置：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">每日科技新闻摘要</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">schedule:</span></span><br><span class="line">    <span class="comment"># 每天UTC时间02:00运行，对应中国时间10:00</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">cron:</span> <span class="string">&#x27;0 2 * * *&#x27;</span></span><br><span class="line">  <span class="attr">workflow_dispatch:</span></span><br><span class="line">    <span class="comment"># 允许手动触发</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">send-news:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    </span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/checkout@v4</span></span><br><span class="line">    </span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">设置时区为中国时区</span></span><br><span class="line">      <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">        echo &quot;TZ=Asia/Shanghai&quot; &gt;&gt; $GITHUB_ENV</span></span><br><span class="line"><span class="string"></span>    </span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">设置Python环境</span></span><br><span class="line">      <span class="attr">uses:</span> <span class="string">actions/setup-python@v5</span></span><br><span class="line">      <span class="attr">with:</span></span><br><span class="line">        <span class="attr">python-version:</span> <span class="string">&#x27;3.9&#x27;</span></span><br><span class="line">    </span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">安装依赖</span></span><br><span class="line">      <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">        python -m pip install --upgrade pip</span></span><br><span class="line"><span class="string">        pip install requests beautifulsoup4</span></span><br><span class="line"><span class="string"></span>    </span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">运行爬取脚本</span></span><br><span class="line">      <span class="attr">run:</span> <span class="string">python</span> <span class="string">crawl_news.py</span></span><br><span class="line">    </span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">运行邮件发送脚本</span></span><br><span class="line">      <span class="attr">env:</span></span><br><span class="line">        <span class="attr">SENDER_EMAIL:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.SENDER_EMAIL</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">SENDER_PASSWORD:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.SENDER_PASSWORD</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">RECEIVER_EMAIL:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.RECEIVER_EMAIL</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">SMTP_SERVER:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.SMTP_SERVER</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">SMTP_PORT:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.SMTP_PORT</span> <span class="string">&#125;&#125;</span></span><br><span class="line">      <span class="attr">run:</span> <span class="string">python</span> <span class="string">send_email.py</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="📷-操作截图-4"><a href="#📷-操作截图-4" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><img src="/tech-news-email-bot/github-actions-config.png" class="" title="GitHub Actions配置文件编辑">
-
-<h3 id="🔒-配置GitHub-Secrets"><a href="#🔒-配置GitHub-Secrets" class="headerlink" title="🔒 配置GitHub Secrets"></a>🔒 配置GitHub Secrets</h3><h4 id="📝-进入Secrets设置"><a href="#📝-进入Secrets设置" class="headerlink" title="📝 进入Secrets设置"></a>📝 进入Secrets设置</h4><p>按照以下路径进入Secrets设置页面：</p>
-<p><strong>进入GitHub仓库 → Settings → Secrets and variables → Actions</strong></p>
-<h4 id="🔑-添加Secrets"><a href="#🔑-添加Secrets" class="headerlink" title="🔑 添加Secrets"></a>🔑 添加Secrets</h4><p>点击 “New repository secret” 按钮，添加以下Secrets：</p>
-<table>
-<thead>
-<tr>
-<th>Secret名称</th>
-<th>描述</th>
-<th>示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>SENDER_EMAIL</code></td>
-<td>您的QQ邮箱地址</td>
-<td><code>3609506278@qq.com</code></td>
-</tr>
-<tr>
-<td><code>SENDER_PASSWORD</code></td>
-<td>您的QQ邮箱授权码（不是密码）</td>
-<td><code>xxxxxxxxxxxxxxxx</code></td>
-</tr>
-<tr>
-<td><code>RECEIVER_EMAIL</code></td>
-<td>收件人邮箱（可以和发件人相同）</td>
-<td><code>3609506278@qq.com</code></td>
-</tr>
-<tr>
-<td><code>SMTP_SERVER</code></td>
-<td>SMTP服务器地址</td>
-<td><code>smtp.qq.com</code></td>
-</tr>
-<tr>
-<td><code>SMTP_PORT</code></td>
-<td>SMTP服务器端口</td>
-<td><code>465</code></td>
-</tr>
-</tbody></table>
-<h4 id="📷-操作截图-5"><a href="#📷-操作截图-5" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><img src="/tech-news-email-bot/github-settings.png" class="" title="GitHub仓库Settings页面">
-
-<h3 id="✅-测试和验证"><a href="#✅-测试和验证" class="headerlink" title="✅ 测试和验证"></a>✅ 测试和验证</h3><h4 id="🚀-手动触发测试"><a href="#🚀-手动触发测试" class="headerlink" title="🚀 手动触发测试"></a>🚀 手动触发测试</h4><p>按照以下步骤手动触发工作流测试：</p>
-<p><strong>进入GitHub仓库 → Actions → 每日科技新闻摘要 → Run workflow</strong></p>
-<p>点击 “Run workflow” 按钮手动触发工作流，无需等待定时执行</p>
-<h4 id="📊-查看运行结果"><a href="#📊-查看运行结果" class="headerlink" title="📊 查看运行结果"></a>📊 查看运行结果</h4><p>在Actions页面查看工作流的运行状态和详细日志：</p>
-<ul>
-<li>检查工作流是否成功启动</li>
-<li>查看每个步骤的执行状态</li>
-<li>检查是否成功发送邮件</li>
-<li>查看任何可能的错误信息</li>
-</ul>
-<h4 id="📷-操作截图-6"><a href="#📷-操作截图-6" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><img src="/tech-news-email-bot/github-actions-page.png" class="" title="GitHub Actions页面">
-
-<h4 id="📧-验证邮件"><a href="#📧-验证邮件" class="headerlink" title="📧 验证邮件"></a>📧 验证邮件</h4><p>查看您的QQ邮箱，确认是否收到了科技新闻摘要邮件：</p>
-<ul>
-<li>检查收件箱或邮件</li>
-<li>确认邮件主题是否为 “CCTV科技新闻摘要”</li>
-<li>查看邮件内容是否完整</li>
-<li>验证新闻链接是否可点击</li>
-</ul>
-<h4 id="📷-操作截图-7"><a href="#📷-操作截图-7" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><img src="/tech-news-email-bot/email-desktop.png" class="" title="QQ邮箱收到邮件">
-
-<h4 id="📱-微信接收邮件提醒设置"><a href="#📱-微信接收邮件提醒设置" class="headerlink" title="📱 微信接收邮件提醒设置"></a>📱 微信接收邮件提醒设置</h4><p>为了确保及时收到科技新闻邮件，建议在微信里设置QQ邮箱提醒，只需按照以下步骤就能搞定：</p>
-<p>   📱 <strong>在微信里开启功能</strong></p>
-<ul>
-<li>打开微信，点击右下角的「我」，进入「设置」</li>
-<li>选择「其他功能」（苹果跟安卓可能不同），然后点击进入「辅助功能」（部分旧版本可能显示为”功能”或”插件”）</li>
-<li>在列表中找到「QQ邮箱提醒」，点击后选择「启用该功能」绑定QQ号即可</li>
-<li><strong>注意</strong>：如果找不到该入口，需先在微信的「我」-「设置」-「账号与安全」中绑定QQ号</li>
-</ul>
-<h4 id="📷-操作截图-8"><a href="#📷-操作截图-8" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><img src="/tech-news-email-bot/Receive-emails-via-wechat.png" class="" title="微信接收邮件">
-
-<h3 id="🔐-QQ授权码变更注意事项"><a href="#🔐-QQ授权码变更注意事项" class="headerlink" title="🔐 QQ授权码变更注意事项"></a>🔐 QQ授权码变更注意事项</h3><p><strong>重要提醒</strong>：如果您修改了QQ密码，之前生成的QQ授权码将会失效，这会影响到使用该授权码的爬虫项目（如本项目）。遇到这种情况，请按照以下步骤操作：</p>
-<p>🔑 <strong>重新生成QQ授权码</strong></p>
-<ul>
-<li>登录QQ邮箱</li>
-<li>进入「设置」 &gt; 「账户」</li>
-<li>找到「POP3&#x2F;IMAP&#x2F;SMTP&#x2F;Exchange&#x2F;CardDAV&#x2F;CalDAV服务」</li>
-<li>点击「生成授权码」，按照提示完成验证</li>
-</ul>
-<p>💻 <strong>更新GitHub仓库中的授权码</strong></p>
-<ul>
-<li>进入项目的GitHub仓库</li>
-<li>更新代码中的授权码：修改发送邮件的代码，将旧的授权码替换为新生成的授权码</li>
-<li>更新环境变量：进入「Settings」 &gt; 「Actions」 &gt; 「Secrets and variables」 &gt; 「Variables」</li>
-<li>找到对应的环境变量，将其值更新为新的QQ授权码</li>
-<li><strong>注意</strong>：环境变量的名称必须与自动化脚本（yml文件）中使用的变量名保持一致</li>
-</ul>
-<h3 id="❓-常见问题排查"><a href="#❓-常见问题排查" class="headerlink" title="❓ 常见问题排查"></a>❓ 常见问题排查</h3><table>
-<thead>
-<tr>
-<th>问题</th>
-<th>解决方案</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>邮件发送失败</strong></td>
-<td>检查授权码是否正确，SMTP服务是否开启</td>
-</tr>
-<tr>
-<td><strong>新闻抓取失败</strong></td>
-<td>检查网络连接，确认CCTV科技频道API是否可访问</td>
-</tr>
-<tr>
-<td><strong>GitHub Actions运行失败</strong></td>
-<td>查看Actions日志，检查Secrets配置是否正确</td>
-</tr>
-</tbody></table>
-<h3 id="🛠️-项目维护"><a href="#🛠️-项目维护" class="headerlink" title="🛠️ 项目维护"></a>🛠️ 项目维护</h3><ul>
-<li><strong>🔍 定期检查</strong>：确保项目正常运行</li>
-<li><strong>📦 更新依赖</strong>：定期更新Python依赖包</li>
-<li><strong>⏰ 调整时间</strong>：根据需要修改GitHub Actions的运行时间</li>
-<li><strong>🌟 扩展功能</strong>：根据需求添加更多新闻源或功能</li>
-</ul>
-<h2 id="🎯-技术难点与解决方案"><a href="#🎯-技术难点与解决方案" class="headerlink" title="🎯 技术难点与解决方案"></a>🎯 技术难点与解决方案</h2><div class="section-divider" style="height: 2px; background: linear-gradient(to right, transparent, #4CAF50, transparent); margin: 30px 0;"></div>
-
-<h3 id="🔍-JSONP数据解析"><a href="#🔍-JSONP数据解析" class="headerlink" title="🔍 JSONP数据解析"></a>🔍 JSONP数据解析</h3><ul>
-<li><strong>问题</strong>：CCTV科技频道使用JSONP格式返回数据，直接解析困难。</li>
-<li><strong>解决方案</strong>：使用正则表达式提取JSON数据，再进行解析。</li>
-</ul>
-<h3 id="📧-SMTP连接问题"><a href="#📧-SMTP连接问题" class="headerlink" title="📧 SMTP连接问题"></a>📧 SMTP连接问题</h3><ul>
-<li><strong>问题</strong>：不同邮箱服务商的SMTP设置不同，容易出现连接错误。</li>
-<li><strong>解决方案</strong>：使用SMTP_SSL直接创建安全连接，简化连接流程。</li>
-</ul>
-<h3 id="⏰-定时任务部署"><a href="#⏰-定时任务部署" class="headerlink" title="⏰ 定时任务部署"></a>⏰ 定时任务部署</h3><ul>
-<li><strong>问题</strong>：需要服务器才能实现定时任务。</li>
-<li><strong>解决方案</strong>：使用GitHub Actions免费实现自动化运行。</li>
-</ul>
-<h2 id="📝-结语"><a href="#📝-结语" class="headerlink" title="📝 结语"></a>📝 结语</h2><p>这个项目不仅是一个实用的工具，也是学习Python爬虫、邮件发送和自动化部署的好案例。通过它，你可以每天轻松获取最新的科技动态，同时也能提升自己的编程技能。</p>
-<p>如果你对这个项目感兴趣，欢迎到我的GitHub仓库查看和Star，也可以在评论区分享你的使用体验和改进建议。<br><strong>完整项目地址</strong>：<a href="https://github.com/Jay-R-J/daily_news">https://github.com/Jay-R-J/daily_news</a></p>
-<hr>
-<div class="article-info">
-  <strong>📅 更新时间：</strong>2026-02-5<br>
-  <strong>✍️ 作者：</strong>Jay<br>
-</div>]]></content>
-      <categories>
-        <category>技术教程</category>
-        <category>Python</category>
-        <category>自动化</category>
-        <category>爬虫</category>
-        <category>邮件</category>
-        <category>GitHub Actions</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>爬虫</tag>
-        <tag>邮件自动化</tag>
-        <tag>GitHub Actions</tag>
-        <tag>科技新闻</tag>
-        <tag>SEO优化</tag>
-        <tag>自动化工具</tag>
-        <tag>数据抓取</tag>
-        <tag>SMTP</tag>
-        <tag>响应式设计</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue3项目创建教程 | 如何使用Vite快速搭建Vue3应用</title>
     <url>//create-vue3-project-vite/</url>
     <content><![CDATA[<div class="tip success">
@@ -2058,6 +1690,374 @@
         <tag>Python爱心动画</tag>
         <tag>心形图案生成</tag>
         <tag>代码艺术</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何打造一个自动科技新闻摘要邮件机器人（附完整代码）</title>
+    <url>//tech-news-email-bot/</url>
+    <content><![CDATA[<div align="center">
+  <h1>🌟 如何使用Python打造自动科技新闻摘要邮件机器人</h1>
+  <p>📧 附完整代码和详细部署指南</p>
+  <hr style="border: 2px solid #f0f0f0; width: 80%; margin: 20px auto;">
+</div>
+
+<h2 id="📰-项目简介"><a href="#📰-项目简介" class="headerlink" title="📰 项目简介"></a>📰 项目简介</h2><div class="tip-box" style="background-color: #f8f9fa; border-left: 4px solid #4CAF50; padding: 15px; margin: 20px 0;">
+  <p style="margin: 0; font-size: 16px;">无需手动操作，每天自动抓取CCTV科技频道的最新新闻，通过Python爬虫技术处理数据，生成美观的响应式HTML邮件，并使用GitHub Actions实现定时自动化发送</p>
+</div>
+
+<h2 id="🌟-前言"><a href="#🌟-前言" class="headerlink" title="🌟 前言"></a>🌟 前言</h2><p>你是否每天都想了解最新的科技动态，却苦于没有时间浏览各大科技网站？今天我要分享一个我自己开发的实用小项目——<strong>自动CCTV科技新闻摘要邮件机器人</strong>，它能够通过Python脚本自动抓取CCTV科技频道的最新新闻，使用SMTP协议发送美观的HTML格式邮件，并通过GitHub Actions实现完全自动化的定时运行，让你每天轻松获取最新的科技新闻。</p>
+<div class="feature-box" style="background-color: #f0f8ff; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  <h3 style="margin-top: 0; color: #1E90FF;">✨ 项目价值</h3>
+  <p>这个项目不仅可以帮助你节省时间，自动获取科技新闻，还可以作为学习Python爬虫、邮件发送和自动化部署的实用案例。</p>
+</div>
+
+<h2 id="✨-项目亮点"><a href="#✨-项目亮点" class="headerlink" title="✨ 项目亮点"></a>✨ 项目亮点</h2><div class="highlights-box" style="background-color: #fafafa; border-radius: 10px; padding: 25px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+  <ul style="list-style-type: none; padding-left: 0;">
+    <li style="margin: 15px 0; padding-left: 30px; position: relative;">
+      <span style="position: absolute; left: 0; top: 0; font-size: 18px;">✨</span>
+      <strong style="font-size: 16px; color: #333;">全自动运行</strong>
+      <p style="margin: 5px 0 0 20px; color: #666;">无需手动操作，通过GitHub Actions实现每天定时发送</p>
+    </li>
+    <li style="margin: 15px 0; padding-left: 30px; position: relative;">
+      <span style="position: absolute; left: 0; top: 0; font-size: 18px;">📊</span>
+      <strong style="font-size: 16px; color: #333;">真实数据</strong>
+      <p style="margin: 5px 0 0 20px; color: #666;">直接从CCTV科技频道获取最新新闻，使用Python爬虫技术确保数据准确性</p>
+    </li>
+    <li style="margin: 15px 0; padding-left: 30px; position: relative;">
+      <span style="position: absolute; left: 0; top: 0; font-size: 18px;">🎨</span>
+      <strong style="font-size: 16px; color: #333;">美观邮件</strong>
+      <p style="margin: 5px 0 0 20px; color: #666;">响应式HTML格式邮件，支持各种设备，专业的邮件模板设计</p>
+    </li>
+    <li style="margin: 15px 0; padding-left: 30px; position: relative;">
+      <span style="position: absolute; left: 0; top: 0; font-size: 18px;">🔒</span>
+      <strong style="font-size: 16px; color: #333;">稳定可靠</strong>
+      <p style="margin: 5px 0 0 20px; color: #666;">3次重试机制，确保Python爬虫数据抓取成功率</p>
+    </li>
+    <li style="margin: 15px 0; padding-left: 30px; position: relative;">
+      <span style="position: absolute; left: 0; top: 0; font-size: 18px;">🚀</span>
+      <strong style="font-size: 16px; color: #333;">易于部署</strong>
+      <p style="margin: 5px 0 0 20px; color: #666;">支持GitHub Actions自动化运行，包含详细的自动化部署指南</p>
+    </li>
+    <li style="margin: 15px 0; padding-left: 30px; position: relative;">
+      <span style="position: absolute; left: 0; top: 0; font-size: 18px;">💻</span>
+      <strong style="font-size: 16px; color: #333;">免费工具</strong>
+      <p style="margin: 5px 0 0 20px; color: #666;">完全免费的自动化工具，无需服务器成本</p>
+    </li>
+  </ul>
+</div>
+
+<h2 id="🛠️-技术栈"><a href="#🛠️-技术栈" class="headerlink" title="🛠️ 技术栈"></a>🛠️ 技术栈</h2><div class="tech-stack-box" style="background-color: #f8f9fa; border-radius: 10px; padding: 25px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+  <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+    <thead>
+      <tr style="background-color: #e9ecef;">
+        <th style="padding: 12px; text-align: left; border-bottom: 2px solid #dee2e6; font-size: 16px; color: #333;">技术</th>
+        <th style="padding: 12px; text-align: left; border-bottom: 2px solid #dee2e6; font-size: 16px; color: #333;">用途</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom: 1px solid #dee2e6;">
+        <td style="padding: 12px; font-weight: 500; color: #495057;">Python 3.9</td>
+        <td style="padding: 12px; color: #6c757d;">核心编程语言，用于开发Python爬虫和自动化脚本</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #dee2e6; background-color: #f8f9fa;">
+        <td style="padding: 12px; font-weight: 500; color: #495057;">Requests</td>
+        <td style="padding: 12px; color: #6c757d;">网络请求库，用于抓取CCTV科技频道数据</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #dee2e6;">
+        <td style="padding: 12px; font-weight: 500; color: #495057;">BeautifulSoup4</td>
+        <td style="padding: 12px; color: #6c757d;">HTML解析库，用于处理和提取网页数据</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #dee2e6; background-color: #f8f9fa;">
+        <td style="padding: 12px; font-weight: 500; color: #495057;">SMTP_SSL</td>
+        <td style="padding: 12px; color: #6c757d;">安全邮件发送协议，用于通过SMTP服务器发送邮件</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #dee2e6;">
+        <td style="padding: 12px; font-weight: 500; color: #495057;">GitHub Actions</td>
+        <td style="padding: 12px; color: #6c757d;">自动化运行平台，用于实现定时任务和自动化部署</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #dee2e6; background-color: #f8f9fa;">
+        <td style="padding: 12px; font-weight: 500; color: #495057;">JSON</td>
+        <td style="padding: 12px; color: #6c757d;">数据存储格式，用于存储和处理新闻数据</td>
+      </tr>
+      <tr>
+        <td style="padding: 12px; font-weight: 500; color: #495057;">Regular Expressions</td>
+        <td style="padding: 12px; color: #6c757d;">正则表达式，用于JSONP数据解析</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 id="📁-项目结构"><a href="#📁-项目结构" class="headerlink" title="📁 项目结构"></a>📁 项目结构</h2><div class="code-box" style="background-color: #2d2d2d; border-radius: 8px; padding: 20px; margin: 20px 0; overflow: auto;">
+  <pre style="margin: 0; color: #f8f8f2; font-family: 'Courier New', monospace; font-size: 14px;">
+├── crawl_news.py         # 新闻抓取脚本
+├── send_email.py         # 邮件发送脚本
+├── news_data.json        # 新闻数据存储
+└── .github/workflows/
+    └── daily-news.yml    # GitHub Actions配置
+  </pre>
+</div>
+
+<div class="info-box" style="background-color: #e7f3ff; border-left: 4px solid #007bff; padding: 15px; margin: 20px 0;">
+  <p style="margin: 0; color: #004085;"><strong>提示：</strong>项目结构清晰简洁，包含了所有必要的文件，易于理解和维护。</p>
+</div>
+
+<h2 id="核心功能解析"><a href="#核心功能解析" class="headerlink" title="核心功能解析"></a>核心功能解析</h2><h3 id="智能新闻抓取"><a href="#智能新闻抓取" class="headerlink" title="智能新闻抓取"></a>智能新闻抓取</h3><p>项目使用JSONP API直接从CCTV科技频道获取真实新闻数据，而非简单的HTML解析，确保了数据的准确性和完整性。</p>
+<h4 id="🐍-部分代码：crawl-news-py"><a href="#🐍-部分代码：crawl-news-py" class="headerlink" title="🐍 部分代码：crawl_news.py"></a>🐍 部分代码：crawl_news.py</h4><div class="code-block" style="background-color: #f5f5f5; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); overflow: auto;">
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">crawl_cctv_tech_news</span>():</span><br><span class="line">    url = <span class="string">&quot;https://news.cctv.com/tech/&quot;</span></span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = requests.get(url, headers=headers, timeout=<span class="number">15</span>)</span><br><span class="line">        response.encoding = <span class="string">&quot;utf-8&quot;</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 保存页面内容以便分析</span></span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;page_content.html&quot;</span>, <span class="string">&quot;w&quot;</span>, encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(response.text)</span><br><span class="line">        </span><br><span class="line">        soup = BeautifulSoup(response.text, <span class="string">&quot;html.parser&quot;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 获取所有a标签</span></span><br><span class="line">        all_links = []</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 方法1：获取所有a标签</span></span><br><span class="line">        <span class="keyword">for</span> a <span class="keyword">in</span> soup.find_all(<span class="string">&quot;a&quot;</span>, href=<span class="literal">True</span>):</span><br><span class="line">            text = a.get_text(strip=<span class="literal">True</span>)</span><br><span class="line">            href = a.get(<span class="string">&quot;href&quot;</span>)</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> text <span class="keyword">and</span> <span class="built_in">len</span>(text) &gt; <span class="number">5</span>:</span><br><span class="line">                <span class="comment"># 确保链接完整</span></span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> href.startswith(<span class="string">&quot;http&quot;</span>):</span><br><span class="line">                    href = <span class="string">&quot;https://news.cctv.com&quot;</span> + href</span><br><span class="line">                all_links.append((text, href))</span><br></pre></td></tr></table></figure>
+</div>
+
+<div class="code-info" style="background-color: #e8f4f8; border-left: 4px solid #3498db; padding: 12px; margin: 10px 0 20px 0;">
+  <p style="margin: 0; font-size: 14px; color: #2c3e50;"><strong>代码说明：</strong>这段代码使用BeautifulSoup库解析CCTV科技频道的HTML页面，提取所有有效的新闻链接。</p>
+</div>
+
+<h3 id="QQ邮箱配置与邮件发送"><a href="#QQ邮箱配置与邮件发送" class="headerlink" title="QQ邮箱配置与邮件发送"></a>QQ邮箱配置与邮件发送</h3><h4 id="QQ邮箱授权码获取步骤"><a href="#QQ邮箱授权码获取步骤" class="headerlink" title="QQ邮箱授权码获取步骤"></a>QQ邮箱授权码获取步骤</h4><ol>
+<li><strong>登录QQ邮箱</strong>：打开 <a href="https://mail.qq.com/">mail.qq.com</a></li>
+<li><strong>进入设置</strong>：点击顶部导航栏的「设置」按钮</li>
+<li><strong>选择账户</strong>：在左侧菜单中选择「账号与安全」选项</li>
+<li><strong>开启SMTP服务</strong>：找到「POP3&#x2F;IMAP&#x2F;SMTP&#x2F;Exchange&#x2F;CardDAV&#x2F;CalDAV服务」部分</li>
+<li><strong>生成授权码</strong>：点击「生成授权码」，按照提示操作获取16位授权码</li>
+</ol>
+<h4 id="📷-操作截图"><a href="#📷-操作截图" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><div class="image-box" style="background-color: #ffffff; border-radius: 8px; padding: 15px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center;">
+  <div style="overflow: hidden; border-radius: 6px;">
+    <img src="/tech-news-email-bot/qq-email-smtp.png" class="" title="QQ邮箱SMTP设置页面">
+  </div>
+  <p style="margin: 10px 0 0 0; font-size: 14px; color: #666;">QQ邮箱SMTP设置页面，开启SMTP服务并生成授权码</p>
+</div>
+
+<h4 id="📧-部分代码：send-email-py"><a href="#📧-部分代码：send-email-py" class="headerlink" title="📧 部分代码：send_email.py"></a>📧 部分代码：send_email.py</h4><div class="code-block" style="background-color: #f5f5f5; border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); overflow: auto;">
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建邮件</span></span><br><span class="line">msg = MIMEMultipart(<span class="string">&#x27;alternative&#x27;</span>)</span><br><span class="line">msg[<span class="string">&quot;From&quot;</span>] = smtp_user</span><br><span class="line">msg[<span class="string">&quot;To&quot;</span>] = to_email</span><br><span class="line">msg[<span class="string">&quot;Subject&quot;</span>] = Header(<span class="string">f&quot;CCTV科技新闻摘要 (<span class="subst">&#123;today&#125;</span>)&quot;</span>, <span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加文本和HTML内容</span></span><br><span class="line">text_part = MIMEText(summary, <span class="string">&quot;plain&quot;</span>, <span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line">html_part = MIMEText(html_content, <span class="string">&quot;html&quot;</span>, <span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line"></span><br><span class="line">msg.attach(text_part)</span><br><span class="line">msg.attach(html_part)</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># 使用SMTP_SSL直接创建SSL连接</span></span><br><span class="line">    <span class="keyword">import</span> ssl</span><br><span class="line">    context = ssl.create_default_context()</span><br><span class="line">    context.check_hostname = <span class="literal">False</span></span><br><span class="line">    context.verify_mode = ssl.CERT_NONE</span><br><span class="line">    </span><br><span class="line">    server = smtplib.SMTP_SSL(smtp_server, <span class="number">465</span>, context=context, timeout=<span class="number">30</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;成功创建SMTP_SSL对象: <span class="subst">&#123;smtp_server&#125;</span>:465&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    server.login(smtp_user, smtp_password)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;成功登录邮箱: <span class="subst">&#123;smtp_user&#125;</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    server.send_message(msg)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;邮件发送成功&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;发送到：<span class="subst">&#123;to_email&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;主题：CCTV科技新闻摘要 (<span class="subst">&#123;today&#125;</span>)&quot;</span>)</span><br></pre></td></tr></table></figure>
+</div>
+
+<div class="code-info" style="background-color: #e8f4f8; border-left: 4px solid #3498db; padding: 12px; margin: 10px 0 20px 0;">
+  <p style="margin: 0; font-size: 14px; color: #2c3e50;"><strong>代码说明：</strong>这段代码使用SMTP_SSL创建安全连接，发送包含HTML和文本内容的邮件，确保邮件能够正确送达。</p>
+</div>
+
+<h3 id="自动化部署（GitHub-Actions）"><a href="#自动化部署（GitHub-Actions）" class="headerlink" title="自动化部署（GitHub Actions）"></a>自动化部署（GitHub Actions）</h3><p>通过GitHub Actions配置，实现每日自动运行，无需服务器。</p>
+<h4 id="时区说明"><a href="#时区说明" class="headerlink" title="时区说明"></a>时区说明</h4><ul>
+<li>GitHub服务器使用UTC时区</li>
+<li>中国时区是UTC+8，所以UTC时间02:44:59对应中国时间10:44:59</li>
+<li>以下配置设置为UTC时间02:45运行，对应中国时间10:45</li>
+</ul>
+<h2 id="邮件效果展示"><a href="#邮件效果展示" class="headerlink" title="邮件效果展示"></a>邮件效果展示</h2><h3 id="📱-邮件效果"><a href="#📱-邮件效果" class="headerlink" title="📱 邮件效果"></a>📱 邮件效果</h3><div class="image-box" style="background-color: #ffffff; border-radius: 8px; padding: 15px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center;">
+  <div style="overflow: hidden; border-radius: 6px;">
+    <img src="/tech-news-email-bot/email-desktop.png" class="" title="电脑端邮件效果">
+  </div>
+  <p style="margin: 10px 0 0 0; font-size: 14px; color: #666;">电脑端邮件效果，美观的HTML格式邮件，响应式设计</p>
+</div>
+
+<h2 id="🚀-快速开始"><a href="#🚀-快速开始" class="headerlink" title="🚀 快速开始"></a>🚀 快速开始</h2><div class="section-divider" style="height: 2px; background: linear-gradient(to right, transparent, #4CAF50, transparent); margin: 30px 0;"></div>
+
+<h3 id="📁-创建项目文件"><a href="#📁-创建项目文件" class="headerlink" title="📁 创建项目文件"></a>📁 创建项目文件</h3><p>创建以下三个核心文件，构建完整的Python自动化新闻邮件系统：</p>
+<h4 id="📄-crawl-news-py"><a href="#📄-crawl-news-py" class="headerlink" title="📄 crawl_news.py"></a>📄 crawl_news.py</h4><ul>
+<li><strong>功能</strong>：使用Python爬虫技术从CCTV科技频道抓取最新新闻</li>
+<li><strong>特性</strong>：3次重试机制，确保Python爬虫数据抓取成功率</li>
+</ul>
+<h4 id="📄-send-email-py"><a href="#📄-send-email-py" class="headerlink" title="📄 send_email.py"></a>📄 send_email.py</h4><ul>
+<li><strong>功能</strong>：生成美观的响应式HTML邮件并通过SMTP协议发送</li>
+<li><strong>特性</strong>：响应式设计，支持各种设备，专业邮件模板</li>
+</ul>
+<h4 id="📄-github-workflows-daily-news-yml"><a href="#📄-github-workflows-daily-news-yml" class="headerlink" title="📄 .github&#x2F;workflows&#x2F;daily-news.yml"></a>📄 .github&#x2F;workflows&#x2F;daily-news.yml</h4><ul>
+<li><strong>功能</strong>：通过GitHub Actions实现每日自动运行的定时任务</li>
+<li><strong>特性</strong>：支持手动触发测试，方便调试和验证</li>
+</ul>
+<h3 id="🔧-安装依赖"><a href="#🔧-安装依赖" class="headerlink" title="🔧 安装依赖"></a>🔧 安装依赖</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install requests beautifulsoup4</span><br></pre></td></tr></table></figure>
+
+<h3 id="🖥️-本地测试"><a href="#🖥️-本地测试" class="headerlink" title="🖥️ 本地测试"></a>🖥️ 本地测试</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 抓取新闻</span></span><br><span class="line">python crawl_news.py</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从环境变量读取配置</span></span><br><span class="line">smtp_server = os.environ.get(<span class="string">&#x27;SMTP_SERVER&#x27;</span>, <span class="string">&#x27;smtp.qq.com&#x27;</span>)           <span class="comment"># SMTP服务器地址</span></span><br><span class="line">smtp_user = os.environ.get(<span class="string">&#x27;SENDER_EMAIL&#x27;</span>, <span class="string">&#x27;自己的qq邮箱&#x27;</span>)  <span class="comment"># 发件人邮箱</span></span><br><span class="line">smtp_password = os.environ.get(<span class="string">&#x27;SENDER_PASSWORD&#x27;</span>, <span class="string">&#x27;自己的授权码&#x27;</span>)    <span class="comment"># 发件人密码或授权码</span></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行发送脚本</span></span><br><span class="line">python send_email.py</span><br></pre></td></tr></table></figure>
+
+<h4 id="📷-操作截图-1"><a href="#📷-操作截图-1" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><img src="/tech-news-email-bot/local-test-config.png" class="" title="本地测试配置">
+
+<h3 id="📦-创建GitHub仓库"><a href="#📦-创建GitHub仓库" class="headerlink" title="📦 创建GitHub仓库"></a>📦 创建GitHub仓库</h3><p>按照以下步骤创建GitHub仓库：</p>
+<ol>
+<li><strong>登录GitHub</strong>：打开 <a href="https://github.com/">github.com</a></li>
+<li><strong>创建新仓库</strong>：点击右上角的「+」按钮，选择「New repository」</li>
+<li><strong>填写仓库信息</strong>：<ul>
+<li>Repository name: <code>daily-tech-news</code></li>
+<li>Description: <code>自动科技新闻摘要邮件机器人</code></li>
+<li>选择 Public 或 Private</li>
+<li>点击「Create repository」</li>
+</ul>
+</li>
+</ol>
+<h4 id="📷-操作截图-2"><a href="#📷-操作截图-2" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><img src="/tech-news-email-bot/github-create-repo.png" class="" title="GitHub创建仓库页面">
+
+<h3 id="📤-上传项目代码"><a href="#📤-上传项目代码" class="headerlink" title="📤 上传项目代码"></a>📤 上传项目代码</h3><p>使用GitHub网页界面上传文件：</p>
+<ol>
+<li><strong>进入仓库</strong>：打开您创建的GitHub仓库页面</li>
+<li><strong>上传文件</strong>：<ul>
+<li>点击「Add file」按钮</li>
+<li>选择「Upload files」选项</li>
+</ul>
+</li>
+<li><strong>选择文件</strong>：<ul>
+<li>拖拽或点击选择您的项目文件（crawl_news.py、send_email.py、news_data.json ）</li>
+<li>同时创建 <code>.github/workflows/</code> 目录和 daily-news.yml 文件</li>
+</ul>
+</li>
+<li><strong>提交更改</strong>：<ul>
+<li>在页面底部填写提交信息（如 “初始化项目”）</li>
+<li>点击「Commit changes」按钮完成上传</li>
+</ul>
+</li>
+</ol>
+<h4 id="📷-操作截图-3"><a href="#📷-操作截图-3" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><img src="/tech-news-email-bot/github-commit-changes.png" class="" title="GitHub提交更改页面">
+
+<h3 id="⚙️-配置GitHub-Actions"><a href="#⚙️-配置GitHub-Actions" class="headerlink" title="⚙️ 配置GitHub Actions"></a>⚙️ 配置GitHub Actions</h3><p>在 <code>.github/workflows/daily-news.yml</code> 文件中添加以下配置：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">每日科技新闻摘要</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">schedule:</span></span><br><span class="line">    <span class="comment"># 每天UTC时间02:00运行，对应中国时间10:00</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">cron:</span> <span class="string">&#x27;0 2 * * *&#x27;</span></span><br><span class="line">  <span class="attr">workflow_dispatch:</span></span><br><span class="line">    <span class="comment"># 允许手动触发</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">send-news:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    </span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/checkout@v4</span></span><br><span class="line">    </span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">设置时区为中国时区</span></span><br><span class="line">      <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">        echo &quot;TZ=Asia/Shanghai&quot; &gt;&gt; $GITHUB_ENV</span></span><br><span class="line"><span class="string"></span>    </span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">设置Python环境</span></span><br><span class="line">      <span class="attr">uses:</span> <span class="string">actions/setup-python@v5</span></span><br><span class="line">      <span class="attr">with:</span></span><br><span class="line">        <span class="attr">python-version:</span> <span class="string">&#x27;3.9&#x27;</span></span><br><span class="line">    </span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">安装依赖</span></span><br><span class="line">      <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">        python -m pip install --upgrade pip</span></span><br><span class="line"><span class="string">        pip install requests beautifulsoup4</span></span><br><span class="line"><span class="string"></span>    </span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">运行爬取脚本</span></span><br><span class="line">      <span class="attr">run:</span> <span class="string">python</span> <span class="string">crawl_news.py</span></span><br><span class="line">    </span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">运行邮件发送脚本</span></span><br><span class="line">      <span class="attr">env:</span></span><br><span class="line">        <span class="attr">SENDER_EMAIL:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.SENDER_EMAIL</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">SENDER_PASSWORD:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.SENDER_PASSWORD</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">RECEIVER_EMAIL:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.RECEIVER_EMAIL</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">SMTP_SERVER:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.SMTP_SERVER</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">SMTP_PORT:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.SMTP_PORT</span> <span class="string">&#125;&#125;</span></span><br><span class="line">      <span class="attr">run:</span> <span class="string">python</span> <span class="string">send_email.py</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="📷-操作截图-4"><a href="#📷-操作截图-4" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><img src="/tech-news-email-bot/github-actions-config.png" class="" title="GitHub Actions配置文件编辑">
+
+<h3 id="🔒-配置GitHub-Secrets"><a href="#🔒-配置GitHub-Secrets" class="headerlink" title="🔒 配置GitHub Secrets"></a>🔒 配置GitHub Secrets</h3><h4 id="📝-进入Secrets设置"><a href="#📝-进入Secrets设置" class="headerlink" title="📝 进入Secrets设置"></a>📝 进入Secrets设置</h4><p>按照以下路径进入Secrets设置页面：</p>
+<p><strong>进入GitHub仓库 → Settings → Secrets and variables → Actions</strong></p>
+<h4 id="🔑-添加Secrets"><a href="#🔑-添加Secrets" class="headerlink" title="🔑 添加Secrets"></a>🔑 添加Secrets</h4><p>点击 “New repository secret” 按钮，添加以下Secrets：</p>
+<table>
+<thead>
+<tr>
+<th>Secret名称</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>SENDER_EMAIL</code></td>
+<td>您的QQ邮箱地址</td>
+<td><code>3609506278@qq.com</code></td>
+</tr>
+<tr>
+<td><code>SENDER_PASSWORD</code></td>
+<td>您的QQ邮箱授权码（不是密码）</td>
+<td><code>xxxxxxxxxxxxxxxx</code></td>
+</tr>
+<tr>
+<td><code>RECEIVER_EMAIL</code></td>
+<td>收件人邮箱（可以和发件人相同）</td>
+<td><code>3609506278@qq.com</code></td>
+</tr>
+<tr>
+<td><code>SMTP_SERVER</code></td>
+<td>SMTP服务器地址</td>
+<td><code>smtp.qq.com</code></td>
+</tr>
+<tr>
+<td><code>SMTP_PORT</code></td>
+<td>SMTP服务器端口</td>
+<td><code>465</code></td>
+</tr>
+</tbody></table>
+<h4 id="📷-操作截图-5"><a href="#📷-操作截图-5" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><img src="/tech-news-email-bot/github-settings.png" class="" title="GitHub仓库Settings页面">
+
+<h3 id="✅-测试和验证"><a href="#✅-测试和验证" class="headerlink" title="✅ 测试和验证"></a>✅ 测试和验证</h3><h4 id="🚀-手动触发测试"><a href="#🚀-手动触发测试" class="headerlink" title="🚀 手动触发测试"></a>🚀 手动触发测试</h4><p>按照以下步骤手动触发工作流测试：</p>
+<p><strong>进入GitHub仓库 → Actions → 每日科技新闻摘要 → Run workflow</strong></p>
+<p>点击 “Run workflow” 按钮手动触发工作流，无需等待定时执行</p>
+<h4 id="📊-查看运行结果"><a href="#📊-查看运行结果" class="headerlink" title="📊 查看运行结果"></a>📊 查看运行结果</h4><p>在Actions页面查看工作流的运行状态和详细日志：</p>
+<ul>
+<li>检查工作流是否成功启动</li>
+<li>查看每个步骤的执行状态</li>
+<li>检查是否成功发送邮件</li>
+<li>查看任何可能的错误信息</li>
+</ul>
+<h4 id="📷-操作截图-6"><a href="#📷-操作截图-6" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><img src="/tech-news-email-bot/github-actions-page.png" class="" title="GitHub Actions页面">
+
+<h4 id="📧-验证邮件"><a href="#📧-验证邮件" class="headerlink" title="📧 验证邮件"></a>📧 验证邮件</h4><p>查看您的QQ邮箱，确认是否收到了科技新闻摘要邮件：</p>
+<ul>
+<li>检查收件箱或邮件</li>
+<li>确认邮件主题是否为 “CCTV科技新闻摘要”</li>
+<li>查看邮件内容是否完整</li>
+<li>验证新闻链接是否可点击</li>
+</ul>
+<h4 id="📷-操作截图-7"><a href="#📷-操作截图-7" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><img src="/tech-news-email-bot/email-desktop.png" class="" title="QQ邮箱收到邮件">
+
+<h4 id="📱-微信接收邮件提醒设置"><a href="#📱-微信接收邮件提醒设置" class="headerlink" title="📱 微信接收邮件提醒设置"></a>📱 微信接收邮件提醒设置</h4><p>为了确保及时收到科技新闻邮件，建议在微信里设置QQ邮箱提醒，只需按照以下步骤就能搞定：</p>
+<p>   📱 <strong>在微信里开启功能</strong></p>
+<ul>
+<li>打开微信，点击右下角的「我」，进入「设置」</li>
+<li>选择「其他功能」（苹果跟安卓可能不同），然后点击进入「辅助功能」（部分旧版本可能显示为”功能”或”插件”）</li>
+<li>在列表中找到「QQ邮箱提醒」，点击后选择「启用该功能」绑定QQ号即可</li>
+<li><strong>注意</strong>：如果找不到该入口，需先在微信的「我」-「设置」-「账号与安全」中绑定QQ号</li>
+</ul>
+<h4 id="📷-操作截图-8"><a href="#📷-操作截图-8" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><img src="/tech-news-email-bot/Receive-emails-via-wechat.png" class="" title="微信接收邮件">
+
+<h3 id="🔐-QQ授权码变更注意事项"><a href="#🔐-QQ授权码变更注意事项" class="headerlink" title="🔐 QQ授权码变更注意事项"></a>🔐 QQ授权码变更注意事项</h3><p><strong>重要提醒</strong>：如果您修改了QQ密码，之前生成的QQ授权码将会失效，这会影响到使用该授权码的爬虫项目（如本项目）。遇到这种情况，请按照以下步骤操作：</p>
+<p>🔑 <strong>重新生成QQ授权码</strong></p>
+<ul>
+<li>登录QQ邮箱</li>
+<li>进入「设置」 &gt; 「账户」</li>
+<li>找到「POP3&#x2F;IMAP&#x2F;SMTP&#x2F;Exchange&#x2F;CardDAV&#x2F;CalDAV服务」</li>
+<li>点击「生成授权码」，按照提示完成验证</li>
+</ul>
+<p>💻 <strong>更新GitHub仓库中的授权码</strong></p>
+<ul>
+<li>进入项目的GitHub仓库</li>
+<li>更新代码中的授权码：修改发送邮件的代码，将旧的授权码替换为新生成的授权码</li>
+<li>更新环境变量：进入「Settings」 &gt; 「Actions」 &gt; 「Secrets and variables」 &gt; 「Variables」</li>
+<li>找到对应的环境变量，将其值更新为新的QQ授权码</li>
+<li><strong>注意</strong>：环境变量的名称必须与自动化脚本（yml文件）中使用的变量名保持一致</li>
+</ul>
+<h3 id="❓-常见问题排查"><a href="#❓-常见问题排查" class="headerlink" title="❓ 常见问题排查"></a>❓ 常见问题排查</h3><table>
+<thead>
+<tr>
+<th>问题</th>
+<th>解决方案</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>邮件发送失败</strong></td>
+<td>检查授权码是否正确，SMTP服务是否开启</td>
+</tr>
+<tr>
+<td><strong>新闻抓取失败</strong></td>
+<td>检查网络连接，确认CCTV科技频道API是否可访问</td>
+</tr>
+<tr>
+<td><strong>GitHub Actions运行失败</strong></td>
+<td>查看Actions日志，检查Secrets配置是否正确</td>
+</tr>
+</tbody></table>
+<h3 id="🛠️-项目维护"><a href="#🛠️-项目维护" class="headerlink" title="🛠️ 项目维护"></a>🛠️ 项目维护</h3><ul>
+<li><strong>🔍 定期检查</strong>：确保项目正常运行</li>
+<li><strong>📦 更新依赖</strong>：定期更新Python依赖包</li>
+<li><strong>⏰ 调整时间</strong>：根据需要修改GitHub Actions的运行时间</li>
+<li><strong>🌟 扩展功能</strong>：根据需求添加更多新闻源或功能</li>
+</ul>
+<h2 id="🎯-技术难点与解决方案"><a href="#🎯-技术难点与解决方案" class="headerlink" title="🎯 技术难点与解决方案"></a>🎯 技术难点与解决方案</h2><div class="section-divider" style="height: 2px; background: linear-gradient(to right, transparent, #4CAF50, transparent); margin: 30px 0;"></div>
+
+<h3 id="🔍-JSONP数据解析"><a href="#🔍-JSONP数据解析" class="headerlink" title="🔍 JSONP数据解析"></a>🔍 JSONP数据解析</h3><ul>
+<li><strong>问题</strong>：CCTV科技频道使用JSONP格式返回数据，直接解析困难。</li>
+<li><strong>解决方案</strong>：使用正则表达式提取JSON数据，再进行解析。</li>
+</ul>
+<h3 id="📧-SMTP连接问题"><a href="#📧-SMTP连接问题" class="headerlink" title="📧 SMTP连接问题"></a>📧 SMTP连接问题</h3><ul>
+<li><strong>问题</strong>：不同邮箱服务商的SMTP设置不同，容易出现连接错误。</li>
+<li><strong>解决方案</strong>：使用SMTP_SSL直接创建安全连接，简化连接流程。</li>
+</ul>
+<h3 id="⏰-定时任务部署"><a href="#⏰-定时任务部署" class="headerlink" title="⏰ 定时任务部署"></a>⏰ 定时任务部署</h3><ul>
+<li><strong>问题</strong>：需要服务器才能实现定时任务。</li>
+<li><strong>解决方案</strong>：使用GitHub Actions免费实现自动化运行。</li>
+</ul>
+<h2 id="📝-结语"><a href="#📝-结语" class="headerlink" title="📝 结语"></a>📝 结语</h2><p>这个项目不仅是一个实用的工具，也是学习Python爬虫、邮件发送和自动化部署的好案例。通过它，你可以每天轻松获取最新的科技动态，同时也能提升自己的编程技能。</p>
+<p>如果你对这个项目感兴趣，欢迎到我的GitHub仓库查看和Star，也可以在评论区分享你的使用体验和改进建议。<br><strong>完整项目地址</strong>：<a href="https://github.com/Jay-R-J/daily_news">https://github.com/Jay-R-J/daily_news</a></p>
+<hr>
+<div class="article-info">
+  <strong>📅 更新时间：</strong>2026-02-5<br>
+  <strong>✍️ 作者：</strong>Jay<br>
+</div>]]></content>
+      <categories>
+        <category>技术教程</category>
+        <category>Python</category>
+        <category>自动化</category>
+        <category>爬虫</category>
+        <category>邮件</category>
+        <category>GitHub Actions</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
+        <tag>邮件自动化</tag>
+        <tag>GitHub Actions</tag>
+        <tag>科技新闻</tag>
+        <tag>SEO优化</tag>
+        <tag>自动化工具</tag>
+        <tag>数据抓取</tag>
+        <tag>SMTP</tag>
+        <tag>响应式设计</tag>
       </tags>
   </entry>
   <entry>
@@ -2620,7 +2620,7 @@
 <ul>
 <li><strong>GitHub</strong>：<a href="https://github.com/Jay-R-J/">https://github.com/Jay-R-J/</a></li>
 <li><strong>CSDN</strong>：<a href="https://blog.csdn.net/2401_82953028">https://blog.csdn.net/2401_82953028</a></li>
-<li><strong>QQ邮件</strong>：<a href="mailto:&#51;&#54;&#x30;&#57;&#53;&#x30;&#54;&#50;&#55;&#56;&#x40;&#x71;&#x71;&#46;&#x63;&#x6f;&#109;">3609506278@qq.com</a></li>
+<li><strong>QQ邮件</strong>：<a href="mailto:&#51;&#x36;&#48;&#x39;&#53;&#x30;&#54;&#50;&#x37;&#x38;&#64;&#x71;&#x71;&#x2e;&#x63;&#111;&#109;">3609506278@qq.com</a></li>
 </ul>
 <h3 id="合作方式"><a href="#合作方式" class="headerlink" title="合作方式"></a>合作方式</h3><ul>
 <li><strong>文章投稿</strong>：欢迎投稿分享您的技术经验和学习心得</li>
@@ -2655,6 +2655,349 @@
         <tag>博客功能</tag>
         <tag>博客浏览技巧</tag>
         <tag>博客使用教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Rust Web API开发教程：用Rust写一个&quot;今日诗词&quot;API（手把手）</title>
+    <url>//rust-poem-api-tutorial/</url>
+    <content><![CDATA[<div class="section-divider" style="height: 2px; background: linear-gradient(to right, transparent, #ff6b6b, transparent); margin: 30px 0;"></div>
+
+<h2 id="📘-Rust-Web-API开发教程：用Rust写一个”今日诗词”API（手把手）"><a href="#📘-Rust-Web-API开发教程：用Rust写一个”今日诗词”API（手把手）" class="headerlink" title="📘 Rust Web API开发教程：用Rust写一个”今日诗词”API（手把手）"></a>📘 Rust Web API开发教程：用Rust写一个”今日诗词”API（手把手）</h2><div class="tip success">
+  <strong>🌟 本教程适合Rust零基础读者</strong>，是一份详细的<strong>Rust Web API开发教程</strong>，每一步都有代码、有命令行操作、有截图指引，1小时内可以跑通。通过本教程，你将学习如何使用<strong>Rust</strong>和<strong>Actix-Web框架</strong>创建一个随机诗词API，快速上手<strong>Rust后端开发</strong>。
+</div>
+
+<h2 id="🦀-关于Rust：它是什么？为什么用它？"><a href="#🦀-关于Rust：它是什么？为什么用它？" class="headerlink" title="🦀 关于Rust：它是什么？为什么用它？"></a>🦀 关于Rust：它是什么？为什么用它？</h2><div class="info-box" style="background: rgba(255, 107, 107, 0.1); border-left: 4px solid #ff6b6b; padding: 15px; margin: 20px 0; border-radius: 4px;">
+  <p><strong>Rust</strong> 是一门由Mozilla开发的系统编程语言，2015年发布第一个稳定版本。它旨在提供 <strong>C/C++级别的性能</strong>，同时通过独特的 <strong>所有权系统</strong> 在编译阶段保证 <strong>内存安全</strong>，无需垃圾回收。这些特性使Rust成为<strong>Rust后端开发</strong>和<strong>Web服务开发</strong>的理想选择。</p>
+</div>
+
+<h3 id="它的核心优点"><a href="#它的核心优点" class="headerlink" title="它的核心优点"></a>它的核心优点</h3><div class="feature-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+  <div class="feature-item" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="color: #ff6b6b; margin-top: 0;">🔒 内存安全</h4>
+    <p>Rust的编译器会在编译时检查所有内存访问，杜绝空指针、悬垂指针和数据竞争，让你写出更健壮的代码。</p>
+  </div>
+  <div class="feature-item" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="color: #4ecdc4; margin-top: 0;">⚡ 零成本抽象</h4>
+    <p>像迭代器、泛型等高级特性在编译后会被优化为与手写底层代码一样高效，不会有运行时开销。</p>
+  </div>
+  <div class="feature-item" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="color: #45b7d1; margin-top: 0;">🔄 无畏并发</h4>
+    <p>所有权系统让线程间数据共享变得安全，编译器会阻止大多数并发错误。</p>
+  </div>
+  <div class="feature-item" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="color: #96ceb4; margin-top: 0;">🛠️ 现代工具链</h4>
+    <p><code>cargo</code> 不仅是包管理器，还能构建、测试、生成文档，配合 <code>rustfmt</code>（格式化）和 <code>clippy</code>（lint）让开发体验极佳。</p>
+  </div>
+  <div class="feature-item" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="color: #ffcc5c; margin-top: 0;">🌱 丰富的生态</h4>
+    <p>Web开发（Actix-Web、Rocket）、嵌入式、WASM、命令行工具等领域都有成熟框架。</p>
+  </div>
+</div>
+
+<div class="info-box" style="background: rgba(78, 205, 196, 0.1); border-left: 4px solid #4ecdc4; padding: 15px; margin: 20px 0; border-radius: 4px;">
+  <p>在Web API场景下，<strong>Rust</strong>能提供 <strong>极致的性能和稳定性</strong>，适合对延迟敏感、高并发的服务。这也是为什么越来越多的开发者选择<strong>Rust后端开发</strong>和<strong>Web服务开发</strong>。今天我们就用Rust写一个简单的<strong>诗词API</strong>，亲身体验<strong>Rust Web API</strong>的开发流程。</p>
+</div>
+
+<h2 id="🎯-最终效果"><a href="#🎯-最终效果" class="headerlink" title="🎯 最终效果"></a>🎯 最终效果</h2><div class="result-box" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0;">
+  <h3 style="color: #45b7d1; margin-top: 0;">🌐 API访问效果</h3>
+  <p>通过本<strong>Rust Web API开发教程</strong>创建的<strong>诗词API</strong>，在浏览器访问 <code>http://localhost:8080/poem</code>，会返回一句随机古诗词，格式为JSON。例如：</p>
+  
+  <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;poem&quot;</span><span class="punctuation">:</span><span class="string">&quot;离离原上草，一岁一枯荣。野火烧不尽，春风吹又生。&quot;</span><span class="punctuation">,</span><span class="attr">&quot;line_count&quot;</span><span class="punctuation">:</span><span class="number">3</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+  <p>访问根路径 <code>http://localhost:8080/</code> 则显示欢迎信息。这个简单的<strong>Rust后端服务</strong>展示了<strong>Rust</strong>在Web开发中的应用。</p>
+</div>
+
+<h4 id="📷-操作截图"><a href="#📷-操作截图" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><div class="image-container" style="text-align: center; margin: 20px 0;">
+  <figure style="display: inline-block; margin: 0; padding: 10px; background: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <img src="/rust-poem-api-tutorial/final-result.png" class="" title="最终结果">
+    <figcaption style="margin-top: 10px; color: #666; font-size: 14px;">最终效果展示</figcaption>
+  </figure>
+</div>
+
+
+<div class="note info" style="background: rgba(69, 183, 209, 0.1); border-left: 4px solid #45b7d1; padding: 15px; margin: 20px 0; border-radius: 4px;">
+  <p><strong>💡 操作环境说明</strong>：以下操作在Windows的PowerShell终端中进行</p>
+</div>
+
+<h2 id="🛠️-第一步：环境准备"><a href="#🛠️-第一步：环境准备" class="headerlink" title="🛠️ 第一步：环境准备"></a>🛠️ 第一步：环境准备</h2><h3 id="安装Rust（如果还没装）"><a href="#安装Rust（如果还没装）" class="headerlink" title="安装Rust（如果还没装）"></a>安装Rust（如果还没装）</h3><div class="step-box" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0;">
+  <h3 style="color: #ff6b6b; margin-top: 0;">📥 安装Rust</h3>
+  <p>打开PowerShell终端，执行以下命令：</p>
+  
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Invoke-WebRequest -Uri https://win.rustup.rs -OutFile rustup-init.exe</span><br><span class="line">.\rustup-init.exe</span><br></pre></td></tr></table></figure>
+  <p><small><strong>提示</strong>：使用官网的curl命令在Windows上可能安装不了，推荐使用上面的PowerShell命令</small></p>
+</div>
+
+<h4 id="📷-操作截图-1"><a href="#📷-操作截图-1" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><div class="image-container" style="text-align: center; margin: 20px 0;">
+  <figure style="display: inline-block; margin: 0; padding: 10px; background: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <img src="/rust-poem-api-tutorial/install-rust.png" class="" title="安装Rust">
+    <figcaption style="margin-top: 10px; color: #666; font-size: 14px;">执行安装命令</figcaption>
+  </figure>
+</div>
+
+<p>安装完成后，最后几行应该显示：</p>
+
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Rust is installed now. Great!</span><br></pre></td></tr></table></figure>
+
+<h4 id="📷-操作截图-2"><a href="#📷-操作截图-2" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><div class="image-container" style="text-align: center; margin: 20px 0;">
+  <figure style="display: inline-block; margin: 0; padding: 10px; background: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <img src="/rust-poem-api-tutorial/install-rust-result.png" class="" title="安装Rust结果">
+    <figcaption style="margin-top: 10px; color: #666; font-size: 14px;">安装完成结果</figcaption>
+  </figure>
+</div>
+
+<p>在Windows上，如果上面命令还是无效，可以到 <a href="https://rustup.rs/" target="_blank">rustup.rs</a> 直接下载安装程序。</p>
+
+<h4 id="📷-操作截图-3"><a href="#📷-操作截图-3" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><div class="image-container" style="text-align: center; margin: 20px 0;">
+  <figure style="display: inline-block; margin: 0; padding: 10px; background: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <img src="/rust-poem-api-tutorial/official-website-install.png" class="" title="官网安装">
+    <figcaption style="margin-top: 10px; color: #666; font-size: 14px;">官网下载安装程序</figcaption>
+  </figure>
+</div>
+
+<h3 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h3><div class="step-box" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0;">
+  <h3 style="color: #96ceb4; margin-top: 0;">✅ 验证安装</h3>
+  <p>在原PowerShell终端，运行：</p>
+  
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rustc --version</span><br><span class="line">cargo --version</span><br></pre></td></tr></table></figure>
+  <p><strong>预期结果</strong>：两条命令都应该输出版本号，例如 <code>rustc 1.75.0</code> 和 <code>cargo 1.75.0</code></p>
+</div>
+
+<h4 id="📷-操作截图-4"><a href="#📷-操作截图-4" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><div class="image-container" style="text-align: center; margin: 20px 0;">
+  <figure style="display: inline-block; margin: 0; padding: 10px; background: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <img src="/rust-poem-api-tutorial/verify-installation.png" class="" title="验证安装">
+    <figcaption style="margin-top: 10px; color: #666; font-size: 14px;">验证安装结果</figcaption>
+  </figure>
+</div>
+
+<h2 id="🆕-第二步：创建新项目"><a href="#🆕-第二步：创建新项目" class="headerlink" title="🆕 第二步：创建新项目"></a>🆕 第二步：创建新项目</h2><div class="step-box" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0;">
+  <h3 style="color: #4ecdc4; margin-top: 0;">🚀 创建新项目</h3>
+  <p>在PowerShell终端中，进入你想存放项目的目录（例如 <code>cd ~/诗词api</code>），然后运行：</p>
+  
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cargo new poem_api</span><br><span class="line"><span class="built_in">cd</span> poem_api</span><br></pre></td></tr></table></figure>
+  <p><strong>预期结果</strong>：终端显示 <code>Created binary (application) 'poem_api' package</code></p>
+</div>
+
+
+<h4 id="📷-操作截图-5"><a href="#📷-操作截图-5" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><div class="image-container" style="text-align: center; margin: 20px 0;">
+  <figure style="display: inline-block; margin: 0; padding: 10px; background: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <img src="/rust-poem-api-tutorial/create-new-project.png" class="" title="创建新项目">
+    <figcaption style="margin-top: 10px; color: #666; font-size: 14px;">创建新项目结果</figcaption>
+  </figure>
+</div>
+
+<div class="note info" style="background: rgba(69, 183, 209, 0.1); border-left: 4px solid #45b7d1; padding: 15px; margin: 20px 0; border-radius: 4px;">
+  <p><strong>💡 操作环境说明</strong>：以下在VS Code或者其他编辑器中进行操作</p>
+</div>
+
+<h2 id="📦-第三步：添加依赖"><a href="#📦-第三步：添加依赖" class="headerlink" title="📦 第三步：添加依赖"></a>📦 第三步：添加依赖</h2><div class="step-box" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0;">
+  <h3 style="color: #ffcc5c; margin-top: 0;">📝 添加依赖</h3>
+  <p>编辑项目根目录下的 <code>Cargo.toml</code> 文件，在 <code>[dependencies]</code> 部分添加三个依赖：</p>
+  
+  <figure class="highlight toml"><table><tr><td class="code"><pre><span class="line"><span class="section">[package]</span></span><br><span class="line"><span class="attr">name</span> = <span class="string">&quot;poem_api&quot;</span></span><br><span class="line"><span class="attr">version</span> = <span class="string">&quot;0.1.0&quot;</span></span><br><span class="line"><span class="attr">edition</span> = <span class="string">&quot;2021&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="section">[dependencies]</span></span><br><span class="line"><span class="attr">actix-web</span> = <span class="string">&quot;4&quot;</span></span><br><span class="line"><span class="attr">rand</span> = <span class="string">&quot;0.8&quot;</span></span><br><span class="line"><span class="attr">serde</span> = &#123; version = <span class="string">&quot;1&quot;</span>, features = [<span class="string">&quot;derive&quot;</span>] &#125;</span><br></pre></td></tr></table></figure>
+</div>
+
+<h4 id="📷-操作截图-6"><a href="#📷-操作截图-6" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><div class="image-container" style="text-align: center; margin: 20px 0;">
+  <figure style="display: inline-block; margin: 0; padding: 10px; background: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <img src="/rust-poem-api-tutorial/add-dependencies.png" class="" title="添加依赖">
+    <figcaption style="margin-top: 10px; color: #666; font-size: 14px;">添加依赖后的Cargo.toml文件</figcaption>
+  </figure>
+</div>
+
+<div class="dependency-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin: 20px 0;">
+  <div class="dependency-item" style="background: rgba(255, 107, 107, 0.1); padding: 15px; border-radius: 6px; border-left: 3px solid #ff6b6b;">
+    <h4 style="margin-top: 0; color: #ff6b6b;">🔧 actix-web</h4>
+    <p>高性能的Rust Web框架，用于处理HTTP请求和响应</p>
+  </div>
+  <div class="dependency-item" style="background: rgba(78, 205, 196, 0.1); padding: 15px; border-radius: 6px; border-left: 3px solid #4ecdc4;">
+    <h4 style="margin-top: 0; color: #4ecdc4;">🎲 rand</h4>
+    <p>用于生成随机数，随机选择诗词</p>
+  </div>
+  <div class="dependency-item" style="background: rgba(69, 183, 209, 0.1); padding: 15px; border-radius: 6px; border-left: 3px solid #45b7d1;">
+    <h4 style="margin-top: 0; color: #45b7d1;">📋 serde</h4>
+    <p>用于将数据结构序列化为JSON格式</p>
+  </div>
+</div>
+
+<h2 id="📄-第四步：准备诗词数据"><a href="#📄-第四步：准备诗词数据" class="headerlink" title="📄 第四步：准备诗词数据"></a>📄 第四步：准备诗词数据</h2><div class="step-box" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0;">
+  <h3 style="color: #96ceb4; margin-top: 0;">📚 准备诗词数据</h3>
+  <p>在 <code>src</code> 目录下新建一个文件，命名为 <code>poems.rs</code>，然后写入以下代码：</p>
+  
+  <figure class="highlight rust"><table><tr><td class="code"><pre><span class="line"><span class="comment">// src/poems.rs</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">pub</span> <span class="keyword">const</span> POEMS: [&amp;<span class="type">str</span>; <span class="number">10</span>] = [</span><br><span class="line">    <span class="string">&quot;床前明月光，疑是地上霜。举头望明月，低头思故乡。&quot;</span>,</span><br><span class="line">    <span class="string">&quot;春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少。&quot;</span>,</span><br><span class="line">    <span class="string">&quot;白日依山尽，黄河入海流。欲穷千里目，更上一层楼。&quot;</span>,</span><br><span class="line">    <span class="string">&quot;红豆生南国，春来发几枝。愿君多采撷，此物最相思。&quot;</span>,</span><br><span class="line">    <span class="string">&quot;千山鸟飞绝，万径人踪灭。孤舟蓑笠翁，独钓寒江雪。&quot;</span>,</span><br><span class="line">    <span class="string">&quot;墙角数枝梅，凌寒独自开。遥知不是雪，为有暗香来。&quot;</span>,</span><br><span class="line">    <span class="string">&quot;白日不到处，青春恰自来。苔花如米小，也学牡丹开。&quot;</span>,</span><br><span class="line">    <span class="string">&quot;锄禾日当午，汗滴禾下土。谁知盘中餐，粒粒皆辛苦。&quot;</span>,</span><br><span class="line">    <span class="string">&quot;离离原上草，一岁一枯荣。野火烧不尽，春风吹又生。&quot;</span>,</span><br><span class="line">    <span class="string">&quot;向晚意不适，驱车登古原。夕阳无限好，只是近黄昏。&quot;</span>,</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+  <p>这里定义了一个常量数组，包含10句经典唐诗（其实是整首诗，但没关系）。</p>
+</div>
+
+<h4 id="📷-操作截图-7"><a href="#📷-操作截图-7" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><div class="image-container" style="text-align: center; margin: 20px 0;">
+  <figure style="display: inline-block; margin: 0; padding: 10px; background: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <img src="/rust-poem-api-tutorial/prepare-poem-data.png" class="" title="准备诗词数据">
+    <figcaption style="margin-top: 10px; color: #666; font-size: 14px;">准备诗词数据文件</figcaption>
+  </figure>
+</div>
+
+<h2 id="🧠-第五步：编写主程序逻辑"><a href="#🧠-第五步：编写主程序逻辑" class="headerlink" title="🧠 第五步：编写主程序逻辑"></a>🧠 第五步：编写主程序逻辑</h2><div class="step-box" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0;">
+  <h3 style="color: #ff6b6b; margin-top: 0;">💻 编写主程序逻辑</h3>
+  <p>现在修改 <code>src/main.rs</code>，这是项目的主入口，我们将在这里编写Web服务：</p>
+  
+  <figure class="highlight rust"><table><tr><td class="code"><pre><span class="line"><span class="comment">// src/main.rs</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">mod</span> poems;  <span class="comment">// 引入刚才写的诗词模块</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> actix_web::&#123;get, web, App, HttpResponse, HttpServer, Responder&#125;;</span><br><span class="line"><span class="keyword">use</span> rand::Rng;</span><br><span class="line"><span class="keyword">use</span> serde::Serialize;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义API返回的JSON结构</span></span><br><span class="line"><span class="meta">#[derive(Serialize)]</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">PoemResponse</span> &#123;</span><br><span class="line">    poem: <span class="type">String</span>,          <span class="comment">// 诗词内容</span></span><br><span class="line">    line_count: <span class="type">usize</span>,     <span class="comment">// 诗句数量（以句号分隔估算）</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 根路径处理函数</span></span><br><span class="line"><span class="meta">#[get(<span class="string">&quot;/&quot;</span>)]</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">fn</span> <span class="title function_">hello</span>() <span class="punctuation">-&gt;</span> <span class="keyword">impl</span> <span class="title class_">Responder</span> &#123;</span><br><span class="line">    HttpResponse::<span class="title function_ invoke__">Ok</span>().<span class="title function_ invoke__">body</span>(<span class="string">&quot;欢迎访问今日诗词API！请访问 /poem 获取随机诗词&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// /poem 路径处理函数</span></span><br><span class="line"><span class="meta">#[get(<span class="string">&quot;/poem&quot;</span>)]</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">fn</span> <span class="title function_">random_poem</span>() <span class="punctuation">-&gt;</span> <span class="keyword">impl</span> <span class="title class_">Responder</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">rng</span> = rand::<span class="title function_ invoke__">thread_rng</span>();</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">index</span> = rng.<span class="title function_ invoke__">gen_range</span>(<span class="number">0</span>..poems::POEMS.<span class="title function_ invoke__">len</span>());  <span class="comment">// 随机选择一个索引</span></span><br><span class="line">    <span class="keyword">let</span> <span class="variable">poem</span> = poems::POEMS[index].<span class="title function_ invoke__">to_string</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 计算大概的诗句数（以句号分割）</span></span><br><span class="line">    <span class="keyword">let</span> <span class="variable">line_count</span> = poem.<span class="title function_ invoke__">split</span>(<span class="string">&#x27;。&#x27;</span>).<span class="title function_ invoke__">count</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> <span class="variable">response</span> = PoemResponse &#123;</span><br><span class="line">        poem,</span><br><span class="line">        line_count,</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    HttpResponse::<span class="title function_ invoke__">Ok</span>().<span class="title function_ invoke__">json</span>(response)  <span class="comment">// 返回JSON</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#[actix_web::main]</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">fn</span> <span class="title function_">main</span>() <span class="punctuation">-&gt;</span> std::io::<span class="type">Result</span>&lt;()&gt; &#123;</span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;🚀 服务器启动在 http://localhost:8080&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    HttpServer::<span class="title function_ invoke__">new</span>(|| &#123;</span><br><span class="line">        App::<span class="title function_ invoke__">new</span>()</span><br><span class="line">            .<span class="title function_ invoke__">service</span>(hello)           <span class="comment">// 注册根路由</span></span><br><span class="line">            .<span class="title function_ invoke__">service</span>(random_poem)      <span class="comment">// 注册/poem路由</span></span><br><span class="line">    &#125;)</span><br><span class="line">    .<span class="title function_ invoke__">bind</span>((<span class="string">&quot;127.0.0.1&quot;</span>, <span class="number">8080</span>))?        <span class="comment">// 绑定地址和端口</span></span><br><span class="line">    .<span class="title function_ invoke__">run</span>()</span><br><span class="line">    .<span class="keyword">await</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</div>
+
+<h4 id="📷-操作截图-8"><a href="#📷-操作截图-8" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><div class="image-container" style="text-align: center; margin: 20px 0;">
+  <figure style="display: inline-block; margin: 0; padding: 10px; background: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <img src="/rust-poem-api-tutorial/write-main-program-logic.png" class="" title="编写主程序逻辑">
+    <figcaption style="margin-top: 10px; color: #666; font-size: 14px;">编写主程序逻辑</figcaption>
+  </figure>
+</div>
+
+<h3 id="代码解释"><a href="#代码解释" class="headerlink" title="代码解释"></a>代码解释</h3><div class="code-explanation" style="background: rgba(150, 206, 180, 0.1); padding: 20px; border-radius: 8px; margin: 20px 0;">
+  <h4 style="color: #96ceb4; margin-top: 0;">🔍 代码解析</h4>
+  <ul style="list-style-type: none; padding-left: 0;">
+    <li style="margin-bottom: 10px;"><strong>📦 模块引入</strong>：<code>mod poems;</code> 告诉Rust我们要使用同目录下的 <code>poems.rs</code> 模块</li>
+    <li style="margin-bottom: 10px;"><strong>🎯 路由处理</strong>：<code>#[get("/")]</code> 是一个属性宏，表示这个函数处理GET请求的根路径</li>
+    <li style="margin-bottom: 10px;"><strong>📋 JSON序列化</strong>：<code>HttpResponse::Ok().json(...)</code> 返回状态码200，并将数据自动转为JSON</li>
+    <li style="margin-bottom: 10px;"><strong>🚀 服务器启动</strong>：在main函数中，我们启动HTTP服务器，监听本地8080端口</li>
+    <li style="margin-bottom: 10px;"><strong>🎲 随机选择</strong>：使用 <code>rand::thread_rng()</code> 生成随机数，随机选择一首诗词</li>
+  </ul>
+</div>
+<div class="note info" style="background: rgba(69, 183, 209, 0.1); border-left: 4px solid #45b7d1; padding: 15px; margin: 20px 0; border-radius: 4px;">
+  <p><strong>💡 操作环境说明</strong>：以下操作在Windows的PowerShell终端中进行</p>
+</div>
+
+<h2 id="🏃-第六步：运行项目"><a href="#🏃-第六步：运行项目" class="headerlink" title="🏃 第六步：运行项目"></a>🏃 第六步：运行项目</h2><div class="step-box" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0;">
+  <h3 style="color: #4ecdc4; margin-top: 0;">🔥 运行项目</h3>
+  <p>回到终端，确保当前目录是 <code>poem_api</code>，然后执行：</p>
+  
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cargo run</span><br></pre></td></tr></table></figure>
+  <p><small><strong>提示</strong>：第一次运行会下载依赖并编译，可能需要几分钟（以后就快了）</small></p>
+</div>
+
+<h4 id="📷-操作截图-9"><a href="#📷-操作截图-9" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><div class="image-container" style="text-align: center; margin: 20px 0;">
+  <figure style="display: inline-block; margin: 0; padding: 10px; background: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <img src="/rust-poem-api-tutorial/run-project-terminal.png" class="" title="在终端运行">
+    <figcaption style="margin-top: 10px; color: #666; font-size: 14px;">在终端运行项目</figcaption>
+  </figure>
+</div>
+
+<p>运行成功后，终端会显示：</p>
+
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">🚀 服务器启动在 http://localhost:8080</span><br></pre></td></tr></table></figure>
+
+<h4 id="📷-操作截图-10"><a href="#📷-操作截图-10" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><div class="image-container" style="text-align: center; margin: 20px 0;">
+  <figure style="display: inline-block; margin: 0; padding: 10px; background: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <img src="/rust-poem-api-tutorial/run-result.png" class="" title="运行结果">
+    <figcaption style="margin-top: 10px; color: #666; font-size: 14px;">运行结果</figcaption>
+  </figure>
+</div>
+
+<div class="tip success" style="background: rgba(150, 206, 180, 0.1); border-left: 4px solid #96ceb4; padding: 15px; margin: 20px 0; border-radius: 4px;">
+  <p><strong>💡 重要提示</strong>：服务器运行后，不要关闭终端，否则服务会停止</p>
+</div>
+
+<h2 id="🌐-第七步：测试API"><a href="#🌐-第七步：测试API" class="headerlink" title="🌐 第七步：测试API"></a>🌐 第七步：测试API</h2><div class="step-box" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0;">
+  <h3 style="color: #ffcc5c; margin-top: 0;">🌍 测试API</h3>
+  <p>打开浏览器（Edge、Chrome、Firefox等），在地址栏输入：</p>
+  
+  <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">http://localhost:8080/</span><br></pre></td></tr></table></figure>
+  <p>然后访问：</p>
+  
+  <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">http://localhost:8080/poem</span><br></pre></td></tr></table></figure>
+  <p><strong>预期结果</strong>：浏览器页面显示一个JSON对象，例如：</p>
+  
+  <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;poem&quot;</span><span class="punctuation">:</span><span class="string">&quot;离离原上草，一岁一枯荣。野火烧不尽，春风吹又生。&quot;</span><span class="punctuation">,</span><span class="attr">&quot;line_count&quot;</span><span class="punctuation">:</span><span class="number">3</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+  <p><strong>特别说明</strong>：刷新几次，诗词内容会随机变化</p>
+</div>
+
+<h4 id="📷-操作截图-11"><a href="#📷-操作截图-11" class="headerlink" title="📷 操作截图"></a>📷 操作截图</h4><div class="image-container" style="text-align: center; margin: 20px 0;">
+  <figure style="display: inline-block; margin: 0; padding: 10px; background: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <img src="/rust-poem-api-tutorial/final-result.png" class="" title="最终结果">
+    <figcaption style="margin-top: 10px; color: #666; font-size: 14px;">最终效果展示</figcaption>
+  </figure>
+</div>
+<div class="section-divider" style="height: 2px; background: linear-gradient(to right, transparent, #ff6b6b, transparent); margin: 30px 0;"></div>
+
+<h2 id="🎉-恭喜！你已经完成了第一个Rust-Web-API"><a href="#🎉-恭喜！你已经完成了第一个Rust-Web-API" class="headerlink" title="🎉 恭喜！你已经完成了第一个Rust Web API"></a>🎉 恭喜！你已经完成了第一个Rust Web API</h2><div class="congrats-box" style="background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1)); padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin: 20px 0; text-align: center;">
+  <h2 style="color: #ff6b6b; margin-top: 0;">🎊 恭喜你！</h2>
+  <p style="font-size: 18px; margin: 20px 0;">你刚刚用Rust写了一个简单的Web服务，它：</p>
+  
+  <div style="display: flex; justify-content: center; gap: 40px; margin: 30px 0;">
+    <div style="text-align: center;">
+      <div style="font-size: 40px; margin-bottom: 10px;">🌐</div>
+      <p style="margin: 0;">接收HTTP请求</p>
+    </div>
+    <div style="text-align: center;">
+      <div style="font-size: 40px; margin-bottom: 10px;">🎲</div>
+      <p style="margin: 0;">随机选择诗词</p>
+    </div>
+    <div style="text-align: center;">
+      <div style="font-size: 40px; margin-bottom: 10px;">📋</div>
+      <p style="margin: 0;">返回格式化的JSON</p>
+    </div>
+  </div>
+</div>
+
+<h2 id="💡-扩展挑战（读者可以自己尝试）"><a href="#💡-扩展挑战（读者可以自己尝试）" class="headerlink" title="💡 扩展挑战（读者可以自己尝试）"></a>💡 扩展挑战（读者可以自己尝试）</h2><div class="challenge-box" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0;">
+  <h3 style="color: #4ecdc4; margin-top: 0;">🚀 扩展挑战</h3>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0;">
+    <div style="background: rgba(255, 107, 107, 0.1); padding: 15px; border-radius: 6px; border-left: 3px solid #ff6b6b;">
+      <h4 style="margin-top: 0; color: #ff6b6b;">📚 增加更多诗词</h4>
+      <p>修改 <code>poems.rs</code>，添加更多古诗</p>
+    </div>
+    <div style="background: rgba(78, 205, 196, 0.1); padding: 15px; border-radius: 6px; border-left: 3px solid #4ecdc4;">
+      <h4 style="margin-top: 0; color: #4ecdc4;">👤 增加作者信息</h4>
+      <p>返回诗词标题和作者，扩展数据结构</p>
+    </div>
+    <div style="background: rgba(69, 183, 209, 0.1); padding: 15px; border-radius: 6px; border-left: 3px solid #45b7d1;">
+      <h4 style="margin-top: 0; color: #45b7d1;">🔍 支持查询参数</h4>
+      <p>例如 <code>?count=3</code> 返回多首诗词</p>
+    </div>
+    <div style="background: rgba(255, 204, 92, 0.1); padding: 15px; border-radius: 6px; border-left: 3px solid #ffcc5c;">
+      <h4 style="margin-top: 0; color: #ffcc5c;">☁️ 部署到云端</h4>
+      <p>尝试用 Shuttle 或 Railway 一键部署</p>
+    </div>
+  </div>
+</div>
+
+<h2 id="❓-常见问题"><a href="#❓-常见问题" class="headerlink" title="❓ 常见问题"></a>❓ 常见问题</h2><div class="faq-box" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0;">
+  <div style="margin: 20px 0;">
+    <div style="background: rgba(255, 107, 107, 0.1); padding: 15px; border-radius: 6px; margin-bottom: 15px;">
+      <h4 style="margin-top: 0; color: #ff6b6b;">🔧 cargo run 时报错 "linker not found"</h4>
+      <p><strong>解决方案</strong>：在Linux上可能需要安装build-essential：<code>sudo apt install build-essential</code>。Mac上需要安装Xcode命令行工具：<code>xcode-select --install</code>。</p>
+    </div>
+    <div style="background: rgba(78, 205, 196, 0.1); padding: 15px; border-radius: 6px; margin-bottom: 15px;">
+      <h4 style="margin-top: 0; color: #4ecdc4;">📡 端口8080被占用怎么办？</h4>
+      <p><strong>解决方案</strong>：修改 main.rs 中的 bind 参数，比如改成 <code>("127.0.0.1", 8081)</code>，然后重新运行。</p>
+    </div>
+    <div style="background: rgba(69, 183, 209, 0.1); padding: 15px; border-radius: 6px;">
+      <h4 style="margin-top: 0; color: #45b7d1;">🌐 浏览器访问不到？</h4>
+      <p><strong>解决方案</strong>：确保程序运行后没有报错，并且浏览器地址是 <code>http://localhost:8080</code> 而不是 <code>https</code>。</p>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider" style="height: 2px; background: linear-gradient(to right, transparent, #ff6b6b, transparent); margin: 30px 0;"></div>
+
+<p style="text-align: center; font-size: 16px; color: #666;">
+  📝 这篇<strong>Rust Web API开发教程</strong>已经足够详细，读者按照截图和代码一步步操作，一定能跑通。通过本教程，你不仅学会了如何用<strong>Rust</strong>和<strong>Actix-Web框架</strong>创建一个<strong>诗词API</strong>，还对<strong>Rust后端开发</strong>有了初步的了解。<br>
+  🌟 希望你喜欢这个<strong>Rust Web API</strong>项目，开始你的<strong>Rust</strong>学习之旅！
+</p>
+
+<div class="article-info">
+  <strong>📅 更新时间：</strong>2026-02-20<br>
+  <strong>✍️ 作者：</strong>Jay<br>
+</div>
+]]></content>
+      <categories>
+        <category>技术教程</category>
+        <category>Rust</category>
+        <category>Web开发</category>
+        <category>后端开发</category>
+      </categories>
+      <tags>
+        <tag>Rust</tag>
+        <tag>Rust Web API</tag>
+        <tag>Actix-Web</tag>
+        <tag>Rust后端开发</tag>
+        <tag>实操教程</tag>
+        <tag>Web服务</tag>
+        <tag>诗词API</tag>
+        <tag>Rust入门</tag>
+        <tag>零基础学Rust</tag>
       </tags>
   </entry>
 </search>
