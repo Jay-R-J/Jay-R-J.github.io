@@ -1,6 +1,385 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>智能车牌识别系统：基于Django和百度OCR的企业级解决方案</title>
+    <url>//intelligent-license-plate-recognition/</url>
+    <content><![CDATA[<div class="section-divider" style="height: 2px; background: linear-gradient(to right, transparent, #ff6b6b, transparent); margin: 30px 0;"></div>
+
+<h2 id="🚗-【原创作品】高效智能车牌识别系统：企业级解决方案"><a href="#🚗-【原创作品】高效智能车牌识别系统：企业级解决方案" class="headerlink" title="🚗 【原创作品】高效智能车牌识别系统：企业级解决方案"></a>🚗 【原创作品】高效智能车牌识别系统：企业级解决方案</h2><div class="tip success">
+  <strong>🌟 本系统为企业级解决方案</strong>，是一套功能强大、界面友好的<strong>智能车牌识别系统</strong>，基于Django框架开发，集成百度智能云OCR技术，支持停车场管理、交通执法、企业门禁等多种场景，具备高精度识别、完整用户管理、历史记录管理、数据导出等功能。
+</div>
+
+<h2 id="📋-项目概述"><a href="#📋-项目概述" class="headerlink" title="📋 项目概述"></a>📋 项目概述</h2><div class="info-box" style="background: rgba(255, 107, 107, 0.1); border-left: 4px solid #ff6b6b; padding: 15px; margin: 20px 0; border-radius: 4px;">
+  <p>今天我要向大家介绍一款由我<strong>独立开发</strong>的功能强大、界面友好的<strong>智能车牌识别系统</strong>。这是我基于Django框架自主研发的<strong>具备企业级特性</strong>的应用，集成了百度智能云的OCR技术，能够快速、准确地识别各类车牌。</p>
+</div>
+
+<h3 id="💡-开发故事"><a href="#💡-开发故事" class="headerlink" title="💡 开发故事"></a>💡 开发故事</h3><div class="info-box" style="background: rgba(78, 205, 196, 0.1); border-left: 4px solid #4ecdc4; padding: 15px; margin: 20px 0; border-radius: 4px;">
+  <p>作为一名热爱技术创新的开发者，我一直对计算机视觉和智能识别技术充满兴趣。一次偶然的机会，我发现市面上的车牌识别系统要么功能单一，要么价格昂贵，于是萌生了自己开发一套完整解决方案的想法。</p>
+  <p>从项目启动到最终完成，我投入了近三个月的时间，从需求分析到技术选型，从代码编写到测试部署，每一个环节都亲力亲为。系统的每一行代码都凝聚了我的专业知识和创新理念，每一个功能都经过了反复测试和优化。</p>
+</div>
+
+<h3 id="🌟-核心价值"><a href="#🌟-核心价值" class="headerlink" title="🌟 核心价值"></a>🌟 核心价值</h3><div class="feature-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+  <div class="feature-item" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="color: #ff6b6b; margin-top: 0;">🔍 高精度识别</h4>
+    <p>基于百度智能云OCR技术，识别准确率高达99%</p>
+  </div>
+  <div class="feature-item" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="color: #4ecdc4; margin-top: 0;">👥 完整用户体系</h4>
+    <p>构建了完整的用户管理体系和数据处理功能</p>
+  </div>
+  <div class="feature-item" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="color: #45b7d1; margin-top: 0;">🚀 一站式解决方案</h4>
+    <p>为实际应用场景提供了一站式解决方案</p>
+  </div>
+</div>
+
+<div class="info-box" style="background: rgba(69, 183, 209, 0.1); border-left: 4px solid #45b7d1; padding: 15px; margin: 20px 0; border-radius: 4px;">
+  <p>这套系统不仅实现了高精度的车牌识别，还构建了完整的用户管理体系和数据处理功能，为实际应用场景提供了一站式解决方案。无论是停车场管理、交通执法还是企业门禁，都能通过这套系统实现智能化、高效化的车牌识别管理。</p>
+</div>
+
+<h2 id="🎯-核心功能"><a href="#🎯-核心功能" class="headerlink" title="🎯 核心功能"></a>🎯 核心功能</h2><div class="step-box" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0;">
+  <h3 style="color: #ff6b6b; margin-top: 0;">🔍 智能车牌识别</h3>
+  <ul style="list-style-type: none; padding-left: 0;">
+    <li style="margin-bottom: 10px;"><strong>📷 多格式支持</strong>：支持JPG、PNG等常见图片格式</li>
+    <li style="margin-bottom: 10px;"><strong>🎯 高精度识别</strong>：基于百度智能云OCR技术，识别准确率高达99%</li>
+    <li style="margin-bottom: 10px;"><strong>📦 批量识别</strong>：支持一张图片中多个车牌的同时识别</li>
+    <li style="margin-bottom: 10px;"><strong>⚡ 实时反馈</strong>：上传图片后立即返回识别结果</li>
+    <li style="margin-bottom: 10px;"><strong>✅ 车牌验证</strong>：内置正则表达式验证，确保识别结果的有效性</li>
+  </ul>
+</div>
+
+
+<div class="step-box" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0;">
+  <h3 style="color: #4ecdc4; margin-top: 0;">👥 完整的用户系统</h3>
+  <ul style="list-style-type: none; padding-left: 0;">
+    <li style="margin-bottom: 10px;"><strong>🔑 用户注册/登录</strong>：安全的账户管理</li>
+    <li style="margin-bottom: 10px;"><strong>🛡️ 角色权限控制</strong>：区分普通用户和管理员权限</li>
+    <li style="margin-bottom: 10px;"><strong>👤 个人中心</strong>：用户信息管理</li>
+  </ul>
+</div>
+
+
+<div class="step-box" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0;">
+  <h3 style="color: #45b7d1; margin-top: 0;">📊 历史记录管理</h3>
+  <ul style="list-style-type: none; padding-left: 0;">
+    <li style="margin-bottom: 10px;"><strong>📋 识别历史</strong>：记录所有识别记录</li>
+    <li style="margin-bottom: 10px;"><strong>🔍 智能搜索</strong>：支持按车牌号搜索历史记录</li>
+    <li style="margin-bottom: 10px;"><strong>📄 分页显示</strong>：优化大量数据的展示效果</li>
+    <li style="margin-bottom: 10px;"><strong>🛡️ 权限控制</strong>：普通用户只能查看自己的记录，管理员可查看所有</li>
+  </ul>
+</div>
+
+
+<div class="step-box" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0;">
+  <h3 style="color: #96ceb4; margin-top: 0;">💾 数据导出功能</h3>
+  <ul style="list-style-type: none; padding-left: 0;">
+    <li style="margin-bottom: 10px;"><strong>📊 Excel导出</strong>：将识别记录导出为Excel格式</li>
+    <li style="margin-bottom: 10px;"><strong>🔍 数据筛选</strong>：支持按条件导出特定数据</li>
+    <li style="margin-bottom: 10px;"><strong>🎨 格式优化</strong>：导出数据结构清晰，易于分析</li>
+  </ul>
+</div>
+
+
+<div class="step-box" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0;">
+  <h3 style="color: #ffcc5c; margin-top: 0;">👑 管理员功能</h3>
+  <ul style="list-style-type: none; padding-left: 0;">
+    <li style="margin-bottom: 10px;"><strong>👥 用户管理</strong>：添加、编辑、删除用户</li>
+    <li style="margin-bottom: 10px;"><strong>📺 系统监控</strong>：查看所有用户的识别活动</li>
+    <li style="margin-bottom: 10px;"><strong>📈 数据统计</strong>：系统使用情况分析</li>
+  </ul>
+</div>
+
+<h2 id="🏗️-技术架构"><a href="#🏗️-技术架构" class="headerlink" title="🏗️ 技术架构"></a>🏗️ 技术架构</h2><h3 id="🎨-前端技术"><a href="#🎨-前端技术" class="headerlink" title="🎨 前端技术"></a>🎨 前端技术</h3><div class="dependency-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin: 20px 0;">
+  <div class="dependency-item" style="background: rgba(255, 107, 107, 0.1); padding: 15px; border-radius: 6px; border-left: 3px solid #ff6b6b;">
+    <h4 style="margin-top: 0; color: #ff6b6b;">🎨 HTML5/CSS3</h4>
+    <p>现代网页设计</p>
+  </div>
+  <div class="dependency-item" style="background: rgba(78, 205, 196, 0.1); padding: 15px; border-radius: 6px; border-left: 3px solid #4ecdc4;">
+    <h4 style="margin-top: 0; color: #4ecdc4;">⚡ JavaScript</h4>
+    <p>交互功能实现</p>
+  </div>
+  <div class="dependency-item" style="background: rgba(69, 183, 209, 0.1); padding: 15px; border-radius: 6px; border-left: 3px solid #45b7d1;">
+    <h4 style="margin-top: 0; color: #45b7d1;">📱 Bootstrap</h4>
+    <p>响应式布局，适配各种设备</p>
+  </div>
+</div>
+
+<h3 id="⚙️-后端技术"><a href="#⚙️-后端技术" class="headerlink" title="⚙️ 后端技术"></a>⚙️ 后端技术</h3><div class="dependency-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin: 20px 0;">
+  <div class="dependency-item" style="background: rgba(150, 206, 180, 0.1); padding: 15px; border-radius: 6px; border-left: 3px solid #96ceb4;">
+    <h4 style="margin-top: 0; color: #96ceb4;">🐍 Django 4.2.8</h4>
+    <p>强大的Python Web框架</p>
+  </div>
+  <div class="dependency-item" style="background: rgba(255, 204, 92, 0.1); padding: 15px; border-radius: 6px; border-left: 3px solid #ffcc5c;">
+    <h4 style="margin-top: 0; color: #ffcc5c;">💾 SQLite/MySQL</h4>
+    <p>灵活的数据库选择</p>
+  </div>
+  <div class="dependency-item" style="background: rgba(255, 107, 107, 0.1); padding: 15px; border-radius: 6px; border-left: 3px solid #ff6b6b;">
+    <h4 style="margin-top: 0; color: #ff6b6b;">🔍 百度智能云OCR API</h4>
+    <p>核心识别技术</p>
+  </div>
+  <div class="dependency-item" style="background: rgba(78, 205, 196, 0.1); padding: 15px; border-radius: 6px; border-left: 3px solid #4ecdc4;">
+    <h4 style="margin-top: 0; color: #4ecdc4;">🖼️ OpenCV</h4>
+    <p>图像处理支持</p>
+  </div>
+  <div class="dependency-item" style="background: rgba(69, 183, 209, 0.1); padding: 15px; border-radius: 6px; border-left: 3px solid #45b7d1;">
+    <h4 style="margin-top: 0; color: #45b7d1;">📊 Pandas</h4>
+    <p>数据处理和导出</p>
+  </div>
+</div>
+
+<h3 id="🔄-系统架构"><a href="#🔄-系统架构" class="headerlink" title="🔄 系统架构"></a>🔄 系统架构</h3><div class="info-box" style="background: rgba(150, 206, 180, 0.1); border-left: 4px solid #96ceb4; padding: 15px; margin: 20px 0; border-radius: 4px;">
+  <ul style="list-style-type: none; padding-left: 0;">
+    <li style="margin-bottom: 10px;"><strong>🏗️ MVC模式</strong>：清晰的代码结构</li>
+    <li style="margin-bottom: 10px;"><strong>🔄 RESTful API</strong>：前后端分离的交互方式</li>
+    <li style="margin-bottom: 10px;"><strong>🧩 模块化设计</strong>：易于扩展和维护</li>
+  </ul>
+</div>
+
+<h3 id="💎-原创技术亮点"><a href="#💎-原创技术亮点" class="headerlink" title="💎 原创技术亮点"></a>💎 原创技术亮点</h3><div class="feature-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+  <div class="feature-item" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="color: #ff6b6b; margin-top: 0;">🔍 自定义车牌验证算法</h4>
+    <p>独立开发的正则表达式验证逻辑，确保识别结果的准确性</p>
+  </div>
+  <div class="feature-item" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="color: #4ecdc4; margin-top: 0;">🔧 百度API集成</h4>
+    <p>自主封装的百度云API调用模块，优化了请求流程和错误处理</p>
+  </div>
+  <div class="feature-item" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="color: #45b7d1; margin-top: 0;">🛡️ 权限管理系统</h4>
+    <p>基于Django的自定义权限控制，实现了精细的角色权限划分</p>
+  </div>
+  <div class="feature-item" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="color: #96ceb4; margin-top: 0;">💾 数据导出功能</h4>
+    <p>原创的Excel导出模块，支持复杂数据结构的格式化输出</p>
+  </div>
+  <div class="feature-item" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="color: #ffcc5c; margin-top: 0;">🎨 响应式前端设计</h4>
+    <p>自主设计的用户界面，兼顾美观性和易用性</p>
+  </div>
+</div>
+
+<h2 id="📍-应用场景"><a href="#📍-应用场景" class="headerlink" title="📍 应用场景"></a>📍 应用场景</h2><div class="step-box" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0;">
+  <h3 style="color: #ff6b6b; margin-top: 0;">🅿️ 停车场管理</h3>
+  <ul style="list-style-type: none; padding-left: 0;">
+    <li style="margin-bottom: 10px;"><strong>🤖 无人值守</strong>：自动识别进场车辆，实现24小时无人值守</li>
+    <li style="margin-bottom: 10px;"><strong>💰 计费管理</strong>：结合识别记录实现自动计费</li>
+    <li style="margin-bottom: 10px;"><strong>🚗 车辆管理</strong>：有效管理停车场内车辆信息</li>
+  </ul>
+</div>
+
+
+<div class="step-box" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0;">
+  <h3 style="color: #4ecdc4; margin-top: 0;">🚓 交通执法</h3>
+  <ul style="list-style-type: none; padding-left: 0;">
+    <li style="margin-bottom: 10px;"><strong>⚠️ 违章识别</strong>：快速识别违章车辆，提高执法效率</li>
+    <li style="margin-bottom: 10px;"><strong>📸 证据留存</strong>：自动记录识别结果，作为执法证据</li>
+    <li style="margin-bottom: 10px;"><strong>🚓 流动执法</strong>：支持移动设备快速识别</li>
+  </ul>
+</div>
+
+
+<div class="step-box" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0;">
+  <h3 style="color: #45b7d1; margin-top: 0;">🏢 企业门禁</h3>
+  <ul style="list-style-type: none; padding-left: 0;">
+    <li style="margin-bottom: 10px;"><strong>✅ 自动放行</strong>：授权车辆自动识别放行</li>
+    <li style="margin-bottom: 10px;"><strong>👥 访客管理</strong>：临时访客车辆登记和识别</li>
+    <li style="margin-bottom: 10px;"><strong>🔒 安全监控</strong>：记录所有进出车辆信息</li>
+  </ul>
+</div>
+
+
+<div class="step-box" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0;">
+  <h3 style="color: #96ceb4; margin-top: 0;">🚚 物流管理</h3>
+  <ul style="list-style-type: none; padding-left: 0;">
+    <li style="margin-bottom: 10px;"><strong>📦 进出库登记</strong>：车辆进出库自动登记</li>
+    <li style="margin-bottom: 10px;"><strong>⚡ 效率提升</strong>：减少人工登记时间，提高物流效率</li>
+    <li style="margin-bottom: 10px;"><strong>📊 数据统计</strong>：物流车辆流量分析</li>
+  </ul>
+</div>
+
+
+<div class="step-box" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0;">
+  <h3 style="color: #ffcc5c; margin-top: 0;">🔒 安防监控</h3>
+  <ul style="list-style-type: none; padding-left: 0;">
+    <li style="margin-bottom: 10px;"><strong>👁️ 重点区域监控</strong>：敏感区域车辆监控</li>
+    <li style="margin-bottom: 10px;"><strong>🚨 异常预警</strong>：陌生车辆进入预警</li>
+    <li style="margin-bottom: 10px;"><strong>📋 历史追溯</strong>：车辆进出历史查询</li>
+  </ul>
+</div>
+
+<h2 id="✅-系统优势"><a href="#✅-系统优势" class="headerlink" title="✅ 系统优势"></a>✅ 系统优势</h2><h3 id="🎯-技术领先"><a href="#🎯-技术领先" class="headerlink" title="🎯 技术领先"></a>🎯 技术领先</h3><div class="info-box" style="background: rgba(255, 107, 107, 0.1); border-left: 4px solid #ff6b6b; padding: 15px; margin: 20px 0; border-radius: 4px;">
+  <ul style="list-style-type: none; padding-left: 0;">
+    <li style="margin-bottom: 10px;">采用百度智能云最新的OCR技术，识别准确率行业领先</li>
+    <li style="margin-bottom: 10px;">基于Django框架，代码质量高，安全性好</li>
+    <li style="margin-bottom: 10px;">模块化设计，易于二次开发和功能扩展</li>
+  </ul>
+</div>
+
+<h3 id="🎨-操作便捷"><a href="#🎨-操作便捷" class="headerlink" title="🎨 操作便捷"></a>🎨 操作便捷</h3><div class="info-box" style="background: rgba(78, 205, 196, 0.1); border-left: 4px solid #4ecdc4; padding: 15px; margin: 20px 0; border-radius: 4px;">
+  <ul style="list-style-type: none; padding-left: 0;">
+    <li style="margin-bottom: 10px;">直观的用户界面，操作简单易学</li>
+    <li style="margin-bottom: 10px;">响应式设计，支持PC端和移动端访问</li>
+    <li style="margin-bottom: 10px;">批量处理功能，提高工作效率</li>
+  </ul>
+</div>
+
+<h3 id="🔒-安全可靠"><a href="#🔒-安全可靠" class="headerlink" title="🔒 安全可靠"></a>🔒 安全可靠</h3><div class="info-box" style="background: rgba(69, 183, 209, 0.1); border-left: 4px solid #45b7d1; padding: 15px; margin: 20px 0; border-radius: 4px;">
+  <ul style="list-style-type: none; padding-left: 0;">
+    <li style="margin-bottom: 10px;">完善的用户权限管理</li>
+    <li style="margin-bottom: 10px;">数据加密存储</li>
+    <li style="margin-bottom: 10px;">错误处理机制，系统稳定性高</li>
+  </ul>
+</div>
+
+<h3 id="💰-成本效益"><a href="#💰-成本效益" class="headerlink" title="💰 成本效益"></a>💰 成本效益</h3><div class="info-box" style="background: rgba(150, 206, 180, 0.1); border-left: 4px solid #96ceb4; padding: 15px; margin: 20px 0; border-radius: 4px;">
+  <ul style="list-style-type: none; padding-left: 0;">
+    <li style="margin-bottom: 10px;">部署成本低，支持多种服务器环境</li>
+    <li style="margin-bottom: 10px;">维护成本低，代码结构清晰</li>
+    <li style="margin-bottom: 10px;">提高工作效率，降低人力成本</li>
+  </ul>
+</div>
+
+<h2 id="📷-系统展示"><a href="#📷-系统展示" class="headerlink" title="📷 系统展示"></a>📷 系统展示</h2><h3 id="🔑-登录界面"><a href="#🔑-登录界面" class="headerlink" title="🔑 登录界面"></a>🔑 登录界面</h3><div class="image-container" style="text-align: center; margin: 20px 0;">
+  <figure style="display: inline-block; margin: 0; padding: 10px; background: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <img src="/intelligent-license-plate-recognition/login-interface.png" class="" title="登录界面">
+    <figcaption style="margin-top: 10px; color: #666; font-size: 14px;">登录界面</figcaption>
+  </figure>
+</div>
+
+<h3 id="🚗-车牌识别界面"><a href="#🚗-车牌识别界面" class="headerlink" title="🚗 车牌识别界面"></a>🚗 车牌识别界面</h3><div class="image-container" style="text-align: center; margin: 20px 0;">
+  <figure style="display: inline-block; margin: 0; padding: 10px; background: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <img src="/intelligent-license-plate-recognition/license-plate-recognition.png" class="" title="车牌识别界面">
+    <figcaption style="margin-top: 10px; color: #666; font-size: 14px;">车牌识别界面</figcaption>
+  </figure>
+</div>
+
+<h3 id="📊-历史记录界面"><a href="#📊-历史记录界面" class="headerlink" title="📊 历史记录界面"></a>📊 历史记录界面</h3><div class="image-container" style="text-align: center; margin: 20px 0;">
+  <figure style="display: inline-block; margin: 0; padding: 10px; background: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <img src="/intelligent-license-plate-recognition/history-records.png" class="" title="历史记录界面">
+    <figcaption style="margin-top: 10px; color: #666; font-size: 14px;">历史记录界面</figcaption>
+  </figure>
+</div>
+
+<h3 id="💾-数据导出界面（只有管理员有）"><a href="#💾-数据导出界面（只有管理员有）" class="headerlink" title="💾 数据导出界面（只有管理员有）"></a>💾 数据导出界面（只有管理员有）</h3><div class="image-container" style="text-align: center; margin: 20px 0;">
+  <figure style="display: inline-block; margin: 0; padding: 10px; background: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <img src="/intelligent-license-plate-recognition/data-export.png" class="" title="数据导出界面">
+    <figcaption style="margin-top: 10px; color: #666; font-size: 14px;">数据导出界面</figcaption>
+  </figure>
+</div>
+
+<h3 id="👥-用户管理界面（只有管理员有）"><a href="#👥-用户管理界面（只有管理员有）" class="headerlink" title="👥 用户管理界面（只有管理员有）"></a>👥 用户管理界面（只有管理员有）</h3><div class="image-container" style="text-align: center; margin: 20px 0;">
+  <figure style="display: inline-block; margin: 0; padding: 10px; background: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <img src="/intelligent-license-plate-recognition/user-management.png" class="" title="用户管理界面">
+    <figcaption style="margin-top: 10px; color: #666; font-size: 14px;">用户管理界面</figcaption>
+  </figure>
+</div>
+
+<h2 id="📥-如何获取源码"><a href="#📥-如何获取源码" class="headerlink" title="📥 如何获取源码"></a>📥 如何获取源码</h2><div class="info-box" style="background: rgba(255, 204, 92, 0.1); border-left: 4px solid #ffcc5c; padding: 15px; margin: 20px 0; border-radius: 4px;">
+  <p>这套车牌识别系统是我<strong>原创开发</strong>的企业级解决方案，包含了我精心编写的完整功能和详细代码注释。作为项目的唯一开发者，我对每一行代码都了如指掌，并且持续进行优化和更新。</p>
+</div>
+
+<h3 id="🎁-源码价值"><a href="#🎁-源码价值" class="headerlink" title="🎁 源码价值"></a>🎁 源码价值</h3><div class="feature-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+  <div class="feature-item" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="color: #ff6b6b; margin-top: 0;">📦 完整功能</h4>
+    <p>包含所有核心功能的完整实现</p>
+  </div>
+  <div class="feature-item" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="color: #4ecdc4; margin-top: 0;">📝 详细注释</h4>
+    <p>代码中包含详细的中文注释，便于学习和二次开发</p>
+  </div>
+  <div class="feature-item" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="color: #45b7d1; margin-top: 0;">📚 技术文档</h4>
+    <p>提供系统架构和API使用文档</p>
+  </div>
+  <div class="feature-item" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="color: #96ceb4; margin-top: 0;">🔄 持续更新</h4>
+    <p>定期更新功能和修复问题</p>
+  </div>
+</div>
+
+<h3 id="📞-获取方式"><a href="#📞-获取方式" class="headerlink" title="📞 获取方式"></a>📞 获取方式</h3><div class="info-box" style="background: rgba(255, 107, 107, 0.1); border-left: 4px solid #ff6b6b; padding: 15px; margin: 20px 0; border-radius: 4px;">
+  <p>如果你对这个项目感兴趣，想要获取完整源代码用于学习或商业用途，请通过以下方式联系我：</p>
+  <ul style="list-style-type: none; padding-left: 0;">
+    <li style="margin-bottom: 10px;"><strong>💬 私聊获取</strong>：在评论区留言或私信我（邮箱：3609506278@qq.com）</li>
+    <li style="margin-bottom: 10px;"><strong>💰 非免费提供</strong>：源代码包含了我的核心技术创新和大量开发时间投入</li>
+  </ul>
+  <p><strong>重要声明</strong>：本项目为我个人原创作品，受著作权保护，未经授权请勿抄袭或商用。</p>
+</div>
+
+<h2 id="🛠️-部署要求"><a href="#🛠️-部署要求" class="headerlink" title="🛠️ 部署要求"></a>🛠️ 部署要求</h2><div class="step-box" style="background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0;">
+  <h3 style="color: #4ecdc4; margin-top: 0;">🛠️ 部署要求</h3>
+  <ul style="list-style-type: none; padding-left: 0;">
+    <li style="margin-bottom: 10px;"><strong>🐍 Python 3.8+</strong></li>
+    <li style="margin-bottom: 10px;"><strong>🌐 Django 4.2.8</strong></li>
+    <li style="margin-bottom: 10px;"><strong>🔑 百度智能云API账号</strong>（需自行申请）</li>
+    <li style="margin-bottom: 10px;"><strong>🖥️ Web服务器</strong>（推荐Nginx+Gunicorn）</li>
+    <li style="margin-bottom: 10px;"><strong>💾 数据库</strong>（SQLite或MySQL）</li>
+  </ul>
+</div>
+
+<h2 id="📝-总结"><a href="#📝-总结" class="headerlink" title="📝 总结"></a>📝 总结</h2><div class="info-box" style="background: rgba(69, 183, 209, 0.1); border-left: 4px solid #45b7d1; padding: 15px; margin: 20px 0; border-radius: 4px;">
+  <p>作为<strong>原创开发者</strong>，我为这款智能车牌识别系统感到自豪。这是一个功能完整、技术先进的企业级解决方案，凝聚了我大量的心血和专业知识。从最初的想法构思到最终的系统上线，我全程参与并主导了每一个开发环节。</p>
+</div>
+
+<h3 id="🏆-技术成就"><a href="#🏆-技术成就" class="headerlink" title="🏆 技术成就"></a>🏆 技术成就</h3><div class="congrats-box" style="background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1)); padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin: 20px 0; text-align: center;">
+  <h2 style="color: #ff6b6b; margin-top: 0;">🏆 技术成就</h2>
+  <p style="font-size: 18px; margin: 20px 0;">通过这个项目，我不仅实现了技术上的突破，也积累了宝贵的开发经验：</p>
+  
+  <div style="display: flex; justify-content: center; gap: 40px; margin: 30px 0;">
+    <div style="text-align: center;">
+      <div style="font-size: 40px; margin-bottom: 10px;">💻</div>
+      <p style="margin: 0;">全栈开发能力</p>
+    </div>
+    <div style="text-align: center;">
+      <div style="font-size: 40px; margin-bottom: 10px;">🔧</div>
+      <p style="margin: 0;">问题解决能力</p>
+    </div>
+    <div style="text-align: center;">
+      <div style="font-size: 40px; margin-bottom: 10px;">🏗️</div>
+      <p style="margin: 0;">架构设计能力</p>
+    </div>
+  </div>
+</div>
+
+<h3 id="💡-应用价值"><a href="#💡-应用价值" class="headerlink" title="💡 应用价值"></a>💡 应用价值</h3><div class="info-box" style="background: rgba(150, 206, 180, 0.1); border-left: 4px solid #96ceb4; padding: 15px; margin: 20px 0; border-radius: 4px;">
+  <p>这款系统不仅具有高精度的车牌识别能力，还提供了完善的用户管理、历史记录和数据导出功能，是停车场管理、交通执法、企业门禁等领域的理想选择。它的成功开发也展示了我在全栈开发、API集成、数据库设计等方面的专业能力。</p>
+</div>
+
+<h3 id="🚀-未来展望"><a href="#🚀-未来展望" class="headerlink" title="🚀 未来展望"></a>🚀 未来展望</h3><div class="info-box" style="background: rgba(255, 204, 92, 0.1); border-left: 4px solid #ffcc5c; padding: 15px; margin: 20px 0; border-radius: 4px;">
+  <p>我相信这套系统能够为有需要的企业和开发者带来实际价值，同时也希望能够通过分享这个项目，与更多志同道合的技术爱好者交流学习。未来，我计划继续优化系统性能，增加更多智能识别功能，为智能交通和安防领域贡献更多创新解决方案。</p>
+  <p>如果你正在寻找一套可靠的车牌识别系统，或者想要学习如何开发类似的应用，欢迎联系我获取完整源代码。</p>
+</div>
+
+<div class="section-divider" style="height: 2px; background: linear-gradient(to right, transparent, #ff6b6b, transparent); margin: 30px 0;"></div>
+
+<p style="text-align: center; font-size: 16px; color: #666;">
+  🌟 希望这套系统能够为有需要的企业和开发者带来实际价值，同时也希望能够通过分享这个项目，与更多志同道合的技术爱好者交流学习！
+</p>
+
+<div class="article-info">
+  <strong>📅 更新时间：</strong>2026-02-24<br>
+  <strong>✍️ 作者：</strong>Jay<br>
+</div>]]></content>
+      <categories>
+        <category>技术教程</category>
+        <category>人工智能</category>
+        <category>计算机视觉</category>
+        <category>企业应用</category>
+      </categories>
+      <tags>
+        <tag>智能车牌识别</tag>
+        <tag>企业级解决方案</tag>
+        <tag>Django</tag>
+        <tag>百度OCR</tag>
+        <tag>停车场管理</tag>
+        <tag>交通执法</tag>
+        <tag>企业门禁</tag>
+        <tag>计算机视觉</tag>
+        <tag>智能识别</tag>
+        <tag>全栈开发</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Rust Web API开发教程：用Rust写一个&quot;今日诗词&quot;API（手把手）</title>
     <url>//rust-poem-api-tutorial/</url>
     <content><![CDATA[<div class="section-divider" style="height: 2px; background: linear-gradient(to right, transparent, #ff6b6b, transparent); margin: 30px 0;"></div>
@@ -2963,7 +3342,7 @@
 <ul>
 <li><strong>GitHub</strong>：<a href="https://github.com/Jay-R-J/">https://github.com/Jay-R-J/</a></li>
 <li><strong>CSDN</strong>：<a href="https://blog.csdn.net/2401_82953028">https://blog.csdn.net/2401_82953028</a></li>
-<li><strong>QQ邮件</strong>：<a href="mailto:&#x33;&#54;&#48;&#57;&#x35;&#x30;&#x36;&#50;&#55;&#x38;&#x40;&#113;&#113;&#x2e;&#99;&#x6f;&#109;">3609506278@qq.com</a></li>
+<li><strong>QQ邮件</strong>：<a href="mailto:&#x33;&#54;&#48;&#57;&#53;&#48;&#54;&#x32;&#x37;&#x38;&#x40;&#113;&#113;&#x2e;&#99;&#111;&#x6d;">3609506278@qq.com</a></li>
 </ul>
 <h3 id="合作方式"><a href="#合作方式" class="headerlink" title="合作方式"></a>合作方式</h3><ul>
 <li><strong>文章投稿</strong>：欢迎投稿分享您的技术经验和学习心得</li>
