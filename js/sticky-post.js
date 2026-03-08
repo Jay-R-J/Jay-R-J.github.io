@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".article-title .sticky").forEach(function(t){let e=t.closest(".recent-post-item");e&&e.classList.add("sticky-post")})});
