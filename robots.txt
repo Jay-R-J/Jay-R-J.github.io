@@ -1,61 +1,25 @@
-# 主机名声明，指定网站的首选域名
-Host: https://www.jay-r-j.top
-
-# 通用搜索引擎配置
+# 允许所有搜索引擎抓取所有公开内容
 User-agent: *
-# 允许抓取所有公共页面
-Allow: /
-# 允许抓取特定目录
-Allow: /archives/
-Allow: /categories/
-Allow: /tags/
-Allow: /about/
-Allow: /tools/
-Allow: /flink/
-Allow: /留言/
-Allow: /visitor-wall/
-Allow: /contribute/
-Allow: /timeline/
-# 禁止抓取敏感目录和文件
+
+# 禁止抓取系统文件、依赖目录和备份文件
 Disallow: /node_modules/
-Disallow: /public/
 Disallow: /themes/
 Disallow: /_config.yml
 Disallow: /_config.butterfly.yml
 Disallow: /db.json
-# 禁止抓取备份文件
 Disallow: /*.bak$
 Disallow: /*.swp$
 Disallow: /*.tmp$
 
-# 抓取频率建议，根据网站更新频率调整
-Crawl-delay: 10
+# 如果你的网站根目录就是 public 文件夹，请不要取消下面这行的注释
+# 否则会禁止抓取所有页面。通常 Hexo 的 public 是生成目录，无需禁止。
+# Disallow: /public/
 
-# 百度搜索引擎特定配置
-User-agent: Baiduspider
-Crawl-delay: 5
+# 抓取延迟：静态博客响应极快，延迟可设为 0 或 1 秒以加快收录
+# 如果你的服务器性能一般或担心压力，可适当增大或保留此设置
+Crawl-delay: 1
 
-# 谷歌搜索引擎特定配置
-User-agent: Googlebot
-Crawl-delay: 5
-
-# 必应搜索引擎特定配置
-User-agent: Bingbot
-Crawl-delay: 5
-
-# 360搜索引擎特定配置
-User-agent: 360Spider
-Crawl-delay: 5
-
-# 搜狗搜索引擎特定配置
-User-agent: Sogou Spider
-Crawl-delay: 5
-
-# 头条搜索引擎特定配置
-User-agent: Bytespider
-Crawl-delay: 5
-
-# 站点地图配置
+# 站点地图（请确认这些文件真实存在且可访问）
 Sitemap: https://www.jay-r-j.top/sitemap.xml
 Sitemap: https://www.jay-r-j.top/baidusitemap.xml
 Sitemap: https://www.jay-r-j.top/atom.xml
