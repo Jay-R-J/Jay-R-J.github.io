@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.jay-r-j.top//blog_building_service/</loc>
+    <lastmod>2026-04-22</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jay-r-j.top//build_hexo_blog/</loc>
+    <lastmod>2026-04-22</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jay-r-j.top//cet4-past-papers/</loc>
+    <lastmod>2026-04-22</lastmod>
+  </url>
+  <url>
     <loc>https://www.jay-r-j.top//python_backup_tool/</loc>
     <lastmod>2026-04-19</lastmod>
   </url>
@@ -34,10 +46,6 @@
   </url>
   <url>
     <loc>https://www.jay-r-j.top//hexo_comment_system/</loc>
-    <lastmod>2026-04-14</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jay-r-j.top//build_hexo_blog/</loc>
     <lastmod>2026-04-14</lastmod>
   </url>
   <url>
