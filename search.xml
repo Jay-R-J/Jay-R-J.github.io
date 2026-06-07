@@ -146,6 +146,221 @@
       </tags>
   </entry>
   <entry>
+    <title>智能合约开发中 13 种最常见的漏洞及防范指南</title>
+    <url>https://www.jay-r-j.top//smart-contract-vulnerabilities/</url>
+    <content><![CDATA[<hr>
+<h2 id="引言：安全是智能合约的生命线"><a href="#引言：安全是智能合约的生命线" class="headerlink" title="引言：安全是智能合约的生命线"></a>引言：安全是智能合约的生命线</h2><p>在智能合约开发过程中，安全漏洞可能直接导致资金损失或合约失效。与传统的中心化应用不同，智能合约一旦部署到区块链上就<strong>不可篡改</strong>，任何安全漏洞都可能造成无法挽回的损失。</p>
+<p>以下是 <strong>13 种高频漏洞类型</strong>及其应对方案，附代码示例，供开发者自查。</p>
+<hr>
+<h2 id="1-重入攻击（Reentrancy-Attack）"><a href="#1-重入攻击（Reentrancy-Attack）" class="headerlink" title="1. 重入攻击（Reentrancy Attack）"></a>1. 重入攻击（Reentrancy Attack）</h2><h3 id="漏洞原理"><a href="#漏洞原理" class="headerlink" title="漏洞原理"></a>漏洞原理</h3><p>攻击者利用合约”先转账后记账”的逻辑缺陷，通过递归调用反复提取资金。</p>
+<h3 id="核心修复"><a href="#核心修复" class="headerlink" title="核心修复"></a>核心修复</h3><p><strong>先更新状态，再执行转账</strong>（遵循检查-生效-交互模式）。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 错误：先转账</span><br><span class="line">msg.sender.transfer(_amount);</span><br><span class="line">balances[msg.sender] -= _amount;</span><br><span class="line"></span><br><span class="line">// 正确：先扣款</span><br><span class="line">balances[msg.sender] -= _amount;</span><br><span class="line">msg.sender.transfer(_amount);</span><br></pre></td></tr></table></figure>
+
+<h3 id="额外建议"><a href="#额外建议" class="headerlink" title="额外建议"></a>额外建议</h3><ul>
+<li>使用 <code>nonReentrant</code> 修饰器（OpenZeppelin 提供）</li>
+<li>避免在转账后执行外部调用</li>
+</ul>
+<hr>
+<h2 id="2-整数溢出与下溢（Integer-Overflow-Underflow）"><a href="#2-整数溢出与下溢（Integer-Overflow-Underflow）" class="headerlink" title="2. 整数溢出与下溢（Integer Overflow&#x2F;Underflow）"></a>2. 整数溢出与下溢（Integer Overflow&#x2F;Underflow）</h2><h3 id="漏洞原理-1"><a href="#漏洞原理-1" class="headerlink" title="漏洞原理"></a>漏洞原理</h3><p>数值超出类型最大值时归零（溢出），从零减去正数时变为最大值（下溢）。</p>
+<h3 id="核心修复-1"><a href="#核心修复-1" class="headerlink" title="核心修复"></a>核心修复</h3><p>使用 <strong>Solidity 0.8.0 及以上版本</strong>内置的检查运算，或使用 SafeMath 库。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// Solidity 0.8+ 自动报错，无需额外处理</span><br><span class="line">balance = balance + amount; // 溢出时自动 revert</span><br><span class="line"></span><br><span class="line">// 旧版本需使用 SafeMath</span><br><span class="line">using SafeMath for uint256;</span><br><span class="line">balance = balance.add(amount);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="3-未授权访问（Unauthorized-Access）"><a href="#3-未授权访问（Unauthorized-Access）" class="headerlink" title="3. 未授权访问（Unauthorized Access）"></a>3. 未授权访问（Unauthorized Access）</h2><h3 id="漏洞原理-2"><a href="#漏洞原理-2" class="headerlink" title="漏洞原理"></a>漏洞原理</h3><p>关键函数（如提款、修改配置）未设权限控制，任何人均可调用。</p>
+<h3 id="核心修复-2"><a href="#核心修复-2" class="headerlink" title="核心修复"></a>核心修复</h3><p>添加访问修饰器。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">modifier onlyOwner() &#123;</span><br><span class="line">    require(msg.sender == owner, &quot;Not owner&quot;);</span><br><span class="line">    _;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function withdraw() public onlyOwner &#123;</span><br><span class="line">    // 只有 owner 可以调用</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h3><ul>
+<li>使用 OpenZeppelin 的 <code>Ownable</code> 合约</li>
+<li>对敏感操作实施多签机制</li>
+</ul>
+<hr>
+<h2 id="4-不当的继承顺序（Incorrect-Inheritance-Order）"><a href="#4-不当的继承顺序（Incorrect-Inheritance-Order）" class="headerlink" title="4. 不当的继承顺序（Incorrect Inheritance Order）"></a>4. 不当的继承顺序（Incorrect Inheritance Order）</h2><h3 id="漏洞原理-3"><a href="#漏洞原理-3" class="headerlink" title="漏洞原理"></a>漏洞原理</h3><p>多重继承时，同名函数被意外覆盖，导致调用错误的逻辑。</p>
+<h3 id="核心修复-3"><a href="#核心修复-3" class="headerlink" title="核心修复"></a>核心修复</h3><p>按优先级顺序继承，并明确调用特定父合约的函数。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">contract Child is ParentA, ParentB &#123;</span><br><span class="line">    function setOwner() public &#123;</span><br><span class="line">        ParentA.setOwnerA(); // 显式指定调用哪个父合约</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<li>Solidity 使用 C3 线性化算法确定继承顺序</li>
+<li>建议使用 <code>super</code> 关键字谨慎调用父函数</li>
+</ul>
+<hr>
+<h2 id="5-短地址攻击（Short-Address-Attack）"><a href="#5-短地址攻击（Short-Address-Attack）" class="headerlink" title="5. 短地址攻击（Short Address Attack）"></a>5. 短地址攻击（Short Address Attack）</h2><h3 id="漏洞原理-4"><a href="#漏洞原理-4" class="headerlink" title="漏洞原理"></a>漏洞原理</h3><p>合约在底层汇编中未校验传入地址的字节长度，导致地址被截断或补零。</p>
+<h3 id="核心修复-4"><a href="#核心修复-4" class="headerlink" title="核心修复"></a>核心修复</h3><ul>
+<li>避免使用底层汇编操作地址</li>
+<li>使用标准的 <code>address</code> 类型校验</li>
+<li>确保输入参数长度正确</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 使用标准地址类型</span><br><span class="line">function transfer(address to, uint256 amount) public &#123;</span><br><span class="line">    require(to != address(0), &quot;Invalid address&quot;);</span><br><span class="line">    // ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="6-断言失败导致锁死（Assert-Failure-Lock）"><a href="#6-断言失败导致锁死（Assert-Failure-Lock）" class="headerlink" title="6. 断言失败导致锁死（Assert Failure Lock）"></a>6. 断言失败导致锁死（Assert Failure Lock）</h2><h3 id="漏洞原理-5"><a href="#漏洞原理-5" class="headerlink" title="漏洞原理"></a>漏洞原理</h3><p><code>assert()</code> 用于不可恢复的内部错误，一旦失败会耗尽 Gas 并回滚。若条件永远无法满足，资金将被永久锁死。</p>
+<h3 id="核心修复-5"><a href="#核心修复-5" class="headerlink" title="核心修复"></a>核心修复</h3><p>对外部输入校验改用 <code>require()</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 风险：若 owner 私钥丢失，资金永久锁死</span><br><span class="line">assert(msg.sender == owner);</span><br><span class="line"></span><br><span class="line">// 建议：使用 require</span><br><span class="line">require(msg.sender == owner, &quot;Not owner&quot;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用原则"><a href="#使用原则" class="headerlink" title="使用原则"></a>使用原则</h3><ul>
+<li><code>require()</code>：用于验证外部输入和前置条件</li>
+<li><code>assert()</code>：仅用于检查内部不变量（绝不应该失败的条件）</li>
+</ul>
+<hr>
+<h2 id="7-合约代理漏洞（Proxy-Contract-Vulnerability）"><a href="#7-合约代理漏洞（Proxy-Contract-Vulnerability）" class="headerlink" title="7. 合约代理漏洞（Proxy Contract Vulnerability）"></a>7. 合约代理漏洞（Proxy Contract Vulnerability）</h2><h3 id="漏洞原理-6"><a href="#漏洞原理-6" class="headerlink" title="漏洞原理"></a>漏洞原理</h3><p>代理合约未做初始化保护，攻击者可重置实现地址，劫持合约逻辑。</p>
+<h3 id="核心修复-6"><a href="#核心修复-6" class="headerlink" title="核心修复"></a>核心修复</h3><p>引入初始化锁，并限制升级权限。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bool private initialized;</span><br><span class="line"></span><br><span class="line">modifier initializer() &#123;</span><br><span class="line">    require(!initialized, &quot;Already initialized&quot;);</span><br><span class="line">    initialized = true;</span><br><span class="line">    _;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function initialize() public initializer &#123;</span><br><span class="line">    // 初始化逻辑</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="最佳实践-1"><a href="#最佳实践-1" class="headerlink" title="最佳实践"></a>最佳实践</h3><ul>
+<li>使用 OpenZeppelin 的 <code>Initializable</code> 合约</li>
+<li>在构造函数中锁定初始化</li>
+<li>升级权限交给多签钱包</li>
+</ul>
+<hr>
+<h2 id="8-时间戳依赖（Timestamp-Dependence）"><a href="#8-时间戳依赖（Timestamp-Dependence）" class="headerlink" title="8. 时间戳依赖（Timestamp Dependence）"></a>8. 时间戳依赖（Timestamp Dependence）</h2><h3 id="漏洞原理-7"><a href="#漏洞原理-7" class="headerlink" title="漏洞原理"></a>漏洞原理</h3><p>矿工可小幅度操纵区块时间戳（<code>block.timestamp</code>），影响随机数或截止时间判断。</p>
+<h3 id="核心修复-7"><a href="#核心修复-7" class="headerlink" title="核心修复"></a>核心修复</h3><p>避免使用精确时间戳，改用区块高度作为基准。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 不安全：依赖时间戳</span><br><span class="line">require(block.timestamp &lt; deadline, &quot;Expired&quot;);</span><br><span class="line"></span><br><span class="line">// 更稳定：使用区块高度</span><br><span class="line">uint256 deadlineBlock = block.number + blocksToWait;</span><br><span class="line">require(block.number &lt; deadlineBlock, &quot;Expired&quot;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h3><ul>
+<li>对于精度要求不高的场景，时间戳仍可使用</li>
+<li>对于博彩、抽奖等敏感场景，避免使用时间戳</li>
+</ul>
+<hr>
+<h2 id="9-Gas-耗尽与-DoS-攻击（Gas-Limit-DoS）"><a href="#9-Gas-耗尽与-DoS-攻击（Gas-Limit-DoS）" class="headerlink" title="9. Gas 耗尽与 DoS 攻击（Gas Limit &amp; DoS）"></a>9. Gas 耗尽与 DoS 攻击（Gas Limit &amp; DoS）</h2><h3 id="漏洞原理-8"><a href="#漏洞原理-8" class="headerlink" title="漏洞原理"></a>漏洞原理</h3><p>合约中存在无限循环或极高复杂度运算，导致调用方 Gas 耗尽交易回滚。</p>
+<h3 id="核心修复-8"><a href="#核心修复-8" class="headerlink" title="核心修复"></a>核心修复</h3><p>限制循环最大次数，避免非必要的大规模遍历。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function safeLoop(uint n) public &#123;</span><br><span class="line">    require(n &lt;= 1000, &quot;Loop limit exceeded&quot;);</span><br><span class="line">    for(uint i = 0; i &lt; n; i++) &#123;</span><br><span class="line">        // 处理逻辑</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="优化建议"><a href="#优化建议" class="headerlink" title="优化建议"></a>优化建议</h3><ul>
+<li>避免在循环中进行存储写入</li>
+<li>使用分页机制处理大量数据</li>
+<li>考虑将复杂计算移到链下</li>
+</ul>
+<hr>
+<h2 id="10-权限管理不当（Improper-Access-Control）"><a href="#10-权限管理不当（Improper-Access-Control）" class="headerlink" title="10. 权限管理不当（Improper Access Control）"></a>10. 权限管理不当（Improper Access Control）</h2><h3 id="漏洞原理-9"><a href="#漏洞原理-9" class="headerlink" title="漏洞原理"></a>漏洞原理</h3><p>管理员权限过大（如无限铸币、任意修改参数），一旦私钥泄露，后果严重。</p>
+<h3 id="核心修复-9"><a href="#核心修复-9" class="headerlink" title="核心修复"></a>核心修复</h3><p>实施多签机制、日限额与权限分割。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 增加日限额</span><br><span class="line">uint256 public dailyLimit = 1000 ether;</span><br><span class="line">uint256 public dailyMinted;</span><br><span class="line"></span><br><span class="line">function mint(uint256 amount) public onlyOwner &#123;</span><br><span class="line">    require(dailyMinted + amount &lt;= dailyLimit, &quot;Over limit&quot;);</span><br><span class="line">    dailyMinted += amount;</span><br><span class="line">    // 铸币逻辑</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="最佳实践-2"><a href="#最佳实践-2" class="headerlink" title="最佳实践"></a>最佳实践</h3><ul>
+<li>权限最小化原则</li>
+<li>关键操作需要多方确认</li>
+<li>定期轮换管理员密钥</li>
+</ul>
+<hr>
+<h2 id="11-不受信任的外部调用（Untrusted-External-Calls）"><a href="#11-不受信任的外部调用（Untrusted-External-Calls）" class="headerlink" title="11. 不受信任的外部调用（Untrusted External Calls）"></a>11. 不受信任的外部调用（Untrusted External Calls）</h2><h3 id="漏洞原理-10"><a href="#漏洞原理-10" class="headerlink" title="漏洞原理"></a>漏洞原理</h3><p>调用未知外部合约可能导致回调攻击或执行恶意代码。</p>
+<h3 id="核心修复-10"><a href="#核心修复-10" class="headerlink" title="核心修复"></a>核心修复</h3><p>设立白名单机制，仅调用经过审计的合约地址。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mapping(address =&gt; bool) public approvedContracts;</span><br><span class="line"></span><br><span class="line">function approveContract(address target) public onlyOwner &#123;</span><br><span class="line">    approvedContracts[target] = true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function safeCall(address target) public &#123;</span><br><span class="line">    require(approvedContracts[target], &quot;Not approved&quot;);</span><br><span class="line">    IToken(target).transferFrom(msg.sender, address(this), amount);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="12-随机数生成漏洞（Random-Number-Generation）"><a href="#12-随机数生成漏洞（Random-Number-Generation）" class="headerlink" title="12. 随机数生成漏洞（Random Number Generation）"></a>12. 随机数生成漏洞（Random Number Generation）</h2><h3 id="漏洞原理-11"><a href="#漏洞原理-11" class="headerlink" title="漏洞原理"></a>漏洞原理</h3><p>链上数据（如哈希、时间戳、区块难度）可被矿工预测或影响，导致博彩类逻辑被破解。</p>
+<h3 id="核心修复-11"><a href="#核心修复-11" class="headerlink" title="核心修复"></a>核心修复</h3><p>使用去中心化预言机提供链下随机数。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 不安全：可被预测</span><br><span class="line">uint256 random = uint256(keccak256(abi.encodePacked(block.timestamp, msg.sender)));</span><br><span class="line"></span><br><span class="line">// 安全：使用 Chainlink VRF</span><br><span class="line">function fulfillRandomness(bytes32 requestId, uint256 randomness) internal override &#123;</span><br><span class="line">    // 使用真正的随机数</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="推荐方案"><a href="#推荐方案" class="headerlink" title="推荐方案"></a>推荐方案</h3><ul>
+<li>Chainlink VRF（可验证随机函数）</li>
+<li>Witnet Oracle</li>
+<li>其他去中心化预言机服务</li>
+</ul>
+<hr>
+<h2 id="13-存储与计算效率低下（Inefficient-Storage-Computation）"><a href="#13-存储与计算效率低下（Inefficient-Storage-Computation）" class="headerlink" title="13. 存储与计算效率低下（Inefficient Storage &amp; Computation）"></a>13. 存储与计算效率低下（Inefficient Storage &amp; Computation）</h2><h3 id="漏洞原理-12"><a href="#漏洞原理-12" class="headerlink" title="漏洞原理"></a>漏洞原理</h3><p>使用数组存储海量数据，导致 Gas 随数据量线性增长甚至溢出。</p>
+<h3 id="核心修复-12"><a href="#核心修复-12" class="headerlink" title="核心修复"></a>核心修复</h3><p>用映射替代数组遍历，并利用计数器缓存长度。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 低效：遍历数组</span><br><span class="line">address[] public voters;</span><br><span class="line">function hasVoted(address voter) public view returns (bool) &#123;</span><br><span class="line">    for (uint i = 0; i &lt; voters.length; i++) &#123;</span><br><span class="line">        if (voters[i] == voter) return true;</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 高效：使用映射 + 计数器</span><br><span class="line">mapping(address =&gt; bool) public hasVoted;</span><br><span class="line">uint256 public voteCount;</span><br><span class="line"></span><br><span class="line">function vote() public &#123;</span><br><span class="line">    require(!hasVoted[msg.sender], &quot;Already voted&quot;);</span><br><span class="line">    hasVoted[msg.sender] = true;</span><br><span class="line">    voteCount++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="安全速查表"><a href="#安全速查表" class="headerlink" title="安全速查表"></a>安全速查表</h2><table>
+<thead>
+<tr>
+<th align="left">漏洞类型</th>
+<th align="left">一句话修复策略</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>重入攻击</strong></td>
+<td align="left">遵循检查-生效-交互模式</td>
+</tr>
+<tr>
+<td align="left"><strong>整数溢出</strong></td>
+<td align="left">升级 Solidity 0.8+ 或使用 SafeMath</td>
+</tr>
+<tr>
+<td align="left"><strong>权限缺失</strong></td>
+<td align="left">给敏感函数加 <code>onlyOwner</code></td>
+</tr>
+<tr>
+<td align="left"><strong>继承顺序</strong></td>
+<td align="left">显式指定父合约函数调用</td>
+</tr>
+<tr>
+<td align="left"><strong>短地址攻击</strong></td>
+<td align="left">使用标准 address 类型校验</td>
+</tr>
+<tr>
+<td align="left"><strong>断言锁死</strong></td>
+<td align="left">外部校验用 require，内部检查用 assert</td>
+</tr>
+<tr>
+<td align="left"><strong>代理漏洞</strong></td>
+<td align="left">在构造函数中锁定初始化</td>
+</tr>
+<tr>
+<td align="left"><strong>时间戳依赖</strong></td>
+<td align="left">改用区块高度作为基准</td>
+</tr>
+<tr>
+<td align="left"><strong>DoS 攻击</strong></td>
+<td align="left">严格控制循环与递归深度</td>
+</tr>
+<tr>
+<td align="left"><strong>权限过大</strong></td>
+<td align="left">实施多签、限额与权限分割</td>
+</tr>
+<tr>
+<td align="left"><strong>外部调用</strong></td>
+<td align="left">设立白名单机制</td>
+</tr>
+<tr>
+<td align="left"><strong>随机数</strong></td>
+<td align="left">使用去中心化预言机</td>
+</tr>
+<tr>
+<td align="left"><strong>存储效率</strong></td>
+<td align="left">多用 mapping，少用动态数组</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="开发建议"><a href="#开发建议" class="headerlink" title="开发建议"></a>开发建议</h2><h3 id="重要提醒"><a href="#重要提醒" class="headerlink" title="重要提醒"></a>重要提醒</h3><blockquote>
+<p>始终进行静态扫描（如 Slither）和专业审计，避免将不可信地址直接设为管理员。安全无小事，每一行代码都关乎用户资产安全。</p>
+</blockquote>
+<hr>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>智能合约安全是一个持续学习和实践的过程。本文列举的 13 种漏洞只是冰山一角，实际开发中还可能遇到更多复杂的安全问题。</p>
+<p><strong>记住三个核心原则：</strong></p>
+<ol>
+<li><strong>最小权限</strong>：只授予必要的权限</li>
+<li><strong>防御性编程</strong>：假设所有输入都是恶意的</li>
+<li><strong>持续审计</strong>：安全不是一次性工作，而是持续过程</li>
+</ol>
+<p>希望这份指南能帮助你在智能合约开发中避开常见的安全陷阱，构建更加健壮和安全的去中心化应用。</p>
+<hr>
+<blockquote>
+<p><strong>更新时间</strong>：2026-06-07<br><strong>作者</strong>：Jay  </p>
+</blockquote>
+<hr>
+<hr>
+<p>本文深入解析了智能合约开发中 13 种最常见的安全漏洞，提供了详细的代码示例和修复方案，希望能帮助开发者构建更安全的智能合约。</p>
+<p>安全是智能合约的生命线，每一次代码审查都是对用户资产的负责。让我们共同推动 Web3 生态的安全发展！</p>
+]]></content>
+      <categories>
+        <category>技术教程</category>
+        <category>区块链</category>
+        <category>Solidity开发</category>
+        <category>网络安全</category>
+      </categories>
+      <tags>
+        <tag>Solidity</tag>
+        <tag>智能合约</tag>
+        <tag>安全漏洞</tag>
+        <tag>区块链安全</tag>
+        <tag>代码审计</tag>
+        <tag>重入攻击</tag>
+        <tag>权限控制</tag>
+        <tag>Gas优化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>学习通无法粘贴？两招教你轻松绕过限制</title>
     <url>https://www.jay-r-j.top//xuexitong-paste-trick/</url>
     <content><![CDATA[<hr>
@@ -894,8 +1109,8 @@
         <category>病毒研究</category>
       </categories>
       <tags>
-        <tag>病毒库</tag>
         <tag>网络安全</tag>
+        <tag>病毒库</tag>
         <tag>恶意软件</tag>
         <tag>安全研究</tag>
         <tag>学习资源</tag>
@@ -981,10 +1196,10 @@
         <category>JavaScript</category>
       </categories>
       <tags>
-        <tag>JavaScript</tag>
         <tag>动画效果</tag>
-        <tag>前端特效</tag>
+        <tag>JavaScript</tag>
         <tag>爱心动画</tag>
+        <tag>前端特效</tag>
         <tag>HTML</tag>
         <tag>CSS</tag>
         <tag>表白程序</tag>
@@ -1354,7 +1569,6 @@
       </categories>
       <tags>
         <tag>Python</tag>
-        <tag>视觉效果</tag>
         <tag>Tkinter</tag>
         <tag>爱心动画</tag>
         <tag>粒子效果</tag>
@@ -1363,6 +1577,7 @@
         <tag>exe文件</tag>
         <tag>数学方程</tag>
         <tag>交互功能</tag>
+        <tag>视觉效果</tag>
       </tags>
   </entry>
   <entry>
@@ -1483,10 +1698,10 @@
       </categories>
       <tags>
         <tag>前端开发</tag>
+        <tag>视觉效果</tag>
         <tag>WebGL</tag>
         <tag>前端特效</tag>
         <tag>粒子系统</tag>
-        <tag>视觉效果</tag>
         <tag>浪漫特效</tag>
         <tag>樱花雨</tag>
         <tag>网页特效</tag>
@@ -1688,11 +1903,11 @@
       </categories>
       <tags>
         <tag>自动化工具</tag>
-        <tag>网络安全</tag>
         <tag>OpenClaw</tag>
         <tag>网络攻击</tag>
         <tag>安全隐患</tag>
         <tag>漏洞管理</tag>
+        <tag>网络安全</tag>
         <tag>安全防护</tag>
         <tag>网络安全风险</tag>
         <tag>自动化工具安全</tag>
@@ -3210,12 +3425,12 @@
       </categories>
       <tags>
         <tag>个人博客</tag>
+        <tag>SEO优化</tag>
         <tag>阿里云</tag>
         <tag>域名注册</tag>
         <tag>GitHub Pages</tag>
         <tag>DNS解析</tag>
         <tag>博客部署</tag>
-        <tag>SEO优化</tag>
         <tag>百度蜘蛛</tag>
         <tag>域名绑定</tag>
         <tag>A记录配置</tag>
@@ -3713,11 +3928,11 @@
       </categories>
       <tags>
         <tag>Python</tag>
-        <tag>SEO优化</tag>
         <tag>爬虫</tag>
         <tag>邮件自动化</tag>
         <tag>GitHub Actions</tag>
         <tag>科技新闻</tag>
+        <tag>SEO优化</tag>
         <tag>自动化工具</tag>
         <tag>数据抓取</tag>
         <tag>SMTP</tag>
@@ -5119,9 +5334,9 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-        <tag>Butterfly主题</tag>
         <tag>Giscus</tag>
         <tag>评论系统</tag>
+        <tag>Butterfly主题</tag>
         <tag>GitHub评论</tag>
         <tag>博客评论</tag>
         <tag>静态博客评论</tag>
@@ -5401,10 +5616,10 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
+        <tag>Butterfly主题</tag>
         <tag>博客教程</tag>
         <tag>网站搭建</tag>
         <tag>静态博客</tag>
-        <tag>Butterfly主题</tag>
         <tag>Hexo博客搭建</tag>
         <tag>个人博客</tag>
         <tag>博客制作</tag>
