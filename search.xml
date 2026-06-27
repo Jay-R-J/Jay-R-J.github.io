@@ -812,116 +812,72 @@
 
 <hr>
 <h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
-<li>✅ 此方法仅适用于<strong>电脑端网页版</strong>学习通</li>
-<li>✅ 粘贴前建议先在记事本中整理好文本格式</li>
-<li>⚠️ 不要删除原有的 HTML 结构，只修改内容部分</li>
-<li>⚠️ 某些复杂的富文本编辑器可能需要额外处理</li>
+<li>此方法仅适用于<strong>电脑端网页版</strong>学习通</li>
+<li>粘贴前建议先在记事本中整理好文本格式</li>
+<li>不要删除原有的 HTML 结构，只修改内容部分</li>
+<li>某些复杂的富文本编辑器可能需要额外处理</li>
 </ul>
 <hr>
-<h2 id="方法二：使用输入法剪贴板（适用于电脑和手机）"><a href="#方法二：使用输入法剪贴板（适用于电脑和手机）" class="headerlink" title="方法二：使用输入法剪贴板（适用于电脑和手机）"></a>方法二：使用输入法剪贴板（适用于电脑和手机）</h2><p>如果你不熟悉开发者工具，或者需要在手机上操作，这个方法更适合你。</p>
-<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><h4 id="第一步：安装支持剪贴板历史的输入法"><a href="#第一步：安装支持剪贴板历史的输入法" class="headerlink" title="第一步：安装支持剪贴板历史的输入法"></a>第一步：安装支持剪贴板历史的输入法</h4><p>推荐以下两款输入法：</p>
-<ul>
-<li><strong>讯飞输入法</strong>：剪贴板功能强大，支持语音输入</li>
-<li><strong>搜狗输入法</strong>：用户基数大，剪贴板历史记录完善</li>
+<h2 id="方法二：禁用-JavaScript（最简单的方法）"><a href="#方法二：禁用-JavaScript（最简单的方法）" class="headerlink" title="方法二：禁用 JavaScript（最简单的方法）"></a>方法二：禁用 JavaScript（最简单的方法）</h2><p>这是最简单的方法！学习通的粘贴限制是通过 JavaScript 脚本实现的，只要禁用页面的 JavaScript，限制就会自动失效。</p>
+<h3 id="操作步骤-1"><a href="#操作步骤-1" class="headerlink" title="操作步骤"></a>操作步骤</h3><h4 id="第一步：打开开发者工具-1"><a href="#第一步：打开开发者工具-1" class="headerlink" title="第一步：打开开发者工具"></a>第一步：打开开发者工具</h4><ol>
+<li>打开学习通的答题或作业页面</li>
+<li>按 <strong>F12</strong> 键（部分笔记本电脑需按 <strong>Fn + F12</strong>）</li>
+<li>此时会弹出开发者工具面板</li>
+</ol>
+<div class="image-container" style="text-align: center; margin: 20px 0;">
+  <figure style="display: inline-block; margin: 0; padding: 10px; background: var(--card-bg); border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <img src="/xuexitong-paste-trick/dev-tools-open.png" class="" title="打开开发者工具">
+    <figcaption style="margin-top: 10px; color: var(--font-color); font-size: 14px;">打开开发者工具</figcaption>  
+  </figure>
+</div>
+
+<h4 id="第二步：打开设置面板"><a href="#第二步：打开设置面板" class="headerlink" title="第二步：打开设置面板"></a>第二步：打开设置面板</h4><p>在开发者工具面板中，按 <strong>F1</strong> 键打开设置面板。</p>
+<h4 id="第三步：找到禁用-JavaScript-选项"><a href="#第三步：找到禁用-JavaScript-选项" class="headerlink" title="第三步：找到禁用 JavaScript 选项"></a>第三步：找到禁用 JavaScript 选项</h4><ol>
+<li>在设置面板中，点击左上角的 <strong>“首选项”</strong> 图标（齿轮图标）</li>
+<li>下滑找到 <strong>“调试程序”</strong> 或 <strong>“Debugger”</strong> 选项</li>
+<li>找到 <strong>“禁用 JavaScript”</strong> 选项</li>
+</ol>
+<div class="image-container" style="text-align: center; margin: 20px 0;">
+  <figure style="display: inline-block; margin: 0; padding: 10px; background: var(--card-bg); border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <img src="/xuexitong-paste-trick/image.png" class="" title="找到 JavaScript 设置">
+    <figcaption style="margin-top: 10px; color: var(--font-color); font-size: 14px;">找到 JavaScript 设置</figcaption>  
+  </figure>
+</div>
+
+<h4 id="第四步：勾选禁用-JavaScript"><a href="#第四步：勾选禁用-JavaScript" class="headerlink" title="第四步：勾选禁用 JavaScript"></a>第四步：勾选禁用 JavaScript</h4><ol>
+<li>勾选 <strong>“禁用 JavaScript”</strong> 复选框</li>
+<li>页面会自动刷新，此时粘贴限制已失效</li>
+<li>在答题框中直接使用 <strong>Ctrl + V</strong> 粘贴文本即可</li>
+</ol>
+<div class="image-container" style="text-align: center; margin: 20px 0;">
+  <figure style="display: inline-block; margin: 0; padding: 10px; background: var(--card-bg); border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <img src="/xuexitong-paste-trick/disable-js-setting.png" class="" title="勾选禁用 JavaScript 设置">
+    <figcaption style="margin-top: 10px; color: var(--font-color); font-size: 14px;">勾选禁用 JavaScript 设置</figcaption>  
+  </figure>
+</div>
+
+
+<hr>
+<h3 id="注意事项-1"><a href="#注意事项-1" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<li>此方法仅适用于<strong>电脑端网页版</strong>学习通</li>
+<li>粘贴完成后，建议取消勾选 <strong>“禁用 JavaScript”</strong>，否则页面其他功能可能无法正常使用</li>
+<li>在粘贴过程中不要关闭开发者工具窗口，否则设置会失效</li>
+<li>禁用 JavaScript 后，页面可能会显示异常，但不影响文本输入功能</li>
 </ul>
-<h4 id="第二步：设置默认输入法"><a href="#第二步：设置默认输入法" class="headerlink" title="第二步：设置默认输入法"></a>第二步：设置默认输入法</h4><p><strong>Windows 系统：</strong></p>
-<ol>
-<li>打开”设置” → “时间和语言” → “语言”</li>
-<li>点击”首选语言”下的中文</li>
-<li>选择”选项” → 添加键盘 → 选择讯飞或搜狗</li>
-<li>将其设为默认输入法</li>
-</ol>
-<p><strong>Mac 系统：</strong></p>
-<ol>
-<li>打开”系统偏好设置” → “键盘”</li>
-<li>选择”输入法”标签</li>
-<li>添加讯飞或搜狗输入法</li>
-<li>设置为默认</li>
-</ol>
-<p><strong>Android&#x2F;iOS 手机：</strong></p>
-<ol>
-<li>下载并安装输入法 App</li>
-<li>在系统设置中将新输入法设为默认</li>
-<li>授予必要的权限（剪贴板访问权限）</li>
-</ol>
-<h4 id="第三步：开启剪贴板历史功能"><a href="#第三步：开启剪贴板历史功能" class="headerlink" title="第三步：开启剪贴板历史功能"></a>第三步：开启剪贴板历史功能</h4><p><strong>讯飞输入法：</strong></p>
-<ol>
-<li>打开输入法设置</li>
-<li>找到”剪贴板”或”快捷短语”选项</li>
-<li>开启”剪贴板历史”功能</li>
-<li>设置历史记录保存时长（建议 24 小时以上）</li>
-</ol>
-<p><strong>搜狗输入法：</strong></p>
-<ol>
-<li>打开输入法设置</li>
-<li>进入”高级设置”</li>
-<li>找到”剪贴板”选项</li>
-<li>开启”剪贴板云同步”和”历史记录”</li>
-</ol>
-<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><h4 id="电脑端操作"><a href="#电脑端操作" class="headerlink" title="电脑端操作"></a>电脑端操作</h4><ol>
-<li>在其他应用（如 Word、网页、PDF）中复制需要的文本</li>
-<li>切换到学习通答题页面</li>
-<li>点击答题框，唤出输入法</li>
-<li>按下输入法的<strong>剪贴板快捷键</strong>（通常是 Ctrl + Shift + V 或自定义按键）</li>
-<li>从剪贴板历史列表中选择刚才复制的文本</li>
-<li>文本会自动插入到答题框中</li>
-</ol>
-<h4 id="手机端操作"><a href="#手机端操作" class="headerlink" title="手机端操作"></a>手机端操作</h4><ol>
-<li>在其他 App 中复制文本</li>
-<li>返回学习通 App，进入答题界面</li>
-<li><strong>长按</strong>答题输入框</li>
-<li>在弹出的菜单中选择”<strong>剪贴板</strong>“或”<strong>历史粘贴</strong>“</li>
-<li>从列表中选择要粘贴的内容</li>
-<li>文本会自动填入</li>
-</ol>
-<h3 id="优势对比"><a href="#优势对比" class="headerlink" title="优势对比"></a>优势对比</h3><table>
-<thead>
-<tr>
-<th>特性</th>
-<th>开发者工具</th>
-<th>输入法剪贴板</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>适用平台</td>
-<td>仅电脑网页版</td>
-<td>电脑 + 手机</td>
-</tr>
-<tr>
-<td>学习成本</td>
-<td>中等（需了解基础 HTML）</td>
-<td>低（操作简单）</td>
-</tr>
-<tr>
-<td>稳定性</td>
-<td>高（直接修改 DOM）</td>
-<td>中（依赖输入法兼容性）</td>
-</tr>
-<tr>
-<td>速度</td>
-<td>快（一次性操作）</td>
-<td>较快（需切换输入法）</td>
-</tr>
-<tr>
-<td>推荐场景</td>
-<td>大量文本粘贴</td>
-<td>日常小段文本</td>
-</tr>
-</tbody></table>
 <hr>
 <h2 id="结语：技术服务于学习"><a href="#结语：技术服务于学习" class="headerlink" title="结语：技术服务于学习"></a>结语：技术服务于学习</h2><p>这些技巧的目的是<strong>提高学习效率</strong>，而不是鼓励不当行为。</p>
 <p>学习通的限制有其合理性，但在实际学习中，我们确实需要灵活地引用、整理和创作内容。掌握这些方法，可以让你更高效地完成学习任务，把更多精力投入到真正的思考和理解中。</p>
 <blockquote>
-<p>🌟 <strong>最后提醒</strong>：无论使用什么工具，<strong>学术诚信</strong>永远是最重要的。合理引用、独立思考，才是学习的真谛。</p>
+<p> <strong>最后提醒</strong>：无论使用什么工具，<strong>学术诚信</strong>永远是最重要的。合理引用、独立思考，才是学习的真谛。</p>
 </blockquote>
 <hr>
 <blockquote>
-<p>📅 <strong>更新时间</strong>：2026-05-23<br>✍️ <strong>作者</strong>：Jay  </p>
+<p> <strong>更新时间</strong>：2026-06-27<br> <strong>作者</strong>：Jay  </p>
 </blockquote>
 <hr>
 <hr>
-<p>📝 本文分享了两种绕过学习通粘贴限制的实用方法，希望能帮助你更高效地完成学习任务。</p>
-<p>🎯 记住：工具只是辅助，真正的学习在于思考和理解。善用技术，让学习更轻松！</p>
+<p>本文分享了两种绕过学习通粘贴限制的实用方法，希望能帮助你更高效地完成学习任务。</p>
+<p>记住：工具只是辅助，真正的学习在于思考和理解。善用技术，让学习更轻松！</p>
 ]]></content>
       <categories>
         <category>技术教程</category>
@@ -1588,10 +1544,10 @@
         <category>JavaScript</category>
       </categories>
       <tags>
-        <tag>JavaScript</tag>
         <tag>动画效果</tag>
-        <tag>爱心动画</tag>
+        <tag>JavaScript</tag>
         <tag>前端特效</tag>
+        <tag>爱心动画</tag>
         <tag>HTML</tag>
         <tag>CSS</tag>
         <tag>表白程序</tag>
@@ -1961,6 +1917,7 @@
       </categories>
       <tags>
         <tag>Python</tag>
+        <tag>视觉效果</tag>
         <tag>Tkinter</tag>
         <tag>爱心动画</tag>
         <tag>粒子效果</tag>
@@ -1969,7 +1926,6 @@
         <tag>exe文件</tag>
         <tag>数学方程</tag>
         <tag>交互功能</tag>
-        <tag>视觉效果</tag>
       </tags>
   </entry>
   <entry>
@@ -2090,10 +2046,10 @@
       </categories>
       <tags>
         <tag>前端开发</tag>
-        <tag>视觉效果</tag>
         <tag>WebGL</tag>
         <tag>前端特效</tag>
         <tag>粒子系统</tag>
+        <tag>视觉效果</tag>
         <tag>浪漫特效</tag>
         <tag>樱花雨</tag>
         <tag>网页特效</tag>
@@ -5726,9 +5682,9 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-        <tag>Butterfly主题</tag>
         <tag>Giscus</tag>
         <tag>评论系统</tag>
+        <tag>Butterfly主题</tag>
         <tag>GitHub评论</tag>
         <tag>博客评论</tag>
         <tag>静态博客评论</tag>
@@ -6008,10 +5964,10 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
+        <tag>Butterfly主题</tag>
         <tag>博客教程</tag>
         <tag>网站搭建</tag>
         <tag>静态博客</tag>
-        <tag>Butterfly主题</tag>
         <tag>Hexo博客搭建</tag>
         <tag>个人博客</tag>
         <tag>博客制作</tag>
