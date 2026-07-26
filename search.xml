@@ -146,6 +146,107 @@
       </tags>
   </entry>
   <entry>
+    <title>炫酷极光效果 WebGL实现沉浸式视觉体验(附源码下载)</title>
+    <url>https://www.jay-r-j.top//aurora_borealis_webgl/</url>
+    <content><![CDATA[<div class="section-divider" style="height: 2px; background: linear-gradient(to right, transparent, #667eea, #764ba2, transparent); margin: 30px 0;"></div>
+
+
+
+<h2 id="引言：极光效果的魅力"><a href="#引言：极光效果的魅力" class="headerlink" title="引言：极光效果的魅力"></a>引言：极光效果的魅力</h2><div class="tip success" style="background: rgba(102, 126, 234, 0.1); border-left: 4px solid #667eea; padding: 15px; margin: 20px 0; border-radius: 4px;">
+  <strong>🌌 极光效果</strong>：极光是自然界最壮观的现象之一，现在通过WebGL技术，你可以在网页中重现这一壮丽场景。本文将深入分析其实现技术并提供完整源码下载。
+</div>
+
+<p>在数字化时代，视觉特效已成为内容创作的重要组成部分。极光效果作为一种极具视觉冲击力的特效，通过WebGL技术模拟粒子在磁场中的运动，营造出神秘而壮丽的氛围。无论是科技主题的网站，还是艺术展示页面，极光效果都能瞬间提升内容的视觉震撼力。</p>
+<div class="image-container" style="text-align: center; margin: 20px 0;">
+  <figure style="display: inline-block; margin: 0; padding: 10px; background: var(--card-bg); border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <img src="/aurora_borealis_webgl/aurora-borealis-webgl-effect.png" class="" title="极光效果">
+    <figcaption style="margin-top: 10px; color: var(--font-color); font-size: 14px;">极光效果</figcaption>  
+  </figure>
+</div>
+
+
+<div class="step-box" style="background: var(--card-bg); padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0;">
+  <h3 style="color: #667eea; margin-top: 0;">极光效果技术特点</h3>
+  <div style="margin: 15px 0;">
+    <p style="color: var(--font-color);">极光效果具有以下技术特点：</p>
+    <ul style="color: var(--font-color);">
+      <li><strong>粒子系统</strong>：5000个独立粒子模拟极光运动，是前端特效中实现复杂视觉效果的核心技术</li>
+      <li><strong>磁场物理模拟</strong>：粒子受动态磁场影响产生自然流动效果，模拟真实极光的运动轨迹</li>
+      <li><strong>动态色彩混合</strong>：蓝/紫/青三色渐变实时混合，打造绚丽的极光色彩过渡效果</li>
+      <li><strong>后处理管线</strong>：Bloom光晕 + 方向模糊 + 晕影效果，增强视觉冲击力</li>
+      <li><strong>星空背景</strong>：多层星空正弦波叠加，营造宇宙深处的神秘氛围</li>
+      <li><strong>响应式设计</strong>：自适应全屏及移动端，保持最佳视觉效果</li>
+    </ul>
+  </div>
+</div>
+
+
+<h2 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h2><ul>
+<li><a href="https://pan.baidu.com/s/1Oyvq6YHPNZQf_-5GIYu1wQ?pwd=kkp2" target="_blank">百度网盘下载</a> - 提取码: <code>kkp2</code>（点击链接后如未自动填充，请手动输入）</li>
+</ul>
+<h2 id="极光效果技术要求与应用场景"><a href="#极光效果技术要求与应用场景" class="headerlink" title="极光效果技术要求与应用场景"></a>极光效果技术要求与应用场景</h2><div class="step-box" style="background: var(--card-bg); padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0;">
+  <h3 style="color: #764ba2; margin-top: 0;">极光效果技术要求</h3>
+  <div style="margin: 15px 0;">
+    <ul style="color: var(--font-color);">
+      <li><strong>浏览器支持</strong>：需要支持WebGL的现代浏览器，这是运行极光特效的基本要求</li>
+      <li><strong>硬件要求</strong>：推荐使用独立显卡以获得最佳效果，集成显卡也可运行但帧率可能较低</li>
+      <li><strong>单文件运行</strong>：仅一个HTML文件即可运行，无需安装任何依赖或框架</li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="step-box" style="background: var(--card-bg); padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0;">
+  <h3 style="color: #667eea; margin-top: 0;">极光效果应用场景</h3>
+  <div style="margin: 15px 0;">
+    <ul style="color: var(--font-color);">
+      <li><strong>网站背景</strong>：作为科技主题网站的动态背景，增添神秘感和视觉冲击力</li>
+      <li><strong>艺术展示</strong>：作为数字艺术作品展示，展现WebGL前端特效的魅力</li>
+      <li><strong>产品发布</strong>：用于科技产品发布会的背景特效，营造未来感氛围</li>
+      <li><strong>冥想放松</strong>：用于冥想或放松的环境营造，通过极光视觉效果帮助用户放松</li>
+      <li><strong>品牌宣传</strong>：作为品牌宣传页面的特效元素，增强品牌科技感</li>
+    </ul>
+  </div>
+</div>
+
+
+
+<p style="color: var(--font-color);">通过简单的HTML文件，就能在浏览器中体验到如此炫酷的极光效果，这正是Web技术的魅力所在。希望这个极光特效能为你的网页增添一份神秘和壮观，让每一位访问者都能感受到极光的壮丽和科技的魅力。</p>
+
+<p style="color: var(--font-color);">无论是作为网站背景，还是网页特效元素，极光效果都能为你的作品增添独特的魅力。技术与美学的完美结合，正是现代前端开发的追求目标，也是WebGL特效的精髓所在。</p>
+
+<div class="section-divider" style="height: 2px; background: linear-gradient(to right, transparent, #667eea, #764ba2, transparent); margin: 30px 0;"></div>
+
+<p style="text-align: center; font-size: 16px; color: var(--font-color);">
+   本文提供了完整的源码和使用指南，希望能帮助开发者和设计师创作出更加炫酷的视觉效果。<br>
+   单文件、零依赖、GPU加速的极光可视化，让数字世界更加丰富多彩！
+</p>
+
+<div class="article-info" style="color: var(--font-color);">
+  <strong> 更新时间：</strong>2026-07-26<br>
+  <strong> 作者：</strong>Jay<br>
+</div>
+]]></content>
+      <categories>
+        <category>网盘分享</category>
+        <category>浪漫编程</category>
+        <category>前端开发</category>
+        <category>WebGL特效</category>
+        <category>视觉设计</category>
+      </categories>
+      <tags>
+        <tag>WebGL</tag>
+        <tag>前端特效</tag>
+        <tag>粒子系统</tag>
+        <tag>视觉效果</tag>
+        <tag>网页特效</tag>
+        <tag>视觉设计</tag>
+        <tag>极光效果</tag>
+        <tag>GLSL着色器</tag>
+        <tag>GPU加速</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>实习周报救星｜AI生成周报｜看不出是AI写的｜9.9永久用</title>
     <url>https://www.jay-r-j.top//internship-weekly-report-savior/</url>
     <content><![CDATA[<hr>
@@ -536,9 +637,9 @@
         <category>编程辅助</category>
       </categories>
       <tags>
-        <tag>Codex</tag>
-        <tag>AI编程</tag>
         <tag>Claude Code</tag>
+        <tag>AI编程</tag>
+        <tag>Codex</tag>
         <tag>Skill</tag>
         <tag>ponytail</tag>
         <tag>create-plan</tag>
@@ -742,13 +843,13 @@
         <category>编程辅助</category>
       </categories>
       <tags>
+        <tag>Claude Code</tag>
         <tag>DeepSeek</tag>
         <tag>CC-Switch</tag>
         <tag>API配置</tag>
         <tag>AI编程</tag>
         <tag>国内访问</tag>
         <tag>代码助手</tag>
-        <tag>Claude Code</tag>
       </tags>
   </entry>
   <entry>
@@ -932,13 +1033,13 @@
         <category>编程辅助</category>
       </categories>
       <tags>
-        <tag>Codex</tag>
         <tag>DeepSeek</tag>
         <tag>CC-Switch</tag>
         <tag>API配置</tag>
         <tag>AI编程</tag>
         <tag>国内访问</tag>
         <tag>代码助手</tag>
+        <tag>Codex</tag>
       </tags>
   </entry>
   <entry>
@@ -1950,8 +2051,8 @@
       <tags>
         <tag>动画效果</tag>
         <tag>JavaScript</tag>
-        <tag>爱心动画</tag>
         <tag>前端特效</tag>
+        <tag>爱心动画</tag>
         <tag>HTML</tag>
         <tag>CSS</tag>
         <tag>表白程序</tag>
@@ -2321,6 +2422,7 @@
       </categories>
       <tags>
         <tag>Python</tag>
+        <tag>视觉效果</tag>
         <tag>Tkinter</tag>
         <tag>爱心动画</tag>
         <tag>粒子效果</tag>
@@ -2329,7 +2431,6 @@
         <tag>exe文件</tag>
         <tag>数学方程</tag>
         <tag>交互功能</tag>
-        <tag>视觉效果</tag>
       </tags>
   </entry>
   <entry>
@@ -2450,10 +2551,10 @@
       </categories>
       <tags>
         <tag>前端开发</tag>
-        <tag>视觉效果</tag>
         <tag>WebGL</tag>
         <tag>前端特效</tag>
         <tag>粒子系统</tag>
+        <tag>视觉效果</tag>
         <tag>浪漫特效</tag>
         <tag>樱花雨</tag>
         <tag>网页特效</tag>
@@ -4177,12 +4278,12 @@
       </categories>
       <tags>
         <tag>个人博客</tag>
+        <tag>SEO优化</tag>
         <tag>阿里云</tag>
         <tag>域名注册</tag>
         <tag>GitHub Pages</tag>
         <tag>DNS解析</tag>
         <tag>博客部署</tag>
-        <tag>SEO优化</tag>
         <tag>百度蜘蛛</tag>
         <tag>域名绑定</tag>
         <tag>A记录配置</tag>
@@ -4680,11 +4781,11 @@
       </categories>
       <tags>
         <tag>Python</tag>
-        <tag>SEO优化</tag>
         <tag>爬虫</tag>
         <tag>邮件自动化</tag>
         <tag>GitHub Actions</tag>
         <tag>科技新闻</tag>
+        <tag>SEO优化</tag>
         <tag>自动化工具</tag>
         <tag>数据抓取</tag>
         <tag>SMTP</tag>
@@ -6086,9 +6187,9 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-        <tag>Butterfly主题</tag>
         <tag>Giscus</tag>
         <tag>评论系统</tag>
+        <tag>Butterfly主题</tag>
         <tag>GitHub评论</tag>
         <tag>博客评论</tag>
         <tag>静态博客评论</tag>
@@ -6368,10 +6469,10 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
+        <tag>Butterfly主题</tag>
         <tag>博客教程</tag>
         <tag>网站搭建</tag>
         <tag>静态博客</tag>
-        <tag>Butterfly主题</tag>
         <tag>Hexo博客搭建</tag>
         <tag>个人博客</tag>
         <tag>博客制作</tag>
