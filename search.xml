@@ -2219,8 +2219,8 @@
         <category>病毒研究</category>
       </categories>
       <tags>
-        <tag>网络安全</tag>
         <tag>病毒库</tag>
+        <tag>网络安全</tag>
         <tag>恶意软件</tag>
         <tag>安全研究</tag>
         <tag>学习资源</tag>
@@ -2309,10 +2309,10 @@
         <tag>JavaScript</tag>
         <tag>动画效果</tag>
         <tag>前端特效</tag>
+        <tag>爱心动画</tag>
         <tag>HTML</tag>
         <tag>CSS</tag>
         <tag>表白程序</tag>
-        <tag>爱心动画</tag>
         <tag>多语言</tag>
         <tag>前端动画</tag>
         <tag>创意项目</tag>
@@ -2350,12 +2350,12 @@
         <tag>Python</tag>
         <tag>网络工具</tag>
         <tag>Tkinter</tag>
-        <tag>VIP视频</tag>
-        <tag>视频破解</tag>
         <tag>桌面应用</tag>
         <tag>exe文件</tag>
-        <tag>视频解析</tag>
         <tag>交互功能</tag>
+        <tag>VIP视频</tag>
+        <tag>视频破解</tag>
+        <tag>视频解析</tag>
         <tag>实用工具</tag>
         <tag>免费观看VIP视频</tag>
         <tag>视频解析工具</tag>
@@ -2681,13 +2681,13 @@
         <tag>Python</tag>
         <tag>视觉效果</tag>
         <tag>Tkinter</tag>
-        <tag>桌面应用</tag>
-        <tag>exe文件</tag>
-        <tag>交互功能</tag>
         <tag>爱心动画</tag>
         <tag>粒子效果</tag>
         <tag>创意代码</tag>
+        <tag>桌面应用</tag>
+        <tag>exe文件</tag>
         <tag>数学方程</tag>
+        <tag>交互功能</tag>
       </tags>
   </entry>
   <entry>
@@ -3013,11 +3013,11 @@
       </categories>
       <tags>
         <tag>自动化工具</tag>
+        <tag>网络安全</tag>
         <tag>OpenClaw</tag>
         <tag>网络攻击</tag>
         <tag>安全隐患</tag>
         <tag>漏洞管理</tag>
-        <tag>网络安全</tag>
         <tag>安全防护</tag>
         <tag>网络安全风险</tag>
         <tag>自动化工具安全</tag>
