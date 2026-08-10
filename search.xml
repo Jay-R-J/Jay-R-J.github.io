@@ -146,6 +146,218 @@
       </tags>
   </entry>
   <entry>
+    <title>慕乐云服务器购买教程：从注册到上手只需5分钟</title>
+    <url>https://www.jay-r-j.top//muleyun-server-purchase-tutorial/</url>
+    <content><![CDATA[<hr>
+<h2 id="引言：为什么写这篇教程？"><a href="#引言：为什么写这篇教程？" class="headerlink" title="引言：为什么写这篇教程？"></a>引言：为什么写这篇教程？</h2><p>上一篇 <a href="https://www.jay-r-j.top/muleyun-cloud-recommendation/">大厂云服务太贵太复杂？这家”小而美”的云厂商，或许更适合你！</a> 中，我推荐了慕乐云计算。很多朋友看完后问我：<strong>具体怎么买？流程是什么？</strong></p>
+<p>所以这篇直接上实操——从注册到购买，每一步都截图标注，跟着做就行。</p>
+<blockquote>
+<p><strong>还没了解慕乐云计算？</strong> 建议先看上一篇推荐文章，了解它为什么适合个人开发者和中小企业。</p>
+</blockquote>
+<hr>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>一个手机号或邮箱（用于注册）</li>
+<li>支付宝或微信（用于付款）</li>
+<li>5分钟时间</li>
+</ul>
+<hr>
+<h2 id="第一步：通过专属链接进入"><a href="#第一步：通过专属链接进入" class="headerlink" title="第一步：通过专属链接进入"></a>第一步：通过专属链接进入</h2><p>点击下方链接进入慕乐云计算官网：</p>
+<p><a href="https://www.muleyun.com/aff/SJFEXDOA">慕乐云计算专属注册链接</a></p>
+<blockquote>
+<p>通过此链接注册可享受专属折扣，同时也是对我持续分享干货的支持！</p>
+</blockquote>
+<div class="image-container" style="text-align: center; margin: 20px 0;">
+  <figure style="display: inline-block; margin: 0; padding: 10px; background: var(--card-bg); border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <img src="https://cdn.jsdelivr.net/gh/Jay-R-J/images/muleyun-homepage.png">
+    <figcaption style="margin-top: 10px; color: var(--font-color); font-size: 14px;">慕乐云计算官网首页</figcaption>
+  </figure>
+</div>
+
+<hr>
+<h2 id="第二步：注册账号"><a href="#第二步：注册账号" class="headerlink" title="第二步：注册账号"></a>第二步：注册账号</h2><ol>
+<li>点击页面右上角的 <strong>“免费注册”</strong> 按钮</li>
+<li>输入手机号或邮箱</li>
+<li>输入图形验证码</li>
+<li>设置密码</li>
+<li>输入验证码</li>
+<li>点击 <strong>“注册”</strong> 完成账号创建</li>
+</ol>
+<div class="image-container" style="text-align: center; margin: 20px 0;">
+  <figure style="display: inline-block; margin: 0; padding: 10px; background: var(--card-bg); border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <img src="https://cdn.jsdelivr.net/gh/Jay-R-J/images/muleyun-register.png">
+    <figcaption style="margin-top: 10px; color: var(--font-color); font-size: 14px;">填写注册信息</figcaption>
+  </figure>
+</div>
+
+<blockquote>
+<p>注册完全免费，不强制绑定任何支付方式。</p>
+</blockquote>
+<hr>
+<h2 id="第三步：选择云服务器产品"><a href="#第三步：选择云服务器产品" class="headerlink" title="第三步：选择云服务器产品"></a>第三步：选择云服务器产品</h2><ol>
+<li>登录后进入 <strong>控制台</strong></li>
+<li>在左侧菜单找到 <strong>“订购产品”</strong></li>
+<li>进入产品选择页面（这些价格都是非常便宜的，适合个人建站、部署项目和学习）</li>
+</ol>
+<div class="image-container" style="text-align: center; margin: 20px 0;">
+  <figure style="display: inline-block; margin: 0; padding: 10px; background: var(--card-bg); border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <img src="https://cdn.jsdelivr.net/gh/Jay-R-J/images/muleyun-product.png">
+    <figcaption style="margin-top: 10px; color: var(--font-color); font-size: 14px;">云服务器产品列表</figcaption>
+  </figure>
+</div>
+
+<hr>
+<h2 id="第四步：选择配置（重点！）"><a href="#第四步：选择配置（重点！）" class="headerlink" title="第四步：选择配置（重点！）"></a>第四步：选择配置（重点！）</h2><p>这里根据你的需求选择合适配置。<strong>不知道怎么选？看下方推荐：</strong></p>
+<h3 id="配置推荐表"><a href="#配置推荐表" class="headerlink" title="配置推荐表"></a>配置推荐表</h3><table>
+<thead>
+<tr>
+<th>使用场景</th>
+<th>推荐配置</th>
+<th>适用人群</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>个人博客&#x2F;学习</strong></td>
+<td>1核1G &#x2F; 1M带宽</td>
+<td>学生党、个人博主</td>
+</tr>
+<tr>
+<td><strong>小型网站&#x2F;测试</strong></td>
+<td>1核2G &#x2F; 3M带宽</td>
+<td>个人开发者、小型项目</td>
+</tr>
+<tr>
+<td><strong>企业官网&#x2F;应用</strong></td>
+<td>2核4G &#x2F; 5M带宽</td>
+<td>中小企业、初创团队</td>
+</tr>
+<tr>
+<td><strong>高并发应用</strong></td>
+<td>4核8G &#x2F; 10M带宽</td>
+<td>中大型项目、线上服务</td>
+</tr>
+</tbody></table>
+<h3 id="配置选项说明"><a href="#配置选项说明" class="headerlink" title="配置选项说明"></a>配置选项说明</h3><div class="step-box" style="background: var(--card-bg); padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0;">
+  <ul style="color: var(--font-color);">
+    <li><strong>CPU 核数</strong>：决定服务器的计算能力，核数越多处理越快</li>
+    <li><strong>内存大小</strong>：决定能同时运行多少程序，建议最低 1G</li>
+    <li><strong>带宽</strong>：决定网站访问速度，个人用 1-3M 够用，企业建议 5M+</li>
+    <li><strong>系统盘</strong>：一般 40G 足够，需要存大量数据可加大数据盘</li>
+    <li><strong>操作系统</strong>：新手推荐 CentOS 7.9 或 Ubuntu 22.04</li>
+    <li><strong>购买时长</strong>：长期用建议按年买，比按月便宜很多</li>
+  </ul>
+</div>
+
+<div class="image-container" style="text-align: center; margin: 20px 0;">
+  <figure style="display: inline-block; margin: 0; padding: 10px; background: var(--card-bg); border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <img src="https://cdn.jsdelivr.net/gh/Jay-R-J/images/muleyun-config.png">
+    <figcaption style="margin-top: 10px; color: var(--font-color); font-size: 14px;">配置选择页面</figcaption>
+  </figure>
+</div>
+
+<blockquote>
+<p><strong>新手建议</strong>：如果只是建个人博客或学习，选最便宜的 1核1G 就够了，后期随时可以升级。</p>
+</blockquote>
+<hr>
+<h2 id="第五步：确认订单并支付"><a href="#第五步：确认订单并支付" class="headerlink" title="第五步：确认订单并支付"></a>第五步：确认订单并支付</h2><ol>
+<li>确认配置信息无误</li>
+<li>选择购买时长（1个月&#x2F;3个月&#x2F;6个月&#x2F;1年）</li>
+<li>查看价格，确认无误后点击 <strong>“加入购物车”</strong></li>
+<li>点击 <strong>“确认支付”</strong></li>
+<li>选择支付方式（支付宝&#x2F;微信）</li>
+<li>扫码完成支付</li>
+</ol>
+<div class="image-container" style="text-align: center; margin: 20px 0;">
+  <figure style="display: inline-block; margin: 0; padding: 10px; background: var(--card-bg); border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <img src="https://cdn.jsdelivr.net/gh/Jay-R-J/images/muleyun-pay.png">
+    <figcaption style="margin-top: 10px; color: var(--font-color); font-size: 14px;">确认订单并支付</figcaption>
+  </figure>
+</div>
+
+<blockquote>
+<p>支付成功后，服务器会在 1-2 分钟内自动创建完成。</p>
+</blockquote>
+<hr>
+<h2 id="第六步：查看服务器信息"><a href="#第六步：查看服务器信息" class="headerlink" title="第六步：查看服务器信息"></a>第六步：查看服务器信息</h2><p>支付成功后，回到控制台查看你的服务器：</p>
+<ol>
+<li>进入 <strong>控制台 → 云服务器</strong></li>
+<li>找到刚购买的服务器</li>
+<li>记录以下关键信息：</li>
+</ol>
+<div class="step-box" style="background: var(--card-bg); padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0;">
+  <h3 style="color: #667eea; margin-top: 0;">服务器关键信息（务必保存）</h3>
+  <ul style="color: var(--font-color);">
+    <li><strong>公网 IP</strong>：用于远程连接和域名解析</li>
+    <li><strong>用户名</strong>：Linux 一般是 root</li>
+    <li><strong>密码</strong>：初始密码在短信或邮件中，建议登录后修改</li>
+  </ul>
+</div>
+
+
+<hr>
+<h2 id="第七步：远程连接服务器"><a href="#第七步：远程连接服务器" class="headerlink" title="第七步：远程连接服务器"></a>第七步：远程连接服务器</h2><h3 id="方法一：网页端连接（最简单）"><a href="#方法一：网页端连接（最简单）" class="headerlink" title="方法一：网页端连接（最简单）"></a>方法一：网页端连接（最简单）</h3><ol>
+<li>在控制台点击服务器进入详情</li>
+<li>点击 <strong>“远程连接”</strong> 按钮</li>
+<li>直接在浏览器中输入密码登录</li>
+</ol>
+<h3 id="方法二：SSH-工具连接（推荐）"><a href="#方法二：SSH-工具连接（推荐）" class="headerlink" title="方法二：SSH 工具连接（推荐）"></a>方法二：SSH 工具连接（推荐）</h3><p>使用 Xshell、Termius 或 Windows 自带的 PowerShell：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">ssh root<span class="selector-tag">@</span>你的服务器IP</span><br></pre></td></tr></table></figure>
+
+<p>输入密码后即可登录。</p>
+<blockquote>
+<p><strong>首次连接会提示是否信任主机</strong>，输入 <code>yes</code> 回车即可。</p>
+</blockquote>
+<hr>
+<h2 id="购买后的建议操作"><a href="#购买后的建议操作" class="headerlink" title="购买后的建议操作"></a>购买后的建议操作</h2><div class="step-box" style="background: var(--card-bg); padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0;">
+  <h3 style="color: #667eea; margin-top: 0;">购买后建议立即做这几件事</h3>
+  <ol style="color: var(--font-color);">
+    <li><strong>修改初始密码</strong>：登录后执行 <code>passwd</code> 修改为强密码</li>
+    <li><strong>开放安全组端口</strong>：在控制台安全组中开放需要的端口（如 80、443、22）</li>
+    <li><strong>更新系统</strong>：执行 <code>yum update</code>（CentOS）或 <code>apt update && apt upgrade</code>（Ubuntu）</li>
+    <li><strong>安装宝塔面板</strong>（可选）：新手推荐安装宝塔面板，可视化管理服务器</li>
+    <li><strong>绑定域名</strong>：在域名服务商处添加 A 记录指向服务器 IP</li>
+  </ol>
+</div>
+
+<hr>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="Q1：买完之后可以退款吗？"><a href="#Q1：买完之后可以退款吗？" class="headerlink" title="Q1：买完之后可以退款吗？"></a>Q1：买完之后可以退款吗？</h3><p>云服务器属于虚拟产品，一般购买后不支持退款。建议先买月付试用，满意后再续年付。</p>
+<h3 id="Q2：配置选错了能升级吗？"><a href="#Q2：配置选错了能升级吗？" class="headerlink" title="Q2：配置选错了能升级吗？"></a>Q2：配置选错了能升级吗？</h3><p>可以。在控制台直接升级 CPU、内存、带宽，只需补差价，数据不会丢失。</p>
+<h3 id="Q3：忘记密码怎么办？"><a href="#Q3：忘记密码怎么办？" class="headerlink" title="Q3：忘记密码怎么办？"></a>Q3：忘记密码怎么办？</h3><p>在控制台找到服务器，点击”重置密码”，验证身份后即可设置新密码。重置后需要重启服务器生效。</p>
+<h3 id="Q4：服务器被攻击了怎么办？"><a href="#Q4：服务器被攻击了怎么办？" class="headerlink" title="Q4：服务器被攻击了怎么办？"></a>Q4：服务器被攻击了怎么办？</h3><ul>
+<li>开启安全组，只开放必要端口</li>
+<li>安装防火墙（如 firewalld）</li>
+<li>联系慕乐云客服，他们响应速度很快</li>
+</ul>
+<h3 id="Q5：如何备案？"><a href="#Q5：如何备案？" class="headerlink" title="Q5：如何备案？"></a>Q5：如何备案？</h3><p>如果使用国内服务器并要绑定域名访问，需要备案。在慕乐云控制台可以提交备案申请，按要求上传资料即可。</p>
+<hr>
+<h2 id="专属福利"><a href="#专属福利" class="headerlink" title="专属福利"></a>专属福利</h2><p>通过我的专属链接注册购买，可享受专属折扣：</p>
+<p><a href="https://www.muleyun.com/aff/SJFEXDOA">慕乐云计算专属注册链接</a></p>
+<p>你的每一次购买，都是对我继续分享干货的最大支持！</p>
+<hr>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>整个过程就这么简单：<strong>注册 → 选配置 → 支付 → 连接 → 开始使用</strong>，5分钟搞定。</p>
+<p>如果你在购买过程中遇到任何问题，可以在评论区留言，我会帮你解答。也可以直接联系慕乐云的客服——他们是真的”真人”在回复，响应很快。</p>
+<blockquote>
+<p><strong>相关阅读</strong>：<a href="https://www.jay-r-j.top/muleyun-cloud-recommendation/">大厂云服务太贵太复杂？这家”小而美”的云厂商，或许更适合你！</a></p>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>更新时间</strong>：2026-08-10<br><strong>作者</strong>：Jay</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>云服务</category>
+        <category>建站教程</category>
+        <category>技术教程</category>
+      </categories>
+      <tags>
+        <tag>云服务器</tag>
+        <tag>慕乐云计算</tag>
+        <tag>购买教程</tag>
+        <tag>建站</tag>
+        <tag>服务器配置</tag>
+        <tag>新手教程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>手把手搭建极简博客：使用 heiswayi/textlog 主题部署到 GitHub Pages</title>
     <url>https://www.jay-r-j.top//textlog-github-pages-tutorial/</url>
     <content><![CDATA[<hr>
@@ -154,6 +366,9 @@
 <li><strong>已有旧站</strong>：旧站 <code>https://你的用户名.github.io/</code> 保持不变，新博客访问 <code>https://你的用户名.github.io/仓库名/</code></li>
 <li>所有文章以 Markdown 书写，极简、无干扰、支持 RSS</li>
 </ul>
+<blockquote>
+<p><strong>我的成品演示</strong>：<a href="https://www.jay-r-j.top/textlog/">https://www.jay-r-j.top/textlog/</a> ——跟着本教程做出来的实际效果</p>
+</blockquote>
 <hr>
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
 <li><strong>Git</strong>：下载安装（官网 <a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a> ）</li>
@@ -585,65 +800,6 @@
       </tags>
   </entry>
   <entry>
-    <title>0.01元喝蜜雪冰城教程｜长期有效｜小白也能看懂</title>
-    <url>https://www.jay-r-j.top//mixue-0.01-yuan-tutorial/</url>
-    <content><![CDATA[<div class="section-divider" style="height: 2px; background: linear-gradient(to right, transparent, #ff6b9d, #c44dff, transparent); margin: 30px 0;"></div>
-
-<h2 id="引言：实现奶茶自由"><a href="#引言：实现奶茶自由" class="headerlink" title="引言：实现奶茶自由"></a>引言：实现奶茶自由</h2><div class="tip success" style="background: rgba(255, 107, 157, 0.1); border-left: 4px solid #ff6b9d; padding: 15px; margin: 20px 0; border-radius: 4px;">
-  <strong>奶茶自由</strong>：刚点的蜜雪，实付0.01，截图在这
-</div>
-
-<div class="image-container" style="text-align: center; margin: 20px 0;">
-  <figure style="display: inline-block; margin: 0; padding: 10px; background: var(--card-bg); border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-    <img src="/mixue-0.01-yuan-tutorial/mixue-0.01-yuan.png" class="" title="实付0.01截图">
-    <figcaption style="margin-top: 10px; color: var(--font-color); font-size: 14px;">实付0.01元截图</figcaption>  
-  </figure>
-</div>
-
-<p>不是代买，是自己号永久能用的方法。</p>
-<p>我试了好几种路子，就这个最稳，每次都能成。整理成图文教程了，一步步跟着做就行，小白也能看懂。</p>
-<h2 id="教程内容"><a href="#教程内容" class="headerlink" title="教程内容"></a>教程内容</h2><div class="step-box" style="background: var(--card-bg); padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0;">
-  <h3 style="color: #ff6b9d; margin-top: 0;">教程包含</h3>
-  <div style="margin: 15px 0;">
-    <ul style="color: var(--font-color);">
-      <li><strong>具体操作步骤</strong>：截图标注版，每一步都有清晰指引</li>
-      <li><strong>适用所有蜜雪门店</strong>：全国门店通用，不限地区</li>
-      <li><strong>长期有效</strong>：不是那种三天过期的活动，稳定可用</li>
-    </ul>
-  </div>
-</div>
-
-<p style="text-align: center; font-size: 16px; color: var(--font-color);">
-  希望这个小技巧能帮你省下更多奶茶钱~<br>
-  省钱不是抠门，是一种生活智慧！
-</p>
-
-
-<h2 id="获取链接"><a href="#获取链接" class="headerlink" title="获取链接"></a>获取链接</h2><ul>
-<li><a href="https://pan.baidu.com/s/196pc6V-3G0yjvmFEsB2DQg?pwd=ebp4" target="_blank">百度网盘下载</a> - 提取码: <code>ebp4</code>（点击链接后如未自动填充，请手动输入）</li>
-</ul>
-<div class="section-divider" style="height: 2px; background: linear-gradient(to right, transparent, #ff6b9d, #c44dff, transparent); margin: 30px 0;"></div>
-
-<div class="article-info" style="color: var(--font-color);">
-  <strong>更新时间：</strong>2026-07-31<br>
-  <strong>作者：</strong>Jay<br>
-</div>
-]]></content>
-      <categories>
-        <category>网盘分享</category>
-        <category>薅羊毛</category>
-        <category>生活技巧</category>
-        <category>省钱攻略</category>
-      </categories>
-      <tags>
-        <tag>蜜雪冰城</tag>
-        <tag>省钱技巧</tag>
-        <tag>生活攻略</tag>
-        <tag>0.01元</tag>
-        <tag>奶茶自由</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>手势粒子特效系统 Gesture Particle FX 实时手势交互(附源码下载)</title>
     <url>https://www.jay-r-j.top//gesture_particle_fx/</url>
     <content><![CDATA[<div class="section-divider" style="height: 2px; background: linear-gradient(to right, transparent, #ff6b9d, #c44dff, transparent); margin: 30px 0;"></div>
@@ -795,6 +951,65 @@
         <tag>粒子特效</tag>
         <tag>手势识别</tag>
         <tag>实时交互</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>0.01元喝蜜雪冰城教程｜长期有效｜小白也能看懂</title>
+    <url>https://www.jay-r-j.top//mixue-0.01-yuan-tutorial/</url>
+    <content><![CDATA[<div class="section-divider" style="height: 2px; background: linear-gradient(to right, transparent, #ff6b9d, #c44dff, transparent); margin: 30px 0;"></div>
+
+<h2 id="引言：实现奶茶自由"><a href="#引言：实现奶茶自由" class="headerlink" title="引言：实现奶茶自由"></a>引言：实现奶茶自由</h2><div class="tip success" style="background: rgba(255, 107, 157, 0.1); border-left: 4px solid #ff6b9d; padding: 15px; margin: 20px 0; border-radius: 4px;">
+  <strong>奶茶自由</strong>：刚点的蜜雪，实付0.01，截图在这
+</div>
+
+<div class="image-container" style="text-align: center; margin: 20px 0;">
+  <figure style="display: inline-block; margin: 0; padding: 10px; background: var(--card-bg); border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <img src="/mixue-0.01-yuan-tutorial/mixue-0.01-yuan.png" class="" title="实付0.01截图">
+    <figcaption style="margin-top: 10px; color: var(--font-color); font-size: 14px;">实付0.01元截图</figcaption>  
+  </figure>
+</div>
+
+<p>不是代买，是自己号永久能用的方法。</p>
+<p>我试了好几种路子，就这个最稳，每次都能成。整理成图文教程了，一步步跟着做就行，小白也能看懂。</p>
+<h2 id="教程内容"><a href="#教程内容" class="headerlink" title="教程内容"></a>教程内容</h2><div class="step-box" style="background: var(--card-bg); padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0;">
+  <h3 style="color: #ff6b9d; margin-top: 0;">教程包含</h3>
+  <div style="margin: 15px 0;">
+    <ul style="color: var(--font-color);">
+      <li><strong>具体操作步骤</strong>：截图标注版，每一步都有清晰指引</li>
+      <li><strong>适用所有蜜雪门店</strong>：全国门店通用，不限地区</li>
+      <li><strong>长期有效</strong>：不是那种三天过期的活动，稳定可用</li>
+    </ul>
+  </div>
+</div>
+
+<p style="text-align: center; font-size: 16px; color: var(--font-color);">
+  希望这个小技巧能帮你省下更多奶茶钱~<br>
+  省钱不是抠门，是一种生活智慧！
+</p>
+
+
+<h2 id="获取链接"><a href="#获取链接" class="headerlink" title="获取链接"></a>获取链接</h2><ul>
+<li><a href="https://pan.baidu.com/s/196pc6V-3G0yjvmFEsB2DQg?pwd=ebp4" target="_blank">百度网盘下载</a> - 提取码: <code>ebp4</code>（点击链接后如未自动填充，请手动输入）</li>
+</ul>
+<div class="section-divider" style="height: 2px; background: linear-gradient(to right, transparent, #ff6b9d, #c44dff, transparent); margin: 30px 0;"></div>
+
+<div class="article-info" style="color: var(--font-color);">
+  <strong>更新时间：</strong>2026-07-31<br>
+  <strong>作者：</strong>Jay<br>
+</div>
+]]></content>
+      <categories>
+        <category>网盘分享</category>
+        <category>薅羊毛</category>
+        <category>生活技巧</category>
+        <category>省钱攻略</category>
+      </categories>
+      <tags>
+        <tag>蜜雪冰城</tag>
+        <tag>省钱技巧</tag>
+        <tag>生活攻略</tag>
+        <tag>0.01元</tag>
+        <tag>奶茶自由</tag>
       </tags>
   </entry>
   <entry>
@@ -990,10 +1205,10 @@
         <category>视觉设计</category>
       </categories>
       <tags>
-        <tag>视觉效果</tag>
         <tag>WebGL</tag>
         <tag>前端特效</tag>
         <tag>粒子系统</tag>
+        <tag>视觉效果</tag>
         <tag>网页特效</tag>
         <tag>视觉设计</tag>
         <tag>极光效果</tag>
@@ -2555,6 +2770,7 @@
         <category>四六级备考</category>
       </categories>
       <tags>
+        <tag>学习资源</tag>
         <tag>英语四级</tag>
         <tag>CET4</tag>
         <tag>真题分享</tag>
@@ -2566,7 +2782,6 @@
         <tag>英语真题</tag>
         <tag>备考资源</tag>
         <tag>百度网盘</tag>
-        <tag>学习资源</tag>
       </tags>
   </entry>
   <entry>
@@ -2611,10 +2826,10 @@
       </categories>
       <tags>
         <tag>网络安全</tag>
-        <tag>学习资源</tag>
         <tag>病毒库</tag>
         <tag>恶意软件</tag>
         <tag>安全研究</tag>
+        <tag>学习资源</tag>
         <tag>病毒样本</tag>
         <tag>安全工具</tag>
         <tag>威胁情报</tag>
@@ -2699,8 +2914,8 @@
       <tags>
         <tag>动画效果</tag>
         <tag>JavaScript</tag>
-        <tag>爱心动画</tag>
         <tag>前端特效</tag>
+        <tag>爱心动画</tag>
         <tag>HTML</tag>
         <tag>CSS</tag>
         <tag>表白程序</tag>
@@ -3070,6 +3285,7 @@
       </categories>
       <tags>
         <tag>Python</tag>
+        <tag>视觉效果</tag>
         <tag>Tkinter</tag>
         <tag>爱心动画</tag>
         <tag>粒子效果</tag>
@@ -3078,7 +3294,6 @@
         <tag>exe文件</tag>
         <tag>数学方程</tag>
         <tag>交互功能</tag>
-        <tag>视觉效果</tag>
       </tags>
   </entry>
   <entry>
@@ -3199,10 +3414,10 @@
       </categories>
       <tags>
         <tag>前端开发</tag>
-        <tag>视觉效果</tag>
         <tag>WebGL</tag>
         <tag>前端特效</tag>
         <tag>粒子系统</tag>
+        <tag>视觉效果</tag>
         <tag>浪漫特效</tag>
         <tag>樱花雨</tag>
         <tag>网页特效</tag>
