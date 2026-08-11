@@ -2885,15 +2885,15 @@
     <url>https://www.jay-r-j.top//multilanguage-heart-confession/</url>
     <content><![CDATA[<h2 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h2><p>这是一个使用 HTML、CSS 和 JavaScript 开发的浪漫表白程序，通过精心设计的动画效果在黑色背景上以爱心动画轨迹展示 <strong>68 种不同语言</strong>的”我爱你”文字。程序结合了水平移动和垂直弹跳的复合动画，创造出视觉效果绚丽、富有浪漫氛围的网页应用。</p>
 <h2 id="核心功能"><a href="#核心功能" class="headerlink" title="核心功能"></a>核心功能</h2><ul>
-<li><strong>🌍 68 种语言</strong>：涵盖全球主要语言，包括中文、英文、日文、韩文、法文、德文、西班牙文等</li>
-<li><strong>💕 爱心动画轨迹</strong>：文字沿着爱心形状路径运动，形成浪漫的视觉效果</li>
-<li><strong>🎭 复合动画</strong>：水平移动与垂直弹跳相结合，增强视觉冲击力</li>
-<li><strong>🎨 精美配色</strong>：粉色、红色渐变文字配合黑色背景，突出浪漫主题</li>
-<li><strong>📱 响应式设计</strong>：适配各种屏幕尺寸，手机、平板、电脑均可完美显示</li>
+<li><strong>68 种语言</strong>：涵盖全球主要语言，包括中文、英文、日文、韩文、法文、德文、西班牙文等</li>
+<li><strong>爱心动画轨迹</strong>：文字沿着爱心形状路径运动，形成浪漫的视觉效果</li>
+<li><strong>复合动画</strong>：水平移动与垂直弹跳相结合，增强视觉冲击力</li>
+<li><strong>精美配色</strong>：粉色、红色渐变文字配合黑色背景，突出浪漫主题</li>
+<li><strong>响应式设计</strong>：适配各种屏幕尺寸，手机、平板、电脑均可完美显示</li>
 </ul>
 <h2 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h2><div class="image-container" style="text-align: center; margin: 20px 0;">
   <figure style="display: inline-block; margin: 0; padding: 10px; background: var(--card-bg); border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-    <img src="/multilanguage-heart-confession/image.png" class="" title="多语言爱心表白程序">
+    <img src="https://cdn.jsdelivr.net/gh/Jay-R-J/images/multilanguage-heart-confession.png">
     <figcaption style="margin-top: 10px; color: var(--font-color); font-size: 14px;">多语言爱心表白程序</figcaption>  
   </figure>
 </div>
@@ -2912,8 +2912,8 @@
         <category>JavaScript</category>
       </categories>
       <tags>
-        <tag>动画效果</tag>
         <tag>JavaScript</tag>
+        <tag>动画效果</tag>
         <tag>前端特效</tag>
         <tag>爱心动画</tag>
         <tag>HTML</tag>
