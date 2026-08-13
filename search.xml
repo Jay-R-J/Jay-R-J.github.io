@@ -1357,10 +1357,10 @@
         <category>视觉设计</category>
       </categories>
       <tags>
-        <tag>视觉效果</tag>
         <tag>WebGL</tag>
         <tag>前端特效</tag>
         <tag>粒子系统</tag>
+        <tag>视觉效果</tag>
         <tag>网页特效</tag>
         <tag>视觉设计</tag>
         <tag>极光效果</tag>
@@ -3064,10 +3064,10 @@
         <category>JavaScript</category>
       </categories>
       <tags>
-        <tag>动画效果</tag>
         <tag>JavaScript</tag>
-        <tag>爱心动画</tag>
+        <tag>动画效果</tag>
         <tag>前端特效</tag>
+        <tag>爱心动画</tag>
         <tag>HTML</tag>
         <tag>CSS</tag>
         <tag>表白程序</tag>
@@ -3437,6 +3437,7 @@
       </categories>
       <tags>
         <tag>Python</tag>
+        <tag>视觉效果</tag>
         <tag>Tkinter</tag>
         <tag>爱心动画</tag>
         <tag>粒子效果</tag>
@@ -3445,7 +3446,6 @@
         <tag>exe文件</tag>
         <tag>数学方程</tag>
         <tag>交互功能</tag>
-        <tag>视觉效果</tag>
       </tags>
   </entry>
   <entry>
@@ -3566,10 +3566,10 @@
       </categories>
       <tags>
         <tag>前端开发</tag>
-        <tag>视觉效果</tag>
         <tag>WebGL</tag>
         <tag>前端特效</tag>
         <tag>粒子系统</tag>
+        <tag>视觉效果</tag>
         <tag>浪漫特效</tag>
         <tag>樱花雨</tag>
         <tag>网页特效</tag>
@@ -3968,13 +3968,13 @@
         <category>毕设指南</category>
       </categories>
       <tags>
+        <tag>Django</tag>
         <tag>毕业设计</tag>
         <tag>毕设案例</tag>
         <tag>项目经验</tag>
         <tag>技术分享</tag>
         <tag>百度AI</tag>
         <tag>深度学习</tag>
-        <tag>Django</tag>
         <tag>动物识别</tag>
         <tag>水果识别</tag>
         <tag>农作物识别</tag>
@@ -4669,9 +4669,9 @@
         <category>企业应用</category>
       </categories>
       <tags>
-        <tag>Django</tag>
         <tag>智能车牌识别</tag>
         <tag>企业级解决方案</tag>
+        <tag>Django</tag>
         <tag>百度OCR</tag>
         <tag>停车场管理</tag>
         <tag>交通执法</tag>
